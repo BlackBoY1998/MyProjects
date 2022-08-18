@@ -1,0 +1,6 @@
+
+import:
+https://www.c-sharpcorner.com/article/import-excel-data-to-database-using-Asp-Net-mvc-entity-frame/
+
+Export:
+https://www.youtube.com/watch?v=VcZGQq412f4

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crudusingEntity", "crudusingEntity\crudusingEntity.csproj", "{4D83DE41-A208-4D32-A208-CB512ED6688B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogService", "LogService\LogService.csproj", "{03B6F7DC-8079-4331-95F0-24641FEA90B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D83DE41-A208-4D32-A208-CB512ED6688B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D83DE41-A208-4D32-A208-CB512ED6688B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D83DE41-A208-4D32-A208-CB512ED6688B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D83DE41-A208-4D32-A208-CB512ED6688B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03B6F7DC-8079-4331-95F0-24641FEA90B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B6F7DC-8079-4331-95F0-24641FEA90B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B6F7DC-8079-4331-95F0-24641FEA90B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B6F7DC-8079-4331-95F0-24641FEA90B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

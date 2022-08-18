@@ -1,0 +1,1964 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallbalanceClopsModel.Store" Provider="Npgsql" ProviderManifestToken="13.4" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.accesscontrollist' was excluded.-->
+  <EntityType Name="accesscontrollist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="accesscontrolid" Type="int4" Nullable="false" />
+    <Property Name="accessname" Type="varchar" MaxLength="50" />
+    <Property Name="friendlyaccessname" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="accesspanel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="acesspanelname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="activitylog">
+    <Key>
+      <PropertyRef Name="activitylogid" />
+    </Key>
+    <Property Name="activitylogid" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="text" Nullable="false" />
+    <Property Name="activity" Type="text" />
+    <Property Name="machinename" Type="text" />
+    <Property Name="machineip" Type="text" />
+    <Property Name="pagename" Type="text" />
+    <Property Name="activitydate" Type="timestamp" />
+    <Property Name="tag" Type="text" />
+  </EntityType>
+  <EntityType Name="addressbook">
+    <Key>
+      <PropertyRef Name="addressid" />
+    </Key>
+    <Property Name="addressid" Type="int4" Nullable="false" />
+    <Property Name="addresstitle" Type="text" Nullable="false" />
+    <Property Name="firstname" Type="text" Nullable="false" />
+    <Property Name="middlename" Type="text" />
+    <Property Name="lastname" Type="text" Nullable="false" />
+    <Property Name="company" Type="text" Nullable="false" />
+    <Property Name="designation" Type="text" Nullable="false" />
+    <Property Name="email" Type="text" Nullable="false" />
+    <Property Name="website" Type="text" />
+    <Property Name="clientcode" Type="text" Nullable="false" />
+    <Property Name="branch" Type="text" Nullable="false" />
+    <Property Name="homeaddress" Type="text" />
+    <Property Name="businessaddress" Type="text" />
+    <Property Name="homepincode" Type="text" />
+    <Property Name="registered" Type="text" />
+    <Property Name="contacttype" Type="text" Nullable="false" />
+    <Property Name="phonenumber" Type="text" Nullable="false" />
+    <Property Name="businesspincode" Type="text" />
+    <Property Name="homecountryid" Type="int4" />
+    <Property Name="homestateid" Type="int4" />
+    <Property Name="homecityid" Type="int4" />
+    <Property Name="businesscountryid" Type="int4" Nullable="false" />
+    <Property Name="businessstateid" Type="int4" Nullable="false" />
+    <Property Name="businesscityid" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="adminmenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="menuname" Type="varchar" MaxLength="100" />
+    <Property Name="parentmenuid" Type="int4" Nullable="false" />
+    <Property Name="shortcode" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="agentcalltimestatuslog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="idletimeexceed" Type="time" Precision="6" />
+    <Property Name="breaktimeexceed" Type="time" Precision="6" />
+    <Property Name="totallogintimeexceed" Type="time" Precision="6" />
+    <Property Name="totaltalktimeexceed" Type="time" Precision="6" />
+    <Property Name="escalationmail" Type="varchar" MaxLength="100" />
+    <Property Name="remark" Type="text" />
+    <Property Name="createdby" Type="int4" Nullable="false" />
+    <Property Name="createdon" Type="date" Nullable="false" />
+    <Property Name="manualdialmodeexceed" Type="time" Precision="6" />
+    <Property Name="extensionringingexceed" Type="time" Precision="6" />
+    <Property Name="outgoingcalldurationexceed" Type="time" Precision="6" />
+    <Property Name="incommingcalldurationexceed" Type="time" Precision="6" />
+  </EntityType>
+  <EntityType Name="alertdescription">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.blockcallerlist' was excluded.-->
+  <EntityType Name="blockcallerlist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="boardmodel">
+    <Key>
+      <PropertyRef Name="boardid" />
+    </Key>
+    <Property Name="boardid" Type="int4" Nullable="false" />
+    <Property Name="productid" Type="int4" />
+    <Property Name="modalname" Type="varchar" MaxLength="200" />
+    <Property Name="manufacturer" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'status' in the table 'CallbalanceClops.public.branchdetail' was excluded.-->
+  <EntityType Name="branchdetail">
+    <Key>
+      <PropertyRef Name="branchid" />
+    </Key>
+    <Property Name="branchid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+    <Property Name="branchname" Type="varchar" MaxLength="200" />
+    <Property Name="branchaddress" Type="varchar" MaxLength="255" />
+    <Property Name="countryid" Type="int4" />
+    <Property Name="stateid" Type="int4" />
+    <Property Name="branchpin" Type="varchar" MaxLength="50" />
+    <Property Name="cityid" Type="int4" />
+    <Property Name="branchheadname" Type="varchar" MaxLength="50" />
+    <Property Name="branchfax" Type="varchar" MaxLength="200" />
+    <Property Name="branchphone1" Type="varchar" MaxLength="200" />
+    <Property Name="branchphone2" Type="varchar" MaxLength="200" />
+    <Property Name="branchheadtel" Type="varchar" MaxLength="200" />
+    <Property Name="branchheadmob" Type="varchar" MaxLength="100" />
+    <Property Name="branchheademail" Type="varchar" MaxLength="255" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="cloudclientid" Type="int4" />
+  </EntityType>
+  <EntityType Name="branchgatewaymapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="branchid" Type="int4" />
+    <Property Name="branchname" Type="text" />
+    <Property Name="gateway" Type="text" />
+    <Property Name="gatewayip" Type="varchar" MaxLength="100" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="branchmaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="branchname" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="stateid" Type="int4" />
+    <Property Name="connectionstring" Type="text" />
+    <Property Name="fallbackwebserverurl" Type="text" />
+    <Property Name="fallbackcommserverurl" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'canbedeleted' in the table 'CallbalanceClops.public.breaks' was excluded.-->
+  <EntityType Name="breaks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="text" />
+    <Property Name="discription" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="call_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="callcategory" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'read' in the table 'CallbalanceClops.public.callbacksmissed' was excluded.-->
+  <EntityType Name="callbacksmissed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="calllistdetailsid" Type="varchar" MaxLength="50" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="misseddate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="callconnectiondetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="calldetailsid" Type="int8" />
+    <Property Name="callattemptid" Type="int8" />
+    <Property Name="agenttelephone" Type="varchar" MaxLength="50" />
+    <Property Name="customertelephone" Type="varchar" MaxLength="50" />
+    <Property Name="agentstatus" Type="varchar" MaxLength="50" />
+    <Property Name="customerstatus" Type="varchar" MaxLength="50" />
+    <Property Name="calldate" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="calldestinationmaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="destination" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'canbedeleted' in the table 'CallbalanceClops.public.calldispositions' was excluded.-->
+  <EntityType Name="calldispositions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="text" />
+    <Property Name="discription" Type="text" />
+    <Property Name="backcolor" Type="varchar" MaxLength="6" />
+    <Property Name="autoflag" Type="int4" />
+    <Property Name="dispositiontype" Type="int4" />
+    <Property Name="tat" Type="varchar" MaxLength="20" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'active' in the table 'CallbalanceClops.public.calllist' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isprefixactive' in the table 'CallbalanceClops.public.calllist' was excluded.-->
+  <EntityType Name="calllist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+    <Property Name="remarks" Type="varchar" MaxLength="1024" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="bucketsize" Type="int4" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="prefix" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'popupreceived' in the table 'CallbalanceClops.public.calllistattempts' was excluded.-->
+  <EntityType Name="calllistattempts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="calllistdetailsid" Type="int8" Nullable="false" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="attemptdate" Type="timestamp" Nullable="false" />
+    <Property Name="systemdisposition" Type="int4" Nullable="false" />
+    <Property Name="processinfo" Type="text" />
+    <Property Name="userdisposition" Type="int4" />
+    <Property Name="endreason" Type="varchar" MaxLength="1024" />
+    <Property Name="modifieddate" Type="timestamp" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="useridletime" Type="int8" />
+    <Property Name="attemptresultdate" Type="timestamp" />
+    <Property Name="calltype" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issoftdial' in the table 'CallbalanceClops.public.calllistdetails' was excluded.-->
+  <EntityType Name="calllistdetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="calllistid" Type="int4" />
+    <Property Name="firstname" Type="varchar" MaxLength="500" />
+    <Property Name="middlename" Type="varchar" MaxLength="500" />
+    <Property Name="lastname" Type="varchar" MaxLength="500" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="details" Type="text" />
+    <Property Name="scheduledtime" Type="timestamp" />
+    <Property Name="remarks" Type="text" />
+    <Property Name="attempts" Type="int4" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="status" Type="int4" />
+    <Property Name="flagid" Type="int4" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="assignedby" Type="int4" />
+    <Property Name="assigneddate" Type="timestamp" />
+    <Property Name="callbackuserid" Type="int4" />
+    <Property Name="assignedto" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'callable' in the table 'CallbalanceClops.public.calllistdetailsadditional' was excluded.-->
+  <EntityType Name="calllistdetailsadditional">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="calllistdetailsid" Type="int8" Nullable="false" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="telephonetype" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="calllistdetailsmobile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="calllistid" Type="int4" />
+    <Property Name="firstname" Type="varchar" MaxLength="500" />
+    <Property Name="middlename" Type="varchar" MaxLength="500" />
+    <Property Name="lastname" Type="varchar" MaxLength="500" />
+    <Property Name="scheduledtime" Type="timestamp" />
+    <Property Name="attempts" Type="int4" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="status" Type="int4" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="assigneddate" Type="timestamp" />
+    <Property Name="policyno" Type="varchar" MaxLength="50" />
+    <Property Name="customername" Type="varchar" MaxLength="50" />
+    <Property Name="product" Type="text" />
+    <Property Name="tennatid" Type="int4" />
+  </EntityType>
+  <EntityType Name="callsuccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="calllistattemptid" Type="int8" Nullable="false" />
+    <Property Name="processdate" Type="timestamp" />
+    <Property Name="processenddate" Type="timestamp" />
+    <Property Name="processid" Type="int4" />
+    <Property Name="processinfo" Type="text" />
+    <Property Name="userdisposition" Type="int4" />
+    <Property Name="endreason" Type="varchar" MaxLength="1024" />
+    <Property Name="modifieddate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="calltransfersuccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callsuccessid" Type="int8" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="startdate" Type="timestamp" />
+    <Property Name="stopdate" Type="timestamp" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="calldisconnectdate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'active' in the table 'CallbalanceClops.public.campaign' was excluded.-->
+  <EntityType Name="campaign">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="startdate" Type="timestamp" />
+    <Property Name="enddate" Type="timestamp" />
+    <Property Name="port" Type="int4" Nullable="false" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="calllisttype" Type="int2" Nullable="false" />
+    <Property Name="maxattempts" Type="int4" />
+    <Property Name="holdpromptid" Type="int4" />
+    <Property Name="dispositionalgorithm" Type="int4" Nullable="false" />
+    <Property Name="greetingid" Type="int4" />
+    <Property Name="campaignmode" Type="int4" />
+    <Property Name="callflow" Type="varchar" MaxLength="1024" />
+    <Property Name="branchcode" Type="bpchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+    <Property Name="campaigndid" Type="int4" />
+  </EntityType>
+  <EntityType Name="campaignchannels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="channelid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="campaigncustomfields">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="customfieldid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="campaigndispositions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="calldispositionid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'canbedeleted' in the table 'CallbalanceClops.public.campaignsettings' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isdefault' in the table 'CallbalanceClops.public.campaignsettings' was excluded.-->
+  <EntityType Name="campaignsettings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="settingtype" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="settingname" Type="varchar" MaxLength="256" />
+    <Property Name="settingvalue" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="campaignusergroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="usergroupid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="campaignusers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="campaignname" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="roleid" Type="int4" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="tenantid" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="campaignverifiers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="verifiersid" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'nonsoftdial' in the table 'CallbalanceClops.public.channels' was excluded.-->
+  <EntityType Name="channels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="systemname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="50" />
+    <Property Name="categoryid" Type="int4" />
+    <Property Name="type" Type="int2" />
+    <Property Name="cli" Type="int4" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="mode" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'active' in the table 'CallbalanceClops.public.checkdidmapping' was excluded.-->
+  <EntityType Name="checkdidmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="didnumber" Type="varchar" MaxLength="50" />
+    <Property Name="groupid" Type="int4" />
+    <Property Name="line" Type="int4" />
+  </EntityType>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="cityid" />
+    </Key>
+    <Property Name="cityid" Type="int4" Nullable="false" />
+    <Property Name="stateid" Type="int4" Nullable="false" />
+    <Property Name="cityname" Type="text" />
+    <Property Name="citycode" Type="varchar" MaxLength="100" />
+    <Property Name="is_deleted" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="clientdetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="alternatenumber" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="text" />
+    <Property Name="alternateaddress" Type="text" />
+    <Property Name="emailid" Type="varchar" MaxLength="50" />
+    <Property Name="servicebranch" Type="varchar" MaxLength="50" />
+    <Property Name="querysavedon" Type="timestamp" />
+    <Property Name="storename" Type="text" />
+    <Property Name="city" Type="text" />
+    <Property Name="location" Type="text" />
+    <Property Name="zomatonumber" Type="varchar" MaxLength="50" />
+    <Property Name="orderamount" Type="varchar" MaxLength="50" />
+    <Property Name="incommingcallid" Type="varchar" MaxLength="50" />
+    <Property Name="userdisposition" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isbodyhtml' in the table 'CallbalanceClops.public.communication_email_emails' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isprocessed' in the table 'CallbalanceClops.public.communication_email_emails' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isdeleted' in the table 'CallbalanceClops.public.communication_email_emails' was excluded.-->
+  <EntityType Name="communication_email_emails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="prefferredsmtpserverid" Type="int4" />
+    <Property Name="emailto" Type="text" Nullable="false" />
+    <Property Name="emailcc" Type="text" />
+    <Property Name="emailbcc" Type="text" />
+    <Property Name="subject" Type="varchar" MaxLength="2048" />
+    <Property Name="body" Type="text" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="lastprocessedon" Type="timestamp" />
+    <Property Name="attempts" Type="int4" />
+    <Property Name="senton" Type="timestamp" />
+    <Property Name="status" Type="int2" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="communication_email_emailsattachments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="emailsid" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="filepath" Type="varchar" MaxLength="2048" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issuccessful' in the table 'CallbalanceClops.public.communication_email_emailsattempts' was excluded.-->
+  <EntityType Name="communication_email_emailsattempts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="smtpserverid" Type="int4" />
+    <Property Name="emailsid" Type="int4" Nullable="false" />
+    <Property Name="attemptedon" Type="timestamp" />
+    <Property Name="remarks" Type="text" />
+  </EntityType>
+  <EntityType Name="communication_email_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="settingname" Type="varchar" MaxLength="300" />
+    <Property Name="settingvalue" Type="varchar" MaxLength="300" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'requireauthentication' in the table 'CallbalanceClops.public.communication_email_smtpserver' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'usessl' in the table 'CallbalanceClops.public.communication_email_smtpserver' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'active' in the table 'CallbalanceClops.public.communication_email_smtpserver' was excluded.-->
+  <EntityType Name="communication_email_smtpserver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="server" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="port" Type="int4" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="500" />
+    <Property Name="passphrase" Type="varchar" MaxLength="500" />
+    <Property Name="fromaddress" Type="varchar" MaxLength="512" />
+    <Property Name="fromdisplayname" Type="varchar" MaxLength="512" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="countryid" />
+    </Key>
+    <Property Name="countryid" Type="int4" Nullable="false" />
+    <Property Name="countryname" Type="text" Nullable="false" />
+    <Property Name="countrycode" Type="varchar" MaxLength="100" />
+    <Property Name="is_deleted" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'active' in the table 'CallbalanceClops.public.customer' was excluded.-->
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="clientcode" Type="varchar" MaxLength="100" />
+    <Property Name="firstname" Type="varchar" MaxLength="100" />
+    <Property Name="middlename" Type="varchar" MaxLength="100" />
+    <Property Name="lastname" Type="varchar" MaxLength="100" />
+    <Property Name="dob" Type="timestamp" />
+    <Property Name="gender" Type="varchar" MaxLength="1" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="mobile" Type="varchar" MaxLength="20" />
+    <Property Name="phoneno" Type="varchar" MaxLength="50" />
+    <Property Name="countryid" Type="int4" />
+    <Property Name="stateid" Type="int4" />
+    <Property Name="cityid" Type="int4" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="pincode" Type="varchar" MaxLength="6" />
+    <Property Name="userrole" Type="int4" />
+    <Property Name="branchid" Type="int4" />
+    <Property Name="demataccno" Type="varchar" MaxLength="100" />
+    <Property Name="accountstatus" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'editable' in the table 'CallbalanceClops.public.customfields' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'ismandatory' in the table 'CallbalanceClops.public.customfields' was excluded.-->
+  <EntityType Name="customfields">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="systemname" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="displayname" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="displaytype" Type="int4" />
+    <Property Name="displayitems" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="dnclist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="serviceareacode" Type="varchar" MaxLength="50" />
+    <Property Name="preferences" Type="varchar" MaxLength="50" />
+    <Property Name="opstype" Type="varchar" MaxLength="50" />
+    <Property Name="phonetype" Type="varchar" MaxLength="50" />
+    <Property Name="refnumber" Type="varchar" MaxLength="50" />
+    <Property Name="filename" Type="varchar" MaxLength="50" />
+    <Property Name="uploaddate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="emailstatementrequestdata">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" />
+    <Property Name="incomingcallid" Type="varchar" MaxLength="50" />
+    <Property Name="foliono" Type="varchar" MaxLength="50" />
+    <Property Name="arnno" Type="varchar" MaxLength="50" />
+    <Property Name="emailid" Type="text" />
+    <Property Name="period_type" Type="varchar" MaxLength="50" />
+    <Property Name="fromdate" Type="timestamp" />
+    <Property Name="todate" Type="timestamp" />
+    <Property Name="pdf_password" Type="varchar" MaxLength="50" />
+    <Property Name="panno" Type="varchar" MaxLength="50" />
+    <Property Name="subrequesttype" Type="text" />
+    <Property Name="requesttype" Type="text" />
+    <Property Name="requestdate" Type="timestamp" />
+    <Property Name="camsreferenceno" Type="varchar" MaxLength="50" />
+    <Property Name="camsresult" Type="text" />
+  </EntityType>
+  <EntityType Name="errorlog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+    <Property Name="logdate" Type="timestamp" />
+    <Property Name="errordescription" Type="text" />
+    <Property Name="exceptiondescription" Type="text" />
+    <Property Name="errorlocation" Type="varchar" MaxLength="100" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="clientcode" Type="varchar" MaxLength="50" />
+    <Property Name="pagetitle" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.extensionmapping' was excluded.-->
+  <EntityType Name="extensionmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="channelid" Type="int4" />
+    <Property Name="gateway" Type="text" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="campaign" Type="int4" />
+    <Property Name="branchid" Type="int4" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="extensions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="channelno" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="flags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="text" />
+    <Property Name="description" Type="text" />
+    <Property Name="filepath" Type="text" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="createdby" Type="int4" />
+  </EntityType>
+  <EntityType Name="groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="systemname" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hmpdetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="hmp_ip" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'status' in the table 'CallbalanceClops.public.holidays' was excluded.-->
+  <EntityType Name="holidays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="date" Type="timestamp" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+    <Property Name="wavfilename" Type="varchar" MaxLength="50" />
+    <Property Name="servicetype" Type="int4" />
+    <Property Name="branchcode" Type="bpchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issynchronised' in the table 'CallbalanceClops.public.incomingcalls' was excluded.-->
+  <EntityType Name="incomingcalls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="callstart" Type="timestamp" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="remarks" Type="text" />
+    <Property Name="calldispositionid" Type="int4" Nullable="false" />
+    <Property Name="callend" Type="timestamp" />
+    <Property Name="callwrapuptime" Type="timestamp" />
+    <Property Name="holdtime" Type="int8" />
+    <Property Name="unholdtime" Type="timestamp" />
+    <Property Name="transferstart" Type="timestamp" />
+    <Property Name="transferend" Type="timestamp" />
+    <Property Name="groupid" Type="int2" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="calleeid" Type="varchar" MaxLength="50" />
+    <Property Name="calleduser" Type="int4" />
+    <Property Name="lasteditdate" Type="timestamp" />
+    <Property Name="creationdate" Type="timestamp" />
+    <Property Name="channelid" Type="varchar" MaxLength="50" />
+    <Property Name="basecallerid" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="incomingdatareceived">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="incomingcallid" Type="int8" />
+    <Property Name="data1" Type="varchar" MaxLength="2000" />
+    <Property Name="data2" Type="varchar" MaxLength="2000" />
+    <Property Name="data3" Type="varchar" MaxLength="2000" />
+    <Property Name="data4" Type="varchar" MaxLength="2000" />
+    <Property Name="data5" Type="varchar" MaxLength="2000" />
+    <Property Name="data6" Type="varchar" MaxLength="2000" />
+    <Property Name="data7" Type="varchar" MaxLength="2000" />
+    <Property Name="lasteditdate" Type="timestamp" />
+    <Property Name="creationdate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isviewed' in the table 'CallbalanceClops.public.incomingtransferfailed' was excluded.-->
+  <EntityType Name="incomingtransferfailed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callreceivedid" Type="int8" />
+    <Property Name="startdate" Type="timestamp" />
+    <Property Name="stopdate" Type="timestamp" />
+    <Property Name="failuretype" Type="int4" />
+    <Property Name="remarks" Type="varchar" MaxLength="1024" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isviewed' in the table 'CallbalanceClops.public.incomingtransferfailed_history' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issendemail' in the table 'CallbalanceClops.public.incomingtransferfailed_history' was excluded.-->
+  <EntityType Name="incomingtransferfailed_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callreceivedid" Type="int8" />
+    <Property Name="startdate" Type="timestamp" />
+    <Property Name="stopdate" Type="timestamp" />
+    <Property Name="failuretype" Type="int4" />
+    <Property Name="remarks" Type="varchar" MaxLength="1024" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="incomingtransfersuccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callreceivedid" Type="int8" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="startdate" Type="timestamp" />
+    <Property Name="stopdate" Type="timestamp" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="calldisonnectdate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="insertoptionselection">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="incomingcallid" Type="int8" Nullable="false" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" />
+    <Property Name="language" Type="varchar" MaxLength="50" />
+    <Property Name="optionselected" Type="varchar" MaxLength="50" />
+    <Property Name="folionumber" Type="varchar" MaxLength="50" />
+    <Property Name="calldate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="internaltransfer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callreceivedid" Type="int8" />
+    <Property Name="incomingtransfersuccessid" Type="int8" />
+    <Property Name="transferinitiatoruserid" Type="int4" />
+    <Property Name="transferredtouserid" Type="int4" />
+    <Property Name="transferreddate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="ivrflowtrace">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="incomingcallsid" Type="int8" Nullable="false" />
+    <Property Name="responsedate" Type="timestamp" />
+    <Property Name="actiontype" Type="int4" />
+    <Property Name="nodename" Type="varchar" MaxLength="1024" />
+    <Property Name="dtmfreceived" Type="varchar" MaxLength="500" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="leadmanagement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="leadid" Type="varchar" MaxLength="50" />
+    <Property Name="leadtype" Type="varchar" MaxLength="50" />
+    <Property Name="contactnumber" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="text" />
+    <Property Name="leadsource" Type="varchar" MaxLength="250" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="assignedtouser" Type="varchar" MaxLength="50" />
+    <Property Name="remarks" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.leadtype' was excluded.-->
+  <EntityType Name="leadtype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="dom" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issynchronised' in the table 'CallbalanceClops.public.manualdialattempts' was excluded.-->
+  <EntityType Name="manualdialattempts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="calllistdispositionsid" Type="int4" />
+    <Property Name="remarks" Type="text" />
+    <Property Name="attemptdate" Type="timestamp" />
+    <Property Name="callstarttime" Type="timestamp" />
+    <Property Name="callendtime" Type="timestamp" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="holdtime" Type="int8" />
+    <Property Name="systemdisposition" Type="int4" />
+    <Property Name="callback" Type="int2" />
+    <Property Name="linkid" Type="text" />
+    <Property Name="scheduleddate" Type="timestamp" />
+    <Property Name="referenceid" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="clientcode" Type="varchar" MaxLength="100" />
+    <Property Name="producttype" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="mobileactivity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="oldtelephoneno" Type="varchar" MaxLength="50" />
+    <Property Name="newtelephoneno" Type="varchar" MaxLength="50" />
+    <Property Name="modifyby" Type="int4" />
+    <Property Name="activityremarks" Type="varchar" MaxLength="200" />
+    <Property Name="doc" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="nonbusinesshourcalls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="callerid" Type="varchar" MaxLength="20" />
+    <Property Name="calltime" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="officeservicetype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="servicename" Type="varchar" MaxLength="50" />
+    <Property Name="officetimeserviceid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isworkingday' in the table 'CallbalanceClops.public.officetime' was excluded.-->
+  <EntityType Name="officetime">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="starttime" Type="timestamp" />
+    <Property Name="endtime" Type="timestamp" />
+    <Property Name="servicetype" Type="varchar" MaxLength="50" />
+    <Property Name="days" Type="varchar" MaxLength="50" />
+    <Property Name="weekday" Type="int4" />
+    <Property Name="branchcode" Type="bpchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'msgdelievered' in the table 'CallbalanceClops.public.otpgeneration' was excluded.-->
+  <EntityType Name="otpgeneration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="foliono" Type="varchar" MaxLength="50" />
+    <Property Name="mobilenumber" Type="bpchar" MaxLength="10" />
+    <Property Name="otp" Type="varchar" MaxLength="50" />
+    <Property Name="doc" Type="timestamp" />
+    <Property Name="isotpsend" Type="int4" />
+    <Property Name="expiry" Type="timestamp" />
+    <Property Name="calldate" Type="timestamp" />
+    <Property Name="isotpused" Type="int4" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" />
+    <Property Name="clientcode" Type="varchar" MaxLength="50" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="incomingcallid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="passwordpolicy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="loginattempt" Type="int4" Nullable="false" />
+    <Property Name="minpswrdlength" Type="int4" Nullable="false" />
+    <Property Name="maxpswrdlength" Type="int4" Nullable="false" />
+    <Property Name="minnumcount" Type="int4" Nullable="false" />
+    <Property Name="minsymbolcount" Type="int4" Nullable="false" />
+    <Property Name="mincapcharactercount" Type="int4" Nullable="false" />
+    <Property Name="expindays" Type="int4" Nullable="false" />
+    <Property Name="unblocktimeinhours" Type="int4" Nullable="false" />
+    <Property Name="sessiontimeout" Type="int4" Nullable="false" />
+    <Property Name="reusepasswordafterattempts" Type="int4" Nullable="false" />
+    <Property Name="standardpassword" Type="text" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.pbxextensions' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'createvoicelink' in the table 'CallbalanceClops.public.pbxextensions' was excluded.-->
+  <EntityType Name="pbxextensions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="channelid" Type="int4" Nullable="false" />
+    <Property Name="number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dom" Type="timestamp" Nullable="false" />
+    <Property Name="campaign" Type="int4" />
+    <Property Name="flownumber" Type="int4" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'allowdelete' in the table 'CallbalanceClops.public.permission' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.permission' was excluded.-->
+  <EntityType Name="permission">
+    <Key>
+      <PropertyRef Name="permissionid" />
+    </Key>
+    <Property Name="permissionid" Type="int4" Nullable="false" />
+    <Property Name="roleid" Type="int4" />
+    <Property Name="permissionname" Type="varchar" MaxLength="510" />
+    <Property Name="permissioncode" Type="varchar" MaxLength="10" />
+    <Property Name="orgid" Type="int4" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="createdby" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="permissions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="remark" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="plan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="planname" Type="varchar" MaxLength="50" />
+    <Property Name="descritpition" Type="varchar" MaxLength="50" />
+    <Property Name="rate_description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="plansettings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" Nullable="false" />
+    <Property Name="planid" Type="int4" Nullable="false" />
+    <Property Name="planname" Type="text" />
+    <Property Name="settingtype" Type="varchar" MaxLength="100" />
+    <Property Name="settingname" Type="varchar" MaxLength="256" />
+    <Property Name="settingvalue" Type="text" />
+  </EntityType>
+  <EntityType Name="priinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="prinumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="rmclientmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="clientid" Type="varchar" MaxLength="50" />
+    <Property Name="contactno" Type="varchar" MaxLength="50" />
+    <Property Name="userid" Type="text" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="remark" Type="text" />
+    <Property Name="did" Type="int4" />
+    <Property Name="client_name" Type="varchar" MaxLength="255" />
+    <Property Name="contact_no2" Type="varchar" MaxLength="255" />
+    <Property Name="contact_no1" Type="varchar" MaxLength="255" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.role' was excluded.-->
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="rolename" Type="varchar" MaxLength="50" />
+    <Property Name="rolecode" Type="bpchar" MaxLength="3" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="createdby" Type="int4" />
+    <Property Name="applicationid" Type="int4" />
+    <Property Name="permissionid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="rolepermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="permissionid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="rolename" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+    <Property Name="abbrevation" Type="varchar" MaxLength="50" />
+    <Property Name="masterrole" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isenable' in the table 'CallbalanceClops.public.rule' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'canbedeleted' in the table 'CallbalanceClops.public.rule' was excluded.-->
+  <EntityType Name="rule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="ruleorder" Type="int4" />
+    <Property Name="createdby" Type="varchar" MaxLength="100" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="100" />
+    <Property Name="createddate" Type="timestamp" />
+    <Property Name="modifieddate" Type="timestamp" />
+    <Property Name="comment" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="ruleactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="ruleid" Type="int4" />
+    <Property Name="actiontype" Type="int4" />
+    <Property Name="actionvalues" Type="text" />
+    <Property Name="actionmessage" Type="text" />
+    <Property Name="userid" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="rulealert">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="ruleid" Type="int4" />
+    <Property Name="alerttype" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isprocessed' in the table 'CallbalanceClops.public.ruleprocess' was excluded.-->
+  <EntityType Name="ruleprocess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="systemalertid" Type="int4" />
+    <Property Name="ruleactionid" Type="int4" />
+    <Property Name="processattempts" Type="int4" />
+    <Property Name="processlog" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="securityquestion">
+    <Key>
+      <PropertyRef Name="questionid" />
+    </Key>
+    <Property Name="questionid" Type="int4" Nullable="false" />
+    <Property Name="question" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="service_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="callcategoryid" Type="int4" />
+    <Property Name="servicecategory" Type="text" />
+  </EntityType>
+  <EntityType Name="service_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="servicecategoryid" Type="int4" />
+    <Property Name="servicetypes" Type="text" />
+  </EntityType>
+  <EntityType Name="setdigit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="digit" Type="varchar" MaxLength="255" />
+    <Property Name="filepath" Type="varchar" MaxLength="255" />
+    <Property Name="mode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="setformat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="voicelanguage" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'canbedeleted' in the table 'CallbalanceClops.public.settings' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isdefault' in the table 'CallbalanceClops.public.settings' was excluded.-->
+  <EntityType Name="settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="settingtype" Type="varchar" MaxLength="50" />
+    <Property Name="settingname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="settingvalue" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="sipusermapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="sipuserid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="sipusermaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="sipusername" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issystemgenerated' in the table 'CallbalanceClops.public.speeddial' was excluded.-->
+  <EntityType Name="speeddial">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="shortcut" Type="varchar" MaxLength="50" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="contactname" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="stateid" />
+    </Key>
+    <Property Name="stateid" Type="int4" Nullable="false" />
+    <Property Name="statename" Type="text" Nullable="false" />
+    <Property Name="countryid" Type="int4" Nullable="false" />
+    <Property Name="zoneid" Type="int4" />
+    <Property Name="is_deleted" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="states">
+    <Key>
+      <PropertyRef Name="stateid" />
+    </Key>
+    <Property Name="stateid" Type="int4" Nullable="false" />
+    <Property Name="statename" Type="varchar" MaxLength="50" />
+    <Property Name="zoneid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="statusid" Type="int4" />
+    <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="statuscode" Type="varchar" MaxLength="10" />
+    <Property Name="allowdelete" Type="int4" />
+  </EntityType>
+  <EntityType Name="storemaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="storename" Type="text" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="location" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.subrole' was excluded.-->
+  <EntityType Name="subrole">
+    <Key>
+      <PropertyRef Name="subroleid" />
+    </Key>
+    <Property Name="subroleid" Type="int4" Nullable="false" />
+    <Property Name="rolename" Type="varchar" MaxLength="50" />
+    <Property Name="rolecode" Type="bpchar" MaxLength="3" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="createdby" Type="int4" />
+    <Property Name="applicationid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="subrolepermissionmapper">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="subroleid" Type="int4" />
+    <Property Name="permissionid" Type="int4" Nullable="false" />
+    <Property Name="createdon" Type="timestamp" />
+    <Property Name="createdby" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'processed' in the table 'CallbalanceClops.public.systemalerts' was excluded.-->
+  <EntityType Name="systemalerts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="systemalerttype" Type="int4" Nullable="false" />
+    <Property Name="alertdatetime" Type="timestamp" />
+    <Property Name="message" Type="text" Nullable="false" />
+    <Property Name="extrainfo" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="systemdisposition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="200" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="systemuserpermissions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="remark" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="tenantaudit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+    <Property Name="planid" Type="int4" />
+    <Property Name="planactivatedate" Type="timestamp" />
+    <Property Name="planexpirdate" Type="timestamp" />
+    <Property Name="pulseused" Type="varchar" MaxLength="250" />
+    <Property Name="lastupdatedate" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.tenants' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isdeleted' in the table 'CallbalanceClops.public.tenants' was excluded.-->
+  <EntityType Name="tenants">
+    <Key>
+      <PropertyRef Name="tenantid" />
+    </Key>
+    <Property Name="tenantid" Type="int8" Nullable="false" />
+    <Property Name="tenantname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tenantaddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="tenantcity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tenantcountry" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tenantpincode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tenantcontact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tenantmobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="weburl" Type="varchar" MaxLength="50" />
+    <Property Name="creationtime" Type="timestamp" Nullable="false" />
+    <Property Name="deleteruserid" Type="int4" Nullable="false" />
+    <Property Name="deletiontime" Type="timestamp" Nullable="false" />
+    <Property Name="lastmodificationtime" Type="timestamp" Nullable="false" />
+    <Property Name="lastmodifieruserid" Type="int4" Nullable="false" />
+    <Property Name="creatoruserid" Type="int4" Nullable="false" />
+    <Property Name="plan_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="planexpirydate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lic_days" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="remark" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isloggedin' in the table 'CallbalanceClops.public.user_cti_details' was excluded.-->
+  <EntityType Name="user_cti_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="currentcampaign" Type="int4" />
+    <Property Name="roleid" Type="int4" />
+    <Property Name="statusid" Type="int4" />
+    <Property Name="workstation" Type="varchar" MaxLength="100" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="statusdatetime" Type="timestamp" />
+    <Property Name="groupid" Type="int4" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="useractivity">
+    <Key>
+      <PropertyRef Name="activityid" />
+    </Key>
+    <Property Name="activityid" Type="int4" Nullable="false" />
+    <Property Name="usersessionid" Type="int4" />
+    <Property Name="activitydone" Type="varchar" MaxLength="255" />
+    <Property Name="activitytime" Type="timestamp" />
+    <Property Name="activitypage" Type="varchar" MaxLength="100" />
+    <Property Name="attemptuserid" Type="varchar" MaxLength="50" />
+    <Property Name="machineip" Type="varchar" MaxLength="100" />
+    <Property Name="machinename" Type="varchar" MaxLength="100" />
+    <Property Name="machineusername" Type="varchar" MaxLength="100" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="userbranchaccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="branchid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="userbranchdetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="zoneid" Type="int4" />
+    <Property Name="stateid" Type="int4" />
+    <Property Name="branchid" Type="int4" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isdefault' in the table 'CallbalanceClops.public.userbranchmapping' was excluded.-->
+  <EntityType Name="userbranchmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="branchid" Type="int4" Nullable="false" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="createdby" Type="int4" Nullable="false" />
+    <Property Name="createdon" Type="timestamp" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issynchronised' in the table 'CallbalanceClops.public.userbreaks' was excluded.-->
+  <EntityType Name="userbreaks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="50" />
+    <Property Name="breakstart" Type="timestamp" Nullable="false" />
+    <Property Name="breakstop" Type="timestamp" />
+    <Property Name="reason" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="usercampaignmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="campaignid" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userdefinedrole">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="rolename" Type="text" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="userdefinedroledetails">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="permissionid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'iscampaignsupervisor' in the table 'CallbalanceClops.public.usergroupdetails' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issupervisior' in the table 'CallbalanceClops.public.usergroupdetails' was excluded.-->
+  <EntityType Name="usergroupdetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="usergroupid" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'canbedeleted' in the table 'CallbalanceClops.public.usergroups' was excluded.-->
+  <EntityType Name="usergroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="groupname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="systemname" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="int4" />
+    <Property Name="customquery" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="userlog">
+    <Key>
+      <PropertyRef Name="userlogid" />
+    </Key>
+    <Property Name="userlogid" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="machineid" Type="varchar" MaxLength="50" />
+    <Property Name="logindate" Type="timestamp" />
+    <Property Name="logoutdate" Type="timestamp" />
+    <Property Name="loginlogoutremarks" Type="varchar" MaxLength="250" />
+    <Property Name="useripaddress" Type="varchar" MaxLength="50" />
+    <Property Name="winloginname" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isassigned' in the table 'CallbalanceClops.public.usermappingwithuserdefinedrole' was excluded.-->
+  <EntityType Name="usermappingwithuserdefinedrole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isdialed' in the table 'CallbalanceClops.public.usermissedcalldetail' was excluded.-->
+  <EntityType Name="usermissedcalldetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="callreceivedid" Type="int8" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="producttype" Type="varchar" MaxLength="50" />
+    <Property Name="clientname" Type="text" />
+    <Property Name="clientcode" Type="varchar" MaxLength="50" />
+    <Property Name="calldate" Type="timestamp" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="assigndate" Type="timestamp" />
+    <Property Name="dialeddate" Type="timestamp" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'iscampaignactive' in the table 'CallbalanceClops.public.usermobilemapping' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'active' in the table 'CallbalanceClops.public.usermobilemapping' was excluded.-->
+  <EntityType Name="usermobilemapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="mobileno" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isgranted' in the table 'CallbalanceClops.public.userpermissions' was excluded.-->
+  <EntityType Name="userpermissions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="permissionid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="userprofile">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="56" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'ispasswordsystemgenerated' in the table 'CallbalanceClops.public.users' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'ispasswordreset' in the table 'CallbalanceClops.public.users' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isfirstlogin' in the table 'CallbalanceClops.public.users' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'islocked' in the table 'CallbalanceClops.public.users' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isactive' in the table 'CallbalanceClops.public.users' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isloggedin' in the table 'CallbalanceClops.public.users' was excluded.-->
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="usercode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="middlename" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="30" />
+    <Property Name="gender" Type="bpchar" MaxLength="1" />
+    <Property Name="dob" Type="date" />
+    <Property Name="branchid" Type="int4" />
+    <Property Name="flat_building" Type="varchar" MaxLength="50" />
+    <Property Name="street_lane" Type="varchar" MaxLength="50" />
+    <Property Name="cityid" Type="int4" />
+    <Property Name="stateid" Type="int4" />
+    <Property Name="countryid" Type="int4" />
+    <Property Name="landmark" Type="varchar" MaxLength="50" />
+    <Property Name="pincode" Type="varchar" MaxLength="10" />
+    <Property Name="phonenumber" Type="varchar" MaxLength="15" />
+    <Property Name="mobile" Type="varchar" MaxLength="10" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="timestamp" Nullable="false" />
+    <Property Name="createdby" Type="int4" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="passwordquestionid" Type="int4" />
+    <Property Name="passwordanswer" Type="varchar" MaxLength="50" />
+    <Property Name="lastpasswordchangeddate" Type="timestamp" />
+    <Property Name="failedpasswordattemptcount" Type="int4" />
+    <Property Name="lastlockoutdate" Type="timestamp" />
+    <Property Name="lastlogindate" Type="timestamp" />
+    <Property Name="tokken" Type="text" />
+    <Property Name="calldestination" Type="int4" />
+    <Property Name="escalationmail1" Type="varchar" MaxLength="225" />
+    <Property Name="escalationmail2" Type="varchar" MaxLength="225" />
+    <Property Name="terminalid" Type="varchar" MaxLength="255" />
+    <Property Name="branchids" Type="text" />
+    <Property Name="callpreference" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+    <Property Name="virtualextension" Type="int4" />
+  </EntityType>
+  <EntityType Name="usersecurity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="useraccountid" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="lastpasswordchangeddate" Type="timestamp" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="usersinroles">
+    <Key>
+      <PropertyRef Name="srno" />
+    </Key>
+    <Property Name="srno" Type="int4" Nullable="false" />
+    <Property Name="userid" Type="int4" Nullable="false" />
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="userstatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="usersid" Type="int4" Nullable="false" />
+    <Property Name="currentcampaign" Type="int4" Nullable="false" />
+    <Property Name="status" Type="int4" Nullable="false" />
+    <Property Name="roleid" Type="int4" Nullable="false" />
+    <Property Name="intime" Type="timestamp" />
+    <Property Name="outtime" Type="timestamp" />
+    <Property Name="sessionid" Type="int8" />
+  </EntityType>
+  <EntityType Name="verifiers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'issynchronised' in the table 'CallbalanceClops.public.voicelogs_calldetails' was excluded.-->
+  <EntityType Name="voicelogs_calldetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" />
+    <Property Name="callid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="calldate" Type="timestamp" />
+    <Property Name="campaignid" Type="int4" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="callerid" Type="varchar" MaxLength="50" />
+    <Property Name="calltype" Type="varchar" MaxLength="50" />
+    <Property Name="comments" Type="varchar" MaxLength="800" />
+    <Property Name="filepath" Type="text" />
+    <Property Name="channelno" Type="int4" />
+    <Property Name="attemptid" Type="int4" />
+    <Property Name="duration" Type="float8" />
+    <Property Name="customdata1" Type="text" />
+    <Property Name="customdata2" Type="text" />
+    <Property Name="customdata3" Type="text" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="filename" Type="text" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isplayed' in the table 'CallbalanceClops.public.voicemail' was excluded.
+warning 6005: The data type 'bit' is currently not supported for the target Entity Framework version; the column 'isabandond' in the table 'CallbalanceClops.public.voicemail' was excluded.-->
+  <EntityType Name="voicemail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="incommingcallid" Type="varchar" MaxLength="50" />
+    <Property Name="callerid" Type="varchar" MaxLength="20" />
+    <Property Name="selectedoption" Type="varchar" MaxLength="50" />
+    <Property Name="wavfile" Type="varchar" MaxLength="200" />
+    <Property Name="duration" Type="float8" />
+    <Property Name="recorddttime" Type="timestamp" />
+    <Property Name="playeddttime" Type="timestamp" />
+    <Property Name="dispositionid" Type="int4" />
+    <Property Name="playedby" Type="int4" />
+    <Property Name="assignedto" Type="int4" />
+    <Property Name="assignedby" Type="int4" />
+    <Property Name="assigneddate" Type="timestamp" />
+    <Property Name="ticketno" Type="varchar" MaxLength="15" />
+    <Property Name="priority" Type="int4" />
+    <Property Name="manualdailid" Type="varchar" MaxLength="500" />
+    <Property Name="auditid" Type="int4" />
+    <Property Name="comments" Type="varchar" MaxLength="800" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="workstations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="ipaddress" Type="varchar" MaxLength="50" />
+    <Property Name="extension" Type="varchar" MaxLength="50" />
+    <Property Name="branchcode" Type="varchar" MaxLength="50" />
+    <Property Name="fxo" Type="varchar" MaxLength="50" />
+    <Property Name="fxs" Type="varchar" MaxLength="50" />
+    <Property Name="physicalextension" Type="varchar" MaxLength="50" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <EntityType Name="zone">
+    <Key>
+      <PropertyRef Name="zoneid" />
+    </Key>
+    <Property Name="zoneid" Type="int4" Nullable="false" />
+    <Property Name="zonename" Type="varchar" MaxLength="50" />
+    <Property Name="is_deleted" Type="int4" />
+    <Property Name="tenantid" Type="int4" />
+  </EntityType>
+  <Association Name="FK_UserGroupDetails_UserGroups">
+    <End Role="usergroups" Type="Self.usergroups" Multiplicity="1" />
+    <End Role="usergroupdetails" Type="Self.usergroupdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usergroups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usergroupdetails">
+        <PropertyRef Name="usergroupid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Userid' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Userid" />-->
+  <Association Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID">
+    <End Role="userdefinedrole" Type="Self.userdefinedrole" Multiplicity="1" />
+    <End Role="usermappingwithuserdefinedrole" Type="Self.usermappingwithuserdefinedrole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdefinedrole">
+        <PropertyRef Name="roleid" />
+      </Principal>
+      <Dependent Role="usermappingwithuserdefinedrole">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CallbalanceClopsModelStoreContainer">
+    <EntitySet Name="accesscontrollist" EntityType="Self.accesscontrollist" Schema="public" store:Type="Tables" />
+    <EntitySet Name="accesspanel" EntityType="Self.accesspanel" Schema="public" store:Type="Tables" />
+    <EntitySet Name="activitylog" EntityType="Self.activitylog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="addressbook" EntityType="Self.addressbook" Schema="public" store:Type="Tables" />
+    <EntitySet Name="adminmenu" EntityType="Self.adminmenu" Schema="public" store:Type="Tables" />
+    <EntitySet Name="agentcalltimestatuslog" EntityType="Self.agentcalltimestatuslog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="alertdescription" EntityType="Self.alertdescription" Schema="public" store:Type="Tables" />
+    <EntitySet Name="blockcallerlist" EntityType="Self.blockcallerlist" Schema="public" store:Type="Tables" />
+    <EntitySet Name="boardmodel" EntityType="Self.boardmodel" Schema="public" store:Type="Tables" />
+    <EntitySet Name="branchdetail" EntityType="Self.branchdetail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="branchgatewaymapping" EntityType="Self.branchgatewaymapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="branchmaster" EntityType="Self.branchmaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="breaks" EntityType="Self.breaks" Schema="public" store:Type="Tables" />
+    <EntitySet Name="call_category" EntityType="Self.call_category" Schema="public" store:Type="Tables" />
+    <EntitySet Name="callbacksmissed" EntityType="Self.callbacksmissed" Schema="public" store:Type="Tables" />
+    <EntitySet Name="callconnectiondetails" EntityType="Self.callconnectiondetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calldestinationmaster" EntityType="Self.calldestinationmaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calldispositions" EntityType="Self.calldispositions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calllist" EntityType="Self.calllist" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calllistattempts" EntityType="Self.calllistattempts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calllistdetails" EntityType="Self.calllistdetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calllistdetailsadditional" EntityType="Self.calllistdetailsadditional" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calllistdetailsmobile" EntityType="Self.calllistdetailsmobile" Schema="public" store:Type="Tables" />
+    <EntitySet Name="callsuccess" EntityType="Self.callsuccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="calltransfersuccess" EntityType="Self.calltransfersuccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaign" EntityType="Self.campaign" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaignchannels" EntityType="Self.campaignchannels" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaigncustomfields" EntityType="Self.campaigncustomfields" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaigndispositions" EntityType="Self.campaigndispositions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaignsettings" EntityType="Self.campaignsettings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaignusergroups" EntityType="Self.campaignusergroups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaignusers" EntityType="Self.campaignusers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="campaignverifiers" EntityType="Self.campaignverifiers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="channels" EntityType="Self.channels" Schema="public" store:Type="Tables" />
+    <EntitySet Name="checkdidmapping" EntityType="Self.checkdidmapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="city" EntityType="Self.city" Schema="public" store:Type="Tables" />
+    <EntitySet Name="clientdetails" EntityType="Self.clientdetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="communication_email_emails" EntityType="Self.communication_email_emails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="communication_email_emailsattachments" EntityType="Self.communication_email_emailsattachments" Schema="public" store:Type="Tables" />
+    <EntitySet Name="communication_email_emailsattempts" EntityType="Self.communication_email_emailsattempts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="communication_email_settings" EntityType="Self.communication_email_settings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="communication_email_smtpserver" EntityType="Self.communication_email_smtpserver" Schema="public" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="public" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="public" store:Type="Tables" />
+    <EntitySet Name="customfields" EntityType="Self.customfields" Schema="public" store:Type="Tables" />
+    <EntitySet Name="dnclist" EntityType="Self.dnclist" Schema="public" store:Type="Tables" />
+    <EntitySet Name="emailstatementrequestdata" EntityType="Self.emailstatementrequestdata" Schema="public" store:Type="Tables" />
+    <EntitySet Name="errorlog" EntityType="Self.errorlog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="extensionmapping" EntityType="Self.extensionmapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="extensions" EntityType="Self.extensions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="flags" EntityType="Self.flags" Schema="public" store:Type="Tables" />
+    <EntitySet Name="gender" EntityType="Self.gender" Schema="public" store:Type="Tables" />
+    <EntitySet Name="groups" EntityType="Self.groups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="hmpdetails" EntityType="Self.hmpdetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="holidays" EntityType="Self.holidays" Schema="public" store:Type="Tables" />
+    <EntitySet Name="incomingcalls" EntityType="Self.incomingcalls" Schema="public" store:Type="Tables" />
+    <EntitySet Name="incomingdatareceived" EntityType="Self.incomingdatareceived" Schema="public" store:Type="Tables" />
+    <EntitySet Name="incomingtransferfailed" EntityType="Self.incomingtransferfailed" Schema="public" store:Type="Tables" />
+    <EntitySet Name="incomingtransferfailed_history" EntityType="Self.incomingtransferfailed_history" Schema="public" store:Type="Tables" />
+    <EntitySet Name="incomingtransfersuccess" EntityType="Self.incomingtransfersuccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="insertoptionselection" EntityType="Self.insertoptionselection" Schema="public" store:Type="Tables" />
+    <EntitySet Name="internaltransfer" EntityType="Self.internaltransfer" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ivrflowtrace" EntityType="Self.ivrflowtrace" Schema="public" store:Type="Tables" />
+    <EntitySet Name="leadmanagement" EntityType="Self.leadmanagement" Schema="public" store:Type="Tables" />
+    <EntitySet Name="leadtype" EntityType="Self.leadtype" Schema="public" store:Type="Tables" />
+    <EntitySet Name="manualdialattempts" EntityType="Self.manualdialattempts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mobileactivity" EntityType="Self.mobileactivity" Schema="public" store:Type="Tables" />
+    <EntitySet Name="nonbusinesshourcalls" EntityType="Self.nonbusinesshourcalls" Schema="public" store:Type="Tables" />
+    <EntitySet Name="officeservicetype" EntityType="Self.officeservicetype" Schema="public" store:Type="Tables" />
+    <EntitySet Name="officetime" EntityType="Self.officetime" Schema="public" store:Type="Tables" />
+    <EntitySet Name="otpgeneration" EntityType="Self.otpgeneration" Schema="public" store:Type="Tables" />
+    <EntitySet Name="passwordpolicy" EntityType="Self.passwordpolicy" Schema="public" store:Type="Tables" />
+    <EntitySet Name="pbxextensions" EntityType="Self.pbxextensions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="permission" EntityType="Self.permission" Schema="public" store:Type="Tables" />
+    <EntitySet Name="permissions" EntityType="Self.permissions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="plan" EntityType="Self.plan" Schema="public" store:Type="Tables" />
+    <EntitySet Name="plansettings" EntityType="Self.plansettings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="priinfo" EntityType="Self.priinfo" Schema="public" store:Type="Tables" />
+    <EntitySet Name="rmclientmapping" EntityType="Self.rmclientmapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="public" store:Type="Tables" />
+    <EntitySet Name="rolepermission" EntityType="Self.rolepermission" Schema="public" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="public" store:Type="Tables" />
+    <EntitySet Name="rule" EntityType="Self.rule" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ruleactions" EntityType="Self.ruleactions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="rulealert" EntityType="Self.rulealert" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ruleprocess" EntityType="Self.ruleprocess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="securityquestion" EntityType="Self.securityquestion" Schema="public" store:Type="Tables" />
+    <EntitySet Name="service_category" EntityType="Self.service_category" Schema="public" store:Type="Tables" />
+    <EntitySet Name="service_type" EntityType="Self.service_type" Schema="public" store:Type="Tables" />
+    <EntitySet Name="setdigit" EntityType="Self.setdigit" Schema="public" store:Type="Tables" />
+    <EntitySet Name="setformat" EntityType="Self.setformat" Schema="public" store:Type="Tables" />
+    <EntitySet Name="settings" EntityType="Self.settings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="sipusermapping" EntityType="Self.sipusermapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="sipusermaster" EntityType="Self.sipusermaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="speeddial" EntityType="Self.speeddial" Schema="public" store:Type="Tables" />
+    <EntitySet Name="state" EntityType="Self.state" Schema="public" store:Type="Tables" />
+    <EntitySet Name="states" EntityType="Self.states" Schema="public" store:Type="Tables" />
+    <EntitySet Name="status" EntityType="Self.status" Schema="public" store:Type="Tables" />
+    <EntitySet Name="storemaster" EntityType="Self.storemaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="subrole" EntityType="Self.subrole" Schema="public" store:Type="Tables" />
+    <EntitySet Name="subrolepermissionmapper" EntityType="Self.subrolepermissionmapper" Schema="public" store:Type="Tables" />
+    <EntitySet Name="systemalerts" EntityType="Self.systemalerts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="systemdisposition" EntityType="Self.systemdisposition" Schema="public" store:Type="Tables" />
+    <EntitySet Name="systemuserpermissions" EntityType="Self.systemuserpermissions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="tenantaudit" EntityType="Self.tenantaudit" Schema="public" store:Type="Tables" />
+    <EntitySet Name="tenants" EntityType="Self.tenants" Schema="public" store:Type="Tables" />
+    <EntitySet Name="user_cti_details" EntityType="Self.user_cti_details" Schema="public" store:Type="Tables" />
+    <EntitySet Name="useractivity" EntityType="Self.useractivity" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userbranchaccess" EntityType="Self.userbranchaccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userbranchdetails" EntityType="Self.userbranchdetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userbranchmapping" EntityType="Self.userbranchmapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userbreaks" EntityType="Self.userbreaks" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usercampaignmapping" EntityType="Self.usercampaignmapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userdefinedrole" EntityType="Self.userdefinedrole" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userdefinedroledetails" EntityType="Self.userdefinedroledetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usergroupdetails" EntityType="Self.usergroupdetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usergroups" EntityType="Self.usergroups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userlog" EntityType="Self.userlog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usermappingwithuserdefinedrole" EntityType="Self.usermappingwithuserdefinedrole" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usermissedcalldetail" EntityType="Self.usermissedcalldetail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usermobilemapping" EntityType="Self.usermobilemapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userpermissions" EntityType="Self.userpermissions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userprofile" EntityType="Self.userprofile" Schema="public" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usersecurity" EntityType="Self.usersecurity" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usersinroles" EntityType="Self.usersinroles" Schema="public" store:Type="Tables" />
+    <EntitySet Name="userstatus" EntityType="Self.userstatus" Schema="public" store:Type="Tables" />
+    <EntitySet Name="verifiers" EntityType="Self.verifiers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="voicelogs_calldetails" EntityType="Self.voicelogs_calldetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="voicemail" EntityType="Self.voicemail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="workstations" EntityType="Self.workstations" Schema="public" store:Type="Tables" />
+    <EntitySet Name="zone" EntityType="Self.zone" Schema="public" store:Type="Tables" />
+    <AssociationSet Name="FK_UserGroupDetails_UserGroups" Association="Self.FK_UserGroupDetails_UserGroups">
+      <End Role="usergroups" EntitySet="usergroups" />
+      <End Role="usergroupdetails" EntitySet="usergroupdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID" Association="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID">
+      <End Role="userdefinedrole" EntitySet="userdefinedrole" />
+      <End Role="usermappingwithuserdefinedrole" EntitySet="usermappingwithuserdefinedrole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

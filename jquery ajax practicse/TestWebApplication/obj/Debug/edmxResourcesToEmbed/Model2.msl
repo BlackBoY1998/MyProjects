@@ -1,0 +1,2026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OceanModelStoreContainer" CdmEntityContainer="OceanEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="OceanModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccessControlLists">
+      <EntityTypeMapping TypeName="OceanModel.AccessControlList">
+        <MappingFragment StoreEntitySet="AccessControlList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccessControlID" ColumnName="AccessControlID" />
+          <ScalarProperty Name="AccessName" ColumnName="AccessName" />
+          <ScalarProperty Name="FriendlyAccessName" ColumnName="FriendlyAccessName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccessPanels">
+      <EntityTypeMapping TypeName="OceanModel.AccessPanel">
+        <MappingFragment StoreEntitySet="AccessPanel">
+          <ScalarProperty Name="AId" ColumnName="AId" />
+          <ScalarProperty Name="AcessPanelName" ColumnName="AcessPanelName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activitylogs">
+      <EntityTypeMapping TypeName="OceanModel.Activitylog">
+        <MappingFragment StoreEntitySet="Activitylog">
+          <ScalarProperty Name="ActivityLogID" ColumnName="ActivityLogID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddressBooks">
+      <EntityTypeMapping TypeName="OceanModel.AddressBook">
+        <MappingFragment StoreEntitySet="AddressBook">
+          <ScalarProperty Name="Addressid" ColumnName="Addressid" />
+          <ScalarProperty Name="Addresstitle" ColumnName="Addresstitle" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="HomePinCode" ColumnName="HomePinCode" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="BusinessPinCode" ColumnName="BusinessPinCode" />
+          <ScalarProperty Name="HomeCountryid" ColumnName="HomeCountryid" />
+          <ScalarProperty Name="HomeStateid" ColumnName="HomeStateid" />
+          <ScalarProperty Name="HomeCityid" ColumnName="HomeCityid" />
+          <ScalarProperty Name="BusinessCountryid" ColumnName="BusinessCountryid" />
+          <ScalarProperty Name="BusinessStateid" ColumnName="BusinessStateid" />
+          <ScalarProperty Name="BusinessCityid" ColumnName="BusinessCityid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgentCallTimeStatus">
+      <EntityTypeMapping TypeName="OceanModel.AgentCallTimeStatu">
+        <MappingFragment StoreEntitySet="AgentCallTimeStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IdleTime" ColumnName="IdleTime" />
+          <ScalarProperty Name="BreakTime" ColumnName="BreakTime" />
+          <ScalarProperty Name="TotalLoginTime" ColumnName="TotalLoginTime" />
+          <ScalarProperty Name="TotalTalkTime" ColumnName="TotalTalkTime" />
+          <ScalarProperty Name="SendEmailCount" ColumnName="SendEmailCount" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="IsSendEmail" ColumnName="IsSendEmail" />
+          <ScalarProperty Name="ManualDialMode" ColumnName="ManualDialMode" />
+          <ScalarProperty Name="ExtensionRinging" ColumnName="ExtensionRinging" />
+          <ScalarProperty Name="OutgoingCallDuration" ColumnName="OutgoingCallDuration" />
+          <ScalarProperty Name="IncommingCallDuration" ColumnName="IncommingCallDuration" />
+          <ScalarProperty Name="IsEmailSendIdle" ColumnName="IsEmailSendIdle" />
+          <ScalarProperty Name="IsEmailSendBreak" ColumnName="IsEmailSendBreak" />
+          <ScalarProperty Name="IsEmailSendTLogin" ColumnName="IsEmailSendTLogin" />
+          <ScalarProperty Name="IsEmailSendTTalk" ColumnName="IsEmailSendTTalk" />
+          <ScalarProperty Name="IsEmailSendMDail" ColumnName="IsEmailSendMDail" />
+          <ScalarProperty Name="IsEmailSendExtRing" ColumnName="IsEmailSendExtRing" />
+          <ScalarProperty Name="IsEmailSendOutCallDur" ColumnName="IsEmailSendOutCallDur" />
+          <ScalarProperty Name="IsEmailSendInCallDur" ColumnName="IsEmailSendInCallDur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgentCallTimeStatusLogs">
+      <EntityTypeMapping TypeName="OceanModel.AgentCallTimeStatusLog">
+        <MappingFragment StoreEntitySet="AgentCallTimeStatusLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IdleTimeExceed" ColumnName="IdleTimeExceed" />
+          <ScalarProperty Name="BreakTimeExceed" ColumnName="BreakTimeExceed" />
+          <ScalarProperty Name="TotalLoginTimeExceed" ColumnName="TotalLoginTimeExceed" />
+          <ScalarProperty Name="TotalTalkTimeExceed" ColumnName="TotalTalkTimeExceed" />
+          <ScalarProperty Name="EscalationMail" ColumnName="EscalationMail" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ManualDialModeExceed" ColumnName="ManualDialModeExceed" />
+          <ScalarProperty Name="ExtensionRingingExceed" ColumnName="ExtensionRingingExceed" />
+          <ScalarProperty Name="OutgoingCallDurationExceed" ColumnName="OutgoingCallDurationExceed" />
+          <ScalarProperty Name="IncommingCallDurationExceed" ColumnName="IncommingCallDurationExceed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlertDescriptions">
+      <EntityTypeMapping TypeName="OceanModel.AlertDescription">
+        <MappingFragment StoreEntitySet="AlertDescription">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="OceanModel.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="ApplicationCode" ColumnName="ApplicationCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppRolePermissionMappers">
+      <EntityTypeMapping TypeName="OceanModel.AppRolePermissionMapper">
+        <MappingFragment StoreEntitySet="AppRolePermissionMapper">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SubRoleId" ColumnName="SubRoleId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlockCallerLists">
+      <EntityTypeMapping TypeName="OceanModel.BlockCallerList">
+        <MappingFragment StoreEntitySet="BlockCallerList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BranchDetails">
+      <EntityTypeMapping TypeName="OceanModel.BranchDetail">
+        <MappingFragment StoreEntitySet="BranchDetail">
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchAddress" ColumnName="BranchAddress" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="BranchPin" ColumnName="BranchPin" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BranchHeadName" ColumnName="BranchHeadName" />
+          <ScalarProperty Name="BranchFax" ColumnName="BranchFax" />
+          <ScalarProperty Name="BranchPhone1" ColumnName="BranchPhone1" />
+          <ScalarProperty Name="BranchPhone2" ColumnName="BranchPhone2" />
+          <ScalarProperty Name="BranchHeadTel" ColumnName="BranchHeadTel" />
+          <ScalarProperty Name="BranchHeadMob" ColumnName="BranchHeadMob" />
+          <ScalarProperty Name="BranchHeadEmail" ColumnName="BranchHeadEmail" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="CloudClientId" ColumnName="CloudClientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BranchGatewayMappings">
+      <EntityTypeMapping TypeName="OceanModel.BranchGatewayMapping">
+        <MappingFragment StoreEntitySet="BranchGatewayMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+          <ScalarProperty Name="GatewayIP" ColumnName="GatewayIP" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BranchMasters">
+      <EntityTypeMapping TypeName="OceanModel.BranchMaster">
+        <MappingFragment StoreEntitySet="BranchMaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="ConnectionString" ColumnName="ConnectionString" />
+          <ScalarProperty Name="FallBackWebServerUrl" ColumnName="FallBackWebServerUrl" />
+          <ScalarProperty Name="FallBackCommServerUrl" ColumnName="FallBackCommServerUrl" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Breaks">
+      <EntityTypeMapping TypeName="OceanModel.Break">
+        <MappingFragment StoreEntitySet="Breaks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallBacksMisseds">
+      <EntityTypeMapping TypeName="OceanModel.CallBacksMissed">
+        <MappingFragment StoreEntitySet="CallBacksMissed">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallListDetailsID" ColumnName="CallListDetailsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Read" ColumnName="Read" />
+          <ScalarProperty Name="MissedDateTime" ColumnName="MissedDateTime" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallDestinationMasters">
+      <EntityTypeMapping TypeName="OceanModel.CallDestinationMaster">
+        <MappingFragment StoreEntitySet="CallDestinationMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallDispositions">
+      <EntityTypeMapping TypeName="OceanModel.CallDisposition">
+        <MappingFragment StoreEntitySet="CallDispositions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+          <ScalarProperty Name="AutoFlag" ColumnName="AutoFlag" />
+          <ScalarProperty Name="DispositionType" ColumnName="DispositionType" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="TAT" ColumnName="TAT" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallLists">
+      <EntityTypeMapping TypeName="OceanModel.CallList">
+        <MappingFragment StoreEntitySet="CallList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="BucketSize" ColumnName="BucketSize" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="IsPrefixActive" ColumnName="IsPrefixActive" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallListAttempts">
+      <EntityTypeMapping TypeName="OceanModel.CallListAttempt">
+        <MappingFragment StoreEntitySet="CallListAttempts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallListDetailsID" ColumnName="CallListDetailsID" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="AttemptDate" ColumnName="AttemptDate" />
+          <ScalarProperty Name="SystemDisposition" ColumnName="SystemDisposition" />
+          <ScalarProperty Name="ProcessInfo" ColumnName="ProcessInfo" />
+          <ScalarProperty Name="UserDisposition" ColumnName="UserDisposition" />
+          <ScalarProperty Name="EndReason" ColumnName="EndReason" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="PopupReceived" ColumnName="PopupReceived" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserIdleTime" ColumnName="UserIdleTime" />
+          <ScalarProperty Name="AttemptResultDate" ColumnName="AttemptResultDate" />
+          <ScalarProperty Name="CallType" ColumnName="CallType" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallListDetails">
+      <EntityTypeMapping TypeName="OceanModel.CallListDetail">
+        <MappingFragment StoreEntitySet="CallListDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallListID" ColumnName="CallListID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="ScheduledTime" ColumnName="ScheduledTime" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FlagID" ColumnName="FlagID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+          <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+          <ScalarProperty Name="CallBackUserId" ColumnName="CallBackUserId" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="IsSoftDial" ColumnName="IsSoftDial" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallListDetailsAdditionals">
+      <EntityTypeMapping TypeName="OceanModel.CallListDetailsAdditional">
+        <MappingFragment StoreEntitySet="CallListDetailsAdditional">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallListDetailsID" ColumnName="CallListDetailsID" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="TelephoneType" ColumnName="TelephoneType" />
+          <ScalarProperty Name="Callable" ColumnName="Callable" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallListDetailsMobiles">
+      <EntityTypeMapping TypeName="OceanModel.CallListDetailsMobile">
+        <MappingFragment StoreEntitySet="CallListDetailsMobile">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallListID" ColumnName="CallListID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ScheduledTime" ColumnName="ScheduledTime" />
+          <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="TennatId" ColumnName="TennatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallSuccesses">
+      <EntityTypeMapping TypeName="OceanModel.CallSuccess">
+        <MappingFragment StoreEntitySet="CallSuccess">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallListAttemptID" ColumnName="CallListAttemptID" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="ProcessEndDate" ColumnName="ProcessEndDate" />
+          <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+          <ScalarProperty Name="ProcessInfo" ColumnName="ProcessInfo" />
+          <ScalarProperty Name="UserDisposition" ColumnName="UserDisposition" />
+          <ScalarProperty Name="EndReason" ColumnName="EndReason" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallTransferSuccesses">
+      <EntityTypeMapping TypeName="OceanModel.CallTransferSuccess">
+        <MappingFragment StoreEntitySet="CallTransferSuccess">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallSuccessID" ColumnName="CallSuccessID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="CallDisconnectDate" ColumnName="CallDisconnectDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Campaigns">
+      <EntityTypeMapping TypeName="OceanModel.Campaign">
+        <MappingFragment StoreEntitySet="Campaign">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="CallListType" ColumnName="CallListType" />
+          <ScalarProperty Name="MaxAttempts" ColumnName="MaxAttempts" />
+          <ScalarProperty Name="HoldPromptID" ColumnName="HoldPromptID" />
+          <ScalarProperty Name="DispositionAlgorithm" ColumnName="DispositionAlgorithm" />
+          <ScalarProperty Name="GreetingID" ColumnName="GreetingID" />
+          <ScalarProperty Name="CampaignMode" ColumnName="CampaignMode" />
+          <ScalarProperty Name="CallFlow" ColumnName="CallFlow" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="CampaignDID" ColumnName="CampaignDID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignChannels">
+      <EntityTypeMapping TypeName="OceanModel.CampaignChannel">
+        <MappingFragment StoreEntitySet="CampaignChannels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignCustomFields">
+      <EntityTypeMapping TypeName="OceanModel.CampaignCustomField">
+        <MappingFragment StoreEntitySet="CampaignCustomFields">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="CustomFieldID" ColumnName="CustomFieldID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignDispositions">
+      <EntityTypeMapping TypeName="OceanModel.CampaignDisposition">
+        <MappingFragment StoreEntitySet="CampaignDispositions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="CallDispositionID" ColumnName="CallDispositionID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignSettings">
+      <EntityTypeMapping TypeName="OceanModel.CampaignSetting">
+        <MappingFragment StoreEntitySet="CampaignSettings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="SettingType" ColumnName="SettingType" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignUserGroups">
+      <EntityTypeMapping TypeName="OceanModel.CampaignUserGroup">
+        <MappingFragment StoreEntitySet="CampaignUserGroups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignUsers">
+      <EntityTypeMapping TypeName="OceanModel.CampaignUser">
+        <MappingFragment StoreEntitySet="CampaignUsers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CampaignVerifiers">
+      <EntityTypeMapping TypeName="OceanModel.CampaignVerifier">
+        <MappingFragment StoreEntitySet="CampaignVerifiers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VerifiersID" ColumnName="VerifiersID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Channels">
+      <EntityTypeMapping TypeName="OceanModel.Channel">
+        <MappingFragment StoreEntitySet="Channels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Cli" ColumnName="Cli" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="NonSoftdial" ColumnName="NonSoftdial" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="OceanModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="Stateid" ColumnName="Stateid" />
+          <ScalarProperty Name="Cityname" ColumnName="Cityname" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientDetails">
+      <EntityTypeMapping TypeName="OceanModel.ClientDetail">
+        <MappingFragment StoreEntitySet="ClientDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallerId" ColumnName="CallerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AlternateNumber" ColumnName="AlternateNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AlternateAddress" ColumnName="AlternateAddress" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="ServiceBranch" ColumnName="ServiceBranch" />
+          <ScalarProperty Name="QuerySavedOn" ColumnName="QuerySavedOn" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ZomatoNumber" ColumnName="ZomatoNumber" />
+          <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+          <ScalarProperty Name="IncommingCallId" ColumnName="IncommingCallId" />
+          <ScalarProperty Name="UserDisposition" ColumnName="UserDisposition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communication_Email_Emails">
+      <EntityTypeMapping TypeName="OceanModel.Communication_Email_Emails">
+        <MappingFragment StoreEntitySet="Communication_Email_Emails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PrefferredSMTPServerID" ColumnName="PrefferredSMTPServerID" />
+          <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+          <ScalarProperty Name="EmailCc" ColumnName="EmailCc" />
+          <ScalarProperty Name="EmailBcc" ColumnName="EmailBcc" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="IsBodyHtml" ColumnName="IsBodyHtml" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+          <ScalarProperty Name="LastProcessedOn" ColumnName="LastProcessedOn" />
+          <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+          <ScalarProperty Name="SentOn" ColumnName="SentOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communication_Email_EmailsAttachments">
+      <EntityTypeMapping TypeName="OceanModel.Communication_Email_EmailsAttachments">
+        <MappingFragment StoreEntitySet="Communication_Email_EmailsAttachments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmailsID" ColumnName="EmailsID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communication_Email_EmailsAttempts">
+      <EntityTypeMapping TypeName="OceanModel.Communication_Email_EmailsAttempts">
+        <MappingFragment StoreEntitySet="Communication_Email_EmailsAttempts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SMTPServerID" ColumnName="SMTPServerID" />
+          <ScalarProperty Name="EmailsID" ColumnName="EmailsID" />
+          <ScalarProperty Name="AttemptedOn" ColumnName="AttemptedOn" />
+          <ScalarProperty Name="IsSuccessful" ColumnName="IsSuccessful" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communication_Email_Settings">
+      <EntityTypeMapping TypeName="OceanModel.Communication_Email_Settings">
+        <MappingFragment StoreEntitySet="Communication_Email_Settings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communication_Email_SMTPServer">
+      <EntityTypeMapping TypeName="OceanModel.Communication_Email_SMTPServer">
+        <MappingFragment StoreEntitySet="Communication_Email_SMTPServer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Passphrase" ColumnName="Passphrase" />
+          <ScalarProperty Name="RequireAuthentication" ColumnName="RequireAuthentication" />
+          <ScalarProperty Name="UseSSL" ColumnName="UseSSL" />
+          <ScalarProperty Name="FromAddress" ColumnName="FromAddress" />
+          <ScalarProperty Name="FromDisplayName" ColumnName="FromDisplayName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="OceanModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Countryid" ColumnName="Countryid" />
+          <ScalarProperty Name="Countryname" ColumnName="Countryname" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="OceanModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="DematAccNo" ColumnName="DematAccNo" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomFields">
+      <EntityTypeMapping TypeName="OceanModel.CustomField">
+        <MappingFragment StoreEntitySet="CustomFields">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Editable" ColumnName="Editable" />
+          <ScalarProperty Name="DisplayType" ColumnName="DisplayType" />
+          <ScalarProperty Name="DisplayItems" ColumnName="DisplayItems" />
+          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DNCLists">
+      <EntityTypeMapping TypeName="OceanModel.DNCList">
+        <MappingFragment StoreEntitySet="DNCList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ServiceAreaCode" ColumnName="ServiceAreaCode" />
+          <ScalarProperty Name="Preferences" ColumnName="Preferences" />
+          <ScalarProperty Name="Opstype" ColumnName="Opstype" />
+          <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+          <ScalarProperty Name="RefNumber" ColumnName="RefNumber" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="OceanModel.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+          <ScalarProperty Name="ErrorDescription" ColumnName="ErrorDescription" />
+          <ScalarProperty Name="ExceptionDescription" ColumnName="ExceptionDescription" />
+          <ScalarProperty Name="ErrorLocation" ColumnName="ErrorLocation" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtensionMappings">
+      <EntityTypeMapping TypeName="OceanModel.ExtensionMapping">
+        <MappingFragment StoreEntitySet="ExtensionMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+          <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Campaign" ColumnName="Campaign" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Extensions">
+      <EntityTypeMapping TypeName="OceanModel.Extension">
+        <MappingFragment StoreEntitySet="Extensions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ChannelNo" ColumnName="ChannelNo" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flags">
+      <EntityTypeMapping TypeName="OceanModel.Flag">
+        <MappingFragment StoreEntitySet="Flags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Filepath" ColumnName="Filepath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="OceanModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="OceanModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HMPDetails">
+      <EntityTypeMapping TypeName="OceanModel.HMPDetail">
+        <MappingFragment StoreEntitySet="HMPDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="HMP_IP" ColumnName="HMP_IP" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="OceanModel.Holiday">
+        <MappingFragment StoreEntitySet="Holidays">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WavFileName" ColumnName="WavFileName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingCalls">
+      <EntityTypeMapping TypeName="OceanModel.IncomingCall">
+        <MappingFragment StoreEntitySet="IncomingCalls">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="CallStart" ColumnName="CallStart" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CallDispositionID" ColumnName="CallDispositionID" />
+          <ScalarProperty Name="CallEnd" ColumnName="CallEnd" />
+          <ScalarProperty Name="CallWrapUpTime" ColumnName="CallWrapUpTime" />
+          <ScalarProperty Name="HoldTime" ColumnName="HoldTime" />
+          <ScalarProperty Name="UnHoldTime" ColumnName="UnHoldTime" />
+          <ScalarProperty Name="TransferStart" ColumnName="TransferStart" />
+          <ScalarProperty Name="TransferEnd" ColumnName="TransferEnd" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="CalleeID" ColumnName="CalleeID" />
+          <ScalarProperty Name="CalledUser" ColumnName="CalledUser" />
+          <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="BaseCallerId" ColumnName="BaseCallerId" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="IsSynchronised" ColumnName="IsSynchronised" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingDataReceiveds">
+      <EntityTypeMapping TypeName="OceanModel.IncomingDataReceived">
+        <MappingFragment StoreEntitySet="IncomingDataReceived">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IncomingCallID" ColumnName="IncomingCallID" />
+          <ScalarProperty Name="Data1" ColumnName="Data1" />
+          <ScalarProperty Name="Data2" ColumnName="Data2" />
+          <ScalarProperty Name="Data3" ColumnName="Data3" />
+          <ScalarProperty Name="Data4" ColumnName="Data4" />
+          <ScalarProperty Name="Data5" ColumnName="Data5" />
+          <ScalarProperty Name="Data6" ColumnName="Data6" />
+          <ScalarProperty Name="Data7" ColumnName="Data7" />
+          <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingEmail_Settings">
+      <EntityTypeMapping TypeName="OceanModel.IncomingEmail_Settings">
+        <MappingFragment StoreEntitySet="IncomingEmail_Settings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="out_emailid" ColumnName="out_emailid" />
+          <ScalarProperty Name="IncomingAliasEmail" ColumnName="IncomingAliasEmail" />
+          <ScalarProperty Name="out_password" ColumnName="out_password" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IncomingMailserver" ColumnName="IncomingMailserver" />
+          <ScalarProperty Name="IncomingPort" ColumnName="IncomingPort" />
+          <ScalarProperty Name="OutgoingMailServer" ColumnName="OutgoingMailServer" />
+          <ScalarProperty Name="OutgoingPort" ColumnName="OutgoingPort" />
+          <ScalarProperty Name="IsSSL" ColumnName="IsSSL" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingTransferFailed_History">
+      <EntityTypeMapping TypeName="OceanModel.IncomingTransferFailed_History">
+        <MappingFragment StoreEntitySet="IncomingTransferFailed_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallReceivedID" ColumnName="CallReceivedID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+          <ScalarProperty Name="FailureType" ColumnName="FailureType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="IsSendEmail" ColumnName="IsSendEmail" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InternalTransfers">
+      <EntityTypeMapping TypeName="OceanModel.InternalTransfer">
+        <MappingFragment StoreEntitySet="InternalTransfer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallReceivedID" ColumnName="CallReceivedID" />
+          <ScalarProperty Name="IncomingTransferSuccessID" ColumnName="IncomingTransferSuccessID" />
+          <ScalarProperty Name="TransferInitiatorUserID" ColumnName="TransferInitiatorUserID" />
+          <ScalarProperty Name="TransferredToUserID" ColumnName="TransferredToUserID" />
+          <ScalarProperty Name="TransferredDate" ColumnName="TransferredDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IVRFlowTraces">
+      <EntityTypeMapping TypeName="OceanModel.IVRFlowTrace">
+        <MappingFragment StoreEntitySet="IVRFlowTrace">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IncomingCallsID" ColumnName="IncomingCallsID" />
+          <ScalarProperty Name="ResponseDateTime" ColumnName="ResponseDateTime" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+          <ScalarProperty Name="DtmfReceived" ColumnName="DtmfReceived" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadManagements">
+      <EntityTypeMapping TypeName="OceanModel.LeadManagement">
+        <MappingFragment StoreEntitySet="LeadManagement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="LeadType" ColumnName="LeadType" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LeadSource" ColumnName="LeadSource" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="AssignedToUser" ColumnName="AssignedToUser" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadTypes">
+      <EntityTypeMapping TypeName="OceanModel.LeadType">
+        <MappingFragment StoreEntitySet="LeadType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualDialAttempts">
+      <EntityTypeMapping TypeName="OceanModel.ManualDialAttempt">
+        <MappingFragment StoreEntitySet="ManualDialAttempts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CallListDispositionsID" ColumnName="CallListDispositionsID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="AttemptDateTime" ColumnName="AttemptDateTime" />
+          <ScalarProperty Name="CallStartTime" ColumnName="CallStartTime" />
+          <ScalarProperty Name="CallEndTime" ColumnName="CallEndTime" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="HoldTime" ColumnName="HoldTime" />
+          <ScalarProperty Name="SystemDisposition" ColumnName="SystemDisposition" />
+          <ScalarProperty Name="CallBack" ColumnName="CallBack" />
+          <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+          <ScalarProperty Name="ScheduledDateTime" ColumnName="ScheduledDateTime" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="IsSynchronised" ColumnName="IsSynchronised" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonBusinessHourCalls">
+      <EntityTypeMapping TypeName="OceanModel.NonBusinessHourCall">
+        <MappingFragment StoreEntitySet="NonBusinessHourCalls">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="CallTime" ColumnName="CallTime" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficeServiceTypes">
+      <EntityTypeMapping TypeName="OceanModel.OfficeServiceType">
+        <MappingFragment StoreEntitySet="OfficeServiceType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="OfficeTimeServiceId" ColumnName="OfficeTimeServiceId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficeTimes">
+      <EntityTypeMapping TypeName="OceanModel.OfficeTime">
+        <MappingFragment StoreEntitySet="OfficeTime">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Servicetype" ColumnName="Servicetype" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="WeekDay" ColumnName="WeekDay" />
+          <ScalarProperty Name="IsWorkingDay" ColumnName="IsWorkingDay" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationDetails">
+      <EntityTypeMapping TypeName="OceanModel.OrganizationDetail">
+        <MappingFragment StoreEntitySet="OrganizationDetail">
+          <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+          <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+          <ScalarProperty Name="OrgOwnerName" ColumnName="OrgOwnerName" />
+          <ScalarProperty Name="OrgAdd1" ColumnName="OrgAdd1" />
+          <ScalarProperty Name="OrgAdd2" ColumnName="OrgAdd2" />
+          <ScalarProperty Name="OrgAdd3" ColumnName="OrgAdd3" />
+          <ScalarProperty Name="OrgCity" ColumnName="OrgCity" />
+          <ScalarProperty Name="OrgPin" ColumnName="OrgPin" />
+          <ScalarProperty Name="OrgState" ColumnName="OrgState" />
+          <ScalarProperty Name="OrgCountry" ColumnName="OrgCountry" />
+          <ScalarProperty Name="OrgURL" ColumnName="OrgURL" />
+          <ScalarProperty Name="OrgPhone1" ColumnName="OrgPhone1" />
+          <ScalarProperty Name="OrgPhone2" ColumnName="OrgPhone2" />
+          <ScalarProperty Name="OrgEmail" ColumnName="OrgEmail" />
+          <ScalarProperty Name="OrgFax" ColumnName="OrgFax" />
+          <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+          <ScalarProperty Name="LogoImage" ColumnName="LogoImage" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PasswordPolicies">
+      <EntityTypeMapping TypeName="OceanModel.PasswordPolicy">
+        <MappingFragment StoreEntitySet="PasswordPolicy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LoginAttempt" ColumnName="LoginAttempt" />
+          <ScalarProperty Name="MinPswrdLength" ColumnName="MinPswrdLength" />
+          <ScalarProperty Name="MaxPswrdLength" ColumnName="MaxPswrdLength" />
+          <ScalarProperty Name="MinNumCount" ColumnName="MinNumCount" />
+          <ScalarProperty Name="MinSymbolCount" ColumnName="MinSymbolCount" />
+          <ScalarProperty Name="MinCapCharacterCount" ColumnName="MinCapCharacterCount" />
+          <ScalarProperty Name="ExpInDays" ColumnName="ExpInDays" />
+          <ScalarProperty Name="UnBLockTimeinHours" ColumnName="UnBLockTimeinHours" />
+          <ScalarProperty Name="Session_Timeout_min_" ColumnName="Session_Timeout_min_" />
+          <ScalarProperty Name="Re_use_Password_After_Attempts_" ColumnName="Re_use_Password_After_Attempts_" />
+          <ScalarProperty Name="StandardPassword" ColumnName="StandardPassword" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="OceanModel.Permission">
+        <MappingFragment StoreEntitySet="Permission">
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+          <ScalarProperty Name="PermissionCode" ColumnName="PermissionCode" />
+          <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+          <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="OceanModel.Plan">
+        <MappingFragment StoreEntitySet="Plan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="Descritpition" ColumnName="Descritpition" />
+          <ScalarProperty Name="Rate_Description" ColumnName="Rate_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanSettings">
+      <EntityTypeMapping TypeName="OceanModel.PlanSetting">
+        <MappingFragment StoreEntitySet="PlanSettings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="PlanId" ColumnName="PlanId" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SettingType" ColumnName="SettingType" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRIInfoes">
+      <EntityTypeMapping TypeName="OceanModel.PRIInfo">
+        <MappingFragment StoreEntitySet="PRIInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+          <ScalarProperty Name="PRINumber" ColumnName="PRINumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RMClientMappings">
+      <EntityTypeMapping TypeName="OceanModel.RMClientMapping">
+        <MappingFragment StoreEntitySet="RMClientMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Contact_No2" ColumnName="Contact_No2" />
+          <ScalarProperty Name="Contact_No1" ColumnName="Contact_No1" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="OceanModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolePermissions">
+      <EntityTypeMapping TypeName="OceanModel.RolePermission">
+        <MappingFragment StoreEntitySet="RolePermission">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles1">
+      <EntityTypeMapping TypeName="OceanModel.Role1">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Abbrevation" ColumnName="Abbrevation" />
+          <ScalarProperty Name="MasterRole" ColumnName="MasterRole" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rules">
+      <EntityTypeMapping TypeName="OceanModel.Rule">
+        <MappingFragment StoreEntitySet="Rule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+          <ScalarProperty Name="RuleOrder" ColumnName="RuleOrder" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleActions">
+      <EntityTypeMapping TypeName="OceanModel.RuleAction">
+        <MappingFragment StoreEntitySet="RuleActions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="ActionValues" ColumnName="ActionValues" />
+          <ScalarProperty Name="ActionMessage" ColumnName="ActionMessage" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleAlerts">
+      <EntityTypeMapping TypeName="OceanModel.RuleAlert">
+        <MappingFragment StoreEntitySet="RuleAlert">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="AlertType" ColumnName="AlertType" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleProcesses">
+      <EntityTypeMapping TypeName="OceanModel.RuleProcess">
+        <MappingFragment StoreEntitySet="RuleProcess">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SystemAlertID" ColumnName="SystemAlertID" />
+          <ScalarProperty Name="RuleActionId" ColumnName="RuleActionId" />
+          <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+          <ScalarProperty Name="ProcessAttempts" ColumnName="ProcessAttempts" />
+          <ScalarProperty Name="ProcessLog" ColumnName="ProcessLog" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityQuestions">
+      <EntityTypeMapping TypeName="OceanModel.SecurityQuestion">
+        <MappingFragment StoreEntitySet="SecurityQuestion">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="OceanModel.Setting">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SettingType" ColumnName="SettingType" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIPUserMappings">
+      <EntityTypeMapping TypeName="OceanModel.SIPUserMapping">
+        <MappingFragment StoreEntitySet="SIPUserMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SIPUserID" ColumnName="SIPUserID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIPUserMasters">
+      <EntityTypeMapping TypeName="OceanModel.SIPUserMaster">
+        <MappingFragment StoreEntitySet="SIPUserMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SIPUserName" ColumnName="SIPUserName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpeedDials">
+      <EntityTypeMapping TypeName="OceanModel.SpeedDial">
+        <MappingFragment StoreEntitySet="SpeedDial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Shortcut" ColumnName="Shortcut" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="IsSystemGenerated" ColumnName="IsSystemGenerated" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="OceanModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="Stateid" ColumnName="Stateid" />
+          <ScalarProperty Name="Statename" ColumnName="Statename" />
+          <ScalarProperty Name="Countryid" ColumnName="Countryid" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States1">
+      <EntityTypeMapping TypeName="OceanModel.State1">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="OceanModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreMasters">
+      <EntityTypeMapping TypeName="OceanModel.StoreMaster">
+        <MappingFragment StoreEntitySet="StoreMaster">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubRoles">
+      <EntityTypeMapping TypeName="OceanModel.SubRole">
+        <MappingFragment StoreEntitySet="SubRole">
+          <ScalarProperty Name="SubRoleID" ColumnName="SubRoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubRolePermissionMappers">
+      <EntityTypeMapping TypeName="OceanModel.SubRolePermissionMapper">
+        <MappingFragment StoreEntitySet="SubRolePermissionMapper">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubRoleID" ColumnName="SubRoleID" />
+          <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+          <ScalarProperty Name="Created_On" ColumnName="Created On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created By" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemAlerts">
+      <EntityTypeMapping TypeName="OceanModel.SystemAlert">
+        <MappingFragment StoreEntitySet="SystemAlerts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SystemAlertType" ColumnName="SystemAlertType" />
+          <ScalarProperty Name="AlertDateTime" ColumnName="AlertDateTime" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ExtraInfo" ColumnName="ExtraInfo" />
+          <ScalarProperty Name="Processed" ColumnName="Processed" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemDispositions">
+      <EntityTypeMapping TypeName="OceanModel.SystemDisposition">
+        <MappingFragment StoreEntitySet="SystemDisposition">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenantAudits">
+      <EntityTypeMapping TypeName="OceanModel.TenantAudit">
+        <MappingFragment StoreEntitySet="TenantAudit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="planActivateDate" ColumnName="planActivateDate" />
+          <ScalarProperty Name="PlanExpirDate" ColumnName="PlanExpirDate" />
+          <ScalarProperty Name="PulseUsed" ColumnName="PulseUsed" />
+          <ScalarProperty Name="LastUpdateDatetime" ColumnName="LastUpdateDatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenants">
+      <EntityTypeMapping TypeName="OceanModel.Tenant">
+        <MappingFragment StoreEntitySet="Tenants">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="TenantName" ColumnName="TenantName" />
+          <ScalarProperty Name="TenantAddress" ColumnName="TenantAddress" />
+          <ScalarProperty Name="TenantCity" ColumnName="TenantCity" />
+          <ScalarProperty Name="TenantCountry" ColumnName="TenantCountry" />
+          <ScalarProperty Name="TenantPinCode" ColumnName="TenantPinCode" />
+          <ScalarProperty Name="TenantContact" ColumnName="TenantContact" />
+          <ScalarProperty Name="TenantMobile" ColumnName="TenantMobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebURL" ColumnName="WebURL" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+          <ScalarProperty Name="PlanExpiryDate" ColumnName="PlanExpiryDate" />
+          <ScalarProperty Name="Lic_Days" ColumnName="Lic_Days" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OceanModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="Flat_Building" ColumnName="Flat_Building" />
+          <ScalarProperty Name="Street_lane" ColumnName="Street_lane" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordQuestionID" ColumnName="PasswordQuestionID" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsPasswordSystemGenerated" ColumnName="IsPasswordSystemGenerated" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="IsPasswordReset" ColumnName="IsPasswordReset" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="IsFirstLogin" ColumnName="IsFirstLogin" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsloggedIn" ColumnName="IsloggedIn" />
+          <ScalarProperty Name="Tokken" ColumnName="Tokken" />
+          <ScalarProperty Name="CallDestination" ColumnName="CallDestination" />
+          <ScalarProperty Name="EscalationMail1" ColumnName="EscalationMail1" />
+          <ScalarProperty Name="EscalationMail2" ColumnName="EscalationMail2" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="BranchIds" ColumnName="BranchIds" />
+          <ScalarProperty Name="CallPreference" ColumnName="CallPreference" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="VirtualExtension" ColumnName="VirtualExtension" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_CTI_Details">
+      <EntityTypeMapping TypeName="OceanModel.User_CTI_Details">
+        <MappingFragment StoreEntitySet="User_CTI_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CurrentCampaign" ColumnName="CurrentCampaign" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Workstation" ColumnName="Workstation" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="StatusDateTime" ColumnName="StatusDateTime" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="IsLoggedIn" ColumnName="IsLoggedIn" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserActivities">
+      <EntityTypeMapping TypeName="OceanModel.UserActivity">
+        <MappingFragment StoreEntitySet="UserActivity">
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="UserSessionID" ColumnName="UserSessionID" />
+          <ScalarProperty Name="ActivityDone" ColumnName="ActivityDone" />
+          <ScalarProperty Name="ActivityTime" ColumnName="ActivityTime" />
+          <ScalarProperty Name="ActivityPage" ColumnName="ActivityPage" />
+          <ScalarProperty Name="AttemptUserID" ColumnName="AttemptUserID" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUserName" ColumnName="MachineUserName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBranchAccesses">
+      <EntityTypeMapping TypeName="OceanModel.UserBranchAccess">
+        <MappingFragment StoreEntitySet="UserBranchAccess">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBranchDetails">
+      <EntityTypeMapping TypeName="OceanModel.UserBranchDetail">
+        <MappingFragment StoreEntitySet="UserBranchDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBranchMappings">
+      <EntityTypeMapping TypeName="OceanModel.UserBranchMapping">
+        <MappingFragment StoreEntitySet="UserBranchMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBreaks">
+      <EntityTypeMapping TypeName="OceanModel.UserBreak">
+        <MappingFragment StoreEntitySet="UserBreaks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="BreakStart" ColumnName="BreakStart" />
+          <ScalarProperty Name="BreakStop" ColumnName="BreakStop" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="IsSynchronised" ColumnName="IsSynchronised" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCampaignMappings">
+      <EntityTypeMapping TypeName="OceanModel.UserCampaignMapping">
+        <MappingFragment StoreEntitySet="UserCampaignMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDefinedRoles">
+      <EntityTypeMapping TypeName="OceanModel.UserDefinedRole">
+        <MappingFragment StoreEntitySet="UserDefinedRole">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Rolename" ColumnName="Rolename" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGroupDetails">
+      <EntityTypeMapping TypeName="OceanModel.UserGroupDetail">
+        <MappingFragment StoreEntitySet="UserGroupDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IscampaignSupervisor" ColumnName="IscampaignSupervisor" />
+          <ScalarProperty Name="IsSuperVisior" ColumnName="IsSuperVisior" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGroups">
+      <EntityTypeMapping TypeName="OceanModel.UserGroup">
+        <MappingFragment StoreEntitySet="UserGroups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CustomQuery" ColumnName="CustomQuery" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogs">
+      <EntityTypeMapping TypeName="OceanModel.UserLog">
+        <MappingFragment StoreEntitySet="UserLog">
+          <ScalarProperty Name="UserLogID" ColumnName="UserLogID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+          <ScalarProperty Name="LogoutDateTime" ColumnName="LogoutDateTime" />
+          <ScalarProperty Name="LoginLogoutRemarks" ColumnName="LoginLogoutRemarks" />
+          <ScalarProperty Name="UserIPAddress" ColumnName="UserIPAddress" />
+          <ScalarProperty Name="WinLoginName" ColumnName="WinLoginName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMappingwithUserDefinedRoles">
+      <EntityTypeMapping TypeName="OceanModel.UserMappingwithUserDefinedRole">
+        <MappingFragment StoreEntitySet="UserMappingwithUserDefinedRole">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMissedCallDetails">
+      <EntityTypeMapping TypeName="OceanModel.UserMissedCallDetail">
+        <MappingFragment StoreEntitySet="UserMissedCallDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallReceivedID" ColumnName="CallReceivedID" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="CallDateTime" ColumnName="CallDateTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AssignDateTime" ColumnName="AssignDateTime" />
+          <ScalarProperty Name="IsDialed" ColumnName="IsDialed" />
+          <ScalarProperty Name="DialedDateTime" ColumnName="DialedDateTime" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMobileMappings">
+      <EntityTypeMapping TypeName="OceanModel.UserMobileMapping">
+        <MappingFragment StoreEntitySet="UserMobileMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="IsCampaignActive" ColumnName="IsCampaignActive" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermissions">
+      <EntityTypeMapping TypeName="OceanModel.UserPermission">
+        <MappingFragment StoreEntitySet="UserPermissions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+          <ScalarProperty Name="IsGranted" ColumnName="IsGranted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="OceanModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_Audit">
+      <EntityTypeMapping TypeName="OceanModel.Users_Audit">
+        <MappingFragment StoreEntitySet="Users_Audit">
+          <ScalarProperty Name="UA_ID" ColumnName="UA_ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserFName" ColumnName="UserFName" />
+          <ScalarProperty Name="UserMName" ColumnName="UserMName" />
+          <ScalarProperty Name="UserLName" ColumnName="UserLName" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserPhoneCode" ColumnName="UserPhoneCode" />
+          <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+          <ScalarProperty Name="UserMobile" ColumnName="UserMobile" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CanBeDeleted" ColumnName="CanBeDeleted" />
+          <ScalarProperty Name="UserCreatedOn" ColumnName="UserCreatedOn" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="EmailValid" ColumnName="EmailValid" />
+          <ScalarProperty Name="VerifyImageText" ColumnName="VerifyImageText" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="BlockTime" ColumnName="BlockTime" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="EmailSignature" ColumnName="EmailSignature" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="UpdatePassword" ColumnName="UpdatePassword" />
+          <ScalarProperty Name="UserDescription" ColumnName="UserDescription" />
+          <ScalarProperty Name="CurrentUserID" ColumnName="CurrentUserID" />
+          <ScalarProperty Name="InsertedOn_Date" ColumnName="InsertedOn_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSecurities">
+      <EntityTypeMapping TypeName="OceanModel.UserSecurity">
+        <MappingFragment StoreEntitySet="UserSecurity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserAccountId" ColumnName="UserAccountId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersInRoles">
+      <EntityTypeMapping TypeName="OceanModel.UsersInRole">
+        <MappingFragment StoreEntitySet="UsersInRoles">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserStatus">
+      <EntityTypeMapping TypeName="OceanModel.UserStatu">
+        <MappingFragment StoreEntitySet="UserStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="CurrentCampaign" ColumnName="CurrentCampaign" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="InTime" ColumnName="InTime" />
+          <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Verifiers">
+      <EntityTypeMapping TypeName="OceanModel.Verifier">
+        <MappingFragment StoreEntitySet="Verifiers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoiceLogs_CallDetails">
+      <EntityTypeMapping TypeName="OceanModel.VoiceLogs_CallDetails">
+        <MappingFragment StoreEntitySet="VoiceLogs_CallDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallID" ColumnName="CallID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CallDateTime" ColumnName="CallDateTime" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="CallType" ColumnName="CallType" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="ChannelNo" ColumnName="ChannelNo" />
+          <ScalarProperty Name="AttemptID" ColumnName="AttemptID" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="CustomData1" ColumnName="CustomData1" />
+          <ScalarProperty Name="CustomData2" ColumnName="CustomData2" />
+          <ScalarProperty Name="CustomData3" ColumnName="CustomData3" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="IsSynchronised" ColumnName="IsSynchronised" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoiceMails">
+      <EntityTypeMapping TypeName="OceanModel.VoiceMail">
+        <MappingFragment StoreEntitySet="VoiceMail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IncommingCallId" ColumnName="IncommingCallId" />
+          <ScalarProperty Name="CallerId" ColumnName="CallerId" />
+          <ScalarProperty Name="SelectedOption" ColumnName="SelectedOption" />
+          <ScalarProperty Name="WavFile" ColumnName="WavFile" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="RecordDtTime" ColumnName="RecordDtTime" />
+          <ScalarProperty Name="PlayedDtTime" ColumnName="PlayedDtTime" />
+          <ScalarProperty Name="DispositionId" ColumnName="DispositionId" />
+          <ScalarProperty Name="PlayedBy" ColumnName="PlayedBy" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+          <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsPlayed" ColumnName="IsPlayed" />
+          <ScalarProperty Name="IsAbandond" ColumnName="IsAbandond" />
+          <ScalarProperty Name="ManualDailId" ColumnName="ManualDailId" />
+          <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workstations">
+      <EntityTypeMapping TypeName="OceanModel.Workstation">
+        <MappingFragment StoreEntitySet="Workstations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="FXO" ColumnName="FXO" />
+          <ScalarProperty Name="FXS" ColumnName="FXS" />
+          <ScalarProperty Name="PhysicalExtension" ColumnName="PhysicalExtension" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zones">
+      <EntityTypeMapping TypeName="OceanModel.Zone">
+        <MappingFragment StoreEntitySet="Zone">
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminMenus">
+      <EntityTypeMapping TypeName="OceanModel.AdminMenu">
+        <MappingFragment StoreEntitySet="AdminMenu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="ParentMenuID" ColumnName="ParentMenuID" />
+          <ScalarProperty Name="ShortCode" ColumnName="ShortCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoardModels">
+      <EntityTypeMapping TypeName="OceanModel.BoardModel">
+        <MappingFragment StoreEntitySet="BoardModel">
+          <ScalarProperty Name="BoardId" ColumnName="BoardId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ModalName" ColumnName="ModalName" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Call_Category">
+      <EntityTypeMapping TypeName="OceanModel.Call_Category">
+        <MappingFragment StoreEntitySet="Call_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallCategory" ColumnName="CallCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallConnectionDetails">
+      <EntityTypeMapping TypeName="OceanModel.CallConnectionDetail">
+        <MappingFragment StoreEntitySet="CallConnectionDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CallDetailsId" ColumnName="CallDetailsId" />
+          <ScalarProperty Name="CallAttemptId" ColumnName="CallAttemptId" />
+          <ScalarProperty Name="AgentTelephone" ColumnName="AgentTelephone" />
+          <ScalarProperty Name="CustomerTelephone" ColumnName="CustomerTelephone" />
+          <ScalarProperty Name="AgentStatus" ColumnName="AgentStatus" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="CallDateTime" ColumnName="CallDateTime" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckDIDMappings">
+      <EntityTypeMapping TypeName="OceanModel.CheckDIDMapping">
+        <MappingFragment StoreEntitySet="CheckDIDMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DIDNumber" ColumnName="DIDNumber" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Line" ColumnName="Line" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailStatementRequestDatas">
+      <EntityTypeMapping TypeName="OceanModel.EmailStatementRequestData">
+        <MappingFragment StoreEntitySet="EmailStatementRequestData">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="IncomingCallID" ColumnName="IncomingCallID" />
+          <ScalarProperty Name="FolioNo" ColumnName="FolioNo" />
+          <ScalarProperty Name="ARNNo" ColumnName="ARNNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Period_Type" ColumnName="Period_Type" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PDF_Password" ColumnName="PDF_Password" />
+          <ScalarProperty Name="PANNo" ColumnName="PANNo" />
+          <ScalarProperty Name="SubRequestType" ColumnName="SubRequestType" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="RequestDateTime" ColumnName="RequestDateTime" />
+          <ScalarProperty Name="CAMSReferenceNo" ColumnName="CAMSReferenceNo" />
+          <ScalarProperty Name="CAMSResult" ColumnName="CAMSResult" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingTransferFaileds">
+      <EntityTypeMapping TypeName="OceanModel.IncomingTransferFailed">
+        <MappingFragment StoreEntitySet="IncomingTransferFailed">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallReceivedID" ColumnName="CallReceivedID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+          <ScalarProperty Name="FailureType" ColumnName="FailureType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingTransferSuccesses">
+      <EntityTypeMapping TypeName="OceanModel.IncomingTransferSuccess">
+        <MappingFragment StoreEntitySet="IncomingTransferSuccess">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallReceivedID" ColumnName="CallReceivedID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="CallDisonnectDate" ColumnName="CallDisonnectDate" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsertOptionSelections">
+      <EntityTypeMapping TypeName="OceanModel.InsertOptionSelection">
+        <MappingFragment StoreEntitySet="InsertOptionSelection">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IncomingCallID" ColumnName="IncomingCallID" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="OptionSelected" ColumnName="OptionSelected" />
+          <ScalarProperty Name="FolioNumber" ColumnName="FolioNumber" />
+          <ScalarProperty Name="CallDateTime" ColumnName="CallDateTime" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MobileActivities">
+      <EntityTypeMapping TypeName="OceanModel.MobileActivity">
+        <MappingFragment StoreEntitySet="MobileActivity">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OldTelephoneNo" ColumnName="OldTelephoneNo" />
+          <ScalarProperty Name="NewTelephoneNo" ColumnName="NewTelephoneNo" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ActivityRemarks" ColumnName="ActivityRemarks" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OTPGenerations">
+      <EntityTypeMapping TypeName="OceanModel.OTPGeneration">
+        <MappingFragment StoreEntitySet="OTPGeneration">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FolioNo" ColumnName="FolioNo" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="IsOTPSend" ColumnName="IsOTPSend" />
+          <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+          <ScalarProperty Name="CallDateTime" ColumnName="CallDateTime" />
+          <ScalarProperty Name="MsgDelievered" ColumnName="MsgDelievered" />
+          <ScalarProperty Name="IsOTPUsed" ColumnName="IsOTPUsed" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IncomingCallID" ColumnName="IncomingCallID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PbxExtensions">
+      <EntityTypeMapping TypeName="OceanModel.PbxExtension">
+        <MappingFragment StoreEntitySet="PbxExtensions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Campaign" ColumnName="Campaign" />
+          <ScalarProperty Name="FlowNumber" ColumnName="FlowNumber" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="CreateVoicelink" ColumnName="CreateVoicelink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions1">
+      <EntityTypeMapping TypeName="OceanModel.Permission1">
+        <MappingFragment StoreEntitySet="Permissions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Category">
+      <EntityTypeMapping TypeName="OceanModel.Service_Category">
+        <MappingFragment StoreEntitySet="Service_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CallCategoryID" ColumnName="CallCategoryID" />
+          <ScalarProperty Name="ServiceCategory" ColumnName="ServiceCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Type">
+      <EntityTypeMapping TypeName="OceanModel.Service_Type">
+        <MappingFragment StoreEntitySet="Service_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ServiceCategoryID" ColumnName="ServiceCategoryID" />
+          <ScalarProperty Name="ServiceTypes" ColumnName="ServiceTypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetDigits">
+      <EntityTypeMapping TypeName="OceanModel.SetDigit">
+        <MappingFragment StoreEntitySet="SetDigit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Digit" ColumnName="Digit" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetFormats">
+      <EntityTypeMapping TypeName="OceanModel.SetFormat">
+        <MappingFragment StoreEntitySet="SetFormat">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VoiceLanguage" ColumnName="VoiceLanguage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUserPermissions">
+      <EntityTypeMapping TypeName="OceanModel.SystemUserPermission">
+        <MappingFragment StoreEntitySet="SystemUserPermissions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDefinedRoleDetails">
+      <EntityTypeMapping TypeName="OceanModel.UserDefinedRoleDetail">
+        <MappingFragment StoreEntitySet="UserDefinedRoleDetails">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

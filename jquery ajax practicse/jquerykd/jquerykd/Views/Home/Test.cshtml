@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+@*<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+    <script type="text/javascript">
+    $(function () {
+        $("#dialog").dialog({
+            modal: true,
+            autoOpen: false,
+            title: "jQuery Dialog",
+            width: 300,
+            height: 150
+        });
+        $('[id*=txtPopUp]').on('mouseover', function () {
+            if (document.cookie.indexOf("cookies") < 0) {
+                document.cookie = "cookies=yes; max-age=" + (5 * 365 * 24 * 60 * 60);
+               $("#dialog").dialog("open");
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="txtPopUp" />
+        <div id="dialog" style="display: none">
+            This is a jQuery Dialog.
+        </div>
+    </div>
+</body>
+</html>*@
+
+<html>
+<head>
+    <title></title>
+    <style>
+        .container {padding:20px;}
+.popover {width:350px;max-width:1500px;}
+.popover-content h4 {
+  color: #00A1FF;
+}
+.popover-content h4 small {
+  color: black;
+}
+.popover-content button.btn-primary {
+  color: #00A1FF;
+  border-color:#00A1FF;
+  background:white;
+}
+
+.popover-content button.btn-default {
+  color: gray;
+  border-color:gray;
+}
+ #login {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-50px 0 0 -100px; /* [-(height/2)px 0 0 -(width/2)px] */
+  }
+    </style>
+  
+</head>
+<body>
+    @*<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>*@
+    @*<script type="text/javascript" src="jquery-3.1.1.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+    @*<button id="opener">open the dialog</button>
+
+        <div id="dialog1" title="Dialog Title" hidden="hidden" style=" width: 320px;height: 120px;background-color:#F4FFEF;border:1px dotted black; padding:10px;padding-left:50px;padding-right:50px;">  >I'm a dialog</div>*@
+    @*<a href="#contact">
+    <div class="button">
+       <div class="button-text contactme">
+            Contact me
+           <div class="emailcontainer">contact@website.com</div>
+        </div>
+    </div>
+</a>*@
+
+    <div class="container">
+        <h3>Bootstrap 3 Popover HTML Example</h3>
+        <span data-placement="left" data-toggle="popover"  data-container="body" type="button" data-html="true" href="#" id="login" class="btn btn-default" data-trigger="focus" title="Dismissible popover">Click me</span>
+        <div id="popover-content" class="hide">
+            Do You want to Save this template??
+            <br/>
+            <button class="btn btn-sm btn-primary">
+              Save
+            </button>
+            <button class="btn btn-sm btn-default">Close</button>
+</div>
+       </div>
+
+        <script type="text/javascript">
+            //$(function ($) {
+            //    $("#dialog1").dialog({
+            //        modal: true,
+            //        autoOpen: false,
+            //        title: "jQuery Dialog",
+            //        width: 300,
+            //        height: 150
+            //    });
+
+            //    $("#opener").on('mouseover', function () {
+            //        $("#dialog1").dialog('open');
+            //    });
+            //});
+            $(document).ready(function () {
+
+                //$("#login").on('mouseover', function () {
+                $("[data-toggle=popover]").popover({
+                    html: true,
+                    trigger: "manual",
+                    content: function () {
+                        return $('#popover-content').html();
+                    }
+                })
+            .on("mouseenter", function () {
+                var _this = this;
+                $("[data-toggle=popover]").popover("show");
+                $(".popover").on("mouseleave", function () {
+                    $("[data-toggle=popover]").popover('hide');
+                });
+            }).on("mouseleave", function () {
+                var _this = this;
+                setTimeout(function () {
+                    if (!$(".popover:hover").length) {
+                        $("[data-toggle=popover]").popover("hide");
+                    }
+                }, 300);
+            });
+                });
+           // });
+           
+
+        </script>
+</body>
+</html>

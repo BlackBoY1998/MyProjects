@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Line";
+}
+<h2>Line</h2>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container" style="min-width: 2000px; height: 500px; margin: 0 auto"></div>
+</figure>
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Default/Index", function (data) {
+            var Time = []
+            var Data = []
+            for (var i = 0; i < data.length; i++) {
+                Time.push(data[i].WithinTime);
+                Data.push(data[i].CountofEntries);
+            }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Count Of Enteries'
+                },
+                subtitle: {
+                    text: 'Source:By Akash Gawde'
+                },
+                xAxis: {
+                    categories:Time
+                },
+                yAxis: {
+                    title: {
+                        text: 'Units'
+                    },
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: true
+                    }
+                },
+                series: [{
+                    name: '15 Min Count',
+                    data: Data
+                }]
+            });
+        });
+    });
+</script>
+

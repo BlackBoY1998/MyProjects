@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <canvas id="canvas1"></canvas>
+    <script>
+        let now = (new Date()).getTime(),
+            
+    minutes = [],
+    TalkTime = [],
+    options = {
+    scales: {
+    xAxes: [{
+    type: 'time'
+    }]
+    }
+    };
+        var d;
+        d = new Date('2014-01-01 10:11:55');
+      
+        
+    for (let i = 0; i < 5; i++) {
+    minutes.push({
+        x:now+(900000 * i),
+        Y:15
+    });
+    
+    //days.push({
+    //x: now + (86400000 * i),
+    //y: 15
+    //});
+    }
+
+    //new Chart(document.getElementById('canvas1'), {
+    //type: 'line',
+    //data: {
+    //datasets: [{
+    //data: minutes
+    //}]
+    //},
+    //options: options
+    //});
+
+    new Chart(document.getElementById('canvas1'), {
+        type: 'line',
+        data: {
+            datasets: [{
+             label: '15 minutes Interval',
+             borderColor: 'rgb(75, 192, 192)',
+             fill: false,
+            data: minutes
+            }]
+            },
+        options: {
+            scales: {
+                xAxes: [{
+                    type: 'time',
+                    time: {
+                        displayFormats: {
+                            quarter: 'h:mm'
+                        }
+                    }
+                }]
+
+               
+            }
+        }
+    });
+  
+    </script>
+</body>
+</html>
+
+

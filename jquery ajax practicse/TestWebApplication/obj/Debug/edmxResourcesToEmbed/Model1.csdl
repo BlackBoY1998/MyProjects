@@ -1,0 +1,1844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallbalanceClopsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="accesscontrollist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="accesscontrolid" Type="Int32" Nullable="false" />
+    <Property Name="accessname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="friendlyaccessname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="accesspanel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="acesspanelname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="activitylog">
+    <Key>
+      <PropertyRef Name="activitylogid" />
+    </Key>
+    <Property Name="activitylogid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="machinename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="machineip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pagename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="activitydate" Type="DateTime" Precision="6" />
+    <Property Name="tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="addressbook">
+    <Key>
+      <PropertyRef Name="addressid" />
+    </Key>
+    <Property Name="addressid" Type="Int32" Nullable="false" />
+    <Property Name="addresstitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="middlename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="clientcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="branch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="homeaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="businessaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="homepincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="registered" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="contacttype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phonenumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="businesspincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="homecountryid" Type="Int32" />
+    <Property Name="homestateid" Type="Int32" />
+    <Property Name="homecityid" Type="Int32" />
+    <Property Name="businesscountryid" Type="Int32" Nullable="false" />
+    <Property Name="businessstateid" Type="Int32" Nullable="false" />
+    <Property Name="businesscityid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="adminmenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="menuname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parentmenuid" Type="Int32" Nullable="false" />
+    <Property Name="shortcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="agentcalltimestatuslog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="idletimeexceed" Type="Time" Precision="6" />
+    <Property Name="breaktimeexceed" Type="Time" Precision="6" />
+    <Property Name="totallogintimeexceed" Type="Time" Precision="6" />
+    <Property Name="totaltalktimeexceed" Type="Time" Precision="6" />
+    <Property Name="escalationmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" Nullable="false" />
+    <Property Name="manualdialmodeexceed" Type="Time" Precision="6" />
+    <Property Name="extensionringingexceed" Type="Time" Precision="6" />
+    <Property Name="outgoingcalldurationexceed" Type="Time" Precision="6" />
+    <Property Name="incommingcalldurationexceed" Type="Time" Precision="6" />
+  </EntityType>
+  <EntityType Name="alertdescription">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="blockcallerlist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="boardmodel">
+    <Key>
+      <PropertyRef Name="boardid" />
+    </Key>
+    <Property Name="boardid" Type="Int32" Nullable="false" />
+    <Property Name="productid" Type="Int32" />
+    <Property Name="modalname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="manufacturer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="branchdetail">
+    <Key>
+      <PropertyRef Name="branchid" />
+    </Key>
+    <Property Name="branchid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+    <Property Name="branchname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="branchaddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="countryid" Type="Int32" />
+    <Property Name="stateid" Type="Int32" />
+    <Property Name="branchpin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cityid" Type="Int32" />
+    <Property Name="branchheadname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="branchfax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="branchphone1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="branchphone2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="branchheadtel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="branchheadmob" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="branchheademail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cloudclientid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="branchgatewaymapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="branchid" Type="Int32" />
+    <Property Name="branchname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gateway" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gatewayip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="branchmaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="branchname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stateid" Type="Int32" />
+    <Property Name="connectionstring" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fallbackwebserverurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fallbackcommserverurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="break">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="call_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="callcategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="callbacksmissed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="calllistdetailsid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="misseddate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="callconnectiondetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="calldetailsid" Type="Int64" />
+    <Property Name="callattemptid" Type="Int64" />
+    <Property Name="agenttelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customertelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="agentstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customerstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calldate" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="calldestinationmaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="calldisposition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="backcolor" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="autoflag" Type="Int32" />
+    <Property Name="dispositiontype" Type="Int32" />
+    <Property Name="tat" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="calllist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remarks" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="bucketsize" Type="Int32" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="calllistattempt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="calllistdetailsid" Type="Int64" Nullable="false" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="attemptdate" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="systemdisposition" Type="Int32" Nullable="false" />
+    <Property Name="processinfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userdisposition" Type="Int32" />
+    <Property Name="endreason" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="modifieddate" Type="DateTime" Precision="6" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="useridletime" Type="Int64" />
+    <Property Name="attemptresultdate" Type="DateTime" Precision="6" />
+    <Property Name="calltype" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="calllistdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="calllistid" Type="Int32" />
+    <Property Name="firstname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="middlename" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="scheduledtime" Type="DateTime" Precision="6" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="attempts" Type="Int32" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="flagid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="assignedby" Type="Int32" />
+    <Property Name="assigneddate" Type="DateTime" Precision="6" />
+    <Property Name="callbackuserid" Type="Int32" />
+    <Property Name="assignedto" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="calllistdetailsadditional">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="calllistdetailsid" Type="Int64" Nullable="false" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="telephonetype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="calllistdetailsmobile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="calllistid" Type="Int32" />
+    <Property Name="firstname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="middlename" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="scheduledtime" Type="DateTime" Precision="6" />
+    <Property Name="attempts" Type="Int32" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="assigneddate" Type="DateTime" Precision="6" />
+    <Property Name="policyno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="product" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tennatid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="callsuccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="calllistattemptid" Type="Int64" Nullable="false" />
+    <Property Name="processdate" Type="DateTime" Precision="6" />
+    <Property Name="processenddate" Type="DateTime" Precision="6" />
+    <Property Name="processid" Type="Int32" />
+    <Property Name="processinfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userdisposition" Type="Int32" />
+    <Property Name="endreason" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="modifieddate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="calltransfersuccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callsuccessid" Type="Int64" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="startdate" Type="DateTime" Precision="6" />
+    <Property Name="stopdate" Type="DateTime" Precision="6" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calldisconnectdate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaign">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="startdate" Type="DateTime" Precision="6" />
+    <Property Name="enddate" Type="DateTime" Precision="6" />
+    <Property Name="port" Type="Int32" Nullable="false" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="calllisttype" Type="Int16" Nullable="false" />
+    <Property Name="maxattempts" Type="Int32" />
+    <Property Name="holdpromptid" Type="Int32" />
+    <Property Name="dispositionalgorithm" Type="Int32" Nullable="false" />
+    <Property Name="greetingid" Type="Int32" />
+    <Property Name="campaignmode" Type="Int32" />
+    <Property Name="callflow" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+    <Property Name="campaigndid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaignchannel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="channelid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaigncustomfield">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="customfieldid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaigndisposition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="calldispositionid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaignsetting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="settingtype" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="settingname" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="settingvalue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaignusergroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="usergroupid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="campaignuser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="campaignname" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="campaignverifier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="verifiersid" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="channel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="systemname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryid" Type="Int32" />
+    <Property Name="type" Type="Int16" />
+    <Property Name="cli" Type="Int32" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="mode" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="checkdidmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="didnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="groupid" Type="Int32" />
+    <Property Name="line" Type="Int32" />
+  </EntityType>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="cityid" />
+    </Key>
+    <Property Name="cityid" Type="Int32" Nullable="false" />
+    <Property Name="stateid" Type="Int32" Nullable="false" />
+    <Property Name="cityname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="citycode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="is_deleted" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="clientdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="alternatenumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="alternateaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="emailid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="servicebranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="querysavedon" Type="DateTime" Precision="6" />
+    <Property Name="storename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="zomatonumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="orderamount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="incommingcallid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userdisposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="communication_email_emails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="prefferredsmtpserverid" Type="Int32" />
+    <Property Name="emailto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="emailcc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="emailbcc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="subject" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Name="body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="lastprocessedon" Type="DateTime" Precision="6" />
+    <Property Name="attempts" Type="Int32" />
+    <Property Name="senton" Type="DateTime" Precision="6" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="communication_email_emailsattachments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="emailsid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="filepath" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="communication_email_emailsattempts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="smtpserverid" Type="Int32" />
+    <Property Name="emailsid" Type="Int32" Nullable="false" />
+    <Property Name="attemptedon" Type="DateTime" Precision="6" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="communication_email_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="settingname" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="settingvalue" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="communication_email_smtpserver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="server" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="port" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="passphrase" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fromaddress" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="fromdisplayname" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="countryid" />
+    </Key>
+    <Property Name="countryid" Type="Int32" Nullable="false" />
+    <Property Name="countryname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="countrycode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="is_deleted" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="clientcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="middlename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dob" Type="DateTime" Precision="6" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="countryid" Type="Int32" />
+    <Property Name="stateid" Type="Int32" />
+    <Property Name="cityid" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pincode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="userrole" Type="Int32" />
+    <Property Name="branchid" Type="Int32" />
+    <Property Name="demataccno" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="accountstatus" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="customfield">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="systemname" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="displayname" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="displaytype" Type="Int32" />
+    <Property Name="displayitems" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="dnclist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="serviceareacode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="preferences" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="opstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phonetype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="refnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uploaddate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="emailstatementrequestdata">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="incomingcallid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="foliono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="arnno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emailid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="period_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fromdate" Type="DateTime" Precision="6" />
+    <Property Name="todate" Type="DateTime" Precision="6" />
+    <Property Name="pdf_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="panno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="subrequesttype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="requesttype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="requestdate" Type="DateTime" Precision="6" />
+    <Property Name="camsreferenceno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="camsresult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="errorlog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+    <Property Name="logdate" Type="DateTime" Precision="6" />
+    <Property Name="errordescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="exceptiondescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="errorlocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="clientcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pagetitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="extensionmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="channelid" Type="Int32" />
+    <Property Name="gateway" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="campaign" Type="Int32" />
+    <Property Name="branchid" Type="Int32" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="extension">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="channelno" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="flag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="createdby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="systemname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="hmpdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hmp_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="holiday">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Precision="6" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wavfilename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="servicetype" Type="Int32" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="incomingcall">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="callstart" Type="DateTime" Precision="6" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="calldispositionid" Type="Int32" Nullable="false" />
+    <Property Name="callend" Type="DateTime" Precision="6" />
+    <Property Name="callwrapuptime" Type="DateTime" Precision="6" />
+    <Property Name="holdtime" Type="Int64" />
+    <Property Name="unholdtime" Type="DateTime" Precision="6" />
+    <Property Name="transferstart" Type="DateTime" Precision="6" />
+    <Property Name="transferend" Type="DateTime" Precision="6" />
+    <Property Name="groupid" Type="Int16" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="calleeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calleduser" Type="Int32" />
+    <Property Name="lasteditdate" Type="DateTime" Precision="6" />
+    <Property Name="creationdate" Type="DateTime" Precision="6" />
+    <Property Name="channelid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="basecallerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="incomingdatareceived">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="incomingcallid" Type="Int64" />
+    <Property Name="data1" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="data2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="data3" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="data4" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="data5" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="data6" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="data7" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="lasteditdate" Type="DateTime" Precision="6" />
+    <Property Name="creationdate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="incomingtransferfailed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callreceivedid" Type="Int64" />
+    <Property Name="startdate" Type="DateTime" Precision="6" />
+    <Property Name="stopdate" Type="DateTime" Precision="6" />
+    <Property Name="failuretype" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="incomingtransferfailed_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callreceivedid" Type="Int64" />
+    <Property Name="startdate" Type="DateTime" Precision="6" />
+    <Property Name="stopdate" Type="DateTime" Precision="6" />
+    <Property Name="failuretype" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="incomingtransfersuccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callreceivedid" Type="Int64" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="startdate" Type="DateTime" Precision="6" />
+    <Property Name="stopdate" Type="DateTime" Precision="6" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calldisonnectdate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="insertoptionselection">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="incomingcallid" Type="Int64" Nullable="false" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="optionselected" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="folionumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calldate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="internaltransfer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callreceivedid" Type="Int64" />
+    <Property Name="incomingtransfersuccessid" Type="Int64" />
+    <Property Name="transferinitiatoruserid" Type="Int32" />
+    <Property Name="transferredtouserid" Type="Int32" />
+    <Property Name="transferreddate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ivrflowtrace">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="incomingcallsid" Type="Int64" Nullable="false" />
+    <Property Name="responsedate" Type="DateTime" Precision="6" />
+    <Property Name="actiontype" Type="Int32" />
+    <Property Name="nodename" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="dtmfreceived" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="leadmanagement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="leadid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="leadtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contactnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="leadsource" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="assignedtouser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="leadtype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="dom" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="manualdialattempt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="calllistdispositionsid" Type="Int32" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="attemptdate" Type="DateTime" Precision="6" />
+    <Property Name="callstarttime" Type="DateTime" Precision="6" />
+    <Property Name="callendtime" Type="DateTime" Precision="6" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="holdtime" Type="Int64" />
+    <Property Name="systemdisposition" Type="Int32" />
+    <Property Name="callback" Type="Int16" />
+    <Property Name="linkid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="scheduleddate" Type="DateTime" Precision="6" />
+    <Property Name="referenceid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="producttype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mobileactivity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="oldtelephoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="newtelephoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="modifyby" Type="Int32" />
+    <Property Name="activityremarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="nonbusinesshourcall">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="callerid" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="calltime" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="officeservicetype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="servicename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="officetimeserviceid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="officetime">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="starttime" Type="DateTime" Precision="6" />
+    <Property Name="endtime" Type="DateTime" Precision="6" />
+    <Property Name="servicetype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="weekday" Type="Int32" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="otpgeneration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="foliono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobilenumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="otp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc" Type="DateTime" Precision="6" />
+    <Property Name="isotpsend" Type="Int32" />
+    <Property Name="expiry" Type="DateTime" Precision="6" />
+    <Property Name="calldate" Type="DateTime" Precision="6" />
+    <Property Name="isotpused" Type="Int32" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="incomingcallid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="passwordpolicy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="loginattempt" Type="Int32" Nullable="false" />
+    <Property Name="minpswrdlength" Type="Int32" Nullable="false" />
+    <Property Name="maxpswrdlength" Type="Int32" Nullable="false" />
+    <Property Name="minnumcount" Type="Int32" Nullable="false" />
+    <Property Name="minsymbolcount" Type="Int32" Nullable="false" />
+    <Property Name="mincapcharactercount" Type="Int32" Nullable="false" />
+    <Property Name="expindays" Type="Int32" Nullable="false" />
+    <Property Name="unblocktimeinhours" Type="Int32" Nullable="false" />
+    <Property Name="sessiontimeout" Type="Int32" Nullable="false" />
+    <Property Name="reusepasswordafterattempts" Type="Int32" Nullable="false" />
+    <Property Name="standardpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="pbxextension">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="channelid" Type="Int32" Nullable="false" />
+    <Property Name="number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dom" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="campaign" Type="Int32" />
+    <Property Name="flownumber" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="permission">
+    <Key>
+      <PropertyRef Name="permissionid" />
+    </Key>
+    <Property Name="permissionid" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="permissionname" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+    <Property Name="permissioncode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="orgid" Type="Int32" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="createdby" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="permission1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="plan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="planname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descritpition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rate_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="plansetting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" Nullable="false" />
+    <Property Name="planid" Type="Int32" Nullable="false" />
+    <Property Name="planname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="settingtype" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="settingname" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="settingvalue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="priinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="prinumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="rmclientmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="clientid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contactno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="did" Type="Int32" />
+    <Property Name="client_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="contact_no2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="contact_no1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rolecode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="createdby" Type="Int32" />
+    <Property Name="applicationid" Type="Int32" />
+    <Property Name="permissionid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="rolepermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="permissionid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="role1">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="abbrevation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="masterrole" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="rule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ruleorder" Type="Int32" />
+    <Property Name="createdby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="modifiedby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createddate" Type="DateTime" Precision="6" />
+    <Property Name="modifieddate" Type="DateTime" Precision="6" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ruleaction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ruleid" Type="Int32" />
+    <Property Name="actiontype" Type="Int32" />
+    <Property Name="actionvalues" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="actionmessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="rulealert">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ruleid" Type="Int32" />
+    <Property Name="alerttype" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ruleprocess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="systemalertid" Type="Int32" />
+    <Property Name="ruleactionid" Type="Int32" />
+    <Property Name="processattempts" Type="Int32" />
+    <Property Name="processlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="securityquestion">
+    <Key>
+      <PropertyRef Name="questionid" />
+    </Key>
+    <Property Name="questionid" Type="Int32" Nullable="false" />
+    <Property Name="question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="service_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="callcategoryid" Type="Int32" />
+    <Property Name="servicecategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="service_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="servicecategoryid" Type="Int32" />
+    <Property Name="servicetypes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="setdigit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="digit" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="setformat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="voicelanguage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="settingtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="settingname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="settingvalue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sipusermapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="sipuserid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sipusermaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="sipusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="speeddial">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="shortcut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="contactname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="stateid" />
+    </Key>
+    <Property Name="stateid" Type="Int32" Nullable="false" />
+    <Property Name="statename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="countryid" Type="Int32" Nullable="false" />
+    <Property Name="zoneid" Type="Int32" />
+    <Property Name="is_deleted" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="state1">
+    <Key>
+      <PropertyRef Name="stateid" />
+    </Key>
+    <Property Name="stateid" Type="Int32" Nullable="false" />
+    <Property Name="statename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="zoneid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="statusid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="statuscode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="allowdelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="storemaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="storename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="subrole">
+    <Key>
+      <PropertyRef Name="subroleid" />
+    </Key>
+    <Property Name="subroleid" Type="Int32" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rolecode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="createdby" Type="Int32" />
+    <Property Name="applicationid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="subrolepermissionmapper">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="subroleid" Type="Int32" />
+    <Property Name="permissionid" Type="Int32" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" Precision="6" />
+    <Property Name="createdby" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="systemalert">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="systemalerttype" Type="Int32" Nullable="false" />
+    <Property Name="alertdatetime" Type="DateTime" Precision="6" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="extrainfo" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="systemdisposition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="systemuserpermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tenantaudit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+    <Property Name="planid" Type="Int32" />
+    <Property Name="planactivatedate" Type="DateTime" Precision="6" />
+    <Property Name="planexpirdate" Type="DateTime" Precision="6" />
+    <Property Name="pulseused" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="lastupdatedate" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="tenant">
+    <Key>
+      <PropertyRef Name="tenantid" />
+    </Key>
+    <Property Name="tenantid" Type="Int64" Nullable="false" />
+    <Property Name="tenantname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantaddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantcity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantcountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantpincode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantcontact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenantmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="weburl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creationtime" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="deleteruserid" Type="Int32" Nullable="false" />
+    <Property Name="deletiontime" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="lastmodificationtime" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="lastmodifieruserid" Type="Int32" Nullable="false" />
+    <Property Name="creatoruserid" Type="Int32" Nullable="false" />
+    <Property Name="plan_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="planexpirydate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lic_days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_cti_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="currentcampaign" Type="Int32" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="statusid" Type="Int32" />
+    <Property Name="workstation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="statusdatetime" Type="DateTime" Precision="6" />
+    <Property Name="groupid" Type="Int32" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="useractivity">
+    <Key>
+      <PropertyRef Name="activityid" />
+    </Key>
+    <Property Name="activityid" Type="Int32" Nullable="false" />
+    <Property Name="usersessionid" Type="Int32" />
+    <Property Name="activitydone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="activitytime" Type="DateTime" Precision="6" />
+    <Property Name="activitypage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="attemptuserid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="machineip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="machinename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="machineusername" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userbranchaccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="branchid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userbranchdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="zoneid" Type="Int32" />
+    <Property Name="stateid" Type="Int32" />
+    <Property Name="branchid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userbranchmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="branchid" Type="Int32" Nullable="false" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userbreak">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="breakstart" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="breakstop" Type="DateTime" Precision="6" />
+    <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usercampaignmapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="campaignid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userdefinedrole">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="usermappingwithuserdefinedroles" Relationship="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID" FromRole="userdefinedrole" ToRole="usermappingwithuserdefinedrole" />
+  </EntityType>
+  <EntityType Name="userdefinedroledetail">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="permissionid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usergroupdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="usergroupid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+    <NavigationProperty Name="usergroup" Relationship="Self.FK_UserGroupDetails_UserGroups" FromRole="usergroupdetails" ToRole="usergroups" />
+  </EntityType>
+  <EntityType Name="usergroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="groupname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="systemname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="customquery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+    <NavigationProperty Name="usergroupdetails" Relationship="Self.FK_UserGroupDetails_UserGroups" FromRole="usergroups" ToRole="usergroupdetails" />
+  </EntityType>
+  <EntityType Name="userlog">
+    <Key>
+      <PropertyRef Name="userlogid" />
+    </Key>
+    <Property Name="userlogid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="machineid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="logindate" Type="DateTime" Precision="6" />
+    <Property Name="logoutdate" Type="DateTime" Precision="6" />
+    <Property Name="loginlogoutremarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="useripaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="winloginname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usermappingwithuserdefinedrole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+    <NavigationProperty Name="userdefinedrole" Relationship="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID" FromRole="usermappingwithuserdefinedrole" ToRole="userdefinedrole" />
+  </EntityType>
+  <EntityType Name="usermissedcalldetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="callreceivedid" Type="Int64" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="producttype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="clientcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calldate" Type="DateTime" Precision="6" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="assigndate" Type="DateTime" Precision="6" />
+    <Property Name="dialeddate" Type="DateTime" Precision="6" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usermobilemapping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="mobileno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="userpermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="permissionid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userprofile">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="56" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="usercode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="DateTime" Precision="0" />
+    <Property Name="branchid" Type="Int32" />
+    <Property Name="flat_building" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="street_lane" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cityid" Type="Int32" />
+    <Property Name="stateid" Type="Int32" />
+    <Property Name="countryid" Type="Int32" />
+    <Property Name="landmark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="phonenumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdon" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passwordquestionid" Type="Int32" />
+    <Property Name="passwordanswer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastpasswordchangeddate" Type="DateTime" Precision="6" />
+    <Property Name="failedpasswordattemptcount" Type="Int32" />
+    <Property Name="lastlockoutdate" Type="DateTime" Precision="6" />
+    <Property Name="lastlogindate" Type="DateTime" Precision="6" />
+    <Property Name="tokken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="calldestination" Type="Int32" />
+    <Property Name="escalationmail1" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="escalationmail2" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="terminalid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="branchids" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="callpreference" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+    <Property Name="virtualextension" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usersecurity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="useraccountid" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastpasswordchangeddate" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usersinrole">
+    <Key>
+      <PropertyRef Name="srno" />
+    </Key>
+    <Property Name="srno" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userstatu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="usersid" Type="Int32" Nullable="false" />
+    <Property Name="currentcampaign" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="intime" Type="DateTime" Precision="6" />
+    <Property Name="outtime" Type="DateTime" Precision="6" />
+    <Property Name="sessionid" Type="Int64" />
+  </EntityType>
+  <EntityType Name="verifier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="voicelogs_calldetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="callid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="calldate" Type="DateTime" Precision="6" />
+    <Property Name="campaignid" Type="Int32" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="callerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="calltype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comments" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="channelno" Type="Int32" />
+    <Property Name="attemptid" Type="Int32" />
+    <Property Name="duration" Type="Double" />
+    <Property Name="customdata1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="customdata2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="customdata3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="voicemail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="incommingcallid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="callerid" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="selectedoption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wavfile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="duration" Type="Double" />
+    <Property Name="recorddttime" Type="DateTime" Precision="6" />
+    <Property Name="playeddttime" Type="DateTime" Precision="6" />
+    <Property Name="dispositionid" Type="Int32" />
+    <Property Name="playedby" Type="Int32" />
+    <Property Name="assignedto" Type="Int32" />
+    <Property Name="assignedby" Type="Int32" />
+    <Property Name="assigneddate" Type="DateTime" Precision="6" />
+    <Property Name="ticketno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="priority" Type="Int32" />
+    <Property Name="manualdailid" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auditid" Type="Int32" />
+    <Property Name="comments" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="workstation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ipaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="branchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fxo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fxs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="physicalextension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="zone">
+    <Key>
+      <PropertyRef Name="zoneid" />
+    </Key>
+    <Property Name="zoneid" Type="Int32" Nullable="false" />
+    <Property Name="zonename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_deleted" Type="Int32" />
+    <Property Name="tenantid" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID">
+    <End Role="userdefinedrole" Type="Self.userdefinedrole" Multiplicity="1" />
+    <End Role="usermappingwithuserdefinedrole" Type="Self.usermappingwithuserdefinedrole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdefinedrole">
+        <PropertyRef Name="roleid" />
+      </Principal>
+      <Dependent Role="usermappingwithuserdefinedrole">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroupDetails_UserGroups">
+    <End Role="usergroups" Type="Self.usergroup" Multiplicity="1" />
+    <End Role="usergroupdetails" Type="Self.usergroupdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usergroups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usergroupdetails">
+        <PropertyRef Name="usergroupid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CallbalanceClopsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="accesscontrollists" EntityType="Self.accesscontrollist" />
+    <EntitySet Name="accesspanels" EntityType="Self.accesspanel" />
+    <EntitySet Name="activitylogs" EntityType="Self.activitylog" />
+    <EntitySet Name="addressbooks" EntityType="Self.addressbook" />
+    <EntitySet Name="adminmenus" EntityType="Self.adminmenu" />
+    <EntitySet Name="agentcalltimestatuslogs" EntityType="Self.agentcalltimestatuslog" />
+    <EntitySet Name="alertdescriptions" EntityType="Self.alertdescription" />
+    <EntitySet Name="blockcallerlists" EntityType="Self.blockcallerlist" />
+    <EntitySet Name="boardmodels" EntityType="Self.boardmodel" />
+    <EntitySet Name="branchdetails" EntityType="Self.branchdetail" />
+    <EntitySet Name="branchgatewaymappings" EntityType="Self.branchgatewaymapping" />
+    <EntitySet Name="branchmasters" EntityType="Self.branchmaster" />
+    <EntitySet Name="breaks" EntityType="Self.break" />
+    <EntitySet Name="call_category" EntityType="Self.call_category" />
+    <EntitySet Name="callbacksmisseds" EntityType="Self.callbacksmissed" />
+    <EntitySet Name="callconnectiondetails" EntityType="Self.callconnectiondetail" />
+    <EntitySet Name="calldestinationmasters" EntityType="Self.calldestinationmaster" />
+    <EntitySet Name="calldispositions" EntityType="Self.calldisposition" />
+    <EntitySet Name="calllists" EntityType="Self.calllist" />
+    <EntitySet Name="calllistattempts" EntityType="Self.calllistattempt" />
+    <EntitySet Name="calllistdetails" EntityType="Self.calllistdetail" />
+    <EntitySet Name="calllistdetailsadditionals" EntityType="Self.calllistdetailsadditional" />
+    <EntitySet Name="calllistdetailsmobiles" EntityType="Self.calllistdetailsmobile" />
+    <EntitySet Name="callsuccesses" EntityType="Self.callsuccess" />
+    <EntitySet Name="calltransfersuccesses" EntityType="Self.calltransfersuccess" />
+    <EntitySet Name="campaigns" EntityType="Self.campaign" />
+    <EntitySet Name="campaignchannels" EntityType="Self.campaignchannel" />
+    <EntitySet Name="campaigncustomfields" EntityType="Self.campaigncustomfield" />
+    <EntitySet Name="campaigndispositions" EntityType="Self.campaigndisposition" />
+    <EntitySet Name="campaignsettings" EntityType="Self.campaignsetting" />
+    <EntitySet Name="campaignusergroups" EntityType="Self.campaignusergroup" />
+    <EntitySet Name="campaignusers" EntityType="Self.campaignuser" />
+    <EntitySet Name="campaignverifiers" EntityType="Self.campaignverifier" />
+    <EntitySet Name="channels" EntityType="Self.channel" />
+    <EntitySet Name="checkdidmappings" EntityType="Self.checkdidmapping" />
+    <EntitySet Name="cities" EntityType="Self.city" />
+    <EntitySet Name="clientdetails" EntityType="Self.clientdetail" />
+    <EntitySet Name="communication_email_emails" EntityType="Self.communication_email_emails" />
+    <EntitySet Name="communication_email_emailsattachments" EntityType="Self.communication_email_emailsattachments" />
+    <EntitySet Name="communication_email_emailsattempts" EntityType="Self.communication_email_emailsattempts" />
+    <EntitySet Name="communication_email_settings" EntityType="Self.communication_email_settings" />
+    <EntitySet Name="communication_email_smtpserver" EntityType="Self.communication_email_smtpserver" />
+    <EntitySet Name="countries" EntityType="Self.country" />
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="customfields" EntityType="Self.customfield" />
+    <EntitySet Name="dnclists" EntityType="Self.dnclist" />
+    <EntitySet Name="emailstatementrequestdatas" EntityType="Self.emailstatementrequestdata" />
+    <EntitySet Name="errorlogs" EntityType="Self.errorlog" />
+    <EntitySet Name="extensionmappings" EntityType="Self.extensionmapping" />
+    <EntitySet Name="extensions" EntityType="Self.extension" />
+    <EntitySet Name="flags" EntityType="Self.flag" />
+    <EntitySet Name="genders" EntityType="Self.gender" />
+    <EntitySet Name="groups" EntityType="Self.group" />
+    <EntitySet Name="hmpdetails" EntityType="Self.hmpdetail" />
+    <EntitySet Name="holidays" EntityType="Self.holiday" />
+    <EntitySet Name="incomingcalls" EntityType="Self.incomingcall" />
+    <EntitySet Name="incomingdatareceiveds" EntityType="Self.incomingdatareceived" />
+    <EntitySet Name="incomingtransferfaileds" EntityType="Self.incomingtransferfailed" />
+    <EntitySet Name="incomingtransferfailed_history" EntityType="Self.incomingtransferfailed_history" />
+    <EntitySet Name="incomingtransfersuccesses" EntityType="Self.incomingtransfersuccess" />
+    <EntitySet Name="insertoptionselections" EntityType="Self.insertoptionselection" />
+    <EntitySet Name="internaltransfers" EntityType="Self.internaltransfer" />
+    <EntitySet Name="ivrflowtraces" EntityType="Self.ivrflowtrace" />
+    <EntitySet Name="leadmanagements" EntityType="Self.leadmanagement" />
+    <EntitySet Name="leadtypes" EntityType="Self.leadtype" />
+    <EntitySet Name="manualdialattempts" EntityType="Self.manualdialattempt" />
+    <EntitySet Name="mobileactivities" EntityType="Self.mobileactivity" />
+    <EntitySet Name="nonbusinesshourcalls" EntityType="Self.nonbusinesshourcall" />
+    <EntitySet Name="officeservicetypes" EntityType="Self.officeservicetype" />
+    <EntitySet Name="officetimes" EntityType="Self.officetime" />
+    <EntitySet Name="otpgenerations" EntityType="Self.otpgeneration" />
+    <EntitySet Name="passwordpolicies" EntityType="Self.passwordpolicy" />
+    <EntitySet Name="pbxextensions" EntityType="Self.pbxextension" />
+    <EntitySet Name="permissions" EntityType="Self.permission" />
+    <EntitySet Name="permissions1" EntityType="Self.permission1" />
+    <EntitySet Name="plans" EntityType="Self.plan" />
+    <EntitySet Name="plansettings" EntityType="Self.plansetting" />
+    <EntitySet Name="priinfoes" EntityType="Self.priinfo" />
+    <EntitySet Name="rmclientmappings" EntityType="Self.rmclientmapping" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <EntitySet Name="rolepermissions" EntityType="Self.rolepermission" />
+    <EntitySet Name="roles1" EntityType="Self.role1" />
+    <EntitySet Name="rules" EntityType="Self.rule" />
+    <EntitySet Name="ruleactions" EntityType="Self.ruleaction" />
+    <EntitySet Name="rulealerts" EntityType="Self.rulealert" />
+    <EntitySet Name="ruleprocesses" EntityType="Self.ruleprocess" />
+    <EntitySet Name="securityquestions" EntityType="Self.securityquestion" />
+    <EntitySet Name="service_category" EntityType="Self.service_category" />
+    <EntitySet Name="service_type" EntityType="Self.service_type" />
+    <EntitySet Name="setdigits" EntityType="Self.setdigit" />
+    <EntitySet Name="setformats" EntityType="Self.setformat" />
+    <EntitySet Name="settings" EntityType="Self.setting" />
+    <EntitySet Name="sipusermappings" EntityType="Self.sipusermapping" />
+    <EntitySet Name="sipusermasters" EntityType="Self.sipusermaster" />
+    <EntitySet Name="speeddials" EntityType="Self.speeddial" />
+    <EntitySet Name="states" EntityType="Self.state" />
+    <EntitySet Name="states1" EntityType="Self.state1" />
+    <EntitySet Name="status" EntityType="Self.status" />
+    <EntitySet Name="storemasters" EntityType="Self.storemaster" />
+    <EntitySet Name="subroles" EntityType="Self.subrole" />
+    <EntitySet Name="subrolepermissionmappers" EntityType="Self.subrolepermissionmapper" />
+    <EntitySet Name="systemalerts" EntityType="Self.systemalert" />
+    <EntitySet Name="systemdispositions" EntityType="Self.systemdisposition" />
+    <EntitySet Name="systemuserpermissions" EntityType="Self.systemuserpermission" />
+    <EntitySet Name="tenantaudits" EntityType="Self.tenantaudit" />
+    <EntitySet Name="tenants" EntityType="Self.tenant" />
+    <EntitySet Name="user_cti_details" EntityType="Self.user_cti_details" />
+    <EntitySet Name="useractivities" EntityType="Self.useractivity" />
+    <EntitySet Name="userbranchaccesses" EntityType="Self.userbranchaccess" />
+    <EntitySet Name="userbranchdetails" EntityType="Self.userbranchdetail" />
+    <EntitySet Name="userbranchmappings" EntityType="Self.userbranchmapping" />
+    <EntitySet Name="userbreaks" EntityType="Self.userbreak" />
+    <EntitySet Name="usercampaignmappings" EntityType="Self.usercampaignmapping" />
+    <EntitySet Name="userdefinedroles" EntityType="Self.userdefinedrole" />
+    <EntitySet Name="userdefinedroledetails" EntityType="Self.userdefinedroledetail" />
+    <EntitySet Name="usergroupdetails" EntityType="Self.usergroupdetail" />
+    <EntitySet Name="usergroups" EntityType="Self.usergroup" />
+    <EntitySet Name="userlogs" EntityType="Self.userlog" />
+    <EntitySet Name="usermappingwithuserdefinedroles" EntityType="Self.usermappingwithuserdefinedrole" />
+    <EntitySet Name="usermissedcalldetails" EntityType="Self.usermissedcalldetail" />
+    <EntitySet Name="usermobilemappings" EntityType="Self.usermobilemapping" />
+    <EntitySet Name="userpermissions" EntityType="Self.userpermission" />
+    <EntitySet Name="userprofiles" EntityType="Self.userprofile" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="usersecurities" EntityType="Self.usersecurity" />
+    <EntitySet Name="usersinroles" EntityType="Self.usersinrole" />
+    <EntitySet Name="userstatus" EntityType="Self.userstatu" />
+    <EntitySet Name="verifiers" EntityType="Self.verifier" />
+    <EntitySet Name="voicelogs_calldetails" EntityType="Self.voicelogs_calldetails" />
+    <EntitySet Name="voicemails" EntityType="Self.voicemail" />
+    <EntitySet Name="workstations" EntityType="Self.workstation" />
+    <EntitySet Name="zones" EntityType="Self.zone" />
+    <AssociationSet Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID" Association="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID">
+      <End Role="userdefinedrole" EntitySet="userdefinedroles" />
+      <End Role="usermappingwithuserdefinedrole" EntitySet="usermappingwithuserdefinedroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroupDetails_UserGroups" Association="Self.FK_UserGroupDetails_UserGroups">
+      <End Role="usergroups" EntitySet="usergroups" />
+      <End Role="usergroupdetails" EntitySet="usergroupdetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RegModelStoreContainer" CdmEntityContainer="RegEntities">
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="RegModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="rid" ColumnName="rid" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Contact_no" ColumnName="Contact_no" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="OtherCourses" ColumnName="OtherCourses" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadManagements">
+      <EntityTypeMapping TypeName="RegModel.LeadManagement">
+        <MappingFragment StoreEntitySet="LeadManagement">
+          <ScalarProperty Name="TelePhoneNo2" ColumnName="TelePhoneNo2" />
+          <ScalarProperty Name="TelphoneNo1" ColumnName="TelphoneNo1" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="AssignedToUser" ColumnName="AssignedToUser" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LeadSource" ColumnName="LeadSource" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LeadType" ColumnName="LeadType" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadTypes">
+      <EntityTypeMapping TypeName="RegModel.LeadType">
+        <MappingFragment StoreEntitySet="LeadType">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="DOM" ColumnName="DOM" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="RegModel.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zones">
+      <EntityTypeMapping TypeName="RegModel.Zone">
+        <MappingFragment StoreEntitySet="Zone">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="zoneName" ColumnName="zoneName" />
+          <ScalarProperty Name="zoneId" ColumnName="zoneId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ptypes">
+      <EntityTypeMapping TypeName="RegModel.Ptype">
+        <MappingFragment StoreEntitySet="Ptypes">
+          <ScalarProperty Name="Ptypes" ColumnName="Ptypes" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginTables">
+      <EntityTypeMapping TypeName="RegModel.LoginTable">
+        <MappingFragment StoreEntitySet="LoginTable">
+          <ScalarProperty Name="IsLoggedin" ColumnName="IsLoggedin" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Password3" ColumnName="Password3" />
+          <ScalarProperty Name="Password2" ColumnName="Password2" />
+          <ScalarProperty Name="NewAccountDate" ColumnName="NewAccountDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

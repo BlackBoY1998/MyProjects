@@ -1,0 +1,22 @@
+D:\akash\study\Implementation of charts\Implementation of charts\bin\Implementation of charts.dll.config
+D:\akash\study\Implementation of charts\Implementation of charts\bin\Implementation of charts.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\Implementation of charts.pdb
+D:\akash\study\Implementation of charts\Implementation of charts\bin\EntityFramework.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\EntityFramework.SqlServer.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Helpers.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Mvc.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Razor.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Webpages.Deployment.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Webpages.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Webpages.Razor.dll
+D:\akash\study\Implementation of charts\Implementation of charts\bin\EntityFramework.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\EntityFramework.SqlServer.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Razor.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Webpages.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Webpages.Deployment.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Webpages.Razor.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Helpers.xml
+D:\akash\study\Implementation of charts\Implementation of charts\bin\System.Web.Mvc.xml
+D:\akash\study\Implementation of charts\Implementation of charts\obj\Release\Implementation of charts.dll
+D:\akash\study\Implementation of charts\Implementation of charts\obj\Release\Implementation of charts.pdb
+D:\akash\study\Implementation of charts\Implementation of charts\obj\Release\Implementation of charts.csprojResolveAssemblyReference.cache

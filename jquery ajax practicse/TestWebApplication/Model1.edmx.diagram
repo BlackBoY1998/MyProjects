@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c489a8a5a6348008ab3f0b162cdd81c" Name="Diagram1">
+        <EntityTypeShape EntityType="CallbalanceClopsModel.accesscontrollist" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.accesspanel" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.activitylog" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.addressbook" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.adminmenu" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.agentcalltimestatuslog" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.alertdescription" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.blockcallerlist" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.boardmodel" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.branchdetail" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.branchgatewaymapping" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.branchmaster" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.break" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.call_category" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.callbacksmissed" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.callconnectiondetail" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calldestinationmaster" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calldisposition" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calllist" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calllistattempt" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calllistdetail" Width="1.5" PointX="13.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calllistdetailsadditional" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calllistdetailsmobile" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.callsuccess" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.calltransfersuccess" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaign" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaignchannel" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaigncustomfield" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaigndisposition" Width="1.5" PointX="15.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaignsetting" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaignusergroup" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaignuser" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.campaignverifier" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.channel" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.checkdidmapping" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.city" Width="1.5" PointX="17.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.clientdetail" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.communication_email_emails" Width="1.5" PointX="2.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.communication_email_emailsattachments" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.communication_email_emailsattempts" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.communication_email_settings" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.communication_email_smtpserver" Width="1.5" PointX="18.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.country" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.customer" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.customfield" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.dnclist" Width="1.5" PointX="19.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.emailstatementrequestdata" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.errorlog" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.extensionmapping" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.extension" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.flag" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.gender" Width="1.5" PointX="20.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.group" Width="1.5" PointX="18.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.hmpdetail" Width="1.5" PointX="20.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.holiday" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.incomingcall" Width="1.5" PointX="21.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.incomingdatareceived" Width="1.5" PointX="6.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.incomingtransferfailed" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.incomingtransferfailed_history" Width="1.5" PointX="22.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.incomingtransfersuccess" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.insertoptionselection" Width="1.5" PointX="22.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.internaltransfer" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.ivrflowtrace" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.leadmanagement" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.leadtype" Width="1.5" PointX="2.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.manualdialattempt" Width="1.5" PointX="23.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.mobileactivity" Width="1.5" PointX="14.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.nonbusinesshourcall" Width="1.5" PointX="16.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.officeservicetype" Width="1.5" PointX="18.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.officetime" Width="1.5" PointX="24.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.otpgeneration" Width="1.5" PointX="10.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.passwordpolicy" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.pbxextension" Width="1.5" PointX="24.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.permission" Width="1.5" PointX="24.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.permission1" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.plan" Width="1.5" PointX="25.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.plansetting" Width="1.5" PointX="25.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.priinfo" Width="1.5" PointX="2.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.rmclientmapping" Width="1.5" PointX="4.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.role" Width="1.5" PointX="6.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.rolepermission" Width="1.5" PointX="26.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.role1" Width="1.5" PointX="12.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.rule" Width="1.5" PointX="26.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.ruleaction" Width="1.5" PointX="14.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.rulealert" Width="1.5" PointX="16.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.ruleprocess" Width="1.5" PointX="26.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.securityquestion" Width="1.5" PointX="18.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.service_category" Width="1.5" PointX="26.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.service_type" Width="1.5" PointX="20.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.setdigit" Width="1.5" PointX="26.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.setformat" Width="1.5" PointX="26.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.setting" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.sipusermapping" Width="1.5" PointX="27.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.sipusermaster" Width="1.5" PointX="27.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.speeddial" Width="1.5" PointX="22.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.state" Width="1.5" PointX="28.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.state1" Width="1.5" PointX="28.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.status" Width="1.5" PointX="28.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.storemaster" Width="1.5" PointX="28.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.subrole" Width="1.5" PointX="28.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.subrolepermissionmapper" Width="1.5" PointX="28.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.systemalert" Width="1.5" PointX="28.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.systemdisposition" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.systemuserpermission" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.tenantaudit" Width="1.5" PointX="29.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.tenant" Width="1.5" PointX="8.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.user_cti_details" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.useractivity" Width="1.5" PointX="16.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userbranchaccess" Width="1.5" PointX="18.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userbranchdetail" Width="1.5" PointX="24.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userbranchmapping" Width="1.5" PointX="2.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userbreak" Width="1.5" PointX="4.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usercampaignmapping" Width="1.5" PointX="30.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userdefinedrole" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userdefinedroledetail" Width="1.5" PointX="30.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usergroupdetail" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usergroup" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userlog" Width="1.5" PointX="12.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usermappingwithuserdefinedrole" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usermissedcalldetail" Width="1.5" PointX="30.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usermobilemapping" Width="1.5" PointX="30.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userpermission" Width="1.5" PointX="20.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userprofile" Width="1.5" PointX="30.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.user" Width="1.5" PointX="30.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usersecurity" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.usersinrole" Width="1.5" PointX="31.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.userstatu" Width="1.5" PointX="26.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.verifier" Width="1.5" PointX="32.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.voicelogs_calldetails" Width="1.5" PointX="32.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.voicemail" Width="1.5" PointX="32.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.workstation" Width="1.5" PointX="32.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CallbalanceClopsModel.zone" Width="1.5" PointX="22.75" PointY="32.75" IsExpanded="true" />
+        <AssociationConnector Association="CallbalanceClopsModel.FK_UserMappingwithUserDefinedRole_UserDefinedRole_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CallbalanceClopsModel.FK_UserGroupDetails_UserGroups" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,853 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>UserInfo</h2>
+<html>
+<head>
+    <title></title>
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" defer></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link src="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+
+    <!-- Datatable plugin JS library file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" defer>
+    </script>
+    @*<script src="~/Scripts/jquery.datetimepicker.js" defer></script>
+
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />*@
+
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        red_border {
+            border: 1px solid #ed1414;
+        }
+
+        .loader {
+            /*cursor: not-allowed;*/
+            display: none;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            cursor: pointer;
+        }
+        .loader2{
+            display:none;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    @*<a href="#" class="btn btn-info" onclick="AddNewUser(0)">Add New User</a> <br /><br />*@
+    <button type="button" class="btn btn-primary" id="CreateUser">Create User</button>
+    <br />
+    <br />
+    <br />
+
+    <table id="DataTable" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                   DOB
+                </th>
+                <th>
+                    EmailId
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    LandLine
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Pincode
+                </th>
+                <th>
+                    Action
+                </th>
+
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+    <div id="loading" class="loader">
+        <center>
+            <img src="~/Images/Load.gif" alt="" height="200" width="200" />
+        </center>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="modal" id="Adduser" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add User</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <lable>ID:</lable>
+                                        <input class="form-control" placeholder="ID" type="number" id="InputID" disabled="disabled" />
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>Name:</lable>
+                                        <input class="form-control" placeholder="Name" type="text" id="InputName" />
+                                        <h5 id="Namecheck" style="color:red;">**Please enter Name</h5>
+                                        </div>
+                                     <div class="form-group">
+                                        <lable>UserName:</lable>
+                                        <input class="form-control" placeholder="UserName" type="text" id="InputUsername" />
+                                        <h5 id="UserNamecheck" style="color:red;">**please enter UserName</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>Password:</lable>
+                                        <input class="form-control" placeholder="Password" type="password" id="InputPassword" />
+                                        <input type="checkbox" id="chkview" onclick="myFunction()">Show Password
+                                        <h5 id="PasswordCheck" style="color:red;">**please enter Password</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>Gender:</lable>
+                                        <select id="cboGender" class="form-control" name="cboGender">
+                                            <option id="Male">Male</option>
+                                            <option id="Female">Female</option>
+                                            <option id="Unspecified">Unspecified</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>Date Of Birth:</lable>
+                                        <input class="form-control" placeholder="Date of Birth" id="InputDOB" />
+                                        <h5 id="DOBcheck" style="color:red;">**please Enter DOB</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>EmailId:</lable>
+                                        <input class="form-control " placeholder="EmailId" type="email" id="InputEmailId" />
+                                        <h5 id="EmailIDcheck" style="color:red;">**please Enter DOB</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>MobileNo:</lable>
+                                        <input class="form-control " placeholder="MobileNo" type="tel" id="InputMobile" />
+                                        <h5 id="Mobilecheck" style="color:red;">**please Enter Mobile No.</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>LandLine:</lable>
+                                        <input class="form-control" placeholder="LandLine" type="tel" id="InputLandLine" />
+                                        <h5 id="LandLinecheck" style="color:red;">**please Enter LandLine No.</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>Address:</lable>
+                                        <textarea class="form-control" placeholder="address" id="InputAddress"></textarea>
+                                        <h5 id="Addresscheck" style="color:red;">**please Enter Address.</h5>
+                                    </div>
+                                    <div class="form-group">
+                                        <lable>
+                                            <lable>Pincode:</lable>
+                                            <input class="form-control" placeholder="Pincode" type="tel" id="InputPincode" />
+                                            <h5 id="Pincodecheck" style="color:red;">**please Pincode.</h5>
+                                        </lable>
+                                    </div>
+                                    <div id="loader2" class="loader2">
+                                        <center>
+                                            <img src="~/Images/transparent-loading-gif-images-1.gif" alt="" style="width:200px;height:200px;" />
+                                        </center>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <input id="btnSave" class="btn btn-success" type="button" value="Save" onclick="return AddUser();" />
+                                <input id="btnupdate" class="btn btn-success" type="button" value="Update" onclick="return Update();" style="display:none" />
+                                <input id="btnCancel" class="btn btn-danger" type="button" value="Cancel" />
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="MyPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        UserInfo
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <lable>ID:</lable>
+                            <input class="form-control" placeholder="ID" id="lblId" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>Name:</lable>
+                            <input class="form-control" placeholder="ID" id="lblName" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>UserName</lable>
+                            <input class="form-control" placeholder="ID" id="lblUserName" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>Password:</lable>
+                            <input class="form-control" placeholder="ID" id="lblpassword" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>Gender:</lable>
+                            <input class="form-control" placeholder="ID" id="lblGender" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>Date of Birth:</lable>
+                            <input class="form-control" placeholder="dd-mm-yyyy" id="lblDOB" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>EmailID:</lable>
+                            <input class="form-control" placeholder="ID" id="lblEmailId" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>Mobile:</lable>
+                            <input class="form-control" placeholder="ID" id="lblMobile" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <lable>Address:</lable>
+                            <textarea class="form-control" placeholder="address" id="lblAddress" disabled="disabled"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <lable>Pincode:</lable>
+                            <input class="form-control" placeholder="ID" id="lblPincode" disabled="disabled" />
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" id="btnClosePopup" value="Close" class="btn btn-danger" data-dismiss="modal" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            loadData();
+            $('#Namecheck').hide();
+            $('#UserNamecheck').hide();
+            $('#PasswordCheck').hide();
+            $('#DOBcheck').hide();
+            $('#EmailIDcheck').hide();
+            $('#Mobilecheck').hide();
+            $('#LandLinecheck').hide();
+            $('#Addresscheck').hide();
+            $('#Pincodecheck').hide();
+            $('#InputDOB').datepicker({
+                dateFormat: "dd-mm-yy"
+            });
+
+
+        });
+
+        $(document).ready(function () {
+            $('#CreateUser').click(function () {
+                $('#Adduser').modal('show');
+                $('#InputID').val("");
+                $('#InputName').val("");
+                $('#InputUsername').val("");
+                $('#InputPassword').val("");
+                $('#cboGender').val("");
+                $('#InputDOB').val("");
+                $('#InputEmailId').val("");
+                $('#InputMobile').val("");
+                $('#InputLandLine').val("");
+                $('#InputAddress').val("");
+                $('#InputPincode').val("");
+                $('#chkview').removeAttr('checked');
+                $('#btnSave').show();
+                $('#btnupdate').hide();
+                $('#Namecheck').hide();
+                $('#UserNamecheck').hide();
+                $('#PasswordCheck').hide();
+                $('#DOBcheck').hide();
+                $('#EmailIDcheck').hide();
+                $('#Mobilecheck').hide();
+                $('#LandLinecheck').hide();
+                $('#Addresscheck').hide();
+                $('Pincodecheck').hide();
+                $('#InputID').css('border-color', 'lightgrey');
+                $('#InputName').css('border-color', 'lightgrey');
+                $('#InputUsername').css('border-color', 'lightgrey');
+                $('#InputPassword').css('border-color', 'lightgrey');
+                $('#cboGender').css('border-color', 'lightgrey');
+                $('#InputDOB').css('border-color', 'lightgrey');
+                $('#InputEmailId').css('border-color', 'lightgrey');
+                $('#InputMobile').css('border-color', 'lightgrey');
+                $('#InputLandLine').css('border-color', 'lightgrey');
+                $('#InputAddress').css('border-color', 'lightgrey');
+                $('#InputPincode').css('border-color', 'lightgrey');
+                $('#chkview').css('border-color', 'lightgrey');
+               // $('#InputDOB').datetimepicker();
+
+            });
+            $('#btnCancel').click(function () {
+                $('#Adduser').modal('hide');
+
+            });
+            //$('#InputDOB').change(function () {
+            //    $('#InputDOB').datetimepicker();
+
+            //});
+        });
+        //function loadData() {
+        //    $.ajax({
+        //        async: true,
+        //        url: '/User/ListofUser',
+        //        type: 'Get',
+        //        contentType: 'application/json;charset=utf-8',
+        //        dataType: 'JSON',
+        //        success: function (response) {
+        //            var html = '';
+        //            $.each(response, function (key, value) {
+        //                html += '<tr>';
+        //                html += '<td>' + value.Id + '</td>';
+        //                html += '<td>' + value.Name + '</td>';
+        //                html += '<td>' + value.UserName + '</td>';
+        //                html += '<td>' + value.Password + '</td>';
+        //                html += '<td>' + value.Gender + '</td>';
+        //                html += '<td>' + value.DOB + '</td>';
+        //                html += '<td>' + value.EmailId + '</td>';
+        //                html += '<td>' + value.Mobile + '</td>';
+        //                html += '<td>' + value.Landline + '</td>';
+        //                html += '<td>' + value.Address + '</td>';
+        //                html += '<td>' + value.Pincode + '</td>';
+        //                html += '<td> <a href="#" onclick="return details(' + value.Id + ')">Edit<a/>|<a href="#" onclick=" return Delete(' + value.Id + ')">Delete</a></td>';
+        //                html += '</tr>'
+        //            });
+
+        //            $('.tbody').html(html)
+        //        },
+        //        error: function () {
+        //            alert('There is Problem is Users Table')
+        //        }
+        //    });
+        //}
+        function loadData() {
+            $.ajax({
+                async: true,
+                url: '/User/ListofUser',
+                type: 'Get',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'JSON',
+                beforeSend:function(){
+                    $('#loading').show();
+                    $('#CreateUser').attr("disabled", true);
+
+                },
+                success: function (data) {
+                    $('#loading').hide();
+                    $('#DataTable').dataTable({
+                        "bDestroy": true,
+                        data: data,
+                        columns: [
+                           {
+
+                               'data': 'Id',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+                               'data': 'Name'
+                           },
+                           {
+                               'data': 'UserName',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+                               'data': 'Password',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+                               'data': 'Gender',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+                               'data': 'DOB',
+                               'sortable': false,
+                               'searchable': false,
+                               'render': function (jsonDate) {
+                                   var date = new Date(parseInt(jsonDate.substr(6)));
+                                   var month = date.getMonth() + 1;
+                                   return date.getDate() + "/" + month + "/" + date.getFullYear();
+                               }
+                           },
+                           {
+                               'data': 'EmailId',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           { 'data': 'Mobile' },
+                           {
+                               'data': 'Landline',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+
+                               'data': 'Address',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+                               'data': 'Pincode',
+                               'sortable': false,
+                               'searchable': false,
+                           },
+                           {
+                               "data": "Id",
+                               "searchable": false,
+                               "sortable": false,
+                               "render": function (data, type, full) {
+                                   return '<a href="#" class="details" onclick="return data(' + data + ')">Details<a/>|<a href="#" onclick="return details(' + data + ')">Edit<a/>|<a href="#" onclick=" return Delete(' + data + ')">Delete</a>'
+                               }
+                           }
+
+                        ]
+                    });
+
+                },
+                complete: function (data) {
+                    $("#loader").hide();
+                    $('#CreateUser').attr("disabled",false);
+                }
+
+            });
+        }
+
+
+
+
+        function AddUser() {
+            var res = validate();
+            if (res == false) {
+                return false;
+            }
+
+
+            var User = {
+                Id: $('#InputID').val(),
+                Name: $('#InputName').val(),
+                UserName: $('#InputUsername').val(),
+                Password: $('#InputPassword').val(),
+                Gender: $('#cboGender').val(),
+                DOB: $('#InputDOB').val(),
+                EmailId: $('#InputEmailId').val(),
+                Mobile: $('#InputMobile').val(),
+                Landline: $('#InputLandLine').val(),
+                Address: $('#InputAddress').val(),
+                Pincode: $('#InputPincode').val()
+            };
+            $.ajax({
+                async: true,
+                url: '/User/AddUser',
+                data: JSON.stringify(User),
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'JSON',
+                beforeSend: function () {
+                    $('#loader2').show();
+                    $('#btnSave').attr("disabled", true);
+                },
+                success: function (result) {
+                    loadData();
+                    $('#Adduser').modal('hide');
+                },
+                complete: function (data) {
+                    $("#loader2").hide();
+                    $('#btnSave').attr("disabled", false);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+
+
+            });
+        }
+        function details(Id) {
+            $('#InputID').css('border-colooutr', 'lightgrey'),
+            $('#InputName').css('border-color', 'lightgrey'),
+            $('#InputUsername').css('border-color', 'lightgrey'),
+            $('#InputPassword').css('border-color', 'lightgrey'),
+            $('#cboGender').css('border-color', 'lightgrey'),
+            $('#InputDOB').css('border-color', 'lightgrey'),
+            $('#InputEmailId').css('border-color', 'lightgrey'),
+            $('#InputMobile').css('border-color', 'lightgrey'),
+            $('#InputLandLine').css('border-color', 'lightgrey'),
+            $('#InputAddress').css('border-color', 'lightgrey'),
+            $('#InputPincode').css('border-color', 'lightgrey'),
+            $('#Namecheck').hide();
+            $('#UserNamecheck').hide();
+            $('#PasswordCheck').hide();
+            $('#DOBcheck').hide();
+            $('#EmailIDcheck').hide();
+            $('#Mobilecheck').hide();
+            $('#LandLinecheck').hide();
+            $('#Addresscheck').hide();
+            $('Pincodecheck').hide();
+
+            $.ajax({
+                url: "/User/details/" + Id,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    var date = new Date(parseInt((result.DOB).substr(6)));
+                    var month = date.getMonth() + 1;
+                    var fulldate= date.getDate() + "/" + month + "/" + date.getFullYear();
+                    $('#InputID').val(result.Id),
+                    $('#InputName').val(result.Name),
+                    $('#InputUsername').val(result.UserName),
+                    $('#InputPassword').val(result.Password),
+                    $('#cboGender').val(result.Gender),
+                    $('#InputDOB').val(fulldate),
+                    $('#InputEmailId').val(result.EmailId),
+                    $('#InputMobile').val(result.Mobile),
+                    $('#InputLandLine').val(result.Landline),
+                    $('#InputAddress').val(result.Address),
+                    $('#InputPincode').val(result.Pincode)
+
+                    $('#Adduser').modal('show');
+                    $('#btnupdate').show();
+                    $('#btnSave').hide();
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
+        }
+
+        function Update() {
+            var res = validate();
+            if (res == false) {
+                return false;
+            }
+            var user = {
+                Id: $('#InputID').val(),
+                Name: $('#InputName').val(),
+                UserName: $('#InputUsername').val(),
+                Password: $('#InputPassword').val(),
+                Gender: $('#cboGender').val(),
+                DOB: $('#InputDOB').val(),
+                EmailId: $('#InputEmailId').val(),
+                Mobile: $('#InputMobile').val(),
+                Landline: $('#InputLandLine').val(),
+                Address: $('#InputAddress').val(),
+                Pincode: $('#InputPincode').val()
+            };
+            $.ajax({
+                url: "/User/Update",
+                data: JSON.stringify(user),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {
+                    $('#loader2').show();
+                    $('#btnupdate').attr("disabled", true);
+                },
+                success: function (result) {
+                    loadData();
+                    $('#Adduser').modal('hide');
+                    $('#InputID').val("");
+                    $('#InputName').val("");
+                    $('#InputUsername').val("");
+                    $('#InputPassword').val("");
+                    $('#cboGender').val("");
+                    $('#InputDOB').val("");
+                    $('#InputEmailId').val("");
+                    $('#InputMobile').val("");
+                    $('#InputLandLine').val("");
+                    $('#InputAddress').val("");
+                    $('#InputPincode').val("")
+                },
+                complete: function (data) {
+                    $("#loader2").hide();
+                    $('#btnupdate').attr("disabled", false);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+        function Delete(Id) {
+            var msg = confirm("Do you want to Delete this Record!!!!?");
+            if (msg) {
+                $.ajax({
+                    url: "/User/Delete/" + Id,
+                    type: "POST",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "JSON",
+                    success: function (result) {
+                        loadData();
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+            }
+        }
+        function myFunction() {
+            var x = document.getElementById("InputPassword");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        //function validate() {
+        //    var IsValid = true;
+        //    $('.required').each(function () {
+        //        if ($.trim($(this).val()) == '') {
+        //            IsValid = false;
+        //            $(this).addClass('red_border');
+        //        }
+        //        else {
+        //            $(this).removeClass('red_border');
+        //        }
+        //    });
+        //    return IsValid;
+        //}
+        function validate() {
+            var Isvalid = true;
+            if ($('#InputName').val().length == "") {
+                $('#InputName').css('border-color', 'Red');
+                $('#Namecheck').show();
+                Isvalid = false;
+
+
+            }
+            else {
+                $('#InputName').css('border-color', 'lightgrey');
+                $('#Namecheck').hide();
+
+            }
+
+
+            if ($('#InputUsername').val().length == "") {
+                $('#InputUsername').css('border-color', 'Red');
+                $('#UserNamecheck').show();
+                Isvalid = false;
+            }
+            else if (($('#InputUsername').val().length < 5) || ($('#InputUsername').val().length > 10)) {
+                $('#InputUsername').css('border-color', 'Red');
+                $('#UserNamecheck').html('**Please Enter UserName Between 5 to 10 Characters');
+                $('#UserNamecheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputUsername').css('border-color', 'lightgrey');
+                $('#UserNamecheck').hide();
+            }
+
+
+            var PwdReg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@@$%^&*-]).{8,10}/;
+            if ($('#InputPassword').val().length == "") {
+                $('#InputPassword').css('border-color', 'Red');
+                $('#PasswordCheck').show();
+                Isvalid = false;
+            }
+            else if (($('#InputPassword').val().length < 8) || ($('#InputPassword').val().length > 10)) {
+                $('#InputPassword').css('border-color', 'Red');
+                $('#PasswordCheck').html('**Please Enter Password Between 8 to 10 Characters');
+                $('#PasswordCheck').show();
+                Isvalid = false;
+            }
+            else if (!PwdReg.test($('#InputPassword').val())) {
+                $('#InputPassword').css('border-color', 'Red');
+                $('#PasswordCheck').html('**Please Enter valid Password');
+                $('#PasswordCheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputPassword').css('border-color', 'lightgrey');
+                $('#PasswordCheck').hide();
+            }
+
+
+            if ($('#InputDOB').val().length == "") {
+                $('#InputDOB').css('border-color', 'Red');
+                $('#DOBcheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputDOB').css('border-color', 'lightgrey');
+                $('#DOBcheck').hide();
+            }
+
+            var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+            if ($('#InputEmailId').val().length == "") {
+                $('#InputEmailId').css('border-color', 'Red');
+                $('#EmailIDcheck').show();
+            }
+            else if (!emailReg.test($('#InputEmailId').val())) {
+                $('#InputEmailId').css('border-color', 'Red');
+                $('#EmailIDcheck').html('**Please Enter valid Email Address');
+                $('#EmailIDcheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputEmailId').css('border-color', 'lightgrey');
+                $('#EmailIDcheck').hide();
+            }
+
+
+            if ($('#InputMobile').val().length == "") {
+                $('#InputMobile').css('border-color', 'Red');
+                $('#Mobilecheck').show();
+                Isvalid = false;
+            }
+            else if (($('#InputMobile').val().length < 10) || ($('#InputMobile').val().length > 12)) {
+                $('#InputMobile').css('border-color', 'Red');
+                $('#Mobilecheck').html('**Please Enter valid Phone No:');
+                $('#Mobilecheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputMobile').css('border-color', 'lightgrey');
+                $('#Mobilecheck').hide();
+            }
+
+
+
+            if ($('#InputLandLine').val().length == "") {
+                $('#InputLandLine').css('border-color', 'Red');
+                $('#LandLinecheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputLandLine').css('border-color', 'lightgrey');
+                $('#LandLinecheck').hide();
+            }
+
+
+            if ($('#InputAddress').val().length == "") {
+                $('#InputAddress').css('border-color', 'Red');
+                $('#Addresscheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputAddress').css('border-color', 'lightgrey');
+                $('#Addresscheck').hide();
+            }
+
+
+            if ($('#InputPincode').val().length == "") {
+                $('#InputPincode').css('border-color', 'Red');
+                $('#Pincodecheck').show();
+                Isvalid = false;
+            }
+            else if (($('#InputPincode').val().length < 6) || ($('#InputPincode').val().length > 6)) {
+                $('#InputPincode').css('border-color', 'Red');
+                $('#Pincodecheck').html('**pincode is Invalid:');
+                $('#Pincodecheck').show();
+                Isvalid = false;
+            }
+            else {
+                $('#InputPincode').css('border-color', 'lightgrey');
+                $('#Pincodecheck').hide();
+            }
+
+
+            return Isvalid;
+
+        }
+
+
+        //details
+        $(document).ready(function () {
+            $("a[class='details']").click(function () {
+                $("#MyPopup").modal("show");
+                return false;
+
+            });
+            $('#btnClosePopup').click(function () {
+                $('#MyPopup').modal('hide');
+                return false;
+            });
+        });
+
+        function data(Id) {
+            $.ajax({
+                url: "/User/details/" + Id,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#lblId').val(result.Id),
+                    $('#lblName').val(result.Name),
+                    $('#lblUserName').val(result.UserName),
+                    $('#lblpassword').val(result.Password),
+                    $('#lblGender').val(result.Gender),
+                    $('#lblDOB').val(new Date(parseInt((result.DOB).replace("/Date(", "").replace(")/")))),
+                    $('#lblEmailId').val(result.EmailId),
+                    $('#lblMobile').val(result.Mobile),
+                    $('#InputLandLine').val(result.Landline),
+                    $('#lblAddress').val(result.Address),
+                    $('#lblPincode').val(result.Pincode)
+
+                    $("#MyPopup").modal("show");
+                    $('#btnupdate').hide();
+                    $('#btnSave').hide();
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,76 @@
+﻿<h3>EditRazor</h3>
+@page "/patients/{id}"
+@inject BlazorApplication.Data.IDataAccessProvider DataAccessProvider
+@inject NavigationManager navigation
+
+<EditForm Model="patient" OnSubmit="@SubmitForm">
+    <div class="form-group">
+        <lable>Id</lable>
+        <input id="id" class="form-control" name="id" value="@patient.id" readonly />
+    </div>
+    <div class="form-group">
+        <lable>Name</lable>
+        <input id="id" class="form-control" name="name" @bind-value="@patient.name" />
+    </div>
+    <div class="form-group">
+        <lable>Address</lable>
+        <input id="id" class="form-control" name="address" @bind-value="@patient.address" />
+    </div>
+    <div class="form-group">
+        <lable>City</lable>
+        <input id="id" class="form-control" name="city" @bind-value="@patient.city"/>
+    </div>
+    <div class="form-group">
+        <lable>Age</lable>
+        <input id="id" class="form-control" name="age" @bind-value="@patient.age"/>
+    </div>
+    <div class="form-group">
+        <lable>Gender</lable>
+        <input id="id" class="form-control" name="gender" @bind-value="@patient.gender"/>
+    </div>
+    <button type="submit"  class="btn btn-primary">Submit</button>
+
+</EditForm>
+
+
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+
+    private BlazorApplication.Models.Patient patient { get; set; }
+
+    
+
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(id) && id == "0")
+        {
+
+            patient = new Models.Patient();
+
+        }
+        else
+        {
+            patient = DataAccessProvider.GetPatientSingleRecord(Convert.ToInt32(id));
+        }
+    }
+
+    public async Task SubmitForm()
+    {
+        if (patient.id == 0)
+        {
+          
+            DataAccessProvider.AddPatientRecord(patient);
+            navigation.NavigateTo("patients");
+        }
+        else
+        {
+         
+            DataAccessProvider.UpdatePatientRecord(patient);
+            navigation.NavigateTo("patients");
+        }
+
+    }
+
+}

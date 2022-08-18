@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    //window.onload = function () {
+    //    if (document.addEventListener){
+    //    document.getElementById('button1')
+    //               .addEventListener('click', clickHandler, false);
+    //}
+    //else{
+    //      document.getElementById('button1')
+    //               .addEventListener('click', clickHandler);
+    //}
+    //      function clickHandler()
+    //      {
+    //          alert('Welcome');
+    //      }
+    //}
+   
+    $(document).ready(function(){
+        $('#button1').click(function () {
+            var result = $('input[type="radio"]:checked');
+            if (result.length>0) {
+                alert(result.val()+' is Selected')
+            }
+        });
+        
+        $('#button2').click(function () {
+            debugger;
+            var resultcity = $('input[type="checkbox"]:checked');
+            if (resultcity.length > 0) {
+                resultcity.each(function () {
+                    resultcity += $(this).val() + "<br/>";
+
+                });
+                $('#c').html(resultcity)
+            }
+            else {
+                alert('Pls Select The City')
+            }
+             
+        });
+    });
+    //$(document).ready(function () {
+    //    alert('DOM Loaded and ready');
+    //});
+    //$(window).load(function () {
+    //    alert('Window loaded');
+    //});
+</script>
+<input id="Radio1" type="radio" value="Male" name="Gender" /> Male
+<input id="Radio1" type="radio" value="Female" name="Gender" />Female
+<br/>
+<br/>
+
+
+<input id="checkbox1" type="checkbox" value="Delhi" name="City" />Delhi
+<input id="checkbox1" type="checkbox" value="Kolkata" name="City" /> Kolkata
+<input id="checkbox1" type="checkbox" value="Chennai" name="City" />Chennai
+<br/>
+<br/>
+<input id="button1" type="button" value="Get Gender" />
+<input id="button2" type="button" value="Get City" />
+<div id="c">
+
+</div>
+

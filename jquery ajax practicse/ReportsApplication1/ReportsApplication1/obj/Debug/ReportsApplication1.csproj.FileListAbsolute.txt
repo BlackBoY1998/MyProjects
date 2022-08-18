@@ -1,0 +1,11 @@
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\bin\Debug\ReportsApplication1.exe.config
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\bin\Debug\ReportsApplication1.exe
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\bin\Debug\ReportsApplication1.pdb
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\ReportsApplication1.csprojResolveAssemblyReference.cache
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\ReportsApplication1.Form1.resources
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\ReportsApplication1.Properties.Resources.resources
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\ReportsApplication1.csproj.GenerateResource.Cache
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\RdlCompile.cache
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\RdlCompile.compiled
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\ReportsApplication1.exe
+D:\akash\study\jquery ajax practicse\ReportsApplication1\ReportsApplication1\obj\Debug\ReportsApplication1.pdb

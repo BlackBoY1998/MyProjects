@@ -1,0 +1,13 @@
+D:\akash\study\asp.net core\DataAcesss\bin\Debug\netcoreapp3.1\DataAcesss.deps.json
+D:\akash\study\asp.net core\DataAcesss\bin\Debug\netcoreapp3.1\DataAcesss.runtimeconfig.json
+D:\akash\study\asp.net core\DataAcesss\bin\Debug\netcoreapp3.1\DataAcesss.runtimeconfig.dev.json
+D:\akash\study\asp.net core\DataAcesss\bin\Debug\netcoreapp3.1\DataAcesss.dll
+D:\akash\study\asp.net core\DataAcesss\bin\Debug\netcoreapp3.1\DataAcesss.pdb
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.csproj.AssemblyReference.cache
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.GeneratedMSBuildEditorConfig.editorconfig
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.AssemblyInfoInputs.cache
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.AssemblyInfo.cs
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.csproj.CoreCompileInputs.cache
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.dll
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.pdb
+D:\akash\study\asp.net core\DataAcesss\obj\Debug\netcoreapp3.1\DataAcesss.genruntimeconfig.cache

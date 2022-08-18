@@ -1,0 +1,11 @@
+﻿@using ReportViewerForMvc
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (ViewBag.Report != null)
+{
+    @Html.ReportViewer(ViewBag.Report as Microsoft.Reporting.WebForms.ReportViewer, new { @width = "100%", @Height = "700px" })
+}

@@ -1,0 +1,111 @@
+﻿@model IEnumerable<crudusingEntity.Models.LeadType>
+
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<h2>Index</h2>
+@*@using (Html.BeginForm("LeadType", "l", FormMethod.Post))
+{*@
+<div class="form-group">
+    <div>
+        <input type="submit" value="AssignToUser" class="btn btn-primary"  />
+    </div>
+</div>
+@*}*@
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Select
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadSource)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadType1)
+        </th>
+        <th>
+            Operations
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <text><input type="checkbox" onclick="SaveList()" id="Check_@item.LeadId"  checked="@item.LeadId" style="width:15px;height:15px;" /></text>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeadId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeadSource)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeadType1)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.LeadId })*@ 
+            <a href="@Url.Action("Edit","LeadTypes",new {id = item.LeadId })">
+                <img src="@Url.Content("~/Images/edit icon.png")" style="width:25px;height:25px;" />
+            </a>|
+            @*@Html.ActionLink("Details", "Details", new { id=item.LeadId })*@ 
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.LeadId })*@
+            <a href="@Url.Action("Delete","LeadTypes",new {id = item.LeadId })">
+                <img src="@Url.Content("~/Images/delete.jpg")" style="width:25px;height:25px;" />
+            </a>
+        </td>
+    </tr>
+}
+
+</table>
+<script>
+    var SaveList = function () {
+        var arrItm = [];
+        var CommaSeperatedIds = "";
+        $('#LeadId').each(function (index, val) {
+            debugger;
+            var checkId = $(val).attr("Id");
+            var arr = checkId.split('_');
+            var currentcheckboxid = arr[1];
+        })
+
+    }
+</script>
+

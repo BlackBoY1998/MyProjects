@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="KomalEntities">
+    <EntitySetMapping Name="cruds">
+      <EntityTypeMapping TypeName="TestModel.crud">
+        <MappingFragment StoreEntitySet="crud">
+          <ScalarProperty Name="Empid" ColumnName="Empid" />
+          <ScalarProperty Name="Empname" ColumnName="Empname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

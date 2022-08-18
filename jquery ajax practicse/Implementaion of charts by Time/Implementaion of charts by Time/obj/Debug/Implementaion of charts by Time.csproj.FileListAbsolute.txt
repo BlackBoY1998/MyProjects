@@ -1,0 +1,18 @@
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\Implementaion of charts by Time.dll.config
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\Implementaion of charts by Time.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\Implementaion of charts by Time.pdb
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Helpers.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Mvc.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Razor.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Webpages.Deployment.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Webpages.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Webpages.Razor.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Razor.xml
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Webpages.xml
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Webpages.Deployment.xml
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Webpages.Razor.xml
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Helpers.xml
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\bin\System.Web.Mvc.xml
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\obj\Debug\Implementaion of charts by Time.csprojResolveAssemblyReference.cache
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\obj\Debug\Implementaion of charts by Time.dll
+D:\akash\study\jquery ajax practicse\Implementaion of charts by Time\Implementaion of charts by Time\obj\Debug\Implementaion of charts by Time.pdb

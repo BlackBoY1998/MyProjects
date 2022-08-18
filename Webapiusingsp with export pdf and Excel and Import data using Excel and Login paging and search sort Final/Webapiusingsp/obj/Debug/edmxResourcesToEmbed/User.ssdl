@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="EmailID" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Landline" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="varchar" MaxLength="1024" />
+    <Property Name="PinCode" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Function Name="Usertsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="Mobile" Type="varchar" Mode="In" />
+    <Parameter Name="Landline" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar" Mode="In" />
+    <Parameter Name="Operation" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="UserModelStoreContainer">
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

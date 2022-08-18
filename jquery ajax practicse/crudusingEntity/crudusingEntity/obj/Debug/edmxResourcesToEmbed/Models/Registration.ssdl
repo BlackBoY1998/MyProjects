@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RegModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LeadManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeadId" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LeadType" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="LeadSource" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="DOC" Type="datetime" />
+    <Property Name="DOM" Type="datetime" />
+    <Property Name="AssignedToUser" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="TelphoneNo1" Type="varchar" MaxLength="50" />
+    <Property Name="TelePhoneNo2" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LeadType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DOC" Type="datetime" />
+    <Property Name="DOM" Type="datetime" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="LoginTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="NewAccountDate" Type="datetime" />
+    <Property Name="Password2" Type="varchar" MaxLength="20" />
+    <Property Name="Password3" Type="varchar" MaxLength="20" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="IsLoggedin" Type="int" />
+  </EntityType>
+  <EntityType Name="Ptypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ptypes" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="rid" />
+    </Key>
+    <Property Name="rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" />
+    <Property Name="Dateofbirth" Type="nvarchar" MaxLength="20" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="Contact_no" Type="nvarchar" MaxLength="20" />
+    <Property Name="course" Type="varchar" MaxLength="20" />
+    <Property Name="OtherCourses" Type="varchar" MaxLength="30" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar(max)" />
+    <Property Name="ZoneID" Type="int" />
+    <Property Name="TenantId" Type="int" />
+  </EntityType>
+  <EntityType Name="Zone">
+    <Key>
+      <PropertyRef Name="zoneId" />
+    </Key>
+    <Property Name="zoneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zoneName" Type="varchar(max)" />
+    <Property Name="Is_Deleted" Type="int" />
+    <Property Name="TenantId" Type="int" />
+  </EntityType>
+  <EntityContainer Name="RegModelStoreContainer">
+    <EntitySet Name="LeadManagement" EntityType="Self.LeadManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadType" EntityType="Self.LeadType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ptypes" EntityType="Self.Ptypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zone" EntityType="Self.Zone" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

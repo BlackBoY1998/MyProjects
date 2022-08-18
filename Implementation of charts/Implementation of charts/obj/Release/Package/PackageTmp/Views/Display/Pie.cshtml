@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Pie";
+}
+
+<h2>Pie</h2>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+   
+</figure>
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Display/PieData", function (data) {
+          
+
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Percentage of Employees By City'
+                },
+                subtitle: {
+                    text: 'Source:By Akash Gawde'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Citywise Employees',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'London',
+                        y:data.London
+                    },
+                    {
+                        name: 'Seattle',
+                        y: data.Seattle
+                    },
+                    {
+                        name: 'Tacoma',
+                        y: data.Tacoma
+                    },
+                    {
+                        name: 'Kirkland',
+                        y: data.Kirkland
+                    },
+                     {
+                         name: 'Redmond',
+                         y: data.Redmond
+                     }]
+                }]
+            });
+        });
+    });
+</script>
+
+

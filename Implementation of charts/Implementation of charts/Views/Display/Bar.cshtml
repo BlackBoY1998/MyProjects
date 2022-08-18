@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Bar";
+}
+
+<h2>Bar</h2>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+</figure>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Display/BarData", function (data) {
+            var Categorey = []
+            var ProductCount = []
+            for (var i = 0; i < data.length; i++) {
+                Categorey.push(data[i].CategoreyName);
+                ProductCount.push(data[i].ProductCount);
+            }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'CategoreyWise Product Count'
+                },
+                subtitle: {
+                    text: 'Source:By Akash Gawde'
+                },
+                xAxis: {
+                    categories:Categorey,
+                    crosshair: false
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Product Count'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.f}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name:'Total Product Count',
+                    //name: ViewBag.Product,
+                    data:ProductCount
+
+                }]
+            });
+        });
+    });
+</script>
+

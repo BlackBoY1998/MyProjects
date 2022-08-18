@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Coloumn";
+}
+
+<h2>Coloumn</h2>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+  <canvas id="barChart"></canvas>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/DisplayAjax/BarData", function (data) {
+                var Categorey = []
+                var ProductCount = []
+                for (var i = 0; i < data.length; i++) {
+                    Categorey.push(data[i].CategoreyName);
+                    ProductCount.push(data[i].ProductCount);
+                }
+                var ctxB = document.getElementById("barChart").getContext('2d');
+                var myBarChart = new Chart(ctxB, {
+                    type: 'bar',
+                    data: {
+                        labels: Categorey,
+                        datasets: [{
+                            label: 'Total Product Count',
+                            data: ProductCount,
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                             'rgba(0, 77, 255, 0.14)',
+                             'rgba(0, 214, 189, 0.14)'
+                            ],
+                            borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgb(106, 90, 205)',
+                            'rgb(150, 186, 151)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            });
+        });
+ </script>
+
+

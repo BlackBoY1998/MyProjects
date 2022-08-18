@@ -1,0 +1,75 @@
+﻿@page "/patients"
+@inject BlazorApplication.Data.IDataAccessProvider DataAccessProvider
+@inject NavigationManager navigation
+@inject IJSRuntime js
+<h3>Fetchall</h3>
+<a href="patients/0">Create Patient</a>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!list.Any())
+        {
+            <tr>
+                <th scope="row">No Patients available</th>
+            </tr>
+        }
+        else
+        {
+            @foreach (var patient in list)
+            {
+                <tr>
+                    <th scope="row">@patient.id</th>
+                    <td>@patient.name</td>
+                    <td>@patient.address</td>
+                    <td>@patient.city</td>
+                    <td>@patient.age</td>
+                    <td>@patient.gender</td>
+                    <td>
+                        <a href="Detailspatients/@patient.id">Details</a> |
+                        <a href="patients/@patient.id">Edit</a> |
+                        <a href="#" @onclick="@(e =>ConfirmDelete(patient.id))">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+@code {
+
+    [Parameter]
+    public string id { get; set; }
+    private List<BlazorApplication.Models.Patient> list;
+    protected override void OnInitialized()
+    {
+        list = DataAccessProvider.GetPatientRecords();
+    }
+    public async Task ConfirmDelete(int id)
+    {
+
+        var Confirm = await js.InvokeAsync<bool>("CustomConfirm", "Confirmation", "Are You Want To Delete This", "question");
+        if (Confirm == true)
+        {
+            DataAccessProvider.DeletePatientRecord(Convert.ToInt32(id));
+            //await js.InvokeAsync<bool>("Taostmsg");
+            navigation.NavigateTo("patients");
+
+        }
+
+
+    }
+}

@@ -1,0 +1,6 @@
+D:\akash\study\jquery ajax practicse\Kamleshtest\Kamleshtest\bin\Debug\Kamleshtest.exe.config
+D:\akash\study\jquery ajax practicse\Kamleshtest\Kamleshtest\bin\Debug\Kamleshtest.exe
+D:\akash\study\jquery ajax practicse\Kamleshtest\Kamleshtest\bin\Debug\Kamleshtest.pdb
+D:\akash\study\jquery ajax practicse\Kamleshtest\Kamleshtest\obj\Debug\Kamleshtest.csprojResolveAssemblyReference.cache
+D:\akash\study\jquery ajax practicse\Kamleshtest\Kamleshtest\obj\Debug\Kamleshtest.exe
+D:\akash\study\jquery ajax practicse\Kamleshtest\Kamleshtest\obj\Debug\Kamleshtest.pdb

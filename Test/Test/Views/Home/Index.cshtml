@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <title></title>
+    <style>
+        #slideme{
+            background:gold;
+            padding:20px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script>
+    //$(document).ready(function () {
+    //    $("div").append("this is div tag");
+        //});
+        //function myfunction() {
+        //    alert("Button is clicked");
+        //    $("<p>test</p>").appendTo("#foo");
+        //    $("#inputpara").wrap('<div class="test"></div>');
+        //    $('#inputhide').hide();
+        //    $('#foo').before("This before eventt");
+           
+        //}
+      
+        function myfunction() {
+            $('#slideme').toggle(2000).slideToggle("linear")
+            var a = $('#floatingInput').val();
+            var b = $('#floatingPassword').val();
+            if ((a == '')||(b==''))
+            { alert("pls  fill username and Password") }
+            else { alert(a); }
+           
+        }
+        function cleartextboxes() {
+            $("#floatingInput").val("");
+            $("#floatingPassword").val("");
+        }
+    </script>
+    </head>
+<body>
+    <br />
+    <br/>
+    <p id="slideme"> <b>Login Info</b></p>
+    <div class="form-floating mb-3">
+        <input type="email"  class="form-control" id="floatingInput" placeholder="name@example.com" >
+        <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+    </div>
+    <br/>
+    <br/>
+    <button type="button" onclick="myfunction()" class="btn btn-success">sumbit</button>&nbsp;
+    <button type="button" onclick="cleartextboxes()" class="btn btn-warning">Reset</button>
+    </body>
+</html>
+

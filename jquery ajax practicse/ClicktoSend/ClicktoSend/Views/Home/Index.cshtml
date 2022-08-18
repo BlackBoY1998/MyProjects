@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("AddUser", "Home", FormMethod.Post))
+{
+
+    <input type="submit" value="Click to Add" class="btn btn-primary" />
+}
+<br/>
+<br/>
+<br/>
+@using (Html.BeginForm("UpdateUser", "Home", FormMethod.Post))
+{
+
+    <input type="submit" value="Click to Update" class="btn btn-primary" />
+}
+

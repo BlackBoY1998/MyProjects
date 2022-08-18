@@ -1,0 +1,43 @@
+﻿@model Email
+@{
+    ViewData["Title"] = "AddEmail";
+}
+
+<h1>AddEmail</h1>
+<form method="post">
+    <div>
+        <div class="mb-3">
+            <label asp-for="server"></label>
+            <input asp-for="server" class="form-control" />
+            <span asp-validation-for="server" class="text-danger">
+            </span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Username"></label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger">
+            </span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Passphrase"></label>
+            <input asp-for="Passphrase" class="form-control" />
+            <span asp-validation-for="Passphrase" class="text-danger">
+            </span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FromAddress"></label>
+            <input asp-for="FromAddress" class="form-control" />
+            <span asp-validation-for="FromAddress" class="text-danger">
+            </span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FromDisplayName"></label>
+            <input asp-for="FromDisplayName" class="form-control" />
+            <span asp-validation-for="FromDisplayName" class="text-danger">
+            </span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="EmailSender" asp-action="EmailList" class="btn btn-primary" style="width:150px">Back to List</a>
+    </div>
+</form>
+

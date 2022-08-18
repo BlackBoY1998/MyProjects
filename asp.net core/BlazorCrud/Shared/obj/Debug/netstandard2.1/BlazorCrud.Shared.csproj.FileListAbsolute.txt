@@ -1,0 +1,10 @@
+D:\akash\study\asp.net core\BlazorCrud\Shared\bin\Debug\netstandard2.1\BlazorCrud.Shared.deps.json
+D:\akash\study\asp.net core\BlazorCrud\Shared\bin\Debug\netstandard2.1\BlazorCrud.Shared.dll
+D:\akash\study\asp.net core\BlazorCrud\Shared\bin\Debug\netstandard2.1\BlazorCrud.Shared.pdb
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.csproj.AssemblyReference.cache
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.AssemblyInfoInputs.cache
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.AssemblyInfo.cs
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.csproj.CoreCompileInputs.cache
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.dll
+D:\akash\study\asp.net core\BlazorCrud\Shared\obj\Debug\netstandard2.1\BlazorCrud.Shared.pdb

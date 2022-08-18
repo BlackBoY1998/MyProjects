@@ -1,0 +1,3001 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OceanModel.Store" Provider="Npgsql" ProviderManifestToken="13.4" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Model" Type="bytea" Nullable="false" />
+    <Property Name="ProductVersion" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccessControlList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="AccessControlID" Type="int4" Nullable="false" />
+    <Property Name="AccessName" Type="varchar" MaxLength="50" />
+    <Property Name="FriendlyAccessName" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bool" />
+  </EntityType>
+  <EntityType Name="AccessPanel">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="int4" Nullable="false" />
+    <Property Name="AcessPanelName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Activitylog">
+    <Key>
+      <PropertyRef Name="ActivityLogID" />
+    </Key>
+    <Property Name="ActivityLogID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Activity" Type="varchar" MaxLength="8000" />
+    <Property Name="MachineName" Type="varchar" MaxLength="8000" />
+    <Property Name="MachineIP" Type="varchar" MaxLength="8000" />
+    <Property Name="PageName" Type="varchar" MaxLength="8000" />
+    <Property Name="ActivityDate" Type="timestamp" />
+    <Property Name="Tag" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="AddressBook">
+    <Key>
+      <PropertyRef Name="Addressid" />
+    </Key>
+    <Property Name="Addressid" Type="int4" Nullable="false" />
+    <Property Name="Addresstitle" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="8000" />
+    <Property Name="LastName" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Company" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Website" Type="varchar" MaxLength="8000" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Branch" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="HomeAddress" Type="varchar" MaxLength="8000" />
+    <Property Name="BusinessAddress" Type="varchar" MaxLength="8000" />
+    <Property Name="HomePinCode" Type="varchar" MaxLength="8000" />
+    <Property Name="Registered" Type="varchar" MaxLength="8000" />
+    <Property Name="ContactType" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="BusinessPinCode" Type="varchar" MaxLength="8000" />
+    <Property Name="HomeCountryid" Type="int4" />
+    <Property Name="HomeStateid" Type="int4" />
+    <Property Name="HomeCityid" Type="int4" />
+    <Property Name="BusinessCountryid" Type="int4" Nullable="false" />
+    <Property Name="BusinessStateid" Type="int4" Nullable="false" />
+    <Property Name="BusinessCityid" Type="int4" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.AdminMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AdminMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ParentMenuID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="100" />
+    <Property Name="ParentMenuID" Type="int4" Nullable="false" />
+    <Property Name="ShortCode" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AgentCallTimeStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="IdleTime" Type="time" Precision="6" Nullable="false" />
+    <Property Name="BreakTime" Type="time" Precision="6" Nullable="false" />
+    <Property Name="TotalLoginTime" Type="time" Precision="6" Nullable="false" />
+    <Property Name="TotalTalkTime" Type="time" Precision="6" Nullable="false" />
+    <Property Name="SendEmailCount" Type="int4" />
+    <Property Name="CreatedBy" Type="int4" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int4" Nullable="false" />
+    <Property Name="UpdatedOn" Type="timestamp" Nullable="false" />
+    <Property Name="IsSendEmail" Type="bool" />
+    <Property Name="ManualDialMode" Type="time" Precision="6" />
+    <Property Name="ExtensionRinging" Type="time" Precision="6" />
+    <Property Name="OutgoingCallDuration" Type="time" Precision="6" />
+    <Property Name="IncommingCallDuration" Type="time" Precision="6" />
+    <Property Name="IsEmailSendIdle" Type="bool" />
+    <Property Name="IsEmailSendBreak" Type="bool" />
+    <Property Name="IsEmailSendTLogin" Type="bool" />
+    <Property Name="IsEmailSendTTalk" Type="bool" />
+    <Property Name="IsEmailSendMDail" Type="bool" />
+    <Property Name="IsEmailSendExtRing" Type="bool" />
+    <Property Name="IsEmailSendOutCallDur" Type="bool" />
+    <Property Name="IsEmailSendInCallDur" Type="bool" />
+  </EntityType>
+  <EntityType Name="AgentCallTimeStatusLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="IdleTimeExceed" Type="time" Precision="6" />
+    <Property Name="BreakTimeExceed" Type="time" Precision="6" />
+    <Property Name="TotalLoginTimeExceed" Type="time" Precision="6" />
+    <Property Name="TotalTalkTimeExceed" Type="time" Precision="6" />
+    <Property Name="EscalationMail" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="varchar" MaxLength="8000" />
+    <Property Name="CreatedBy" Type="int4" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" Nullable="false" />
+    <Property Name="ManualDialModeExceed" Type="time" Precision="6" />
+    <Property Name="ExtensionRingingExceed" Type="time" Precision="6" />
+    <Property Name="OutgoingCallDurationExceed" Type="time" Precision="6" />
+    <Property Name="IncommingCallDurationExceed" Type="time" Precision="6" />
+  </EntityType>
+  <EntityType Name="AlertDescription">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="ApplicationID" />
+    </Key>
+    <Property Name="ApplicationID" Type="int4" Nullable="false" />
+    <Property Name="ApplicationName" Type="varchar" MaxLength="50" />
+    <Property Name="ApplicationCode" Type="bpchar" MaxLength="3" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="int4" />
+  </EntityType>
+  <EntityType Name="AppRolePermissionMapper">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="ApplicationID" Type="int4" />
+    <Property Name="RoleID" Type="int4" />
+    <Property Name="PermissionId" Type="int4" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="int4" />
+    <Property Name="SubRoleId" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="BlockCallerList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="IsActive" Type="bool" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.BoardModel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BoardModel">
+    <Key>
+      <PropertyRef Name="BoardId" />
+    </Key>
+    <Property Name="BoardId" Type="int4" Nullable="false" />
+    <Property Name="ProductId" Type="int4" />
+    <Property Name="ModalName" Type="varchar" MaxLength="200" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BranchDetail">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+    <Property Name="BranchName" Type="varchar" MaxLength="200" />
+    <Property Name="BranchAddress" Type="varchar" MaxLength="255" />
+    <Property Name="CountryID" Type="int4" />
+    <Property Name="StateID" Type="int4" />
+    <Property Name="BranchPin" Type="varchar" MaxLength="50" />
+    <Property Name="CityId" Type="int4" />
+    <Property Name="Status" Type="bool" Nullable="false" />
+    <Property Name="BranchHeadName" Type="varchar" MaxLength="50" />
+    <Property Name="BranchFax" Type="varchar" MaxLength="200" />
+    <Property Name="BranchPhone1" Type="varchar" MaxLength="200" />
+    <Property Name="BranchPhone2" Type="varchar" MaxLength="200" />
+    <Property Name="BranchHeadTel" Type="varchar" MaxLength="200" />
+    <Property Name="BranchHeadMob" Type="varchar" MaxLength="100" />
+    <Property Name="BranchHeadEmail" Type="varchar" MaxLength="255" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="CloudClientId" Type="int4" />
+  </EntityType>
+  <EntityType Name="BranchGatewayMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="BranchID" Type="int4" />
+    <Property Name="BranchName" Type="varchar" MaxLength="8000" />
+    <Property Name="Gateway" Type="varchar" MaxLength="8000" />
+    <Property Name="GatewayIP" Type="varchar" MaxLength="100" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="BranchMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="BranchName" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="StateID" Type="int4" />
+    <Property Name="ConnectionString" Type="varchar" MaxLength="8000" />
+    <Property Name="FallBackWebServerUrl" Type="varchar" MaxLength="8000" />
+    <Property Name="FallBackCommServerUrl" Type="varchar" MaxLength="8000" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Breaks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="8000" />
+    <Property Name="Discription" Type="varchar" MaxLength="8000" />
+    <Property Name="CanBeDeleted" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.Call_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Call_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CallCategory" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="CallBacksMissed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CallListDetailsID" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="Read" Type="bool" />
+    <Property Name="MissedDateTime" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.CallConnectionDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CallConnectionDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="CallDetailsId" Type="int8" />
+    <Property Name="CallAttemptId" Type="int8" />
+    <Property Name="AgentTelephone" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerTelephone" Type="varchar" MaxLength="50" />
+    <Property Name="AgentStatus" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerStatus" Type="varchar" MaxLength="50" />
+    <Property Name="CallDateTime" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="CallDestinationMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CallDispositions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="8000" />
+    <Property Name="Discription" Type="varchar" MaxLength="8000" />
+    <Property Name="BackColor" Type="varchar" MaxLength="6" />
+    <Property Name="AutoFlag" Type="int4" />
+    <Property Name="DispositionType" Type="int4" />
+    <Property Name="CanBeDeleted" Type="bool" />
+    <Property Name="TAT" Type="varchar" MaxLength="20" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="1024" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="Active" Type="bool" />
+    <Property Name="BucketSize" Type="int4" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="Prefix" Type="varchar" MaxLength="50" />
+    <Property Name="IsPrefixActive" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallListAttempts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallListDetailsID" Type="int8" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AttemptDate" Type="timestamp" Nullable="false" />
+    <Property Name="SystemDisposition" Type="int4" Nullable="false" />
+    <Property Name="ProcessInfo" Type="text" />
+    <Property Name="UserDisposition" Type="int4" />
+    <Property Name="EndReason" Type="varchar" MaxLength="1024" />
+    <Property Name="ModifiedDate" Type="timestamp" />
+    <Property Name="PopupReceived" Type="bool" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="UserIdleTime" Type="int8" />
+    <Property Name="AttemptResultDate" Type="timestamp" />
+    <Property Name="CallType" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallListDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallListID" Type="int4" />
+    <Property Name="FirstName" Type="varchar" MaxLength="500" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="500" />
+    <Property Name="LastName" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Details" Type="text" />
+    <Property Name="ScheduledTime" Type="timestamp" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="Attempts" Type="int4" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="Status" Type="int4" />
+    <Property Name="FlagID" Type="int4" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="AssignedBy" Type="int4" />
+    <Property Name="AssignedDate" Type="timestamp" />
+    <Property Name="CallBackUserId" Type="int4" />
+    <Property Name="AssignedTo" Type="int4" />
+    <Property Name="IsSoftDial" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallListDetailsAdditional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallListDetailsID" Type="int8" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="TelephoneType" Type="varchar" MaxLength="50" />
+    <Property Name="Callable" Type="bool" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallListDetailsMobile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallListID" Type="int4" />
+    <Property Name="FirstName" Type="varchar" MaxLength="500" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="500" />
+    <Property Name="LastName" Type="varchar" MaxLength="500" />
+    <Property Name="ScheduledTime" Type="timestamp" />
+    <Property Name="Attempts" Type="int4" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="Status" Type="int4" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="AssignedDate" Type="timestamp" />
+    <Property Name="PolicyNo" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+    <Property Name="Product" Type="varchar" MaxLength="8000" />
+    <Property Name="TennatId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallSuccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallListAttemptID" Type="int8" Nullable="false" />
+    <Property Name="ProcessDate" Type="timestamp" />
+    <Property Name="ProcessEndDate" Type="timestamp" />
+    <Property Name="ProcessID" Type="int4" />
+    <Property Name="ProcessInfo" Type="text" />
+    <Property Name="UserDisposition" Type="int4" />
+    <Property Name="EndReason" Type="varchar" MaxLength="1024" />
+    <Property Name="ModifiedDate" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CallTransferSuccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallSuccessID" Type="int8" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="StartDate" Type="timestamp" />
+    <Property Name="StopDate" Type="timestamp" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="CallDisconnectDate" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Campaign">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Description" Type="text" />
+    <Property Name="StartDate" Type="timestamp" />
+    <Property Name="EndDate" Type="timestamp" />
+    <Property Name="Active" Type="bool" Nullable="false" />
+    <Property Name="Port" Type="int4" Nullable="false" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="CallListType" Type="int2" Nullable="false" />
+    <Property Name="MaxAttempts" Type="int4" />
+    <Property Name="HoldPromptID" Type="int4" />
+    <Property Name="DispositionAlgorithm" Type="int4" Nullable="false" />
+    <Property Name="GreetingID" Type="int4" />
+    <Property Name="CampaignMode" Type="int4" />
+    <Property Name="CallFlow" Type="varchar" MaxLength="1024" />
+    <Property Name="BranchCode" Type="bpchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+    <Property Name="CampaignDID" Type="int4" />
+  </EntityType>
+  <EntityType Name="CampaignChannels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="ChannelID" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CampaignCustomFields">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="CustomFieldID" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CampaignDispositions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" />
+    <Property Name="CallDispositionID" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CampaignSettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="SettingType" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SettingName" Type="varchar" MaxLength="256" />
+    <Property Name="SettingValue" Type="varchar" MaxLength="8000" />
+    <Property Name="CanBeDeleted" Type="bool" />
+    <Property Name="IsDefault" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CampaignUserGroups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="UserGroupID" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="CampaignUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="CampaignName" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="RoleID" Type="int4" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="TenantId" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CampaignVerifiers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="VerifiersID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Channels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SystemName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Alias" Type="varchar" MaxLength="50" />
+    <Property Name="CategoryID" Type="int4" />
+    <Property Name="Type" Type="int2" />
+    <Property Name="Cli" Type="int4" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="Mode" Type="int4" Nullable="false" />
+    <Property Name="NonSoftdial" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.CheckDIDMapping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CheckDIDMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserId" Type="int4" />
+    <Property Name="DIDNumber" Type="varchar" MaxLength="50" />
+    <Property Name="GroupId" Type="int4" />
+    <Property Name="Line" Type="int4" />
+    <Property Name="Active" Type="bool" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Cityid" />
+    </Key>
+    <Property Name="Cityid" Type="int4" Nullable="false" />
+    <Property Name="Stateid" Type="int4" Nullable="false" />
+    <Property Name="Cityname" Type="varchar" MaxLength="8000" />
+    <Property Name="CityCode" Type="varchar" MaxLength="100" />
+    <Property Name="Is_Deleted" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="ClientDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CallerId" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="AlternateNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="8000" />
+    <Property Name="AlternateAddress" Type="varchar" MaxLength="8000" />
+    <Property Name="EmailID" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceBranch" Type="varchar" MaxLength="50" />
+    <Property Name="QuerySavedOn" Type="timestamp" />
+    <Property Name="StoreName" Type="varchar" MaxLength="8000" />
+    <Property Name="City" Type="varchar" MaxLength="8000" />
+    <Property Name="Location" Type="varchar" MaxLength="8000" />
+    <Property Name="ZomatoNumber" Type="varchar" MaxLength="50" />
+    <Property Name="OrderAmount" Type="varchar" MaxLength="50" />
+    <Property Name="IncommingCallId" Type="varchar" MaxLength="50" />
+    <Property Name="UserDisposition" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="Communication_Email_Emails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="PrefferredSMTPServerID" Type="int4" />
+    <Property Name="EmailTo" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="EmailCc" Type="varchar" MaxLength="8000" />
+    <Property Name="EmailBcc" Type="varchar" MaxLength="8000" />
+    <Property Name="Subject" Type="varchar" MaxLength="2048" />
+    <Property Name="Body" Type="varchar" MaxLength="8000" />
+    <Property Name="IsBodyHtml" Type="bool" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="IsProcessed" Type="bool" />
+    <Property Name="LastProcessedOn" Type="timestamp" />
+    <Property Name="Attempts" Type="int4" />
+    <Property Name="SentOn" Type="timestamp" />
+    <Property Name="Status" Type="int2" />
+    <Property Name="IsDeleted" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Communication_Email_EmailsAttachments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="EmailsID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="FilePath" Type="varchar" MaxLength="2048" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Communication_Email_EmailsAttempts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SMTPServerID" Type="int4" />
+    <Property Name="EmailsID" Type="int4" Nullable="false" />
+    <Property Name="AttemptedOn" Type="timestamp" />
+    <Property Name="IsSuccessful" Type="bool" />
+    <Property Name="Remarks" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="Communication_Email_Settings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SettingName" Type="varchar" MaxLength="300" />
+    <Property Name="SettingValue" Type="varchar" MaxLength="300" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Communication_Email_SMTPServer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Server" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Port" Type="int4" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="500" />
+    <Property Name="Passphrase" Type="varchar" MaxLength="500" />
+    <Property Name="RequireAuthentication" Type="bool" />
+    <Property Name="UseSSL" Type="bool" />
+    <Property Name="FromAddress" Type="varchar" MaxLength="512" />
+    <Property Name="FromDisplayName" Type="varchar" MaxLength="512" />
+    <Property Name="Active" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Ocean.public.count' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="count">
+          <Property Name="count" Type="int8" />
+        </EntityType>-->
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Countryid" />
+    </Key>
+    <Property Name="Countryid" Type="int4" Nullable="false" />
+    <Property Name="Countryname" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="100" />
+    <Property Name="Is_Deleted" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="DOB" Type="timestamp" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="CountryId" Type="int4" />
+    <Property Name="StateId" Type="int4" />
+    <Property Name="CityId" Type="int4" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="Pincode" Type="varchar" MaxLength="6" />
+    <Property Name="Active" Type="bool" />
+    <Property Name="UserRole" Type="int4" />
+    <Property Name="BranchID" Type="int4" />
+    <Property Name="DematAccNo" Type="varchar" MaxLength="100" />
+    <Property Name="AccountStatus" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="CustomFields">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SystemName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Editable" Type="bool" />
+    <Property Name="DisplayType" Type="int4" />
+    <Property Name="DisplayItems" Type="varchar" MaxLength="8000" />
+    <Property Name="IsMandatory" Type="bool" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="DNCList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceAreaCode" Type="varchar" MaxLength="50" />
+    <Property Name="Preferences" Type="varchar" MaxLength="50" />
+    <Property Name="Opstype" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneType" Type="varchar" MaxLength="50" />
+    <Property Name="RefNumber" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="UploadDate" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.EmailStatementRequestData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EmailStatementRequestData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CallerID" Type="varchar" MaxLength="50" />
+    <Property Name="IncomingCallID" Type="varchar" MaxLength="50" />
+    <Property Name="FolioNo" Type="varchar" MaxLength="50" />
+    <Property Name="ARNNo" Type="varchar" MaxLength="50" />
+    <Property Name="EmailID" Type="varchar" MaxLength="8000" />
+    <Property Name="Period_Type" Type="varchar" MaxLength="50" />
+    <Property Name="FromDate" Type="timestamp" />
+    <Property Name="ToDate" Type="timestamp" />
+    <Property Name="PDF_Password" Type="varchar" MaxLength="50" />
+    <Property Name="PANNo" Type="varchar" MaxLength="50" />
+    <Property Name="SubRequestType" Type="varchar" MaxLength="8000" />
+    <Property Name="RequestType" Type="varchar" MaxLength="8000" />
+    <Property Name="RequestDateTime" Type="timestamp" />
+    <Property Name="CAMSReferenceNo" Type="varchar" MaxLength="50" />
+    <Property Name="CAMSResult" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+    <Property Name="LogDate" Type="timestamp" />
+    <Property Name="ErrorDescription" Type="varchar" MaxLength="8000" />
+    <Property Name="ExceptionDescription" Type="varchar" MaxLength="8000" />
+    <Property Name="ErrorLocation" Type="varchar" MaxLength="100" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="50" />
+    <Property Name="PageTitle" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ExtensionMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="ChannelID" Type="int4" />
+    <Property Name="Gateway" Type="varchar" MaxLength="8000" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="Campaign" Type="int4" />
+    <Property Name="BranchID" Type="int4" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Extensions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChannelNo" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Flags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="8000" />
+    <Property Name="Description" Type="varchar" MaxLength="8000" />
+    <Property Name="Filepath" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="int4" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SystemName" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HMPDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="HMP_IP" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Holidays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Date" Type="timestamp" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="WavFileName" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bool" />
+    <Property Name="ServiceType" Type="int4" />
+    <Property Name="BranchCode" Type="bpchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="IncomingCalls">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallerID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CallStart" Type="timestamp" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="CallDispositionID" Type="int4" Nullable="false" />
+    <Property Name="CallEnd" Type="timestamp" />
+    <Property Name="CallWrapUpTime" Type="timestamp" />
+    <Property Name="HoldTime" Type="int8" />
+    <Property Name="UnHoldTime" Type="timestamp" />
+    <Property Name="TransferStart" Type="timestamp" />
+    <Property Name="TransferEnd" Type="timestamp" />
+    <Property Name="GroupID" Type="int2" />
+    <Property Name="CampaignID" Type="int4" />
+    <Property Name="CalleeID" Type="varchar" MaxLength="50" />
+    <Property Name="CalledUser" Type="int4" />
+    <Property Name="LastEditDate" Type="timestamp" />
+    <Property Name="CreationDate" Type="timestamp" />
+    <Property Name="ChannelId" Type="varchar" MaxLength="50" />
+    <Property Name="BaseCallerId" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsSynchronised" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="IncomingDataReceived">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="IncomingCallID" Type="int8" />
+    <Property Name="Data1" Type="varchar" MaxLength="2000" />
+    <Property Name="Data2" Type="varchar" MaxLength="2000" />
+    <Property Name="Data3" Type="varchar" MaxLength="2000" />
+    <Property Name="Data4" Type="varchar" MaxLength="2000" />
+    <Property Name="Data5" Type="varchar" MaxLength="2000" />
+    <Property Name="Data6" Type="varchar" MaxLength="2000" />
+    <Property Name="Data7" Type="varchar" MaxLength="2000" />
+    <Property Name="LastEditDate" Type="timestamp" />
+    <Property Name="CreationDate" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="IncomingEmail_Settings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="EmailID" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="out_emailid" Type="varchar" MaxLength="200" />
+    <Property Name="IncomingAliasEmail" Type="varchar" MaxLength="200" />
+    <Property Name="out_password" Type="bytea" />
+    <Property Name="Password" Type="bytea" />
+    <Property Name="IncomingMailserver" Type="varchar" MaxLength="400" />
+    <Property Name="IncomingPort" Type="varchar" MaxLength="200" />
+    <Property Name="OutgoingMailServer" Type="varchar" MaxLength="400" />
+    <Property Name="OutgoingPort" Type="varchar" MaxLength="200" />
+    <Property Name="IsSSL" Type="bool" />
+    <Property Name="UserRole" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.IncomingTransferFailed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IncomingTransferFailed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallReceivedID" Type="int8" />
+    <Property Name="StartDate" Type="timestamp" />
+    <Property Name="StopDate" Type="timestamp" />
+    <Property Name="FailureType" Type="int4" />
+    <Property Name="Remarks" Type="varchar" MaxLength="1024" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="IsViewed" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="IncomingTransferFailed_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallReceivedID" Type="int8" />
+    <Property Name="StartDate" Type="timestamp" />
+    <Property Name="StopDate" Type="timestamp" />
+    <Property Name="FailureType" Type="int4" />
+    <Property Name="Remarks" Type="varchar" MaxLength="1024" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="IsViewed" Type="bool" />
+    <Property Name="IsSendEmail" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.IncomingTransferSuccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IncomingTransferSuccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallReceivedID" Type="int8" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="StartDate" Type="timestamp" />
+    <Property Name="StopDate" Type="timestamp" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="CallDisonnectDate" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.InsertOptionSelection' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="InsertOptionSelection">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IncomingCallID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="IncomingCallID" Type="int8" Nullable="false" />
+    <Property Name="CallerID" Type="varchar" MaxLength="50" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="OptionSelected" Type="varchar" MaxLength="50" />
+    <Property Name="FolioNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CallDateTime" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="InternalTransfer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallReceivedID" Type="int8" />
+    <Property Name="IncomingTransferSuccessID" Type="int8" />
+    <Property Name="TransferInitiatorUserID" Type="int4" />
+    <Property Name="TransferredToUserID" Type="int4" />
+    <Property Name="TransferredDate" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="IVRFlowTrace">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="IncomingCallsID" Type="int8" Nullable="false" />
+    <Property Name="ResponseDateTime" Type="timestamp" />
+    <Property Name="ActionType" Type="int4" />
+    <Property Name="NodeName" Type="varchar" MaxLength="1024" />
+    <Property Name="DtmfReceived" Type="varchar" MaxLength="500" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="LeadManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="LeadId" Type="varchar" MaxLength="50" />
+    <Property Name="LeadType" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="8000" />
+    <Property Name="LeadSource" Type="varchar" MaxLength="250" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="AssignedToUser" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="8000" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="LeadType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="DOM" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+    <Property Name="Description" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="ManualDialAttempts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" />
+    <Property Name="UserId" Type="int4" />
+    <Property Name="CallListDispositionsID" Type="int4" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="AttemptDateTime" Type="timestamp" />
+    <Property Name="CallStartTime" Type="timestamp" />
+    <Property Name="CallEndTime" Type="timestamp" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="HoldTime" Type="int8" />
+    <Property Name="SystemDisposition" Type="int4" />
+    <Property Name="CallBack" Type="int2" />
+    <Property Name="LinkID" Type="varchar" MaxLength="8000" />
+    <Property Name="ScheduledDateTime" Type="timestamp" />
+    <Property Name="ReferenceID" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsSynchronised" Type="bool" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="100" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.MobileActivity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MobileActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="OldTelephoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="NewTelephoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyBy" Type="int4" />
+    <Property Name="ActivityRemarks" Type="varchar" MaxLength="200" />
+    <Property Name="DOC" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="NonBusinessHourCalls">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CallerID" Type="varchar" MaxLength="20" />
+    <Property Name="CallTime" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="OfficeServiceType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="ServiceName" Type="varchar" MaxLength="50" />
+    <Property Name="OfficeTimeServiceId" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="OfficeTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="StartTime" Type="timestamp" />
+    <Property Name="EndTime" Type="timestamp" />
+    <Property Name="Servicetype" Type="varchar" MaxLength="50" />
+    <Property Name="Days" Type="varchar" MaxLength="50" />
+    <Property Name="WeekDay" Type="int4" />
+    <Property Name="IsWorkingDay" Type="bool" />
+    <Property Name="BranchCode" Type="bpchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="OrganizationDetail">
+    <Key>
+      <PropertyRef Name="OrgID" />
+    </Key>
+    <Property Name="OrgID" Type="int4" Nullable="false" />
+    <Property Name="OrgName" Type="varchar" MaxLength="100" />
+    <Property Name="OrgOwnerName" Type="varchar" MaxLength="100" />
+    <Property Name="OrgAdd1" Type="varchar" MaxLength="100" />
+    <Property Name="OrgAdd2" Type="varchar" MaxLength="100" />
+    <Property Name="OrgAdd3" Type="varchar" MaxLength="100" />
+    <Property Name="OrgCity" Type="varchar" MaxLength="50" />
+    <Property Name="OrgPin" Type="varchar" MaxLength="50" />
+    <Property Name="OrgState" Type="varchar" MaxLength="50" />
+    <Property Name="OrgCountry" Type="varchar" MaxLength="50" />
+    <Property Name="OrgURL" Type="varchar" MaxLength="50" />
+    <Property Name="OrgPhone1" Type="varchar" MaxLength="50" />
+    <Property Name="OrgPhone2" Type="varchar" MaxLength="50" />
+    <Property Name="OrgEmail" Type="varchar" MaxLength="50" />
+    <Property Name="OrgFax" Type="varchar" MaxLength="50" />
+    <Property Name="LogoPath" Type="varchar" MaxLength="8000" />
+    <Property Name="LogoImage" Type="bytea" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.OTPGeneration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="OTPGeneration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="FolioNo" Type="varchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="bpchar" MaxLength="10" />
+    <Property Name="OTP" Type="varchar" MaxLength="50" />
+    <Property Name="DOC" Type="timestamp" />
+    <Property Name="IsOTPSend" Type="int4" />
+    <Property Name="Expiry" Type="timestamp" />
+    <Property Name="CallDateTime" Type="timestamp" />
+    <Property Name="MsgDelievered" Type="bool" />
+    <Property Name="IsOTPUsed" Type="int4" />
+    <Property Name="CallerID" Type="varchar" MaxLength="50" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="IncomingCallID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PasswordPolicy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="LoginAttempt" Type="int4" Nullable="false" />
+    <Property Name="MinPswrdLength" Type="int4" Nullable="false" />
+    <Property Name="MaxPswrdLength" Type="int4" Nullable="false" />
+    <Property Name="MinNumCount" Type="int4" Nullable="false" />
+    <Property Name="MinSymbolCount" Type="int4" Nullable="false" />
+    <Property Name="MinCapCharacterCount" Type="int4" Nullable="false" />
+    <Property Name="ExpInDays" Type="int4" Nullable="false" />
+    <Property Name="UnBLockTimeinHours" Type="int4" Nullable="false" />
+    <Property Name="Session_Timeout_min_" Type="int4" Nullable="false" />
+    <Property Name="Re_use_Password_After_Attempts_" Type="int4" Nullable="false" />
+    <Property Name="StandardPassword" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.PbxExtensions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PbxExtensions">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ChannelID" />
+      <PropertyRef Name="Number" />
+      <PropertyRef Name="DOM" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="ChannelID" Type="int4" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOM" Type="timestamp" Nullable="false" />
+    <Property Name="IsActive" Type="bool" Nullable="false" />
+    <Property Name="Campaign" Type="int4" />
+    <Property Name="FlowNumber" Type="int4" />
+    <Property Name="UserId" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+    <Property Name="CreateVoicelink" Type="bool" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="PermissionID" />
+    </Key>
+    <Property Name="PermissionID" Type="int4" Nullable="false" />
+    <Property Name="RoleID" Type="int4" />
+    <Property Name="PermissionName" Type="varchar" MaxLength="510" />
+    <Property Name="PermissionCode" Type="varchar" MaxLength="10" />
+    <Property Name="AllowDelete" Type="bool" Nullable="false" />
+    <Property Name="OrgID" Type="int4" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="int4" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.Permissions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="text" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="PlanName" Type="varchar" MaxLength="50" />
+    <Property Name="Descritpition" Type="varchar" MaxLength="50" />
+    <Property Name="Rate_Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PlanSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" Nullable="false" />
+    <Property Name="PlanId" Type="int4" Nullable="false" />
+    <Property Name="PlanName" Type="varchar" MaxLength="8000" />
+    <Property Name="SettingType" Type="varchar" MaxLength="100" />
+    <Property Name="SettingName" Type="varchar" MaxLength="256" />
+    <Property Name="SettingValue" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="PRIInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignId" Type="int4" />
+    <Property Name="PRINumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RMClientMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="ClientID" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="50" />
+    <Property Name="Userid" Type="varchar" MaxLength="8000" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="8000" />
+    <Property Name="DID" Type="int4" />
+    <Property Name="Client_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Contact_No2" Type="varchar" MaxLength="255" />
+    <Property Name="Contact_No1" Type="varchar" MaxLength="255" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int4" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+    <Property Name="RoleCode" Type="bpchar" MaxLength="3" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="int4" />
+    <Property Name="ApplicationID" Type="int4" />
+    <Property Name="PermissionID" Type="int4" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" Nullable="false" />
+    <Property Name="RoleID" Type="int4" Nullable="false" />
+    <Property Name="PermissionID" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int4" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Abbrevation" Type="varchar" MaxLength="50" />
+    <Property Name="MasterRole" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Rule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="IsEnable" Type="bool" />
+    <Property Name="RuleOrder" Type="int4" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="timestamp" />
+    <Property Name="ModifiedDate" Type="timestamp" />
+    <Property Name="CanBeDeleted" Type="bool" />
+    <Property Name="Comment" Type="varchar" MaxLength="8000" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="RuleActions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="RuleID" Type="int4" />
+    <Property Name="ActionType" Type="int4" />
+    <Property Name="ActionValues" Type="varchar" MaxLength="8000" />
+    <Property Name="ActionMessage" Type="text" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="RuleAlert">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="RuleID" Type="int4" />
+    <Property Name="AlertType" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="RuleProcess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SystemAlertID" Type="int4" />
+    <Property Name="RuleActionId" Type="int4" />
+    <Property Name="IsProcessed" Type="bool" />
+    <Property Name="ProcessAttempts" Type="int4" />
+    <Property Name="ProcessLog" Type="text" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SecurityQuestion">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="int4" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.Service_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Service_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CallCategoryID" Type="int4" />
+    <Property Name="ServiceCategory" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.Service_Type' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Service_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="ServiceCategoryID" Type="int4" />
+    <Property Name="ServiceTypes" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.SetDigit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SetDigit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Digit" Type="varchar" MaxLength="255" />
+    <Property Name="FilePath" Type="varchar" MaxLength="255" />
+    <Property Name="Mode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.SetFormat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SetFormat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="VoiceLanguage" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SettingType" Type="varchar" MaxLength="50" />
+    <Property Name="SettingName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SettingValue" Type="varchar" MaxLength="8000" />
+    <Property Name="CanBeDeleted" Type="bool" />
+    <Property Name="IsDefault" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SIPUserMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="SIPUserID" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SIPUserMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="SIPUserName" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SpeedDial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Shortcut" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="int4" />
+    <Property Name="ContactName" Type="varchar" MaxLength="8000" />
+    <Property Name="IsSystemGenerated" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Stateid" />
+    </Key>
+    <Property Name="Stateid" Type="int4" Nullable="false" />
+    <Property Name="Statename" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Countryid" Type="int4" Nullable="false" />
+    <Property Name="ZoneID" Type="int4" />
+    <Property Name="Is_Deleted" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int4" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+    <Property Name="ZoneID" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="StatusID" Type="int4" />
+    <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="StatusCode" Type="varchar" MaxLength="10" />
+    <Property Name="AllowDelete" Type="int4" />
+  </EntityType>
+  <EntityType Name="StoreMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="StoreName" Type="varchar" MaxLength="8000" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="SubRole">
+    <Key>
+      <PropertyRef Name="SubRoleID" />
+    </Key>
+    <Property Name="SubRoleID" Type="int4" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+    <Property Name="RoleCode" Type="bpchar" MaxLength="3" />
+    <Property Name="CreatedOn" Type="timestamp" />
+    <Property Name="CreatedBy" Type="int4" />
+    <Property Name="ApplicationID" Type="int4" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SubRolePermissionMapper">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SubRoleID" Type="int4" />
+    <Property Name="PermissionId" Type="int4" Nullable="false" />
+    <Property Name="Created On" Type="timestamp" />
+    <Property Name="Created By" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SystemAlerts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="SystemAlertType" Type="int4" Nullable="false" />
+    <Property Name="AlertDateTime" Type="timestamp" />
+    <Property Name="Message" Type="text" Nullable="false" />
+    <Property Name="ExtraInfo" Type="int4" />
+    <Property Name="Processed" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="SystemDisposition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="200" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.SystemUserPermissions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SystemUserPermissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="text" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="TenantAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+    <Property Name="PlanID" Type="int4" />
+    <Property Name="planActivateDate" Type="timestamp" />
+    <Property Name="PlanExpirDate" Type="timestamp" />
+    <Property Name="PulseUsed" Type="varchar" MaxLength="250" />
+    <Property Name="LastUpdateDatetime" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="Tenants">
+    <Key>
+      <PropertyRef Name="TenantID" />
+    </Key>
+    <Property Name="TenantID" Type="int8" Nullable="false" />
+    <Property Name="TenantName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenantAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TenantCity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenantCountry" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenantPinCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenantContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenantMobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WebURL" Type="varchar" MaxLength="50" />
+    <Property Name="CreationTime" Type="timestamp" Nullable="false" />
+    <Property Name="IsActive" Type="bool" Nullable="false" />
+    <Property Name="IsDeleted" Type="bool" Nullable="false" />
+    <Property Name="DeleterUserId" Type="int4" Nullable="false" />
+    <Property Name="DeletionTime" Type="timestamp" Nullable="false" />
+    <Property Name="LastModificationTime" Type="timestamp" Nullable="false" />
+    <Property Name="LastModifierUserId" Type="int4" Nullable="false" />
+    <Property Name="CreatorUserId" Type="int4" Nullable="false" />
+    <Property Name="Plan_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PlanExpiryDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lic_Days" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserCode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="Gender" Type="bpchar" MaxLength="1" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="BranchId" Type="int4" />
+    <Property Name="Flat_Building" Type="varchar" MaxLength="50" />
+    <Property Name="Street_lane" Type="varchar" MaxLength="50" />
+    <Property Name="CityID" Type="int4" />
+    <Property Name="StateID" Type="int4" />
+    <Property Name="CountryID" Type="int4" />
+    <Property Name="Landmark" Type="varchar" MaxLength="50" />
+    <Property Name="PinCode" Type="varchar" MaxLength="10" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="15" />
+    <Property Name="Mobile" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="timestamp" Nullable="false" />
+    <Property Name="CreatedBy" Type="int4" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordQuestionID" Type="int4" />
+    <Property Name="PasswordAnswer" Type="varchar" MaxLength="50" />
+    <Property Name="IsPasswordSystemGenerated" Type="bool" />
+    <Property Name="LastPasswordChangedDate" Type="timestamp" />
+    <Property Name="FailedPasswordAttemptCount" Type="int4" />
+    <Property Name="IsPasswordReset" Type="bool" />
+    <Property Name="LastLockoutDate" Type="timestamp" />
+    <Property Name="LastLoginDate" Type="timestamp" />
+    <Property Name="IsFirstLogin" Type="bool" />
+    <Property Name="IsLocked" Type="bool" Nullable="false" />
+    <Property Name="IsActive" Type="bool" Nullable="false" />
+    <Property Name="IsloggedIn" Type="bool" />
+    <Property Name="Tokken" Type="varchar" MaxLength="8000" />
+    <Property Name="CallDestination" Type="int4" />
+    <Property Name="EscalationMail1" Type="varchar" MaxLength="225" />
+    <Property Name="EscalationMail2" Type="varchar" MaxLength="225" />
+    <Property Name="TerminalID" Type="varchar" MaxLength="255" />
+    <Property Name="BranchIds" Type="varchar" MaxLength="8000" />
+    <Property Name="CallPreference" Type="int4" />
+    <Property Name="TenantID" Type="int4" />
+    <Property Name="VirtualExtension" Type="int4" />
+  </EntityType>
+  <EntityType Name="User_CTI_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="UserId" Type="int4" />
+    <Property Name="CurrentCampaign" Type="int4" />
+    <Property Name="RoleID" Type="int4" />
+    <Property Name="StatusID" Type="int4" />
+    <Property Name="Workstation" Type="varchar" MaxLength="100" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="StatusDateTime" Type="timestamp" />
+    <Property Name="GroupId" Type="int4" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsLoggedIn" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserActivity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="int4" Nullable="false" />
+    <Property Name="UserSessionID" Type="int4" />
+    <Property Name="ActivityDone" Type="varchar" MaxLength="255" />
+    <Property Name="ActivityTime" Type="timestamp" />
+    <Property Name="ActivityPage" Type="varchar" MaxLength="100" />
+    <Property Name="AttemptUserID" Type="varchar" MaxLength="50" />
+    <Property Name="MachineIP" Type="varchar" MaxLength="100" />
+    <Property Name="MachineName" Type="varchar" MaxLength="100" />
+    <Property Name="MachineUserName" Type="varchar" MaxLength="100" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserBranchAccess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="UserId" Type="int4" />
+    <Property Name="BranchId" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserBranchDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="ZoneID" Type="int4" />
+    <Property Name="StateID" Type="int4" />
+    <Property Name="BranchId" Type="int4" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserBranchMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="BranchId" Type="int4" Nullable="false" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="IsDefault" Type="bool" />
+    <Property Name="CreatedBy" Type="int4" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserBreaks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" />
+    <Property Name="BreakStart" Type="timestamp" Nullable="false" />
+    <Property Name="BreakStop" Type="timestamp" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsSynchronised" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserCampaignMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CampaignID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDefinedRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int4" Nullable="false" />
+    <Property Name="Rolename" Type="varchar" MaxLength="8000" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Ocean.public.UserDefinedRoleDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserDefinedRoleDetails">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int4" Nullable="false" />
+    <Property Name="PermissionID" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserGroupDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserGroupID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="IscampaignSupervisor" Type="bool" />
+    <Property Name="IsSuperVisior" Type="bool" Nullable="false" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserGroups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="GroupName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SystemName" Type="varchar" MaxLength="50" />
+    <Property Name="CanBeDeleted" Type="bool" />
+    <Property Name="Type" Type="int4" />
+    <Property Name="CustomQuery" Type="varchar" MaxLength="8000" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserLog">
+    <Key>
+      <PropertyRef Name="UserLogID" />
+    </Key>
+    <Property Name="UserLogID" Type="int8" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="MachineID" Type="varchar" MaxLength="50" />
+    <Property Name="LoginDateTime" Type="timestamp" />
+    <Property Name="LogoutDateTime" Type="timestamp" />
+    <Property Name="LoginLogoutRemarks" Type="varchar" MaxLength="250" />
+    <Property Name="UserIPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="WinLoginName" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserMappingwithUserDefinedRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="RoleID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="IsAssigned" Type="bool" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserMissedCallDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="CallReceivedID" Type="int8" />
+    <Property Name="CallerID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" />
+    <Property Name="ClientName" Type="varchar" MaxLength="8000" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="50" />
+    <Property Name="CallDateTime" Type="timestamp" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="AssignDateTime" Type="timestamp" />
+    <Property Name="IsDialed" Type="bool" />
+    <Property Name="DialedDateTime" Type="timestamp" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserMobileMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="CampaignID" Type="int4" />
+    <Property Name="IsCampaignActive" Type="bool" />
+    <Property Name="Active" Type="bool" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserPermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="UserId" Type="int4" Nullable="false" />
+    <Property Name="PermissionId" Type="int4" Nullable="false" />
+    <Property Name="IsGranted" Type="bool" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int4" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="56" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Audit">
+    <Key>
+      <PropertyRef Name="UA_ID" />
+    </Key>
+    <Property Name="UA_ID" Type="int4" Nullable="false" />
+    <Property Name="UserID" Type="int4" Nullable="false" />
+    <Property Name="UserFName" Type="varchar" MaxLength="25" />
+    <Property Name="UserMName" Type="varchar" MaxLength="25" />
+    <Property Name="UserLName" Type="varchar" MaxLength="25" />
+    <Property Name="UserRole" Type="int4" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="50" />
+    <Property Name="UserPhoneCode" Type="bpchar" MaxLength="10" />
+    <Property Name="UserPhone" Type="varchar" MaxLength="50" />
+    <Property Name="UserMobile" Type="varchar" MaxLength="25" />
+    <Property Name="DOB" Type="timestamp" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="IsActive" Type="bool" Nullable="false" />
+    <Property Name="CanBeDeleted" Type="bool" Nullable="false" />
+    <Property Name="UserCreatedOn" Type="timestamp" />
+    <Property Name="CountryID" Type="int4" />
+    <Property Name="StateID" Type="int4" />
+    <Property Name="EmailValid" Type="bool" Nullable="false" />
+    <Property Name="VerifyImageText" Type="varchar" MaxLength="50" />
+    <Property Name="IsBlock" Type="bool" Nullable="false" />
+    <Property Name="BlockTime" Type="timestamp" />
+    <Property Name="UserPassword" Type="bytea" />
+    <Property Name="EmailSignature" Type="varchar" MaxLength="8000" />
+    <Property Name="ModuleId" Type="int4" />
+    <Property Name="UserTypeId" Type="int4" />
+    <Property Name="IsAdmin" Type="bool" Nullable="false" />
+    <Property Name="Question_ID" Type="int4" />
+    <Property Name="Answer" Type="bytea" />
+    <Property Name="UpdatePassword" Type="int4" />
+    <Property Name="UserDescription" Type="varchar" MaxLength="8000" />
+    <Property Name="CurrentUserID" Type="int4" />
+    <Property Name="InsertedOn_Date" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="UserSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="UserAccountId" Type="int4" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="timestamp" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="int4" Nullable="false" />
+    <Property Name="UserId" Type="int4" Nullable="false" />
+    <Property Name="RoleId" Type="int4" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="UserStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="UsersID" Type="int4" Nullable="false" />
+    <Property Name="CurrentCampaign" Type="int4" Nullable="false" />
+    <Property Name="Status" Type="int4" Nullable="false" />
+    <Property Name="RoleID" Type="int4" Nullable="false" />
+    <Property Name="InTime" Type="timestamp" />
+    <Property Name="OutTime" Type="timestamp" />
+    <Property Name="SessionID" Type="int8" />
+  </EntityType>
+  <EntityType Name="Verifiers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="VoiceLogs_CallDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int8" Nullable="false" />
+    <Property Name="CallID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="int4" />
+    <Property Name="CallDateTime" Type="timestamp" />
+    <Property Name="CampaignID" Type="int4" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="CallerID" Type="varchar" MaxLength="50" />
+    <Property Name="CallType" Type="varchar" MaxLength="50" />
+    <Property Name="Comments" Type="varchar" MaxLength="800" />
+    <Property Name="FilePath" Type="varchar" MaxLength="8000" />
+    <Property Name="ChannelNo" Type="int4" />
+    <Property Name="AttemptID" Type="int4" />
+    <Property Name="Duration" Type="float8" />
+    <Property Name="CustomData1" Type="varchar" MaxLength="8000" />
+    <Property Name="CustomData2" Type="varchar" MaxLength="8000" />
+    <Property Name="CustomData3" Type="varchar" MaxLength="8000" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="8000" />
+    <Property Name="IsSynchronised" Type="bool" Nullable="false" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="VoiceMail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" Nullable="false" />
+    <Property Name="IncommingCallId" Type="varchar" MaxLength="50" />
+    <Property Name="CallerId" Type="varchar" MaxLength="20" />
+    <Property Name="SelectedOption" Type="varchar" MaxLength="50" />
+    <Property Name="WavFile" Type="varchar" MaxLength="200" />
+    <Property Name="Duration" Type="float8" />
+    <Property Name="RecordDtTime" Type="timestamp" />
+    <Property Name="PlayedDtTime" Type="timestamp" />
+    <Property Name="DispositionId" Type="int4" />
+    <Property Name="PlayedBy" Type="int4" />
+    <Property Name="AssignedTo" Type="int2" />
+    <Property Name="AssignedBy" Type="int2" />
+    <Property Name="AssignedDate" Type="timestamp" />
+    <Property Name="TicketNo" Type="varchar" MaxLength="15" />
+    <Property Name="Priority" Type="int4" />
+    <Property Name="IsPlayed" Type="bool" />
+    <Property Name="IsAbandond" Type="bool" />
+    <Property Name="ManualDailId" Type="varchar" MaxLength="500" />
+    <Property Name="AuditId" Type="int4" />
+    <Property Name="Comments" Type="varchar" MaxLength="800" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Workstations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int4" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="FXO" Type="varchar" MaxLength="50" />
+    <Property Name="FXS" Type="varchar" MaxLength="50" />
+    <Property Name="PhysicalExtension" Type="varchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <EntityType Name="Zone">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="int4" Nullable="false" />
+    <Property Name="ZoneName" Type="varchar" MaxLength="50" />
+    <Property Name="Is_Deleted" Type="int4" />
+    <Property Name="TenantId" Type="int4" />
+  </EntityType>
+  <Association Name="FK__AgentCall__UserI__5EAAD05B">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AgentCallTimeStatus" Type="Self.AgentCallTimeStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AgentCallTimeStatus">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AgentCall__UserI__61873D06">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AgentCallTimeStatusLog" Type="Self.AgentCallTimeStatusLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AgentCallTimeStatusLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CallListD__CallL__15C52FC4">
+    <End Role="CallListDetails" Type="Self.CallListDetails" Multiplicity="1" />
+    <End Role="CallListDetailsAdditional" Type="Self.CallListDetailsAdditional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallListDetailsAdditional">
+        <PropertyRef Name="CallListDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CallListD__CallL__16B953FD">
+    <End Role="CallListDetails" Type="Self.CallListDetails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallListDetailsAdditional" Type="Self.CallListDetailsAdditional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallListDetailsAdditional">
+        <PropertyRef Name="CallListDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CallListD__CallL__6D980E30">
+    <End Role="CallListDetails" Type="Self.CallListDetails" Multiplicity="1" />
+    <End Role="CallListDetailsAdditional" Type="Self.CallListDetailsAdditional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallListDetailsAdditional">
+        <PropertyRef Name="CallListDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__Stateid__5F492382">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Stateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__Stateid__6F8056A2">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Stateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RuleAlert__RuleI__0D44F85C">
+    <End Role="Rule" Type="Self.Rule" Multiplicity="0..1" />
+    <End Role="RuleAlert" Type="Self.RuleAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RuleAlert">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RuleAlert__RuleI__70747ADB">
+    <End Role="Rule" Type="Self.Rule" Multiplicity="0..1" />
+    <End Role="RuleAlert" Type="Self.RuleAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RuleAlert">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__Countryid__57A801BA">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="Countryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__Countryid__71689F14">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="Countryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccessControlList_AccessPanel">
+    <End Role="AccessPanel" Type="Self.AccessPanel" Multiplicity="1" />
+    <End Role="AccessControlList" Type="Self.AccessControlList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessPanel">
+        <PropertyRef Name="AId" />
+      </Principal>
+      <Dependent Role="AccessControlList">
+        <PropertyRef Name="AccessControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_AddressBook">
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="1" />
+    <End Role="AddressBook1" Type="Self.AddressBook" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AddressBook">
+        <PropertyRef Name="Addressid" />
+      </Principal>
+      <Dependent Role="AddressBook1">
+        <PropertyRef Name="Addressid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="HomeCityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_City1">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="BusinessCityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_Country">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="HomeCityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_Country1">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="BusinessCountryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="HomeStateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_State1">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="BusinessStateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppRolePermissionMapper_Permission">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="1" />
+    <End Role="AppRolePermissionMapper" Type="Self.AppRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="AppRolePermissionMapper">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppRolePermissionMapper_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AppRolePermissionMapper" Type="Self.AppRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AppRolePermissionMapper">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDetail_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="BranchDetail">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDetail_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="BranchDetail">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDetail_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="BranchDetail">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchGateWayMapping_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="0..1" />
+    <End Role="BranchGatewayMapping" Type="Self.BranchGatewayMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BranchGatewayMapping">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallDispositions_CallDispositions">
+    <End Role="CallDispositions" Type="Self.CallDispositions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignDispositions" Type="Self.CampaignDispositions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallDispositions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignDispositions">
+        <PropertyRef Name="CallDispositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallSuccess_CallListAttempts">
+    <End Role="CallListAttempts" Type="Self.CallListAttempts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallSuccess" Type="Self.CallSuccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListAttempts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallSuccess">
+        <PropertyRef Name="CallListAttemptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallTransferSuccess_CallSuccess">
+    <End Role="CallSuccess" Type="Self.CallSuccess" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallTransferSuccess" Type="Self.CallTransferSuccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallSuccess">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallTransferSuccess">
+        <PropertyRef Name="CallSuccessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignChannels_Channels">
+    <End Role="Channels" Type="Self.Channels" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignChannels" Type="Self.CampaignChannels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Channels">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignChannels">
+        <PropertyRef Name="ChannelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignCustomFields_CustomFields">
+    <End Role="CustomFields" Type="Self.CustomFields" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignCustomFields" Type="Self.CampaignCustomFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomFields">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignCustomFields">
+        <PropertyRef Name="CustomFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignUserGroups_UserGroups">
+    <End Role="UserGroups" Type="Self.UserGroups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignUserGroups" Type="Self.CampaignUserGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignUserGroups">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignVerifiers_Verifiers">
+    <End Role="Verifiers" Type="Self.Verifiers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignVerifiers" Type="Self.CampaignVerifiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Verifiers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignVerifiers">
+        <PropertyRef Name="VerifiersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_Emails_Communication_Email_SMTPServer">
+    <End Role="Communication_Email_SMTPServer" Type="Self.Communication_Email_SMTPServer" Multiplicity="0..1" />
+    <End Role="Communication_Email_Emails" Type="Self.Communication_Email_Emails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_SMTPServer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_Emails">
+        <PropertyRef Name="PrefferredSMTPServerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_EmailsAttachments_Communication_Email_Em">
+    <End Role="Communication_Email_Emails" Type="Self.Communication_Email_Emails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Communication_Email_EmailsAttachments" Type="Self.Communication_Email_EmailsAttachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_Emails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_EmailsAttachments">
+        <PropertyRef Name="EmailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_EmailsAttempts_Communication_Email_Email">
+    <End Role="Communication_Email_Emails" Type="Self.Communication_Email_Emails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Communication_Email_EmailsAttempts" Type="Self.Communication_Email_EmailsAttempts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_Emails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_EmailsAttempts">
+        <PropertyRef Name="EmailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS">
+    <End Role="Communication_Email_SMTPServer" Type="Self.Communication_Email_SMTPServer" Multiplicity="0..1" />
+    <End Role="Communication_Email_EmailsAttempts" Type="Self.Communication_Email_EmailsAttempts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_SMTPServer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_EmailsAttempts">
+        <PropertyRef Name="SMTPServerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExtensionMapping_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="0..1" />
+    <End Role="ExtensionMapping" Type="Self.ExtensionMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ExtensionMapping">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDataReceived_IncomingCalls">
+    <End Role="IncomingCalls" Type="Self.IncomingCalls" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IncomingDataReceived" Type="Self.IncomingDataReceived" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomingCalls">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IncomingDataReceived">
+        <PropertyRef Name="IncomingCallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_Application">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="0..1" />
+    <End Role="Role" Type="Self.Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="PermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermission_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="RolePermission" Type="Self.RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRole_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="SubRole" Type="Self.SubRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationID" />
+      </Principal>
+      <Dependent Role="SubRole">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRolePermissionMapper_Permission">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="1" />
+    <End Role="SubRolePermissionMapper" Type="Self.SubRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="SubRolePermissionMapper">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRolePermissionMapper_SubRole">
+    <End Role="SubRole" Type="Self.SubRole" Multiplicity="0..1" />
+    <End Role="SubRolePermissionMapper" Type="Self.SubRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRole">
+        <PropertyRef Name="SubRoleID" />
+      </Principal>
+      <Dependent Role="SubRolePermissionMapper">
+        <PropertyRef Name="SubRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User1" Type="Self.User" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBranchDetails_BranchDetail">
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="0..1" />
+    <End Role="UserBranchDetails" Type="Self.UserBranchDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchDetail">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="UserBranchDetails">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBranchDetails_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="UserBranchDetails" Type="Self.UserBranchDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="UserBranchDetails">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBranchDetails_Zone">
+    <End Role="Zone" Type="Self.Zone" Multiplicity="0..1" />
+    <End Role="UserBranchDetails" Type="Self.UserBranchDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zone">
+        <PropertyRef Name="ZoneID" />
+      </Principal>
+      <Dependent Role="UserBranchDetails">
+        <PropertyRef Name="ZoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBreaks_UserBreaks1">
+    <End Role="UserBreaks" Type="Self.UserBreaks" Multiplicity="1" />
+    <End Role="UserBreaks1" Type="Self.UserBreaks" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserBreaks">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserBreaks1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroupDetails_UserGroups">
+    <End Role="UserGroups" Type="Self.UserGroups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserGroupDetails" Type="Self.UserGroupDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserGroupDetails">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole">
+    <End Role="UserDefinedRole" Type="Self.UserDefinedRole" Multiplicity="1" />
+    <End Role="UserMappingwithUserDefinedRole" Type="Self.UserMappingwithUserDefinedRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDefinedRole">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="UserMappingwithUserDefinedRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubRoleId">
+    <End Role="SubRole" Type="Self.SubRole" Multiplicity="0..1" />
+    <End Role="AppRolePermissionMapper" Type="Self.AppRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRole">
+        <PropertyRef Name="SubRoleID" />
+      </Principal>
+      <Dependent Role="AppRolePermissionMapper">
+        <PropertyRef Name="SubRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OceanModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AccessControlList" EntityType="Self.AccessControlList" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AccessPanel" EntityType="Self.AccessPanel" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Activitylog" EntityType="Self.Activitylog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AddressBook" EntityType="Self.AddressBook" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AgentCallTimeStatus" EntityType="Self.AgentCallTimeStatus" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AgentCallTimeStatusLog" EntityType="Self.AgentCallTimeStatusLog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AlertDescription" EntityType="Self.AlertDescription" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AppRolePermissionMapper" EntityType="Self.AppRolePermissionMapper" Schema="public" store:Type="Tables" />
+    <EntitySet Name="BlockCallerList" EntityType="Self.BlockCallerList" Schema="public" store:Type="Tables" />
+    <EntitySet Name="BranchDetail" EntityType="Self.BranchDetail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="BranchGatewayMapping" EntityType="Self.BranchGatewayMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="BranchMaster" EntityType="Self.BranchMaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Breaks" EntityType="Self.Breaks" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallBacksMissed" EntityType="Self.CallBacksMissed" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallDestinationMaster" EntityType="Self.CallDestinationMaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallDispositions" EntityType="Self.CallDispositions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallList" EntityType="Self.CallList" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallListAttempts" EntityType="Self.CallListAttempts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallListDetails" EntityType="Self.CallListDetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallListDetailsAdditional" EntityType="Self.CallListDetailsAdditional" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallListDetailsMobile" EntityType="Self.CallListDetailsMobile" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallSuccess" EntityType="Self.CallSuccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CallTransferSuccess" EntityType="Self.CallTransferSuccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Campaign" EntityType="Self.Campaign" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignChannels" EntityType="Self.CampaignChannels" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignCustomFields" EntityType="Self.CampaignCustomFields" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignDispositions" EntityType="Self.CampaignDispositions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignSettings" EntityType="Self.CampaignSettings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignUserGroups" EntityType="Self.CampaignUserGroups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignUsers" EntityType="Self.CampaignUsers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CampaignVerifiers" EntityType="Self.CampaignVerifiers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Channels" EntityType="Self.Channels" Schema="public" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ClientDetails" EntityType="Self.ClientDetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Communication_Email_Emails" EntityType="Self.Communication_Email_Emails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Communication_Email_EmailsAttachments" EntityType="Self.Communication_Email_EmailsAttachments" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Communication_Email_EmailsAttempts" EntityType="Self.Communication_Email_EmailsAttempts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Communication_Email_Settings" EntityType="Self.Communication_Email_Settings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Communication_Email_SMTPServer" EntityType="Self.Communication_Email_SMTPServer" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="public" store:Type="Tables" />
+    <EntitySet Name="CustomFields" EntityType="Self.CustomFields" Schema="public" store:Type="Tables" />
+    <EntitySet Name="DNCList" EntityType="Self.DNCList" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ExtensionMapping" EntityType="Self.ExtensionMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Extensions" EntityType="Self.Extensions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Flags" EntityType="Self.Flags" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="HMPDetails" EntityType="Self.HMPDetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Holidays" EntityType="Self.Holidays" Schema="public" store:Type="Tables" />
+    <EntitySet Name="IncomingCalls" EntityType="Self.IncomingCalls" Schema="public" store:Type="Tables" />
+    <EntitySet Name="IncomingDataReceived" EntityType="Self.IncomingDataReceived" Schema="public" store:Type="Tables" />
+    <EntitySet Name="IncomingEmail_Settings" EntityType="Self.IncomingEmail_Settings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="IncomingTransferFailed_History" EntityType="Self.IncomingTransferFailed_History" Schema="public" store:Type="Tables" />
+    <EntitySet Name="InternalTransfer" EntityType="Self.InternalTransfer" Schema="public" store:Type="Tables" />
+    <EntitySet Name="IVRFlowTrace" EntityType="Self.IVRFlowTrace" Schema="public" store:Type="Tables" />
+    <EntitySet Name="LeadManagement" EntityType="Self.LeadManagement" Schema="public" store:Type="Tables" />
+    <EntitySet Name="LeadType" EntityType="Self.LeadType" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ManualDialAttempts" EntityType="Self.ManualDialAttempts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="NonBusinessHourCalls" EntityType="Self.NonBusinessHourCalls" Schema="public" store:Type="Tables" />
+    <EntitySet Name="OfficeServiceType" EntityType="Self.OfficeServiceType" Schema="public" store:Type="Tables" />
+    <EntitySet Name="OfficeTime" EntityType="Self.OfficeTime" Schema="public" store:Type="Tables" />
+    <EntitySet Name="OrganizationDetail" EntityType="Self.OrganizationDetail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="PasswordPolicy" EntityType="Self.PasswordPolicy" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" Schema="public" store:Type="Tables" />
+    <EntitySet Name="PlanSettings" EntityType="Self.PlanSettings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="PRIInfo" EntityType="Self.PRIInfo" Schema="public" store:Type="Tables" />
+    <EntitySet Name="RMClientMapping" EntityType="Self.RMClientMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="public" store:Type="Tables" />
+    <EntitySet Name="RolePermission" EntityType="Self.RolePermission" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Rule" EntityType="Self.Rule" Schema="public" store:Type="Tables" />
+    <EntitySet Name="RuleActions" EntityType="Self.RuleActions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="RuleAlert" EntityType="Self.RuleAlert" Schema="public" store:Type="Tables" />
+    <EntitySet Name="RuleProcess" EntityType="Self.RuleProcess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SecurityQuestion" EntityType="Self.SecurityQuestion" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SIPUserMapping" EntityType="Self.SIPUserMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SIPUserMaster" EntityType="Self.SIPUserMaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SpeedDial" EntityType="Self.SpeedDial" Schema="public" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="public" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="public" store:Type="Tables" />
+    <EntitySet Name="StoreMaster" EntityType="Self.StoreMaster" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SubRole" EntityType="Self.SubRole" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SubRolePermissionMapper" EntityType="Self.SubRolePermissionMapper" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SystemAlerts" EntityType="Self.SystemAlerts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="SystemDisposition" EntityType="Self.SystemDisposition" Schema="public" store:Type="Tables" />
+    <EntitySet Name="TenantAudit" EntityType="Self.TenantAudit" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Tenants" EntityType="Self.Tenants" Schema="public" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="public" store:Type="Tables" />
+    <EntitySet Name="User_CTI_Details" EntityType="Self.User_CTI_Details" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserActivity" EntityType="Self.UserActivity" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserBranchAccess" EntityType="Self.UserBranchAccess" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserBranchDetails" EntityType="Self.UserBranchDetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserBranchMapping" EntityType="Self.UserBranchMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserBreaks" EntityType="Self.UserBreaks" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserCampaignMapping" EntityType="Self.UserCampaignMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserDefinedRole" EntityType="Self.UserDefinedRole" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserGroupDetails" EntityType="Self.UserGroupDetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserGroups" EntityType="Self.UserGroups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserMappingwithUserDefinedRole" EntityType="Self.UserMappingwithUserDefinedRole" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserMissedCallDetail" EntityType="Self.UserMissedCallDetail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserMobileMapping" EntityType="Self.UserMobileMapping" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserPermissions" EntityType="Self.UserPermissions" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Users_Audit" EntityType="Self.Users_Audit" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserSecurity" EntityType="Self.UserSecurity" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UsersInRoles" EntityType="Self.UsersInRoles" Schema="public" store:Type="Tables" />
+    <EntitySet Name="UserStatus" EntityType="Self.UserStatus" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Verifiers" EntityType="Self.Verifiers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="VoiceLogs_CallDetails" EntityType="Self.VoiceLogs_CallDetails" Schema="public" store:Type="Tables" />
+    <EntitySet Name="VoiceMail" EntityType="Self.VoiceMail" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Workstations" EntityType="Self.Workstations" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Zone" EntityType="Self.Zone" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AdminMenu" EntityType="Self.AdminMenu" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "AdminMenu"."ID", "AdminMenu"."MenuName", "AdminMenu"."ParentMenuID", "AdminMenu"."ShortCode" FROM "public"."AdminMenu" AS "AdminMenu"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BoardModel" EntityType="Self.BoardModel" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "BoardModel"."BoardId", "BoardModel"."ProductId", "BoardModel"."ModalName", "BoardModel"."Manufacturer" FROM "public"."BoardModel" AS "BoardModel"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Call_Category" EntityType="Self.Call_Category" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "Call_Category"."ID", "Call_Category"."CallCategory" FROM "public"."Call_Category" AS "Call_Category"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CallConnectionDetails" EntityType="Self.CallConnectionDetails" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "CallConnectionDetails"."Id", "CallConnectionDetails"."CallDetailsId", "CallConnectionDetails"."CallAttemptId", "CallConnectionDetails"."AgentTelephone", "CallConnectionDetails"."CustomerTelephone", "CallConnectionDetails"."AgentStatus", "CallConnectionDetails"."CustomerStatus", "CallConnectionDetails"."CallDateTime", "CallConnectionDetails"."DOM" FROM "public"."CallConnectionDetails" AS "CallConnectionDetails"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CheckDIDMapping" EntityType="Self.CheckDIDMapping" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "CheckDIDMapping"."ID", "CheckDIDMapping"."UserId", "CheckDIDMapping"."DIDNumber", "CheckDIDMapping"."GroupId", "CheckDIDMapping"."Line", "CheckDIDMapping"."Active" FROM "public"."CheckDIDMapping" AS "CheckDIDMapping"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EmailStatementRequestData" EntityType="Self.EmailStatementRequestData" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "EmailStatementRequestData"."ID", "EmailStatementRequestData"."CallerID", "EmailStatementRequestData"."IncomingCallID", "EmailStatementRequestData"."FolioNo", "EmailStatementRequestData"."ARNNo", "EmailStatementRequestData"."EmailID", "EmailStatementRequestData"."Period_Type", "EmailStatementRequestData"."FromDate", "EmailStatementRequestData"."ToDate", "EmailStatementRequestData"."PDF_Password", "EmailStatementRequestData"."PANNo", "EmailStatementRequestData"."SubRequestType", "EmailStatementRequestData"."RequestType", "EmailStatementRequestData"."RequestDateTime", "EmailStatementRequestData"."CAMSReferenceNo", "EmailStatementRequestData"."CAMSResult" FROM "public"."EmailStatementRequestData" AS "EmailStatementRequestData"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IncomingTransferFailed" EntityType="Self.IncomingTransferFailed" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "IncomingTransferFailed"."ID", "IncomingTransferFailed"."CallReceivedID", "IncomingTransferFailed"."StartDate", "IncomingTransferFailed"."StopDate", "IncomingTransferFailed"."FailureType", "IncomingTransferFailed"."Remarks", "IncomingTransferFailed"."UserID", "IncomingTransferFailed"."Extension", "IncomingTransferFailed"."IsViewed", "IncomingTransferFailed"."TenantId" FROM "public"."IncomingTransferFailed" AS "IncomingTransferFailed"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IncomingTransferSuccess" EntityType="Self.IncomingTransferSuccess" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "IncomingTransferSuccess"."ID", "IncomingTransferSuccess"."CallReceivedID", "IncomingTransferSuccess"."UserID", "IncomingTransferSuccess"."StartDate", "IncomingTransferSuccess"."StopDate", "IncomingTransferSuccess"."Extension", "IncomingTransferSuccess"."CallDisonnectDate", "IncomingTransferSuccess"."TenantId" FROM "public"."IncomingTransferSuccess" AS "IncomingTransferSuccess"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="InsertOptionSelection" EntityType="Self.InsertOptionSelection" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "InsertOptionSelection"."ID", "InsertOptionSelection"."IncomingCallID", "InsertOptionSelection"."CallerID", "InsertOptionSelection"."Language", "InsertOptionSelection"."OptionSelected", "InsertOptionSelection"."FolioNumber", "InsertOptionSelection"."CallDateTime", "InsertOptionSelection"."TenantId" FROM "public"."InsertOptionSelection" AS "InsertOptionSelection"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MobileActivity" EntityType="Self.MobileActivity" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "MobileActivity"."ID", "MobileActivity"."OldTelephoneNo", "MobileActivity"."NewTelephoneNo", "MobileActivity"."ModifyBy", "MobileActivity"."ActivityRemarks", "MobileActivity"."DOC" FROM "public"."MobileActivity" AS "MobileActivity"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OTPGeneration" EntityType="Self.OTPGeneration" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "OTPGeneration"."ID", "OTPGeneration"."FolioNo", "OTPGeneration"."MobileNumber", "OTPGeneration"."OTP", "OTPGeneration"."DOC", "OTPGeneration"."IsOTPSend", "OTPGeneration"."Expiry", "OTPGeneration"."CallDateTime", "OTPGeneration"."MsgDelievered", "OTPGeneration"."IsOTPUsed", "OTPGeneration"."CallerID", "OTPGeneration"."ClientCode", "OTPGeneration"."UserID", "OTPGeneration"."IncomingCallID" FROM "public"."OTPGeneration" AS "OTPGeneration"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PbxExtensions" EntityType="Self.PbxExtensions" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "PbxExtensions"."ID", "PbxExtensions"."ChannelID", "PbxExtensions"."Number", "PbxExtensions"."DOM", "PbxExtensions"."IsActive", "PbxExtensions"."Campaign", "PbxExtensions"."FlowNumber", "PbxExtensions"."UserId", "PbxExtensions"."TenantId", "PbxExtensions"."CreateVoicelink" FROM "public"."PbxExtensions" AS "PbxExtensions"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Permissions" EntityType="Self.Permissions" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "Permissions"."ID", "Permissions"."Name", "Permissions"."Remark", "Permissions"."TenantId" FROM "public"."Permissions" AS "Permissions"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Service_Category" EntityType="Self.Service_Category" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "Service_Category"."ID", "Service_Category"."CallCategoryID", "Service_Category"."ServiceCategory" FROM "public"."Service_Category" AS "Service_Category"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Service_Type" EntityType="Self.Service_Type" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "Service_Type"."ID", "Service_Type"."ServiceCategoryID", "Service_Type"."ServiceTypes" FROM "public"."Service_Type" AS "Service_Type"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SetDigit" EntityType="Self.SetDigit" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "SetDigit"."ID", "SetDigit"."Digit", "SetDigit"."FilePath", "SetDigit"."Mode" FROM "public"."SetDigit" AS "SetDigit"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SetFormat" EntityType="Self.SetFormat" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "SetFormat"."ID", "SetFormat"."VoiceLanguage" FROM "public"."SetFormat" AS "SetFormat"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SystemUserPermissions" EntityType="Self.SystemUserPermissions" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "SystemUserPermissions"."ID", "SystemUserPermissions"."Name", "SystemUserPermissions"."Remark", "SystemUserPermissions"."TenantId" FROM "public"."SystemUserPermissions" AS "SystemUserPermissions"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserDefinedRoleDetails" EntityType="Self.UserDefinedRoleDetails" store:Type="Tables" store:Schema="public">
+      <DefiningQuery>SELECT "UserDefinedRoleDetails"."RoleID", "UserDefinedRoleDetails"."PermissionID" FROM "public"."UserDefinedRoleDetails" AS "UserDefinedRoleDetails"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__AgentCall__UserI__5EAAD05B" Association="Self.FK__AgentCall__UserI__5EAAD05B">
+      <End Role="User" EntitySet="User" />
+      <End Role="AgentCallTimeStatus" EntitySet="AgentCallTimeStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AgentCall__UserI__61873D06" Association="Self.FK__AgentCall__UserI__61873D06">
+      <End Role="User" EntitySet="User" />
+      <End Role="AgentCallTimeStatusLog" EntitySet="AgentCallTimeStatusLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CallListD__CallL__15C52FC4" Association="Self.FK__CallListD__CallL__15C52FC4">
+      <End Role="CallListDetails" EntitySet="CallListDetails" />
+      <End Role="CallListDetailsAdditional" EntitySet="CallListDetailsAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CallListD__CallL__16B953FD" Association="Self.FK__CallListD__CallL__16B953FD">
+      <End Role="CallListDetails" EntitySet="CallListDetails" />
+      <End Role="CallListDetailsAdditional" EntitySet="CallListDetailsAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CallListD__CallL__6D980E30" Association="Self.FK__CallListD__CallL__6D980E30">
+      <End Role="CallListDetails" EntitySet="CallListDetails" />
+      <End Role="CallListDetailsAdditional" EntitySet="CallListDetailsAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__Stateid__5F492382" Association="Self.FK__City__Stateid__5F492382">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__Stateid__6F8056A2" Association="Self.FK__City__Stateid__6F8056A2">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RuleAlert__RuleI__0D44F85C" Association="Self.FK__RuleAlert__RuleI__0D44F85C">
+      <End Role="Rule" EntitySet="Rule" />
+      <End Role="RuleAlert" EntitySet="RuleAlert" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RuleAlert__RuleI__70747ADB" Association="Self.FK__RuleAlert__RuleI__70747ADB">
+      <End Role="Rule" EntitySet="Rule" />
+      <End Role="RuleAlert" EntitySet="RuleAlert" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__Countryid__57A801BA" Association="Self.FK__State__Countryid__57A801BA">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__Countryid__71689F14" Association="Self.FK__State__Countryid__71689F14">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccessControlList_AccessPanel" Association="Self.FK_AccessControlList_AccessPanel">
+      <End Role="AccessPanel" EntitySet="AccessPanel" />
+      <End Role="AccessControlList" EntitySet="AccessControlList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_AddressBook" Association="Self.FK_AddressBook_AddressBook">
+      <End Role="AddressBook" EntitySet="AddressBook" />
+      <End Role="AddressBook1" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_City" Association="Self.FK_AddressBook_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="AddressBook" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_City1" Association="Self.FK_AddressBook_City1">
+      <End Role="City" EntitySet="City" />
+      <End Role="AddressBook" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_Country" Association="Self.FK_AddressBook_Country">
+      <End Role="City" EntitySet="City" />
+      <End Role="AddressBook" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_Country1" Association="Self.FK_AddressBook_Country1">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="AddressBook" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_State" Association="Self.FK_AddressBook_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="AddressBook" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_State1" Association="Self.FK_AddressBook_State1">
+      <End Role="State" EntitySet="State" />
+      <End Role="AddressBook" EntitySet="AddressBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppRolePermissionMapper_Permission" Association="Self.FK_AppRolePermissionMapper_Permission">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="AppRolePermissionMapper" EntitySet="AppRolePermissionMapper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppRolePermissionMapper_User" Association="Self.FK_AppRolePermissionMapper_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AppRolePermissionMapper" EntitySet="AppRolePermissionMapper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDetail_City" Association="Self.FK_BranchDetail_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="BranchDetail" EntitySet="BranchDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDetail_Country" Association="Self.FK_BranchDetail_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="BranchDetail" EntitySet="BranchDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDetail_State" Association="Self.FK_BranchDetail_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="BranchDetail" EntitySet="BranchDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchGateWayMapping_BranchMaster" Association="Self.FK_BranchGateWayMapping_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+      <End Role="BranchGatewayMapping" EntitySet="BranchGatewayMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallDispositions_CallDispositions" Association="Self.FK_CallDispositions_CallDispositions">
+      <End Role="CallDispositions" EntitySet="CallDispositions" />
+      <End Role="CampaignDispositions" EntitySet="CampaignDispositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallSuccess_CallListAttempts" Association="Self.FK_CallSuccess_CallListAttempts">
+      <End Role="CallListAttempts" EntitySet="CallListAttempts" />
+      <End Role="CallSuccess" EntitySet="CallSuccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallTransferSuccess_CallSuccess" Association="Self.FK_CallTransferSuccess_CallSuccess">
+      <End Role="CallSuccess" EntitySet="CallSuccess" />
+      <End Role="CallTransferSuccess" EntitySet="CallTransferSuccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignChannels_Channels" Association="Self.FK_CampaignChannels_Channels">
+      <End Role="Channels" EntitySet="Channels" />
+      <End Role="CampaignChannels" EntitySet="CampaignChannels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignCustomFields_CustomFields" Association="Self.FK_CampaignCustomFields_CustomFields">
+      <End Role="CustomFields" EntitySet="CustomFields" />
+      <End Role="CampaignCustomFields" EntitySet="CampaignCustomFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignUserGroups_UserGroups" Association="Self.FK_CampaignUserGroups_UserGroups">
+      <End Role="UserGroups" EntitySet="UserGroups" />
+      <End Role="CampaignUserGroups" EntitySet="CampaignUserGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignVerifiers_Verifiers" Association="Self.FK_CampaignVerifiers_Verifiers">
+      <End Role="Verifiers" EntitySet="Verifiers" />
+      <End Role="CampaignVerifiers" EntitySet="CampaignVerifiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_Emails_Communication_Email_SMTPServer" Association="Self.FK_Communication_Email_Emails_Communication_Email_SMTPServer">
+      <End Role="Communication_Email_SMTPServer" EntitySet="Communication_Email_SMTPServer" />
+      <End Role="Communication_Email_Emails" EntitySet="Communication_Email_Emails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_EmailsAttachments_Communication_Email_Em" Association="Self.FK_Communication_Email_EmailsAttachments_Communication_Email_Em">
+      <End Role="Communication_Email_Emails" EntitySet="Communication_Email_Emails" />
+      <End Role="Communication_Email_EmailsAttachments" EntitySet="Communication_Email_EmailsAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_EmailsAttempts_Communication_Email_Email" Association="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_Email">
+      <End Role="Communication_Email_Emails" EntitySet="Communication_Email_Emails" />
+      <End Role="Communication_Email_EmailsAttempts" EntitySet="Communication_Email_EmailsAttempts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS" Association="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS">
+      <End Role="Communication_Email_SMTPServer" EntitySet="Communication_Email_SMTPServer" />
+      <End Role="Communication_Email_EmailsAttempts" EntitySet="Communication_Email_EmailsAttempts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_City" Association="Self.FK_Customer_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Country" Association="Self.FK_Customer_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_State" Association="Self.FK_Customer_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExtensionMapping_BranchMaster" Association="Self.FK_ExtensionMapping_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+      <End Role="ExtensionMapping" EntitySet="ExtensionMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDataReceived_IncomingCalls" Association="Self.FK_IncomingDataReceived_IncomingCalls">
+      <End Role="IncomingCalls" EntitySet="IncomingCalls" />
+      <End Role="IncomingDataReceived" EntitySet="IncomingDataReceived" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_Application" Association="Self.FK_Role_Application">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermission_Roles" Association="Self.FK_RolePermission_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRole_Application" Association="Self.FK_SubRole_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="SubRole" EntitySet="SubRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRolePermissionMapper_Permission" Association="Self.FK_SubRolePermissionMapper_Permission">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="SubRolePermissionMapper" EntitySet="SubRolePermissionMapper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRolePermissionMapper_SubRole" Association="Self.FK_SubRolePermissionMapper_SubRole">
+      <End Role="SubRole" EntitySet="SubRole" />
+      <End Role="SubRolePermissionMapper" EntitySet="SubRolePermissionMapper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="User1" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBranchDetails_BranchDetail" Association="Self.FK_UserBranchDetails_BranchDetail">
+      <End Role="BranchDetail" EntitySet="BranchDetail" />
+      <End Role="UserBranchDetails" EntitySet="UserBranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBranchDetails_State" Association="Self.FK_UserBranchDetails_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="UserBranchDetails" EntitySet="UserBranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBranchDetails_Zone" Association="Self.FK_UserBranchDetails_Zone">
+      <End Role="Zone" EntitySet="Zone" />
+      <End Role="UserBranchDetails" EntitySet="UserBranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBreaks_UserBreaks1" Association="Self.FK_UserBreaks_UserBreaks1">
+      <End Role="UserBreaks" EntitySet="UserBreaks" />
+      <End Role="UserBreaks1" EntitySet="UserBreaks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroupDetails_UserGroups" Association="Self.FK_UserGroupDetails_UserGroups">
+      <End Role="UserGroups" EntitySet="UserGroups" />
+      <End Role="UserGroupDetails" EntitySet="UserGroupDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole" Association="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole">
+      <End Role="UserDefinedRole" EntitySet="UserDefinedRole" />
+      <End Role="UserMappingwithUserDefinedRole" EntitySet="UserMappingwithUserDefinedRole" />
+    </AssociationSet>
+    <AssociationSet Name="SubRoleId" Association="Self.SubRoleId">
+      <End Role="SubRole" EntitySet="SubRole" />
+      <End Role="AppRolePermissionMapper" EntitySet="AppRolePermissionMapper" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

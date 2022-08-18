@@ -1,0 +1,1808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CallbalanceClopsModelStoreContainer" CdmEntityContainer="CallbalanceClopsEntities">
+    <EntitySetMapping Name="accesscontrollists">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.accesscontrollist">
+        <MappingFragment StoreEntitySet="accesscontrollist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="accesscontrolid" ColumnName="accesscontrolid" />
+          <ScalarProperty Name="accessname" ColumnName="accessname" />
+          <ScalarProperty Name="friendlyaccessname" ColumnName="friendlyaccessname" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accesspanels">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.accesspanel">
+        <MappingFragment StoreEntitySet="accesspanel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="acesspanelname" ColumnName="acesspanelname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="activitylogs">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.activitylog">
+        <MappingFragment StoreEntitySet="activitylog">
+          <ScalarProperty Name="activitylogid" ColumnName="activitylogid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="machinename" ColumnName="machinename" />
+          <ScalarProperty Name="machineip" ColumnName="machineip" />
+          <ScalarProperty Name="pagename" ColumnName="pagename" />
+          <ScalarProperty Name="activitydate" ColumnName="activitydate" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="addressbooks">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.addressbook">
+        <MappingFragment StoreEntitySet="addressbook">
+          <ScalarProperty Name="addressid" ColumnName="addressid" />
+          <ScalarProperty Name="addresstitle" ColumnName="addresstitle" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="clientcode" ColumnName="clientcode" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="homeaddress" ColumnName="homeaddress" />
+          <ScalarProperty Name="businessaddress" ColumnName="businessaddress" />
+          <ScalarProperty Name="homepincode" ColumnName="homepincode" />
+          <ScalarProperty Name="registered" ColumnName="registered" />
+          <ScalarProperty Name="contacttype" ColumnName="contacttype" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="businesspincode" ColumnName="businesspincode" />
+          <ScalarProperty Name="homecountryid" ColumnName="homecountryid" />
+          <ScalarProperty Name="homestateid" ColumnName="homestateid" />
+          <ScalarProperty Name="homecityid" ColumnName="homecityid" />
+          <ScalarProperty Name="businesscountryid" ColumnName="businesscountryid" />
+          <ScalarProperty Name="businessstateid" ColumnName="businessstateid" />
+          <ScalarProperty Name="businesscityid" ColumnName="businesscityid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="adminmenus">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.adminmenu">
+        <MappingFragment StoreEntitySet="adminmenu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menuname" ColumnName="menuname" />
+          <ScalarProperty Name="parentmenuid" ColumnName="parentmenuid" />
+          <ScalarProperty Name="shortcode" ColumnName="shortcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="agentcalltimestatuslogs">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.agentcalltimestatuslog">
+        <MappingFragment StoreEntitySet="agentcalltimestatuslog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="idletimeexceed" ColumnName="idletimeexceed" />
+          <ScalarProperty Name="breaktimeexceed" ColumnName="breaktimeexceed" />
+          <ScalarProperty Name="totallogintimeexceed" ColumnName="totallogintimeexceed" />
+          <ScalarProperty Name="totaltalktimeexceed" ColumnName="totaltalktimeexceed" />
+          <ScalarProperty Name="escalationmail" ColumnName="escalationmail" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="manualdialmodeexceed" ColumnName="manualdialmodeexceed" />
+          <ScalarProperty Name="extensionringingexceed" ColumnName="extensionringingexceed" />
+          <ScalarProperty Name="outgoingcalldurationexceed" ColumnName="outgoingcalldurationexceed" />
+          <ScalarProperty Name="incommingcalldurationexceed" ColumnName="incommingcalldurationexceed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="alertdescriptions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.alertdescription">
+        <MappingFragment StoreEntitySet="alertdescription">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blockcallerlists">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.blockcallerlist">
+        <MappingFragment StoreEntitySet="blockcallerlist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boardmodels">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.boardmodel">
+        <MappingFragment StoreEntitySet="boardmodel">
+          <ScalarProperty Name="boardid" ColumnName="boardid" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="modalname" ColumnName="modalname" />
+          <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="branchdetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.branchdetail">
+        <MappingFragment StoreEntitySet="branchdetail">
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="branchname" ColumnName="branchname" />
+          <ScalarProperty Name="branchaddress" ColumnName="branchaddress" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="branchpin" ColumnName="branchpin" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="branchheadname" ColumnName="branchheadname" />
+          <ScalarProperty Name="branchfax" ColumnName="branchfax" />
+          <ScalarProperty Name="branchphone1" ColumnName="branchphone1" />
+          <ScalarProperty Name="branchphone2" ColumnName="branchphone2" />
+          <ScalarProperty Name="branchheadtel" ColumnName="branchheadtel" />
+          <ScalarProperty Name="branchheadmob" ColumnName="branchheadmob" />
+          <ScalarProperty Name="branchheademail" ColumnName="branchheademail" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="cloudclientid" ColumnName="cloudclientid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="branchgatewaymappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.branchgatewaymapping">
+        <MappingFragment StoreEntitySet="branchgatewaymapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="branchname" ColumnName="branchname" />
+          <ScalarProperty Name="gateway" ColumnName="gateway" />
+          <ScalarProperty Name="gatewayip" ColumnName="gatewayip" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="branchmasters">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.branchmaster">
+        <MappingFragment StoreEntitySet="branchmaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="branchname" ColumnName="branchname" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="connectionstring" ColumnName="connectionstring" />
+          <ScalarProperty Name="fallbackwebserverurl" ColumnName="fallbackwebserverurl" />
+          <ScalarProperty Name="fallbackcommserverurl" ColumnName="fallbackcommserverurl" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="breaks">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.break">
+        <MappingFragment StoreEntitySet="breaks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="discription" ColumnName="discription" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="call_category">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.call_category">
+        <MappingFragment StoreEntitySet="call_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callcategory" ColumnName="callcategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="callbacksmisseds">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.callbacksmissed">
+        <MappingFragment StoreEntitySet="callbacksmissed">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calllistdetailsid" ColumnName="calllistdetailsid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="misseddate" ColumnName="misseddate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="callconnectiondetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.callconnectiondetail">
+        <MappingFragment StoreEntitySet="callconnectiondetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calldetailsid" ColumnName="calldetailsid" />
+          <ScalarProperty Name="callattemptid" ColumnName="callattemptid" />
+          <ScalarProperty Name="agenttelephone" ColumnName="agenttelephone" />
+          <ScalarProperty Name="customertelephone" ColumnName="customertelephone" />
+          <ScalarProperty Name="agentstatus" ColumnName="agentstatus" />
+          <ScalarProperty Name="customerstatus" ColumnName="customerstatus" />
+          <ScalarProperty Name="calldate" ColumnName="calldate" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calldestinationmasters">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calldestinationmaster">
+        <MappingFragment StoreEntitySet="calldestinationmaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calldispositions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calldisposition">
+        <MappingFragment StoreEntitySet="calldispositions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="discription" ColumnName="discription" />
+          <ScalarProperty Name="backcolor" ColumnName="backcolor" />
+          <ScalarProperty Name="autoflag" ColumnName="autoflag" />
+          <ScalarProperty Name="dispositiontype" ColumnName="dispositiontype" />
+          <ScalarProperty Name="tat" ColumnName="tat" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calllists">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calllist">
+        <MappingFragment StoreEntitySet="calllist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="bucketsize" ColumnName="bucketsize" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="prefix" ColumnName="prefix" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calllistattempts">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calllistattempt">
+        <MappingFragment StoreEntitySet="calllistattempts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calllistdetailsid" ColumnName="calllistdetailsid" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="attemptdate" ColumnName="attemptdate" />
+          <ScalarProperty Name="systemdisposition" ColumnName="systemdisposition" />
+          <ScalarProperty Name="processinfo" ColumnName="processinfo" />
+          <ScalarProperty Name="userdisposition" ColumnName="userdisposition" />
+          <ScalarProperty Name="endreason" ColumnName="endreason" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="useridletime" ColumnName="useridletime" />
+          <ScalarProperty Name="attemptresultdate" ColumnName="attemptresultdate" />
+          <ScalarProperty Name="calltype" ColumnName="calltype" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calllistdetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calllistdetail">
+        <MappingFragment StoreEntitySet="calllistdetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calllistid" ColumnName="calllistid" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="scheduledtime" ColumnName="scheduledtime" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="attempts" ColumnName="attempts" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="flagid" ColumnName="flagid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="assignedby" ColumnName="assignedby" />
+          <ScalarProperty Name="assigneddate" ColumnName="assigneddate" />
+          <ScalarProperty Name="callbackuserid" ColumnName="callbackuserid" />
+          <ScalarProperty Name="assignedto" ColumnName="assignedto" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calllistdetailsadditionals">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calllistdetailsadditional">
+        <MappingFragment StoreEntitySet="calllistdetailsadditional">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calllistdetailsid" ColumnName="calllistdetailsid" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="telephonetype" ColumnName="telephonetype" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calllistdetailsmobiles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calllistdetailsmobile">
+        <MappingFragment StoreEntitySet="calllistdetailsmobile">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calllistid" ColumnName="calllistid" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="scheduledtime" ColumnName="scheduledtime" />
+          <ScalarProperty Name="attempts" ColumnName="attempts" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="assigneddate" ColumnName="assigneddate" />
+          <ScalarProperty Name="policyno" ColumnName="policyno" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="tennatid" ColumnName="tennatid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="callsuccesses">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.callsuccess">
+        <MappingFragment StoreEntitySet="callsuccess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calllistattemptid" ColumnName="calllistattemptid" />
+          <ScalarProperty Name="processdate" ColumnName="processdate" />
+          <ScalarProperty Name="processenddate" ColumnName="processenddate" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="processinfo" ColumnName="processinfo" />
+          <ScalarProperty Name="userdisposition" ColumnName="userdisposition" />
+          <ScalarProperty Name="endreason" ColumnName="endreason" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calltransfersuccesses">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.calltransfersuccess">
+        <MappingFragment StoreEntitySet="calltransfersuccess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callsuccessid" ColumnName="callsuccessid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="stopdate" ColumnName="stopdate" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="calldisconnectdate" ColumnName="calldisconnectdate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaigns">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaign">
+        <MappingFragment StoreEntitySet="campaign">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="calllisttype" ColumnName="calllisttype" />
+          <ScalarProperty Name="maxattempts" ColumnName="maxattempts" />
+          <ScalarProperty Name="holdpromptid" ColumnName="holdpromptid" />
+          <ScalarProperty Name="dispositionalgorithm" ColumnName="dispositionalgorithm" />
+          <ScalarProperty Name="greetingid" ColumnName="greetingid" />
+          <ScalarProperty Name="campaignmode" ColumnName="campaignmode" />
+          <ScalarProperty Name="callflow" ColumnName="callflow" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="campaigndid" ColumnName="campaigndid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaignchannels">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaignchannel">
+        <MappingFragment StoreEntitySet="campaignchannels">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="channelid" ColumnName="channelid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaigncustomfields">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaigncustomfield">
+        <MappingFragment StoreEntitySet="campaigncustomfields">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="customfieldid" ColumnName="customfieldid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaigndispositions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaigndisposition">
+        <MappingFragment StoreEntitySet="campaigndispositions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="calldispositionid" ColumnName="calldispositionid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaignsettings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaignsetting">
+        <MappingFragment StoreEntitySet="campaignsettings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="settingtype" ColumnName="settingtype" />
+          <ScalarProperty Name="settingname" ColumnName="settingname" />
+          <ScalarProperty Name="settingvalue" ColumnName="settingvalue" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaignusergroups">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaignusergroup">
+        <MappingFragment StoreEntitySet="campaignusergroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="usergroupid" ColumnName="usergroupid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaignusers">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaignuser">
+        <MappingFragment StoreEntitySet="campaignusers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="campaignname" ColumnName="campaignname" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campaignverifiers">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.campaignverifier">
+        <MappingFragment StoreEntitySet="campaignverifiers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="verifiersid" ColumnName="verifiersid" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="channels">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.channel">
+        <MappingFragment StoreEntitySet="channels">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="systemname" ColumnName="systemname" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="cli" ColumnName="cli" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="mode" ColumnName="mode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="checkdidmappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.checkdidmapping">
+        <MappingFragment StoreEntitySet="checkdidmapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="didnumber" ColumnName="didnumber" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+          <ScalarProperty Name="line" ColumnName="line" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cities">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.city">
+        <MappingFragment StoreEntitySet="city">
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="cityname" ColumnName="cityname" />
+          <ScalarProperty Name="citycode" ColumnName="citycode" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientdetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.clientdetail">
+        <MappingFragment StoreEntitySet="clientdetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alternatenumber" ColumnName="alternatenumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="alternateaddress" ColumnName="alternateaddress" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="servicebranch" ColumnName="servicebranch" />
+          <ScalarProperty Name="querysavedon" ColumnName="querysavedon" />
+          <ScalarProperty Name="storename" ColumnName="storename" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="zomatonumber" ColumnName="zomatonumber" />
+          <ScalarProperty Name="orderamount" ColumnName="orderamount" />
+          <ScalarProperty Name="incommingcallid" ColumnName="incommingcallid" />
+          <ScalarProperty Name="userdisposition" ColumnName="userdisposition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="communication_email_emails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.communication_email_emails">
+        <MappingFragment StoreEntitySet="communication_email_emails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="prefferredsmtpserverid" ColumnName="prefferredsmtpserverid" />
+          <ScalarProperty Name="emailto" ColumnName="emailto" />
+          <ScalarProperty Name="emailcc" ColumnName="emailcc" />
+          <ScalarProperty Name="emailbcc" ColumnName="emailbcc" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="lastprocessedon" ColumnName="lastprocessedon" />
+          <ScalarProperty Name="attempts" ColumnName="attempts" />
+          <ScalarProperty Name="senton" ColumnName="senton" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="communication_email_emailsattachments">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.communication_email_emailsattachments">
+        <MappingFragment StoreEntitySet="communication_email_emailsattachments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emailsid" ColumnName="emailsid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="communication_email_emailsattempts">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.communication_email_emailsattempts">
+        <MappingFragment StoreEntitySet="communication_email_emailsattempts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="smtpserverid" ColumnName="smtpserverid" />
+          <ScalarProperty Name="emailsid" ColumnName="emailsid" />
+          <ScalarProperty Name="attemptedon" ColumnName="attemptedon" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="communication_email_settings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.communication_email_settings">
+        <MappingFragment StoreEntitySet="communication_email_settings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="settingname" ColumnName="settingname" />
+          <ScalarProperty Name="settingvalue" ColumnName="settingvalue" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="communication_email_smtpserver">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.communication_email_smtpserver">
+        <MappingFragment StoreEntitySet="communication_email_smtpserver">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="server" ColumnName="server" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="passphrase" ColumnName="passphrase" />
+          <ScalarProperty Name="fromaddress" ColumnName="fromaddress" />
+          <ScalarProperty Name="fromdisplayname" ColumnName="fromdisplayname" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="countryname" ColumnName="countryname" />
+          <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="clientcode" ColumnName="clientcode" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="userrole" ColumnName="userrole" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="demataccno" ColumnName="demataccno" />
+          <ScalarProperty Name="accountstatus" ColumnName="accountstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customfields">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.customfield">
+        <MappingFragment StoreEntitySet="customfields">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="systemname" ColumnName="systemname" />
+          <ScalarProperty Name="displayname" ColumnName="displayname" />
+          <ScalarProperty Name="displaytype" ColumnName="displaytype" />
+          <ScalarProperty Name="displayitems" ColumnName="displayitems" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dnclists">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.dnclist">
+        <MappingFragment StoreEntitySet="dnclist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="serviceareacode" ColumnName="serviceareacode" />
+          <ScalarProperty Name="preferences" ColumnName="preferences" />
+          <ScalarProperty Name="opstype" ColumnName="opstype" />
+          <ScalarProperty Name="phonetype" ColumnName="phonetype" />
+          <ScalarProperty Name="refnumber" ColumnName="refnumber" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="uploaddate" ColumnName="uploaddate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emailstatementrequestdatas">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.emailstatementrequestdata">
+        <MappingFragment StoreEntitySet="emailstatementrequestdata">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="incomingcallid" ColumnName="incomingcallid" />
+          <ScalarProperty Name="foliono" ColumnName="foliono" />
+          <ScalarProperty Name="arnno" ColumnName="arnno" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="period_type" ColumnName="period_type" />
+          <ScalarProperty Name="fromdate" ColumnName="fromdate" />
+          <ScalarProperty Name="todate" ColumnName="todate" />
+          <ScalarProperty Name="pdf_password" ColumnName="pdf_password" />
+          <ScalarProperty Name="panno" ColumnName="panno" />
+          <ScalarProperty Name="subrequesttype" ColumnName="subrequesttype" />
+          <ScalarProperty Name="requesttype" ColumnName="requesttype" />
+          <ScalarProperty Name="requestdate" ColumnName="requestdate" />
+          <ScalarProperty Name="camsreferenceno" ColumnName="camsreferenceno" />
+          <ScalarProperty Name="camsresult" ColumnName="camsresult" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="errorlogs">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.errorlog">
+        <MappingFragment StoreEntitySet="errorlog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="logdate" ColumnName="logdate" />
+          <ScalarProperty Name="errordescription" ColumnName="errordescription" />
+          <ScalarProperty Name="exceptiondescription" ColumnName="exceptiondescription" />
+          <ScalarProperty Name="errorlocation" ColumnName="errorlocation" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="clientcode" ColumnName="clientcode" />
+          <ScalarProperty Name="pagetitle" ColumnName="pagetitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="extensionmappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.extensionmapping">
+        <MappingFragment StoreEntitySet="extensionmapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="channelid" ColumnName="channelid" />
+          <ScalarProperty Name="gateway" ColumnName="gateway" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="campaign" ColumnName="campaign" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="extensions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.extension">
+        <MappingFragment StoreEntitySet="extensions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="channelno" ColumnName="channelno" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flags">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.flag">
+        <MappingFragment StoreEntitySet="flags">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genders">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.gender">
+        <MappingFragment StoreEntitySet="gender">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="groups">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.group">
+        <MappingFragment StoreEntitySet="groups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="systemname" ColumnName="systemname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hmpdetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.hmpdetail">
+        <MappingFragment StoreEntitySet="hmpdetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="hmp_ip" ColumnName="hmp_ip" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="holidays">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.holiday">
+        <MappingFragment StoreEntitySet="holidays">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="wavfilename" ColumnName="wavfilename" />
+          <ScalarProperty Name="servicetype" ColumnName="servicetype" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incomingcalls">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.incomingcall">
+        <MappingFragment StoreEntitySet="incomingcalls">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="callstart" ColumnName="callstart" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="calldispositionid" ColumnName="calldispositionid" />
+          <ScalarProperty Name="callend" ColumnName="callend" />
+          <ScalarProperty Name="callwrapuptime" ColumnName="callwrapuptime" />
+          <ScalarProperty Name="holdtime" ColumnName="holdtime" />
+          <ScalarProperty Name="unholdtime" ColumnName="unholdtime" />
+          <ScalarProperty Name="transferstart" ColumnName="transferstart" />
+          <ScalarProperty Name="transferend" ColumnName="transferend" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="calleeid" ColumnName="calleeid" />
+          <ScalarProperty Name="calleduser" ColumnName="calleduser" />
+          <ScalarProperty Name="lasteditdate" ColumnName="lasteditdate" />
+          <ScalarProperty Name="creationdate" ColumnName="creationdate" />
+          <ScalarProperty Name="channelid" ColumnName="channelid" />
+          <ScalarProperty Name="basecallerid" ColumnName="basecallerid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incomingdatareceiveds">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.incomingdatareceived">
+        <MappingFragment StoreEntitySet="incomingdatareceived">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="incomingcallid" ColumnName="incomingcallid" />
+          <ScalarProperty Name="data1" ColumnName="data1" />
+          <ScalarProperty Name="data2" ColumnName="data2" />
+          <ScalarProperty Name="data3" ColumnName="data3" />
+          <ScalarProperty Name="data4" ColumnName="data4" />
+          <ScalarProperty Name="data5" ColumnName="data5" />
+          <ScalarProperty Name="data6" ColumnName="data6" />
+          <ScalarProperty Name="data7" ColumnName="data7" />
+          <ScalarProperty Name="lasteditdate" ColumnName="lasteditdate" />
+          <ScalarProperty Name="creationdate" ColumnName="creationdate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incomingtransferfaileds">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.incomingtransferfailed">
+        <MappingFragment StoreEntitySet="incomingtransferfailed">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callreceivedid" ColumnName="callreceivedid" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="stopdate" ColumnName="stopdate" />
+          <ScalarProperty Name="failuretype" ColumnName="failuretype" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incomingtransferfailed_history">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.incomingtransferfailed_history">
+        <MappingFragment StoreEntitySet="incomingtransferfailed_history">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callreceivedid" ColumnName="callreceivedid" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="stopdate" ColumnName="stopdate" />
+          <ScalarProperty Name="failuretype" ColumnName="failuretype" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incomingtransfersuccesses">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.incomingtransfersuccess">
+        <MappingFragment StoreEntitySet="incomingtransfersuccess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callreceivedid" ColumnName="callreceivedid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="stopdate" ColumnName="stopdate" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="calldisonnectdate" ColumnName="calldisonnectdate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="insertoptionselections">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.insertoptionselection">
+        <MappingFragment StoreEntitySet="insertoptionselection">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="incomingcallid" ColumnName="incomingcallid" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="optionselected" ColumnName="optionselected" />
+          <ScalarProperty Name="folionumber" ColumnName="folionumber" />
+          <ScalarProperty Name="calldate" ColumnName="calldate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="internaltransfers">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.internaltransfer">
+        <MappingFragment StoreEntitySet="internaltransfer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callreceivedid" ColumnName="callreceivedid" />
+          <ScalarProperty Name="incomingtransfersuccessid" ColumnName="incomingtransfersuccessid" />
+          <ScalarProperty Name="transferinitiatoruserid" ColumnName="transferinitiatoruserid" />
+          <ScalarProperty Name="transferredtouserid" ColumnName="transferredtouserid" />
+          <ScalarProperty Name="transferreddate" ColumnName="transferreddate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ivrflowtraces">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.ivrflowtrace">
+        <MappingFragment StoreEntitySet="ivrflowtrace">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="incomingcallsid" ColumnName="incomingcallsid" />
+          <ScalarProperty Name="responsedate" ColumnName="responsedate" />
+          <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+          <ScalarProperty Name="nodename" ColumnName="nodename" />
+          <ScalarProperty Name="dtmfreceived" ColumnName="dtmfreceived" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leadmanagements">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.leadmanagement">
+        <MappingFragment StoreEntitySet="leadmanagement">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="leadid" ColumnName="leadid" />
+          <ScalarProperty Name="leadtype" ColumnName="leadtype" />
+          <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="leadsource" ColumnName="leadsource" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="assignedtouser" ColumnName="assignedtouser" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leadtypes">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.leadtype">
+        <MappingFragment StoreEntitySet="leadtype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manualdialattempts">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.manualdialattempt">
+        <MappingFragment StoreEntitySet="manualdialattempts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="calllistdispositionsid" ColumnName="calllistdispositionsid" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="attemptdate" ColumnName="attemptdate" />
+          <ScalarProperty Name="callstarttime" ColumnName="callstarttime" />
+          <ScalarProperty Name="callendtime" ColumnName="callendtime" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="holdtime" ColumnName="holdtime" />
+          <ScalarProperty Name="systemdisposition" ColumnName="systemdisposition" />
+          <ScalarProperty Name="callback" ColumnName="callback" />
+          <ScalarProperty Name="linkid" ColumnName="linkid" />
+          <ScalarProperty Name="scheduleddate" ColumnName="scheduleddate" />
+          <ScalarProperty Name="referenceid" ColumnName="referenceid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="clientcode" ColumnName="clientcode" />
+          <ScalarProperty Name="producttype" ColumnName="producttype" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mobileactivities">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.mobileactivity">
+        <MappingFragment StoreEntitySet="mobileactivity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="oldtelephoneno" ColumnName="oldtelephoneno" />
+          <ScalarProperty Name="newtelephoneno" ColumnName="newtelephoneno" />
+          <ScalarProperty Name="modifyby" ColumnName="modifyby" />
+          <ScalarProperty Name="activityremarks" ColumnName="activityremarks" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nonbusinesshourcalls">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.nonbusinesshourcall">
+        <MappingFragment StoreEntitySet="nonbusinesshourcalls">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="calltime" ColumnName="calltime" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="officeservicetypes">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.officeservicetype">
+        <MappingFragment StoreEntitySet="officeservicetype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="servicename" ColumnName="servicename" />
+          <ScalarProperty Name="officetimeserviceid" ColumnName="officetimeserviceid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="officetimes">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.officetime">
+        <MappingFragment StoreEntitySet="officetime">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="servicetype" ColumnName="servicetype" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="weekday" ColumnName="weekday" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="otpgenerations">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.otpgeneration">
+        <MappingFragment StoreEntitySet="otpgeneration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="foliono" ColumnName="foliono" />
+          <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+          <ScalarProperty Name="otp" ColumnName="otp" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="isotpsend" ColumnName="isotpsend" />
+          <ScalarProperty Name="expiry" ColumnName="expiry" />
+          <ScalarProperty Name="calldate" ColumnName="calldate" />
+          <ScalarProperty Name="isotpused" ColumnName="isotpused" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="clientcode" ColumnName="clientcode" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="incomingcallid" ColumnName="incomingcallid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="passwordpolicies">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.passwordpolicy">
+        <MappingFragment StoreEntitySet="passwordpolicy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="loginattempt" ColumnName="loginattempt" />
+          <ScalarProperty Name="minpswrdlength" ColumnName="minpswrdlength" />
+          <ScalarProperty Name="maxpswrdlength" ColumnName="maxpswrdlength" />
+          <ScalarProperty Name="minnumcount" ColumnName="minnumcount" />
+          <ScalarProperty Name="minsymbolcount" ColumnName="minsymbolcount" />
+          <ScalarProperty Name="mincapcharactercount" ColumnName="mincapcharactercount" />
+          <ScalarProperty Name="expindays" ColumnName="expindays" />
+          <ScalarProperty Name="unblocktimeinhours" ColumnName="unblocktimeinhours" />
+          <ScalarProperty Name="sessiontimeout" ColumnName="sessiontimeout" />
+          <ScalarProperty Name="reusepasswordafterattempts" ColumnName="reusepasswordafterattempts" />
+          <ScalarProperty Name="standardpassword" ColumnName="standardpassword" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pbxextensions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.pbxextension">
+        <MappingFragment StoreEntitySet="pbxextensions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channelid" ColumnName="channelid" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="dom" ColumnName="dom" />
+          <ScalarProperty Name="campaign" ColumnName="campaign" />
+          <ScalarProperty Name="flownumber" ColumnName="flownumber" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permissions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.permission">
+        <MappingFragment StoreEntitySet="permission">
+          <ScalarProperty Name="permissionid" ColumnName="permissionid" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="permissionname" ColumnName="permissionname" />
+          <ScalarProperty Name="permissioncode" ColumnName="permissioncode" />
+          <ScalarProperty Name="orgid" ColumnName="orgid" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permissions1">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.permission1">
+        <MappingFragment StoreEntitySet="permissions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plans">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.plan">
+        <MappingFragment StoreEntitySet="plan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="planname" ColumnName="planname" />
+          <ScalarProperty Name="descritpition" ColumnName="descritpition" />
+          <ScalarProperty Name="rate_description" ColumnName="rate_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plansettings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.plansetting">
+        <MappingFragment StoreEntitySet="plansettings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="planid" ColumnName="planid" />
+          <ScalarProperty Name="planname" ColumnName="planname" />
+          <ScalarProperty Name="settingtype" ColumnName="settingtype" />
+          <ScalarProperty Name="settingname" ColumnName="settingname" />
+          <ScalarProperty Name="settingvalue" ColumnName="settingvalue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priinfoes">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.priinfo">
+        <MappingFragment StoreEntitySet="priinfo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="prinumber" ColumnName="prinumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rmclientmappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.rmclientmapping">
+        <MappingFragment StoreEntitySet="rmclientmapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="clientid" ColumnName="clientid" />
+          <ScalarProperty Name="contactno" ColumnName="contactno" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="contact_no2" ColumnName="contact_no2" />
+          <ScalarProperty Name="contact_no1" ColumnName="contact_no1" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="rolecode" ColumnName="rolecode" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="applicationid" ColumnName="applicationid" />
+          <ScalarProperty Name="permissionid" ColumnName="permissionid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rolepermissions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.rolepermission">
+        <MappingFragment StoreEntitySet="rolepermission">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="permissionid" ColumnName="permissionid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles1">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.role1">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="abbrevation" ColumnName="abbrevation" />
+          <ScalarProperty Name="masterrole" ColumnName="masterrole" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rules">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.rule">
+        <MappingFragment StoreEntitySet="rule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ruleorder" ColumnName="ruleorder" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="createddate" ColumnName="createddate" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ruleactions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.ruleaction">
+        <MappingFragment StoreEntitySet="ruleactions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ruleid" ColumnName="ruleid" />
+          <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+          <ScalarProperty Name="actionvalues" ColumnName="actionvalues" />
+          <ScalarProperty Name="actionmessage" ColumnName="actionmessage" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rulealerts">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.rulealert">
+        <MappingFragment StoreEntitySet="rulealert">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ruleid" ColumnName="ruleid" />
+          <ScalarProperty Name="alerttype" ColumnName="alerttype" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ruleprocesses">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.ruleprocess">
+        <MappingFragment StoreEntitySet="ruleprocess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="systemalertid" ColumnName="systemalertid" />
+          <ScalarProperty Name="ruleactionid" ColumnName="ruleactionid" />
+          <ScalarProperty Name="processattempts" ColumnName="processattempts" />
+          <ScalarProperty Name="processlog" ColumnName="processlog" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="securityquestions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.securityquestion">
+        <MappingFragment StoreEntitySet="securityquestion">
+          <ScalarProperty Name="questionid" ColumnName="questionid" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_category">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.service_category">
+        <MappingFragment StoreEntitySet="service_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callcategoryid" ColumnName="callcategoryid" />
+          <ScalarProperty Name="servicecategory" ColumnName="servicecategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_type">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.service_type">
+        <MappingFragment StoreEntitySet="service_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="servicecategoryid" ColumnName="servicecategoryid" />
+          <ScalarProperty Name="servicetypes" ColumnName="servicetypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="setdigits">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.setdigit">
+        <MappingFragment StoreEntitySet="setdigit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="digit" ColumnName="digit" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="mode" ColumnName="mode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="setformats">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.setformat">
+        <MappingFragment StoreEntitySet="setformat">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="voicelanguage" ColumnName="voicelanguage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="settings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.setting">
+        <MappingFragment StoreEntitySet="settings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="settingtype" ColumnName="settingtype" />
+          <ScalarProperty Name="settingname" ColumnName="settingname" />
+          <ScalarProperty Name="settingvalue" ColumnName="settingvalue" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sipusermappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.sipusermapping">
+        <MappingFragment StoreEntitySet="sipusermapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="sipuserid" ColumnName="sipuserid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sipusermasters">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.sipusermaster">
+        <MappingFragment StoreEntitySet="sipusermaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sipusername" ColumnName="sipusername" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="speeddials">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.speeddial">
+        <MappingFragment StoreEntitySet="speeddial">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shortcut" ColumnName="shortcut" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="contactname" ColumnName="contactname" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="statename" ColumnName="statename" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="zoneid" ColumnName="zoneid" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states1">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.state1">
+        <MappingFragment StoreEntitySet="states">
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="statename" ColumnName="statename" />
+          <ScalarProperty Name="zoneid" ColumnName="zoneid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statusid" ColumnName="statusid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="statuscode" ColumnName="statuscode" />
+          <ScalarProperty Name="allowdelete" ColumnName="allowdelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storemasters">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.storemaster">
+        <MappingFragment StoreEntitySet="storemaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="storename" ColumnName="storename" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subroles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.subrole">
+        <MappingFragment StoreEntitySet="subrole">
+          <ScalarProperty Name="subroleid" ColumnName="subroleid" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="rolecode" ColumnName="rolecode" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="applicationid" ColumnName="applicationid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subrolepermissionmappers">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.subrolepermissionmapper">
+        <MappingFragment StoreEntitySet="subrolepermissionmapper">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="subroleid" ColumnName="subroleid" />
+          <ScalarProperty Name="permissionid" ColumnName="permissionid" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemalerts">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.systemalert">
+        <MappingFragment StoreEntitySet="systemalerts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="systemalerttype" ColumnName="systemalerttype" />
+          <ScalarProperty Name="alertdatetime" ColumnName="alertdatetime" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="extrainfo" ColumnName="extrainfo" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemdispositions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.systemdisposition">
+        <MappingFragment StoreEntitySet="systemdisposition">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemuserpermissions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.systemuserpermission">
+        <MappingFragment StoreEntitySet="systemuserpermissions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tenantaudits">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.tenantaudit">
+        <MappingFragment StoreEntitySet="tenantaudit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="planid" ColumnName="planid" />
+          <ScalarProperty Name="planactivatedate" ColumnName="planactivatedate" />
+          <ScalarProperty Name="planexpirdate" ColumnName="planexpirdate" />
+          <ScalarProperty Name="pulseused" ColumnName="pulseused" />
+          <ScalarProperty Name="lastupdatedate" ColumnName="lastupdatedate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tenants">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.tenant">
+        <MappingFragment StoreEntitySet="tenants">
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="tenantname" ColumnName="tenantname" />
+          <ScalarProperty Name="tenantaddress" ColumnName="tenantaddress" />
+          <ScalarProperty Name="tenantcity" ColumnName="tenantcity" />
+          <ScalarProperty Name="tenantcountry" ColumnName="tenantcountry" />
+          <ScalarProperty Name="tenantpincode" ColumnName="tenantpincode" />
+          <ScalarProperty Name="tenantcontact" ColumnName="tenantcontact" />
+          <ScalarProperty Name="tenantmobile" ColumnName="tenantmobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="weburl" ColumnName="weburl" />
+          <ScalarProperty Name="creationtime" ColumnName="creationtime" />
+          <ScalarProperty Name="deleteruserid" ColumnName="deleteruserid" />
+          <ScalarProperty Name="deletiontime" ColumnName="deletiontime" />
+          <ScalarProperty Name="lastmodificationtime" ColumnName="lastmodificationtime" />
+          <ScalarProperty Name="lastmodifieruserid" ColumnName="lastmodifieruserid" />
+          <ScalarProperty Name="creatoruserid" ColumnName="creatoruserid" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="planexpirydate" ColumnName="planexpirydate" />
+          <ScalarProperty Name="lic_days" ColumnName="lic_days" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_cti_details">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.user_cti_details">
+        <MappingFragment StoreEntitySet="user_cti_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="currentcampaign" ColumnName="currentcampaign" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="statusid" ColumnName="statusid" />
+          <ScalarProperty Name="workstation" ColumnName="workstation" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="statusdatetime" ColumnName="statusdatetime" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="useractivities">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.useractivity">
+        <MappingFragment StoreEntitySet="useractivity">
+          <ScalarProperty Name="activityid" ColumnName="activityid" />
+          <ScalarProperty Name="usersessionid" ColumnName="usersessionid" />
+          <ScalarProperty Name="activitydone" ColumnName="activitydone" />
+          <ScalarProperty Name="activitytime" ColumnName="activitytime" />
+          <ScalarProperty Name="activitypage" ColumnName="activitypage" />
+          <ScalarProperty Name="attemptuserid" ColumnName="attemptuserid" />
+          <ScalarProperty Name="machineip" ColumnName="machineip" />
+          <ScalarProperty Name="machinename" ColumnName="machinename" />
+          <ScalarProperty Name="machineusername" ColumnName="machineusername" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userbranchaccesses">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userbranchaccess">
+        <MappingFragment StoreEntitySet="userbranchaccess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userbranchdetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userbranchdetail">
+        <MappingFragment StoreEntitySet="userbranchdetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="zoneid" ColumnName="zoneid" />
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userbranchmappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userbranchmapping">
+        <MappingFragment StoreEntitySet="userbranchmapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userbreaks">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userbreak">
+        <MappingFragment StoreEntitySet="userbreaks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="breakstart" ColumnName="breakstart" />
+          <ScalarProperty Name="breakstop" ColumnName="breakstop" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usercampaignmappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usercampaignmapping">
+        <MappingFragment StoreEntitySet="usercampaignmapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userdefinedroles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userdefinedrole">
+        <MappingFragment StoreEntitySet="userdefinedrole">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userdefinedroledetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userdefinedroledetail">
+        <MappingFragment StoreEntitySet="userdefinedroledetails">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="permissionid" ColumnName="permissionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usergroupdetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usergroupdetail">
+        <MappingFragment StoreEntitySet="usergroupdetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usergroupid" ColumnName="usergroupid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usergroups">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usergroup">
+        <MappingFragment StoreEntitySet="usergroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="groupname" ColumnName="groupname" />
+          <ScalarProperty Name="systemname" ColumnName="systemname" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="customquery" ColumnName="customquery" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userlogs">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userlog">
+        <MappingFragment StoreEntitySet="userlog">
+          <ScalarProperty Name="userlogid" ColumnName="userlogid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="logindate" ColumnName="logindate" />
+          <ScalarProperty Name="logoutdate" ColumnName="logoutdate" />
+          <ScalarProperty Name="loginlogoutremarks" ColumnName="loginlogoutremarks" />
+          <ScalarProperty Name="useripaddress" ColumnName="useripaddress" />
+          <ScalarProperty Name="winloginname" ColumnName="winloginname" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usermappingwithuserdefinedroles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usermappingwithuserdefinedrole">
+        <MappingFragment StoreEntitySet="usermappingwithuserdefinedrole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usermissedcalldetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usermissedcalldetail">
+        <MappingFragment StoreEntitySet="usermissedcalldetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callreceivedid" ColumnName="callreceivedid" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="producttype" ColumnName="producttype" />
+          <ScalarProperty Name="clientname" ColumnName="clientname" />
+          <ScalarProperty Name="clientcode" ColumnName="clientcode" />
+          <ScalarProperty Name="calldate" ColumnName="calldate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="assigndate" ColumnName="assigndate" />
+          <ScalarProperty Name="dialeddate" ColumnName="dialeddate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usermobilemappings">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usermobilemapping">
+        <MappingFragment StoreEntitySet="usermobilemapping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userpermissions">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userpermission">
+        <MappingFragment StoreEntitySet="userpermissions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="permissionid" ColumnName="permissionid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userprofiles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userprofile">
+        <MappingFragment StoreEntitySet="userprofile">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usercode" ColumnName="usercode" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="flat_building" ColumnName="flat_building" />
+          <ScalarProperty Name="street_lane" ColumnName="street_lane" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="stateid" ColumnName="stateid" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="landmark" ColumnName="landmark" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="passwordquestionid" ColumnName="passwordquestionid" />
+          <ScalarProperty Name="passwordanswer" ColumnName="passwordanswer" />
+          <ScalarProperty Name="lastpasswordchangeddate" ColumnName="lastpasswordchangeddate" />
+          <ScalarProperty Name="failedpasswordattemptcount" ColumnName="failedpasswordattemptcount" />
+          <ScalarProperty Name="lastlockoutdate" ColumnName="lastlockoutdate" />
+          <ScalarProperty Name="lastlogindate" ColumnName="lastlogindate" />
+          <ScalarProperty Name="tokken" ColumnName="tokken" />
+          <ScalarProperty Name="calldestination" ColumnName="calldestination" />
+          <ScalarProperty Name="escalationmail1" ColumnName="escalationmail1" />
+          <ScalarProperty Name="escalationmail2" ColumnName="escalationmail2" />
+          <ScalarProperty Name="terminalid" ColumnName="terminalid" />
+          <ScalarProperty Name="branchids" ColumnName="branchids" />
+          <ScalarProperty Name="callpreference" ColumnName="callpreference" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+          <ScalarProperty Name="virtualextension" ColumnName="virtualextension" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usersecurities">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usersecurity">
+        <MappingFragment StoreEntitySet="usersecurity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="useraccountid" ColumnName="useraccountid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="lastpasswordchangeddate" ColumnName="lastpasswordchangeddate" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usersinroles">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.usersinrole">
+        <MappingFragment StoreEntitySet="usersinroles">
+          <ScalarProperty Name="srno" ColumnName="srno" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userstatus">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.userstatu">
+        <MappingFragment StoreEntitySet="userstatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usersid" ColumnName="usersid" />
+          <ScalarProperty Name="currentcampaign" ColumnName="currentcampaign" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="intime" ColumnName="intime" />
+          <ScalarProperty Name="outtime" ColumnName="outtime" />
+          <ScalarProperty Name="sessionid" ColumnName="sessionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="verifiers">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.verifier">
+        <MappingFragment StoreEntitySet="verifiers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voicelogs_calldetails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.voicelogs_calldetails">
+        <MappingFragment StoreEntitySet="voicelogs_calldetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="callid" ColumnName="callid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="calldate" ColumnName="calldate" />
+          <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="calltype" ColumnName="calltype" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="channelno" ColumnName="channelno" />
+          <ScalarProperty Name="attemptid" ColumnName="attemptid" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="customdata1" ColumnName="customdata1" />
+          <ScalarProperty Name="customdata2" ColumnName="customdata2" />
+          <ScalarProperty Name="customdata3" ColumnName="customdata3" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voicemails">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.voicemail">
+        <MappingFragment StoreEntitySet="voicemail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="incommingcallid" ColumnName="incommingcallid" />
+          <ScalarProperty Name="callerid" ColumnName="callerid" />
+          <ScalarProperty Name="selectedoption" ColumnName="selectedoption" />
+          <ScalarProperty Name="wavfile" ColumnName="wavfile" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="recorddttime" ColumnName="recorddttime" />
+          <ScalarProperty Name="playeddttime" ColumnName="playeddttime" />
+          <ScalarProperty Name="dispositionid" ColumnName="dispositionid" />
+          <ScalarProperty Name="playedby" ColumnName="playedby" />
+          <ScalarProperty Name="assignedto" ColumnName="assignedto" />
+          <ScalarProperty Name="assignedby" ColumnName="assignedby" />
+          <ScalarProperty Name="assigneddate" ColumnName="assigneddate" />
+          <ScalarProperty Name="ticketno" ColumnName="ticketno" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="manualdailid" ColumnName="manualdailid" />
+          <ScalarProperty Name="auditid" ColumnName="auditid" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workstations">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.workstation">
+        <MappingFragment StoreEntitySet="workstations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="fxo" ColumnName="fxo" />
+          <ScalarProperty Name="fxs" ColumnName="fxs" />
+          <ScalarProperty Name="physicalextension" ColumnName="physicalextension" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zones">
+      <EntityTypeMapping TypeName="CallbalanceClopsModel.zone">
+        <MappingFragment StoreEntitySet="zone">
+          <ScalarProperty Name="zoneid" ColumnName="zoneid" />
+          <ScalarProperty Name="zonename" ColumnName="zonename" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="tenantid" ColumnName="tenantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

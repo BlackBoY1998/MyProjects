@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Order_Detail">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="Discount" Type="Single" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Order_Details_Products" FromRole="Order_Details" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="QuantityPerUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UnitsInStock" Type="Int16" />
+    <Property Name="UnitsOnOrder" Type="Int16" />
+    <Property Name="ReorderLevel" Type="Int16" />
+    <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Products" FromRole="Products" ToRole="Order_Details" />
+  </EntityType>
+  <Association Name="FK_Order_Details_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Order_Details" EntityType="Self.Order_Detail" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK_Order_Details_Products" Association="Self.FK_Order_Details_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

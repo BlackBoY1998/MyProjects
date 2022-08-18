@@ -1,0 +1,3028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OceanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="2147483647" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccessControlList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="AccessControlID" Type="Int32" Nullable="false" />
+    <Property Name="AccessName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FriendlyAccessName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AccessPanel" Relationship="Self.FK_AccessControlList_AccessPanel" FromRole="AccessControlList" ToRole="AccessPanel" />
+  </EntityType>
+  <EntityType Name="AccessPanel">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="Int32" Nullable="false" />
+    <Property Name="AcessPanelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccessControlLists" Relationship="Self.FK_AccessControlList_AccessPanel" FromRole="AccessPanel" ToRole="AccessControlList" />
+  </EntityType>
+  <EntityType Name="Activitylog">
+    <Key>
+      <PropertyRef Name="ActivityLogID" />
+    </Key>
+    <Property Name="ActivityLogID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Activity" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="MachineName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="MachineIP" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="PageName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ActivityDate" Type="DateTime" Precision="6" />
+    <Property Name="Tag" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AddressBook">
+    <Key>
+      <PropertyRef Name="Addressid" />
+    </Key>
+    <Property Name="Addressid" Type="Int32" Nullable="false" />
+    <Property Name="Addresstitle" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Company" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Website" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ClientCode" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Branch" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HomeAddress" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessAddress" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="HomePinCode" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Registered" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ContactType" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BusinessPinCode" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="HomeCountryid" Type="Int32" />
+    <Property Name="HomeStateid" Type="Int32" />
+    <Property Name="HomeCityid" Type="Int32" />
+    <Property Name="BusinessCountryid" Type="Int32" Nullable="false" />
+    <Property Name="BusinessStateid" Type="Int32" Nullable="false" />
+    <Property Name="BusinessCityid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AddressBook1" Relationship="Self.FK_AddressBook_AddressBook" FromRole="AddressBook" ToRole="AddressBook1" />
+    <NavigationProperty Name="AddressBook2" Relationship="Self.FK_AddressBook_AddressBook" FromRole="AddressBook1" ToRole="AddressBook" />
+    <NavigationProperty Name="City" Relationship="Self.FK_AddressBook_City" FromRole="AddressBook" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="Self.FK_AddressBook_City1" FromRole="AddressBook" ToRole="City" />
+    <NavigationProperty Name="City2" Relationship="Self.FK_AddressBook_Country" FromRole="AddressBook" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_AddressBook_Country1" FromRole="AddressBook" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK_AddressBook_State" FromRole="AddressBook" ToRole="State" />
+    <NavigationProperty Name="State1" Relationship="Self.FK_AddressBook_State1" FromRole="AddressBook" ToRole="State" />
+  </EntityType>
+  <EntityType Name="AgentCallTimeStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IdleTime" Type="Time" Precision="6" Nullable="false" />
+    <Property Name="BreakTime" Type="Time" Precision="6" Nullable="false" />
+    <Property Name="TotalLoginTime" Type="Time" Precision="6" Nullable="false" />
+    <Property Name="TotalTalkTime" Type="Time" Precision="6" Nullable="false" />
+    <Property Name="SendEmailCount" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="IsSendEmail" Type="Boolean" />
+    <Property Name="ManualDialMode" Type="Time" Precision="6" />
+    <Property Name="ExtensionRinging" Type="Time" Precision="6" />
+    <Property Name="OutgoingCallDuration" Type="Time" Precision="6" />
+    <Property Name="IncommingCallDuration" Type="Time" Precision="6" />
+    <Property Name="IsEmailSendIdle" Type="Boolean" />
+    <Property Name="IsEmailSendBreak" Type="Boolean" />
+    <Property Name="IsEmailSendTLogin" Type="Boolean" />
+    <Property Name="IsEmailSendTTalk" Type="Boolean" />
+    <Property Name="IsEmailSendMDail" Type="Boolean" />
+    <Property Name="IsEmailSendExtRing" Type="Boolean" />
+    <Property Name="IsEmailSendOutCallDur" Type="Boolean" />
+    <Property Name="IsEmailSendInCallDur" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK__AgentCall__UserI__5EAAD05B" FromRole="AgentCallTimeStatus" ToRole="User" />
+  </EntityType>
+  <EntityType Name="AgentCallTimeStatusLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IdleTimeExceed" Type="Time" Precision="6" />
+    <Property Name="BreakTimeExceed" Type="Time" Precision="6" />
+    <Property Name="TotalLoginTimeExceed" Type="Time" Precision="6" />
+    <Property Name="TotalTalkTimeExceed" Type="Time" Precision="6" />
+    <Property Name="EscalationMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="ManualDialModeExceed" Type="Time" Precision="6" />
+    <Property Name="ExtensionRingingExceed" Type="Time" Precision="6" />
+    <Property Name="OutgoingCallDurationExceed" Type="Time" Precision="6" />
+    <Property Name="IncommingCallDurationExceed" Type="Time" Precision="6" />
+    <NavigationProperty Name="User" Relationship="Self.FK__AgentCall__UserI__61873D06" FromRole="AgentCallTimeStatusLog" ToRole="User" />
+  </EntityType>
+  <EntityType Name="AlertDescription">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="ApplicationID" />
+    </Key>
+    <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <NavigationProperty Name="SubRoles" Relationship="Self.FK_SubRole_Application" FromRole="Application" ToRole="SubRole" />
+  </EntityType>
+  <EntityType Name="AppRolePermissionMapper">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ApplicationID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="PermissionId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="SubRoleId" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Permission" Relationship="Self.FK_AppRolePermissionMapper_Permission" FromRole="AppRolePermissionMapper" ToRole="Permission" />
+    <NavigationProperty Name="User" Relationship="Self.FK_AppRolePermissionMapper_User" FromRole="AppRolePermissionMapper" ToRole="User" />
+    <NavigationProperty Name="SubRole" Relationship="Self.SubRoleId" FromRole="AppRolePermissionMapper" ToRole="SubRole" />
+  </EntityType>
+  <EntityType Name="BlockCallerList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BranchDetail">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="BranchName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BranchAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="BranchPin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="BranchHeadName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchFax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BranchPhone1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BranchPhone2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BranchHeadTel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BranchHeadMob" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BranchHeadEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CloudClientId" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="Self.FK_BranchDetail_City" FromRole="BranchDetail" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_BranchDetail_Country" FromRole="BranchDetail" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK_BranchDetail_State" FromRole="BranchDetail" ToRole="State" />
+    <NavigationProperty Name="UserBranchDetails" Relationship="Self.FK_UserBranchDetails_BranchDetail" FromRole="BranchDetail" ToRole="UserBranchDetails" />
+  </EntityType>
+  <EntityType Name="BranchGatewayMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="BranchID" Type="Int32" />
+    <Property Name="BranchName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Gateway" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="GatewayIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="BranchMaster" Relationship="Self.FK_BranchGateWayMapping_BranchMaster" FromRole="BranchGatewayMapping" ToRole="BranchMaster" />
+  </EntityType>
+  <EntityType Name="BranchMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="ConnectionString" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="FallBackWebServerUrl" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="FallBackCommServerUrl" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="BranchGatewayMappings" Relationship="Self.FK_BranchGateWayMapping_BranchMaster" FromRole="BranchMaster" ToRole="BranchGatewayMapping" />
+    <NavigationProperty Name="ExtensionMappings" Relationship="Self.FK_ExtensionMapping_BranchMaster" FromRole="BranchMaster" ToRole="ExtensionMapping" />
+  </EntityType>
+  <EntityType Name="Break">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Discription" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CanBeDeleted" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CallBacksMissed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CallListDetailsID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Read" Type="Boolean" />
+    <Property Name="MissedDateTime" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CallDestinationMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CallDisposition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Discription" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="BackColor" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="AutoFlag" Type="Int32" />
+    <Property Name="DispositionType" Type="Int32" />
+    <Property Name="CanBeDeleted" Type="Boolean" />
+    <Property Name="TAT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CampaignDispositions" Relationship="Self.FK_CallDispositions_CallDispositions" FromRole="CallDispositions" ToRole="CampaignDispositions" />
+  </EntityType>
+  <EntityType Name="CallList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="BucketSize" Type="Int32" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPrefixActive" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CallListAttempt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallListDetailsID" Type="Int64" Nullable="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttemptDate" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="SystemDisposition" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserDisposition" Type="Int32" />
+    <Property Name="EndReason" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="6" />
+    <Property Name="PopupReceived" Type="Boolean" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="UserIdleTime" Type="Int64" />
+    <Property Name="AttemptResultDate" Type="DateTime" Precision="6" />
+    <Property Name="CallType" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CallSuccesses" Relationship="Self.FK_CallSuccess_CallListAttempts" FromRole="CallListAttempts" ToRole="CallSuccess" />
+  </EntityType>
+  <EntityType Name="CallListDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallListID" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ScheduledTime" Type="DateTime" Precision="6" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attempts" Type="Int32" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="FlagID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AssignedBy" Type="Int32" />
+    <Property Name="AssignedDate" Type="DateTime" Precision="6" />
+    <Property Name="CallBackUserId" Type="Int32" />
+    <Property Name="AssignedTo" Type="Int32" />
+    <Property Name="IsSoftDial" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CallListDetailsAdditionals" Relationship="Self.FK__CallListD__CallL__15C52FC4" FromRole="CallListDetails" ToRole="CallListDetailsAdditional" />
+    <NavigationProperty Name="CallListDetailsAdditionals1" Relationship="Self.FK__CallListD__CallL__16B953FD" FromRole="CallListDetails" ToRole="CallListDetailsAdditional" />
+    <NavigationProperty Name="CallListDetailsAdditionals2" Relationship="Self.FK__CallListD__CallL__6D980E30" FromRole="CallListDetails" ToRole="CallListDetailsAdditional" />
+  </EntityType>
+  <EntityType Name="CallListDetailsAdditional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallListDetailsID" Type="Int64" Nullable="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="TelephoneType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Callable" Type="Boolean" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CallListDetail" Relationship="Self.FK__CallListD__CallL__15C52FC4" FromRole="CallListDetailsAdditional" ToRole="CallListDetails" />
+    <NavigationProperty Name="CallListDetail1" Relationship="Self.FK__CallListD__CallL__16B953FD" FromRole="CallListDetailsAdditional" ToRole="CallListDetails" />
+    <NavigationProperty Name="CallListDetail2" Relationship="Self.FK__CallListD__CallL__6D980E30" FromRole="CallListDetailsAdditional" ToRole="CallListDetails" />
+  </EntityType>
+  <EntityType Name="CallListDetailsMobile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallListID" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ScheduledTime" Type="DateTime" Precision="6" />
+    <Property Name="Attempts" Type="Int32" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AssignedDate" Type="DateTime" Precision="6" />
+    <Property Name="PolicyNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Product" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="TennatId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CallSuccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallListAttemptID" Type="Int64" Nullable="false" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="6" />
+    <Property Name="ProcessEndDate" Type="DateTime" Precision="6" />
+    <Property Name="ProcessID" Type="Int32" />
+    <Property Name="ProcessInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserDisposition" Type="Int32" />
+    <Property Name="EndReason" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CallListAttempt" Relationship="Self.FK_CallSuccess_CallListAttempts" FromRole="CallSuccess" ToRole="CallListAttempts" />
+    <NavigationProperty Name="CallTransferSuccesses" Relationship="Self.FK_CallTransferSuccess_CallSuccess" FromRole="CallSuccess" ToRole="CallTransferSuccess" />
+  </EntityType>
+  <EntityType Name="CallTransferSuccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallSuccessID" Type="Int64" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="6" />
+    <Property Name="StopDate" Type="DateTime" Precision="6" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallDisconnectDate" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CallSuccess" Relationship="Self.FK_CallTransferSuccess_CallSuccess" FromRole="CallTransferSuccess" ToRole="CallSuccess" />
+  </EntityType>
+  <EntityType Name="Campaign">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="6" />
+    <Property Name="EndDate" Type="DateTime" Precision="6" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Port" Type="Int32" Nullable="false" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="CallListType" Type="Int16" Nullable="false" />
+    <Property Name="MaxAttempts" Type="Int32" />
+    <Property Name="HoldPromptID" Type="Int32" />
+    <Property Name="DispositionAlgorithm" Type="Int32" Nullable="false" />
+    <Property Name="GreetingID" Type="Int32" />
+    <Property Name="CampaignMode" Type="Int32" />
+    <Property Name="CallFlow" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="CampaignDID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CampaignChannel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="ChannelID" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Channel" Relationship="Self.FK_CampaignChannels_Channels" FromRole="CampaignChannels" ToRole="Channels" />
+  </EntityType>
+  <EntityType Name="CampaignCustomField">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="CustomFieldID" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CustomField" Relationship="Self.FK_CampaignCustomFields_CustomFields" FromRole="CampaignCustomFields" ToRole="CustomFields" />
+  </EntityType>
+  <EntityType Name="CampaignDisposition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" />
+    <Property Name="CallDispositionID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CallDisposition" Relationship="Self.FK_CallDispositions_CallDispositions" FromRole="CampaignDispositions" ToRole="CallDispositions" />
+  </EntityType>
+  <EntityType Name="CampaignSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="SettingType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SettingName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="SettingValue" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CanBeDeleted" Type="Boolean" />
+    <Property Name="IsDefault" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CampaignUserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="UserGroup" Relationship="Self.FK_CampaignUserGroups_UserGroups" FromRole="CampaignUserGroups" ToRole="UserGroups" />
+  </EntityType>
+  <EntityType Name="CampaignUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignName" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CampaignVerifier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="VerifiersID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Verifier" Relationship="Self.FK_CampaignVerifiers_Verifiers" FromRole="CampaignVerifiers" ToRole="Verifiers" />
+  </EntityType>
+  <EntityType Name="Channel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Type" Type="Int16" />
+    <Property Name="Cli" Type="Int32" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="Mode" Type="Int32" Nullable="false" />
+    <Property Name="NonSoftdial" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CampaignChannels" Relationship="Self.FK_CampaignChannels_Channels" FromRole="Channels" ToRole="CampaignChannels" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Cityid" />
+    </Key>
+    <Property Name="Cityid" Type="Int32" Nullable="false" />
+    <Property Name="Stateid" Type="Int32" Nullable="false" />
+    <Property Name="Cityname" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Deleted" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="AddressBooks" Relationship="Self.FK_AddressBook_City" FromRole="City" ToRole="AddressBook" />
+    <NavigationProperty Name="AddressBooks1" Relationship="Self.FK_AddressBook_City1" FromRole="City" ToRole="AddressBook" />
+    <NavigationProperty Name="AddressBooks2" Relationship="Self.FK_AddressBook_Country" FromRole="City" ToRole="AddressBook" />
+    <NavigationProperty Name="BranchDetails" Relationship="Self.FK_BranchDetail_City" FromRole="City" ToRole="BranchDetail" />
+    <NavigationProperty Name="State" Relationship="Self.FK__City__Stateid__5F492382" FromRole="City" ToRole="State" />
+    <NavigationProperty Name="State1" Relationship="Self.FK__City__Stateid__6F8056A2" FromRole="City" ToRole="State" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_City" FromRole="City" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="ClientDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CallerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlternateNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="AlternateAddress" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuerySavedOn" Type="DateTime" Precision="6" />
+    <Property Name="StoreName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ZomatoNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IncommingCallId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserDisposition" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Communication_Email_Emails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PrefferredSMTPServerID" Type="Int32" />
+    <Property Name="EmailTo" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailCc" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="EmailBcc" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="IsBodyHtml" Type="Boolean" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="IsProcessed" Type="Boolean" />
+    <Property Name="LastProcessedOn" Type="DateTime" Precision="6" />
+    <Property Name="Attempts" Type="Int32" />
+    <Property Name="SentOn" Type="DateTime" Precision="6" />
+    <Property Name="Status" Type="Int16" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Communication_Email_SMTPServer" Relationship="Self.FK_Communication_Email_Emails_Communication_Email_SMTPServer" FromRole="Communication_Email_Emails" ToRole="Communication_Email_SMTPServer" />
+    <NavigationProperty Name="Communication_Email_EmailsAttachments" Relationship="Self.FK_Communication_Email_EmailsAttachments_Communication_Email_Em" FromRole="Communication_Email_Emails" ToRole="Communication_Email_EmailsAttachments" />
+    <NavigationProperty Name="Communication_Email_EmailsAttempts" Relationship="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_Email" FromRole="Communication_Email_Emails" ToRole="Communication_Email_EmailsAttempts" />
+  </EntityType>
+  <EntityType Name="Communication_Email_EmailsAttachments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="EmailsID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FilePath" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Communication_Email_Emails" Relationship="Self.FK_Communication_Email_EmailsAttachments_Communication_Email_Em" FromRole="Communication_Email_EmailsAttachments" ToRole="Communication_Email_Emails" />
+  </EntityType>
+  <EntityType Name="Communication_Email_EmailsAttempts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SMTPServerID" Type="Int32" />
+    <Property Name="EmailsID" Type="Int32" Nullable="false" />
+    <Property Name="AttemptedOn" Type="DateTime" Precision="6" />
+    <Property Name="IsSuccessful" Type="Boolean" />
+    <Property Name="Remarks" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Communication_Email_Emails" Relationship="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_Email" FromRole="Communication_Email_EmailsAttempts" ToRole="Communication_Email_Emails" />
+    <NavigationProperty Name="Communication_Email_SMTPServer" Relationship="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS" FromRole="Communication_Email_EmailsAttempts" ToRole="Communication_Email_SMTPServer" />
+  </EntityType>
+  <EntityType Name="Communication_Email_Settings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SettingName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="SettingValue" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Communication_Email_SMTPServer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Server" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Port" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Passphrase" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RequireAuthentication" Type="Boolean" />
+    <Property Name="UseSSL" Type="Boolean" />
+    <Property Name="FromAddress" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="FromDisplayName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Communication_Email_Emails" Relationship="Self.FK_Communication_Email_Emails_Communication_Email_SMTPServer" FromRole="Communication_Email_SMTPServer" ToRole="Communication_Email_Emails" />
+    <NavigationProperty Name="Communication_Email_EmailsAttempts" Relationship="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS" FromRole="Communication_Email_SMTPServer" ToRole="Communication_Email_EmailsAttempts" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Countryid" />
+    </Key>
+    <Property Name="Countryid" Type="Int32" Nullable="false" />
+    <Property Name="Countryname" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Deleted" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="AddressBooks" Relationship="Self.FK_AddressBook_Country1" FromRole="Country" ToRole="AddressBook" />
+    <NavigationProperty Name="BranchDetails" Relationship="Self.FK_BranchDetail_Country" FromRole="Country" ToRole="BranchDetail" />
+    <NavigationProperty Name="States" Relationship="Self.FK__State__Countryid__57A801BA" FromRole="Country" ToRole="State" />
+    <NavigationProperty Name="States1" Relationship="Self.FK__State__Countryid__71689F14" FromRole="Country" ToRole="State" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Country" FromRole="Country" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ClientCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="6" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="UserRole" Type="Int32" />
+    <Property Name="BranchID" Type="Int32" />
+    <Property Name="DematAccNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AccountStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Customer_City" FromRole="Customer" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Customer_Country" FromRole="Customer" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK_Customer_State" FromRole="Customer" ToRole="State" />
+  </EntityType>
+  <EntityType Name="CustomField">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SystemName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Editable" Type="Boolean" />
+    <Property Name="DisplayType" Type="Int32" />
+    <Property Name="DisplayItems" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="IsMandatory" Type="Boolean" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CampaignCustomFields" Relationship="Self.FK_CampaignCustomFields_CustomFields" FromRole="CustomFields" ToRole="CampaignCustomFields" />
+  </EntityType>
+  <EntityType Name="DNCList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ServiceAreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Preferences" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Opstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RefNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UploadDate" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="LogDate" Type="DateTime" Precision="6" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ExceptionDescription" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ClientCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExtensionMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ChannelID" Type="Int32" />
+    <Property Name="Gateway" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Campaign" Type="Int32" />
+    <Property Name="BranchID" Type="Int32" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="BranchMaster" Relationship="Self.FK_ExtensionMapping_BranchMaster" FromRole="ExtensionMapping" ToRole="BranchMaster" />
+  </EntityType>
+  <EntityType Name="Extension">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChannelNo" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Flag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Filepath" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HMPDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HMP_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="6" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WavFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ServiceType" Type="Int32" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IncomingCall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CallStart" Type="DateTime" Precision="6" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CallDispositionID" Type="Int32" Nullable="false" />
+    <Property Name="CallEnd" Type="DateTime" Precision="6" />
+    <Property Name="CallWrapUpTime" Type="DateTime" Precision="6" />
+    <Property Name="HoldTime" Type="Int64" />
+    <Property Name="UnHoldTime" Type="DateTime" Precision="6" />
+    <Property Name="TransferStart" Type="DateTime" Precision="6" />
+    <Property Name="TransferEnd" Type="DateTime" Precision="6" />
+    <Property Name="GroupID" Type="Int16" />
+    <Property Name="CampaignID" Type="Int32" />
+    <Property Name="CalleeID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CalledUser" Type="Int32" />
+    <Property Name="LastEditDate" Type="DateTime" Precision="6" />
+    <Property Name="CreationDate" Type="DateTime" Precision="6" />
+    <Property Name="ChannelId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BaseCallerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSynchronised" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="IncomingDataReceiveds" Relationship="Self.FK_IncomingDataReceived_IncomingCalls" FromRole="IncomingCalls" ToRole="IncomingDataReceived" />
+  </EntityType>
+  <EntityType Name="IncomingDataReceived">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IncomingCallID" Type="Int64" />
+    <Property Name="Data1" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Data2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Data3" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Data4" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Data5" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Data6" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Data7" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LastEditDate" Type="DateTime" Precision="6" />
+    <Property Name="CreationDate" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="IncomingCall" Relationship="Self.FK_IncomingDataReceived_IncomingCalls" FromRole="IncomingDataReceived" ToRole="IncomingCalls" />
+  </EntityType>
+  <EntityType Name="IncomingEmail_Settings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="EmailID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="out_emailid" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IncomingAliasEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="out_password" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="Password" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="IncomingMailserver" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="IncomingPort" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OutgoingMailServer" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="OutgoingPort" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsSSL" Type="Boolean" />
+    <Property Name="UserRole" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IncomingTransferFailed_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallReceivedID" Type="Int64" />
+    <Property Name="StartDate" Type="DateTime" Precision="6" />
+    <Property Name="StopDate" Type="DateTime" Precision="6" />
+    <Property Name="FailureType" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsViewed" Type="Boolean" />
+    <Property Name="IsSendEmail" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InternalTransfer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallReceivedID" Type="Int64" />
+    <Property Name="IncomingTransferSuccessID" Type="Int64" />
+    <Property Name="TransferInitiatorUserID" Type="Int32" />
+    <Property Name="TransferredToUserID" Type="Int32" />
+    <Property Name="TransferredDate" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IVRFlowTrace">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="IncomingCallsID" Type="Int64" Nullable="false" />
+    <Property Name="ResponseDateTime" Type="DateTime" Precision="6" />
+    <Property Name="ActionType" Type="Int32" />
+    <Property Name="NodeName" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="DtmfReceived" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LeadManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LeadType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="LeadSource" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="AssignedToUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LeadType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ManualDialAttempt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CallListDispositionsID" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AttemptDateTime" Type="DateTime" Precision="6" />
+    <Property Name="CallStartTime" Type="DateTime" Precision="6" />
+    <Property Name="CallEndTime" Type="DateTime" Precision="6" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HoldTime" Type="Int64" />
+    <Property Name="SystemDisposition" Type="Int32" />
+    <Property Name="CallBack" Type="Int16" />
+    <Property Name="LinkID" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ScheduledDateTime" Type="DateTime" Precision="6" />
+    <Property Name="ReferenceID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSynchronised" Type="Boolean" />
+    <Property Name="ClientCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NonBusinessHourCall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CallerID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CallTime" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OfficeServiceType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeTimeServiceId" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OfficeTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="6" />
+    <Property Name="EndTime" Type="DateTime" Precision="6" />
+    <Property Name="Servicetype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WeekDay" Type="Int32" />
+    <Property Name="IsWorkingDay" Type="Boolean" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OrganizationDetail">
+    <Key>
+      <PropertyRef Name="OrgID" />
+    </Key>
+    <Property Name="OrgID" Type="Int32" Nullable="false" />
+    <Property Name="OrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrgOwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrgAdd1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrgAdd2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrgAdd3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrgCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgPin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgURL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgPhone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgPhone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrgFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogoPath" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="LogoImage" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PasswordPolicy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LoginAttempt" Type="Int32" Nullable="false" />
+    <Property Name="MinPswrdLength" Type="Int32" Nullable="false" />
+    <Property Name="MaxPswrdLength" Type="Int32" Nullable="false" />
+    <Property Name="MinNumCount" Type="Int32" Nullable="false" />
+    <Property Name="MinSymbolCount" Type="Int32" Nullable="false" />
+    <Property Name="MinCapCharacterCount" Type="Int32" Nullable="false" />
+    <Property Name="ExpInDays" Type="Int32" Nullable="false" />
+    <Property Name="UnBLockTimeinHours" Type="Int32" Nullable="false" />
+    <Property Name="Session_Timeout_min_" Type="Int32" Nullable="false" />
+    <Property Name="Re_use_Password_After_Attempts_" Type="Int32" Nullable="false" />
+    <Property Name="StandardPassword" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="PermissionID" />
+    </Key>
+    <Property Name="PermissionID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="PermissionName" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+    <Property Name="PermissionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AllowDelete" Type="Boolean" Nullable="false" />
+    <Property Name="OrgID" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="AppRolePermissionMappers" Relationship="Self.FK_AppRolePermissionMapper_Permission" FromRole="Permission" ToRole="AppRolePermissionMapper" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_Role_Application" FromRole="Permission" ToRole="Role" />
+    <NavigationProperty Name="SubRolePermissionMappers" Relationship="Self.FK_SubRolePermissionMapper_Permission" FromRole="Permission" ToRole="SubRolePermissionMapper" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PlanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descritpition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rate_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PlanSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" Nullable="false" />
+    <Property Name="PlanId" Type="Int32" Nullable="false" />
+    <Property Name="PlanName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="SettingType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SettingName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="SettingValue" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRIInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignId" Type="Int32" />
+    <Property Name="PRINumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RMClientMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ClientID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userid" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="DID" Type="Int32" />
+    <Property Name="Client_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_No2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_No1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ApplicationID" Type="Int32" />
+    <Property Name="PermissionID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Permission" Relationship="Self.FK_Role_Application" FromRole="Role" ToRole="Permission" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="PermissionID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_RolePermission_Roles" FromRole="RolePermission" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Role1">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Abbrevation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MasterRole" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="RolePermissions" Relationship="Self.FK_RolePermission_Roles" FromRole="Roles" ToRole="RolePermission" />
+  </EntityType>
+  <EntityType Name="Rule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="RuleOrder" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="6" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="6" />
+    <Property Name="CanBeDeleted" Type="Boolean" />
+    <Property Name="Comment" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="RuleAlerts" Relationship="Self.FK__RuleAlert__RuleI__0D44F85C" FromRole="Rule" ToRole="RuleAlert" />
+    <NavigationProperty Name="RuleAlerts1" Relationship="Self.FK__RuleAlert__RuleI__70747ADB" FromRole="Rule" ToRole="RuleAlert" />
+  </EntityType>
+  <EntityType Name="RuleAction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="RuleID" Type="Int32" />
+    <Property Name="ActionType" Type="Int32" />
+    <Property Name="ActionValues" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ActionMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RuleAlert">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="RuleID" Type="Int32" />
+    <Property Name="AlertType" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Rule" Relationship="Self.FK__RuleAlert__RuleI__0D44F85C" FromRole="RuleAlert" ToRole="Rule" />
+    <NavigationProperty Name="Rule1" Relationship="Self.FK__RuleAlert__RuleI__70747ADB" FromRole="RuleAlert" ToRole="Rule" />
+  </EntityType>
+  <EntityType Name="RuleProcess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SystemAlertID" Type="Int32" />
+    <Property Name="RuleActionId" Type="Int32" />
+    <Property Name="IsProcessed" Type="Boolean" />
+    <Property Name="ProcessAttempts" Type="Int32" />
+    <Property Name="ProcessLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SecurityQuestion">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SettingType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SettingName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SettingValue" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CanBeDeleted" Type="Boolean" />
+    <Property Name="IsDefault" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SIPUserMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SIPUserID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SIPUserMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SIPUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SpeedDial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Shortcut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ContactName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="IsSystemGenerated" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Stateid" />
+    </Key>
+    <Property Name="Stateid" Type="Int32" Nullable="false" />
+    <Property Name="Statename" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Countryid" Type="Int32" Nullable="false" />
+    <Property Name="ZoneID" Type="Int32" />
+    <Property Name="Is_Deleted" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="AddressBooks" Relationship="Self.FK_AddressBook_State" FromRole="State" ToRole="AddressBook" />
+    <NavigationProperty Name="AddressBooks1" Relationship="Self.FK_AddressBook_State1" FromRole="State" ToRole="AddressBook" />
+    <NavigationProperty Name="BranchDetails" Relationship="Self.FK_BranchDetail_State" FromRole="State" ToRole="BranchDetail" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK__City__Stateid__5F492382" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Cities1" Relationship="Self.FK__City__Stateid__6F8056A2" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__State__Countryid__57A801BA" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Country1" Relationship="Self.FK__State__Countryid__71689F14" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_State" FromRole="State" ToRole="Customer" />
+    <NavigationProperty Name="UserBranchDetails" Relationship="Self.FK_UserBranchDetails_State" FromRole="State" ToRole="UserBranchDetails" />
+  </EntityType>
+  <EntityType Name="State1">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AllowDelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="StoreMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StoreName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SubRole">
+    <Key>
+      <PropertyRef Name="SubRoleID" />
+    </Key>
+    <Property Name="SubRoleID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ApplicationID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_SubRole_Application" FromRole="SubRole" ToRole="Application" />
+    <NavigationProperty Name="AppRolePermissionMappers" Relationship="Self.SubRoleId" FromRole="SubRole" ToRole="AppRolePermissionMapper" />
+    <NavigationProperty Name="SubRolePermissionMappers" Relationship="Self.FK_SubRolePermissionMapper_SubRole" FromRole="SubRole" ToRole="SubRolePermissionMapper" />
+  </EntityType>
+  <EntityType Name="SubRolePermissionMapper">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SubRoleID" Type="Int32" />
+    <Property Name="PermissionId" Type="Int32" Nullable="false" />
+    <Property Name="Created_On" Type="DateTime" Precision="6" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="Permission" Relationship="Self.FK_SubRolePermissionMapper_Permission" FromRole="SubRolePermissionMapper" ToRole="Permission" />
+    <NavigationProperty Name="SubRole" Relationship="Self.FK_SubRolePermissionMapper_SubRole" FromRole="SubRolePermissionMapper" ToRole="SubRole" />
+  </EntityType>
+  <EntityType Name="SystemAlert">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SystemAlertType" Type="Int32" Nullable="false" />
+    <Property Name="AlertDateTime" Type="DateTime" Precision="6" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ExtraInfo" Type="Int32" />
+    <Property Name="Processed" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SystemDisposition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TenantAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="PlanID" Type="Int32" />
+    <Property Name="planActivateDate" Type="DateTime" Precision="6" />
+    <Property Name="PlanExpirDate" Type="DateTime" Precision="6" />
+    <Property Name="PulseUsed" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdateDatetime" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantID" />
+    </Key>
+    <Property Name="TenantID" Type="Int64" Nullable="false" />
+    <Property Name="TenantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantPinCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenantMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebURL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreationTime" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeleterUserId" Type="Int32" Nullable="false" />
+    <Property Name="DeletionTime" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="LastModificationTime" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="LastModifierUserId" Type="Int32" Nullable="false" />
+    <Property Name="CreatorUserId" Type="Int32" Nullable="false" />
+    <Property Name="Plan_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PlanExpiryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lic_Days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="BranchId" Type="Int32" />
+    <Property Name="Flat_Building" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Street_lane" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="Landmark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PinCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordQuestionID" Type="Int32" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPasswordSystemGenerated" Type="Boolean" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="6" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" />
+    <Property Name="IsPasswordReset" Type="Boolean" />
+    <Property Name="LastLockoutDate" Type="DateTime" Precision="6" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="6" />
+    <Property Name="IsFirstLogin" Type="Boolean" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsloggedIn" Type="Boolean" />
+    <Property Name="Tokken" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CallDestination" Type="Int32" />
+    <Property Name="EscalationMail1" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="EscalationMail2" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BranchIds" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CallPreference" Type="Int32" />
+    <Property Name="TenantID" Type="Int32" />
+    <Property Name="VirtualExtension" Type="Int32" />
+    <NavigationProperty Name="AgentCallTimeStatus" Relationship="Self.FK__AgentCall__UserI__5EAAD05B" FromRole="User" ToRole="AgentCallTimeStatus" />
+    <NavigationProperty Name="AgentCallTimeStatusLogs" Relationship="Self.FK__AgentCall__UserI__61873D06" FromRole="User" ToRole="AgentCallTimeStatusLog" />
+    <NavigationProperty Name="AppRolePermissionMappers" Relationship="Self.FK_AppRolePermissionMapper_User" FromRole="User" ToRole="AppRolePermissionMapper" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_User_User" FromRole="User" ToRole="User1" />
+    <NavigationProperty Name="User2" Relationship="Self.FK_User_User" FromRole="User1" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User_CTI_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CurrentCampaign" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Workstation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusDateTime" Type="DateTime" Precision="6" />
+    <Property Name="GroupId" Type="Int32" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsLoggedIn" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserActivity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="Int32" Nullable="false" />
+    <Property Name="UserSessionID" Type="Int32" />
+    <Property Name="ActivityDone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="6" />
+    <Property Name="ActivityPage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttemptUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MachineIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MachineName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MachineUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserBranchAccess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="BranchId" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserBranchDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ZoneID" Type="Int32" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="BranchId" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="BranchDetail" Relationship="Self.FK_UserBranchDetails_BranchDetail" FromRole="UserBranchDetails" ToRole="BranchDetail" />
+    <NavigationProperty Name="State" Relationship="Self.FK_UserBranchDetails_State" FromRole="UserBranchDetails" ToRole="State" />
+    <NavigationProperty Name="Zone" Relationship="Self.FK_UserBranchDetails_Zone" FromRole="UserBranchDetails" ToRole="Zone" />
+  </EntityType>
+  <EntityType Name="UserBranchMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="IsDefault" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserBreak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BreakStart" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="BreakStop" Type="DateTime" Precision="6" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSynchronised" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="UserBreaks1" Relationship="Self.FK_UserBreaks_UserBreaks1" FromRole="UserBreaks" ToRole="UserBreaks1" />
+    <NavigationProperty Name="UserBreak1" Relationship="Self.FK_UserBreaks_UserBreaks1" FromRole="UserBreaks1" ToRole="UserBreaks" />
+  </EntityType>
+  <EntityType Name="UserCampaignMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CampaignID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDefinedRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="Rolename" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserMappingwithUserDefinedRoles" Relationship="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole" FromRole="UserDefinedRole" ToRole="UserMappingwithUserDefinedRole" />
+  </EntityType>
+  <EntityType Name="UserGroupDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IscampaignSupervisor" Type="Boolean" />
+    <Property Name="IsSuperVisior" Type="Boolean" Nullable="false" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="UserGroup" Relationship="Self.FK_UserGroupDetails_UserGroups" FromRole="UserGroupDetails" ToRole="UserGroups" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CanBeDeleted" Type="Boolean" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="CustomQuery" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CampaignUserGroups" Relationship="Self.FK_CampaignUserGroups_UserGroups" FromRole="UserGroups" ToRole="CampaignUserGroups" />
+    <NavigationProperty Name="UserGroupDetails" Relationship="Self.FK_UserGroupDetails_UserGroups" FromRole="UserGroups" ToRole="UserGroupDetails" />
+  </EntityType>
+  <EntityType Name="UserLog">
+    <Key>
+      <PropertyRef Name="UserLogID" />
+    </Key>
+    <Property Name="UserLogID" Type="Int64" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="MachineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginDateTime" Type="DateTime" Precision="6" />
+    <Property Name="LogoutDateTime" Type="DateTime" Precision="6" />
+    <Property Name="LoginLogoutRemarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="UserIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WinLoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserMappingwithUserDefinedRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IsAssigned" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="UserDefinedRole" Relationship="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole" FromRole="UserMappingwithUserDefinedRole" ToRole="UserDefinedRole" />
+  </EntityType>
+  <EntityType Name="UserMissedCallDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CallReceivedID" Type="Int64" />
+    <Property Name="CallerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClientName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ClientCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallDateTime" Type="DateTime" Precision="6" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AssignDateTime" Type="DateTime" Precision="6" />
+    <Property Name="IsDialed" Type="Boolean" />
+    <Property Name="DialedDateTime" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserMobileMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CampaignID" Type="Int32" />
+    <Property Name="IsCampaignActive" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PermissionId" Type="Int32" Nullable="false" />
+    <Property Name="IsGranted" Type="Boolean" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="56" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Audit">
+    <Key>
+      <PropertyRef Name="UA_ID" />
+    </Key>
+    <Property Name="UA_ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserFName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="UserMName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="UserLName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="UserRole" Type="Int32" />
+    <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserPhoneCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="UserPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserMobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="6" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CanBeDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="UserCreatedOn" Type="DateTime" Precision="6" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="EmailValid" Type="Boolean" Nullable="false" />
+    <Property Name="VerifyImageText" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsBlock" Type="Boolean" Nullable="false" />
+    <Property Name="BlockTime" Type="DateTime" Precision="6" />
+    <Property Name="UserPassword" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="EmailSignature" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ModuleId" Type="Int32" />
+    <Property Name="UserTypeId" Type="Int32" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="Question_ID" Type="Int32" />
+    <Property Name="Answer" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="UpdatePassword" Type="Int32" />
+    <Property Name="UserDescription" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentUserID" Type="Int32" />
+    <Property Name="InsertedOn_Date" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="UserSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserAccountId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UsersInRole">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UsersID" Type="Int32" Nullable="false" />
+    <Property Name="CurrentCampaign" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="InTime" Type="DateTime" Precision="6" />
+    <Property Name="OutTime" Type="DateTime" Precision="6" />
+    <Property Name="SessionID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Verifier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="CampaignVerifiers" Relationship="Self.FK_CampaignVerifiers_Verifiers" FromRole="Verifiers" ToRole="CampaignVerifiers" />
+  </EntityType>
+  <EntityType Name="VoiceLogs_CallDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CallDateTime" Type="DateTime" Precision="6" />
+    <Property Name="CampaignID" Type="Int32" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="ChannelNo" Type="Int32" />
+    <Property Name="AttemptID" Type="Int32" />
+    <Property Name="Duration" Type="Double" />
+    <Property Name="CustomData1" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CustomData2" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="CustomData3" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="IsSynchronised" Type="Boolean" Nullable="false" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VoiceMail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IncommingCallId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallerId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedOption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WavFile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Duration" Type="Double" />
+    <Property Name="RecordDtTime" Type="DateTime" Precision="6" />
+    <Property Name="PlayedDtTime" Type="DateTime" Precision="6" />
+    <Property Name="DispositionId" Type="Int32" />
+    <Property Name="PlayedBy" Type="Int32" />
+    <Property Name="AssignedTo" Type="Int16" />
+    <Property Name="AssignedBy" Type="Int16" />
+    <Property Name="AssignedDate" Type="DateTime" Precision="6" />
+    <Property Name="TicketNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="IsPlayed" Type="Boolean" />
+    <Property Name="IsAbandond" Type="Boolean" />
+    <Property Name="ManualDailId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AuditId" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Workstation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FXO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FXS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhysicalExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Zone">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="Int32" Nullable="false" />
+    <Property Name="ZoneName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Deleted" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <NavigationProperty Name="UserBranchDetails" Relationship="Self.FK_UserBranchDetails_Zone" FromRole="Zone" ToRole="UserBranchDetails" />
+  </EntityType>
+  <EntityType Name="AdminMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ParentMenuID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ParentMenuID" Type="Int32" Nullable="false" />
+    <Property Name="ShortCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BoardModel">
+    <Key>
+      <PropertyRef Name="BoardId" />
+    </Key>
+    <Property Name="BoardId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="ModalName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Call_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CallCategory" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CallConnectionDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CallDetailsId" Type="Int64" />
+    <Property Name="CallAttemptId" Type="Int64" />
+    <Property Name="AgentTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallDateTime" Type="DateTime" Precision="6" />
+    <Property Name="DOM" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="CheckDIDMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="DIDNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GroupId" Type="Int32" />
+    <Property Name="Line" Type="Int32" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EmailStatementRequestData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CallerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IncomingCallID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FolioNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ARNNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="Period_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromDate" Type="DateTime" Precision="6" />
+    <Property Name="ToDate" Type="DateTime" Precision="6" />
+    <Property Name="PDF_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PANNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubRequestType" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="RequestType" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Name="RequestDateTime" Type="DateTime" Precision="6" />
+    <Property Name="CAMSReferenceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CAMSResult" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IncomingTransferFailed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallReceivedID" Type="Int64" />
+    <Property Name="StartDate" Type="DateTime" Precision="6" />
+    <Property Name="StopDate" Type="DateTime" Precision="6" />
+    <Property Name="FailureType" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsViewed" Type="Boolean" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IncomingTransferSuccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CallReceivedID" Type="Int64" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="6" />
+    <Property Name="StopDate" Type="DateTime" Precision="6" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallDisonnectDate" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InsertOptionSelection">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IncomingCallID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="IncomingCallID" Type="Int64" Nullable="false" />
+    <Property Name="CallerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OptionSelected" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FolioNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallDateTime" Type="DateTime" Precision="6" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MobileActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="OldTelephoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NewTelephoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyBy" Type="Int32" />
+    <Property Name="ActivityRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="OTPGeneration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="FolioNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="OTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC" Type="DateTime" Precision="6" />
+    <Property Name="IsOTPSend" Type="Int32" />
+    <Property Name="Expiry" Type="DateTime" Precision="6" />
+    <Property Name="CallDateTime" Type="DateTime" Precision="6" />
+    <Property Name="MsgDelievered" Type="Boolean" />
+    <Property Name="IsOTPUsed" Type="Int32" />
+    <Property Name="CallerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClientCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="IncomingCallID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PbxExtension">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ChannelID" />
+      <PropertyRef Name="Number" />
+      <PropertyRef Name="DOM" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ChannelID" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOM" Type="DateTime" Precision="6" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Campaign" Type="Int32" />
+    <Property Name="FlowNumber" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="CreateVoicelink" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Permission1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Service_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CallCategoryID" Type="Int32" />
+    <Property Name="ServiceCategory" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Service_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceCategoryID" Type="Int32" />
+    <Property Name="ServiceTypes" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SetDigit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Digit" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SetFormat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="VoiceLanguage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SystemUserPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserDefinedRoleDetail">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="PermissionID" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_AccessControlList_AccessPanel">
+    <End Role="AccessPanel" Type="Self.AccessPanel" Multiplicity="1" />
+    <End Role="AccessControlList" Type="Self.AccessControlList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessPanel">
+        <PropertyRef Name="AId" />
+      </Principal>
+      <Dependent Role="AccessControlList">
+        <PropertyRef Name="AccessControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_AddressBook">
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="1" />
+    <End Role="AddressBook1" Type="Self.AddressBook" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AddressBook">
+        <PropertyRef Name="Addressid" />
+      </Principal>
+      <Dependent Role="AddressBook1">
+        <PropertyRef Name="Addressid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="HomeCityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_City1">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="BusinessCityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_Country">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="HomeCityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_Country1">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="BusinessCountryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="HomeStateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressBook_State1">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="AddressBook">
+        <PropertyRef Name="BusinessStateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AgentCall__UserI__5EAAD05B">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AgentCallTimeStatus" Type="Self.AgentCallTimeStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AgentCallTimeStatus">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AgentCall__UserI__61873D06">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AgentCallTimeStatusLog" Type="Self.AgentCallTimeStatusLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AgentCallTimeStatusLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRole_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="SubRole" Type="Self.SubRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationID" />
+      </Principal>
+      <Dependent Role="SubRole">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppRolePermissionMapper_Permission">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="1" />
+    <End Role="AppRolePermissionMapper" Type="Self.AppRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="AppRolePermissionMapper">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppRolePermissionMapper_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AppRolePermissionMapper" Type="Self.AppRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AppRolePermissionMapper">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubRoleId">
+    <End Role="SubRole" Type="Self.SubRole" Multiplicity="0..1" />
+    <End Role="AppRolePermissionMapper" Type="Self.AppRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRole">
+        <PropertyRef Name="SubRoleID" />
+      </Principal>
+      <Dependent Role="AppRolePermissionMapper">
+        <PropertyRef Name="SubRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDetail_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="BranchDetail">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDetail_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="BranchDetail">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDetail_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="BranchDetail">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBranchDetails_BranchDetail">
+    <End Role="BranchDetail" Type="Self.BranchDetail" Multiplicity="0..1" />
+    <End Role="UserBranchDetails" Type="Self.UserBranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchDetail">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="UserBranchDetails">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchGateWayMapping_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="0..1" />
+    <End Role="BranchGatewayMapping" Type="Self.BranchGatewayMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BranchGatewayMapping">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExtensionMapping_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="0..1" />
+    <End Role="ExtensionMapping" Type="Self.ExtensionMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ExtensionMapping">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallDispositions_CallDispositions">
+    <End Role="CallDispositions" Type="Self.CallDisposition" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignDispositions" Type="Self.CampaignDisposition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallDispositions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignDispositions">
+        <PropertyRef Name="CallDispositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallSuccess_CallListAttempts">
+    <End Role="CallListAttempts" Type="Self.CallListAttempt" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallSuccess" Type="Self.CallSuccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListAttempts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallSuccess">
+        <PropertyRef Name="CallListAttemptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CallListD__CallL__15C52FC4">
+    <End Role="CallListDetails" Type="Self.CallListDetail" Multiplicity="1" />
+    <End Role="CallListDetailsAdditional" Type="Self.CallListDetailsAdditional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallListDetailsAdditional">
+        <PropertyRef Name="CallListDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CallListD__CallL__16B953FD">
+    <End Role="CallListDetails" Type="Self.CallListDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallListDetailsAdditional" Type="Self.CallListDetailsAdditional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallListDetailsAdditional">
+        <PropertyRef Name="CallListDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CallListD__CallL__6D980E30">
+    <End Role="CallListDetails" Type="Self.CallListDetail" Multiplicity="1" />
+    <End Role="CallListDetailsAdditional" Type="Self.CallListDetailsAdditional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallListDetails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallListDetailsAdditional">
+        <PropertyRef Name="CallListDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallTransferSuccess_CallSuccess">
+    <End Role="CallSuccess" Type="Self.CallSuccess" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallTransferSuccess" Type="Self.CallTransferSuccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CallSuccess">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallTransferSuccess">
+        <PropertyRef Name="CallSuccessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignChannels_Channels">
+    <End Role="Channels" Type="Self.Channel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignChannels" Type="Self.CampaignChannel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Channels">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignChannels">
+        <PropertyRef Name="ChannelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignCustomFields_CustomFields">
+    <End Role="CustomFields" Type="Self.CustomField" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignCustomFields" Type="Self.CampaignCustomField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomFields">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignCustomFields">
+        <PropertyRef Name="CustomFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignUserGroups_UserGroups">
+    <End Role="UserGroups" Type="Self.UserGroup" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignUserGroups" Type="Self.CampaignUserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignUserGroups">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampaignVerifiers_Verifiers">
+    <End Role="Verifiers" Type="Self.Verifier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CampaignVerifiers" Type="Self.CampaignVerifier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Verifiers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CampaignVerifiers">
+        <PropertyRef Name="VerifiersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__Stateid__5F492382">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Stateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__Stateid__6F8056A2">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Stateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Cityid" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_Emails_Communication_Email_SMTPServer">
+    <End Role="Communication_Email_SMTPServer" Type="Self.Communication_Email_SMTPServer" Multiplicity="0..1" />
+    <End Role="Communication_Email_Emails" Type="Self.Communication_Email_Emails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_SMTPServer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_Emails">
+        <PropertyRef Name="PrefferredSMTPServerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_EmailsAttachments_Communication_Email_Em">
+    <End Role="Communication_Email_Emails" Type="Self.Communication_Email_Emails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Communication_Email_EmailsAttachments" Type="Self.Communication_Email_EmailsAttachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_Emails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_EmailsAttachments">
+        <PropertyRef Name="EmailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_EmailsAttempts_Communication_Email_Email">
+    <End Role="Communication_Email_Emails" Type="Self.Communication_Email_Emails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Communication_Email_EmailsAttempts" Type="Self.Communication_Email_EmailsAttempts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_Emails">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_EmailsAttempts">
+        <PropertyRef Name="EmailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS">
+    <End Role="Communication_Email_SMTPServer" Type="Self.Communication_Email_SMTPServer" Multiplicity="0..1" />
+    <End Role="Communication_Email_EmailsAttempts" Type="Self.Communication_Email_EmailsAttempts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Communication_Email_SMTPServer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Communication_Email_EmailsAttempts">
+        <PropertyRef Name="SMTPServerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__Countryid__57A801BA">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="Countryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__Countryid__71689F14">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="Countryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Countryid" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDataReceived_IncomingCalls">
+    <End Role="IncomingCalls" Type="Self.IncomingCall" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IncomingDataReceived" Type="Self.IncomingDataReceived" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomingCalls">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IncomingDataReceived">
+        <PropertyRef Name="IncomingCallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_Application">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="0..1" />
+    <End Role="Role" Type="Self.Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="PermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRolePermissionMapper_Permission">
+    <End Role="Permission" Type="Self.Permission" Multiplicity="1" />
+    <End Role="SubRolePermissionMapper" Type="Self.SubRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="SubRolePermissionMapper">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermission_Roles">
+    <End Role="Roles" Type="Self.Role1" Multiplicity="1" />
+    <End Role="RolePermission" Type="Self.RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RuleAlert__RuleI__0D44F85C">
+    <End Role="Rule" Type="Self.Rule" Multiplicity="0..1" />
+    <End Role="RuleAlert" Type="Self.RuleAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RuleAlert">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RuleAlert__RuleI__70747ADB">
+    <End Role="Rule" Type="Self.Rule" Multiplicity="0..1" />
+    <End Role="RuleAlert" Type="Self.RuleAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RuleAlert">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBranchDetails_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="UserBranchDetails" Type="Self.UserBranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Stateid" />
+      </Principal>
+      <Dependent Role="UserBranchDetails">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubRolePermissionMapper_SubRole">
+    <End Role="SubRole" Type="Self.SubRole" Multiplicity="0..1" />
+    <End Role="SubRolePermissionMapper" Type="Self.SubRolePermissionMapper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubRole">
+        <PropertyRef Name="SubRoleID" />
+      </Principal>
+      <Dependent Role="SubRolePermissionMapper">
+        <PropertyRef Name="SubRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User1" Type="Self.User" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBranchDetails_Zone">
+    <End Role="Zone" Type="Self.Zone" Multiplicity="0..1" />
+    <End Role="UserBranchDetails" Type="Self.UserBranchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zone">
+        <PropertyRef Name="ZoneID" />
+      </Principal>
+      <Dependent Role="UserBranchDetails">
+        <PropertyRef Name="ZoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserBreaks_UserBreaks1">
+    <End Role="UserBreaks" Type="Self.UserBreak" Multiplicity="1" />
+    <End Role="UserBreaks1" Type="Self.UserBreak" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserBreaks">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserBreaks1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole">
+    <End Role="UserDefinedRole" Type="Self.UserDefinedRole" Multiplicity="1" />
+    <End Role="UserMappingwithUserDefinedRole" Type="Self.UserMappingwithUserDefinedRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDefinedRole">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="UserMappingwithUserDefinedRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroupDetails_UserGroups">
+    <End Role="UserGroups" Type="Self.UserGroup" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserGroupDetails" Type="Self.UserGroupDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserGroupDetails">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OceanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AccessControlLists" EntityType="Self.AccessControlList" />
+    <EntitySet Name="AccessPanels" EntityType="Self.AccessPanel" />
+    <EntitySet Name="Activitylogs" EntityType="Self.Activitylog" />
+    <EntitySet Name="AddressBooks" EntityType="Self.AddressBook" />
+    <EntitySet Name="AgentCallTimeStatus" EntityType="Self.AgentCallTimeStatu" />
+    <EntitySet Name="AgentCallTimeStatusLogs" EntityType="Self.AgentCallTimeStatusLog" />
+    <EntitySet Name="AlertDescriptions" EntityType="Self.AlertDescription" />
+    <EntitySet Name="Applications" EntityType="Self.Application" />
+    <EntitySet Name="AppRolePermissionMappers" EntityType="Self.AppRolePermissionMapper" />
+    <EntitySet Name="BlockCallerLists" EntityType="Self.BlockCallerList" />
+    <EntitySet Name="BranchDetails" EntityType="Self.BranchDetail" />
+    <EntitySet Name="BranchGatewayMappings" EntityType="Self.BranchGatewayMapping" />
+    <EntitySet Name="BranchMasters" EntityType="Self.BranchMaster" />
+    <EntitySet Name="Breaks" EntityType="Self.Break" />
+    <EntitySet Name="CallBacksMisseds" EntityType="Self.CallBacksMissed" />
+    <EntitySet Name="CallDestinationMasters" EntityType="Self.CallDestinationMaster" />
+    <EntitySet Name="CallDispositions" EntityType="Self.CallDisposition" />
+    <EntitySet Name="CallLists" EntityType="Self.CallList" />
+    <EntitySet Name="CallListAttempts" EntityType="Self.CallListAttempt" />
+    <EntitySet Name="CallListDetails" EntityType="Self.CallListDetail" />
+    <EntitySet Name="CallListDetailsAdditionals" EntityType="Self.CallListDetailsAdditional" />
+    <EntitySet Name="CallListDetailsMobiles" EntityType="Self.CallListDetailsMobile" />
+    <EntitySet Name="CallSuccesses" EntityType="Self.CallSuccess" />
+    <EntitySet Name="CallTransferSuccesses" EntityType="Self.CallTransferSuccess" />
+    <EntitySet Name="Campaigns" EntityType="Self.Campaign" />
+    <EntitySet Name="CampaignChannels" EntityType="Self.CampaignChannel" />
+    <EntitySet Name="CampaignCustomFields" EntityType="Self.CampaignCustomField" />
+    <EntitySet Name="CampaignDispositions" EntityType="Self.CampaignDisposition" />
+    <EntitySet Name="CampaignSettings" EntityType="Self.CampaignSetting" />
+    <EntitySet Name="CampaignUserGroups" EntityType="Self.CampaignUserGroup" />
+    <EntitySet Name="CampaignUsers" EntityType="Self.CampaignUser" />
+    <EntitySet Name="CampaignVerifiers" EntityType="Self.CampaignVerifier" />
+    <EntitySet Name="Channels" EntityType="Self.Channel" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="ClientDetails" EntityType="Self.ClientDetail" />
+    <EntitySet Name="Communication_Email_Emails" EntityType="Self.Communication_Email_Emails" />
+    <EntitySet Name="Communication_Email_EmailsAttachments" EntityType="Self.Communication_Email_EmailsAttachments" />
+    <EntitySet Name="Communication_Email_EmailsAttempts" EntityType="Self.Communication_Email_EmailsAttempts" />
+    <EntitySet Name="Communication_Email_Settings" EntityType="Self.Communication_Email_Settings" />
+    <EntitySet Name="Communication_Email_SMTPServer" EntityType="Self.Communication_Email_SMTPServer" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="CustomFields" EntityType="Self.CustomField" />
+    <EntitySet Name="DNCLists" EntityType="Self.DNCList" />
+    <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+    <EntitySet Name="ExtensionMappings" EntityType="Self.ExtensionMapping" />
+    <EntitySet Name="Extensions" EntityType="Self.Extension" />
+    <EntitySet Name="Flags" EntityType="Self.Flag" />
+    <EntitySet Name="Genders" EntityType="Self.Gender" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="HMPDetails" EntityType="Self.HMPDetail" />
+    <EntitySet Name="Holidays" EntityType="Self.Holiday" />
+    <EntitySet Name="IncomingCalls" EntityType="Self.IncomingCall" />
+    <EntitySet Name="IncomingDataReceiveds" EntityType="Self.IncomingDataReceived" />
+    <EntitySet Name="IncomingEmail_Settings" EntityType="Self.IncomingEmail_Settings" />
+    <EntitySet Name="IncomingTransferFailed_History" EntityType="Self.IncomingTransferFailed_History" />
+    <EntitySet Name="InternalTransfers" EntityType="Self.InternalTransfer" />
+    <EntitySet Name="IVRFlowTraces" EntityType="Self.IVRFlowTrace" />
+    <EntitySet Name="LeadManagements" EntityType="Self.LeadManagement" />
+    <EntitySet Name="LeadTypes" EntityType="Self.LeadType" />
+    <EntitySet Name="ManualDialAttempts" EntityType="Self.ManualDialAttempt" />
+    <EntitySet Name="NonBusinessHourCalls" EntityType="Self.NonBusinessHourCall" />
+    <EntitySet Name="OfficeServiceTypes" EntityType="Self.OfficeServiceType" />
+    <EntitySet Name="OfficeTimes" EntityType="Self.OfficeTime" />
+    <EntitySet Name="OrganizationDetails" EntityType="Self.OrganizationDetail" />
+    <EntitySet Name="PasswordPolicies" EntityType="Self.PasswordPolicy" />
+    <EntitySet Name="Permissions" EntityType="Self.Permission" />
+    <EntitySet Name="Plans" EntityType="Self.Plan" />
+    <EntitySet Name="PlanSettings" EntityType="Self.PlanSetting" />
+    <EntitySet Name="PRIInfoes" EntityType="Self.PRIInfo" />
+    <EntitySet Name="RMClientMappings" EntityType="Self.RMClientMapping" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="RolePermissions" EntityType="Self.RolePermission" />
+    <EntitySet Name="Roles1" EntityType="Self.Role1" />
+    <EntitySet Name="Rules" EntityType="Self.Rule" />
+    <EntitySet Name="RuleActions" EntityType="Self.RuleAction" />
+    <EntitySet Name="RuleAlerts" EntityType="Self.RuleAlert" />
+    <EntitySet Name="RuleProcesses" EntityType="Self.RuleProcess" />
+    <EntitySet Name="SecurityQuestions" EntityType="Self.SecurityQuestion" />
+    <EntitySet Name="Settings" EntityType="Self.Setting" />
+    <EntitySet Name="SIPUserMappings" EntityType="Self.SIPUserMapping" />
+    <EntitySet Name="SIPUserMasters" EntityType="Self.SIPUserMaster" />
+    <EntitySet Name="SpeedDials" EntityType="Self.SpeedDial" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="States1" EntityType="Self.State1" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="StoreMasters" EntityType="Self.StoreMaster" />
+    <EntitySet Name="SubRoles" EntityType="Self.SubRole" />
+    <EntitySet Name="SubRolePermissionMappers" EntityType="Self.SubRolePermissionMapper" />
+    <EntitySet Name="SystemAlerts" EntityType="Self.SystemAlert" />
+    <EntitySet Name="SystemDispositions" EntityType="Self.SystemDisposition" />
+    <EntitySet Name="TenantAudits" EntityType="Self.TenantAudit" />
+    <EntitySet Name="Tenants" EntityType="Self.Tenant" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="User_CTI_Details" EntityType="Self.User_CTI_Details" />
+    <EntitySet Name="UserActivities" EntityType="Self.UserActivity" />
+    <EntitySet Name="UserBranchAccesses" EntityType="Self.UserBranchAccess" />
+    <EntitySet Name="UserBranchDetails" EntityType="Self.UserBranchDetail" />
+    <EntitySet Name="UserBranchMappings" EntityType="Self.UserBranchMapping" />
+    <EntitySet Name="UserBreaks" EntityType="Self.UserBreak" />
+    <EntitySet Name="UserCampaignMappings" EntityType="Self.UserCampaignMapping" />
+    <EntitySet Name="UserDefinedRoles" EntityType="Self.UserDefinedRole" />
+    <EntitySet Name="UserGroupDetails" EntityType="Self.UserGroupDetail" />
+    <EntitySet Name="UserGroups" EntityType="Self.UserGroup" />
+    <EntitySet Name="UserLogs" EntityType="Self.UserLog" />
+    <EntitySet Name="UserMappingwithUserDefinedRoles" EntityType="Self.UserMappingwithUserDefinedRole" />
+    <EntitySet Name="UserMissedCallDetails" EntityType="Self.UserMissedCallDetail" />
+    <EntitySet Name="UserMobileMappings" EntityType="Self.UserMobileMapping" />
+    <EntitySet Name="UserPermissions" EntityType="Self.UserPermission" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <EntitySet Name="Users_Audit" EntityType="Self.Users_Audit" />
+    <EntitySet Name="UserSecurities" EntityType="Self.UserSecurity" />
+    <EntitySet Name="UsersInRoles" EntityType="Self.UsersInRole" />
+    <EntitySet Name="UserStatus" EntityType="Self.UserStatu" />
+    <EntitySet Name="Verifiers" EntityType="Self.Verifier" />
+    <EntitySet Name="VoiceLogs_CallDetails" EntityType="Self.VoiceLogs_CallDetails" />
+    <EntitySet Name="VoiceMails" EntityType="Self.VoiceMail" />
+    <EntitySet Name="Workstations" EntityType="Self.Workstation" />
+    <EntitySet Name="Zones" EntityType="Self.Zone" />
+    <EntitySet Name="AdminMenus" EntityType="Self.AdminMenu" />
+    <EntitySet Name="BoardModels" EntityType="Self.BoardModel" />
+    <EntitySet Name="Call_Category" EntityType="Self.Call_Category" />
+    <EntitySet Name="CallConnectionDetails" EntityType="Self.CallConnectionDetail" />
+    <EntitySet Name="CheckDIDMappings" EntityType="Self.CheckDIDMapping" />
+    <EntitySet Name="EmailStatementRequestDatas" EntityType="Self.EmailStatementRequestData" />
+    <EntitySet Name="IncomingTransferFaileds" EntityType="Self.IncomingTransferFailed" />
+    <EntitySet Name="IncomingTransferSuccesses" EntityType="Self.IncomingTransferSuccess" />
+    <EntitySet Name="InsertOptionSelections" EntityType="Self.InsertOptionSelection" />
+    <EntitySet Name="MobileActivities" EntityType="Self.MobileActivity" />
+    <EntitySet Name="OTPGenerations" EntityType="Self.OTPGeneration" />
+    <EntitySet Name="PbxExtensions" EntityType="Self.PbxExtension" />
+    <EntitySet Name="Permissions1" EntityType="Self.Permission1" />
+    <EntitySet Name="Service_Category" EntityType="Self.Service_Category" />
+    <EntitySet Name="Service_Type" EntityType="Self.Service_Type" />
+    <EntitySet Name="SetDigits" EntityType="Self.SetDigit" />
+    <EntitySet Name="SetFormats" EntityType="Self.SetFormat" />
+    <EntitySet Name="SystemUserPermissions" EntityType="Self.SystemUserPermission" />
+    <EntitySet Name="UserDefinedRoleDetails" EntityType="Self.UserDefinedRoleDetail" />
+    <AssociationSet Name="FK_AccessControlList_AccessPanel" Association="Self.FK_AccessControlList_AccessPanel">
+      <End Role="AccessPanel" EntitySet="AccessPanels" />
+      <End Role="AccessControlList" EntitySet="AccessControlLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_AddressBook" Association="Self.FK_AddressBook_AddressBook">
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+      <End Role="AddressBook1" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_City" Association="Self.FK_AddressBook_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_City1" Association="Self.FK_AddressBook_City1">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_Country" Association="Self.FK_AddressBook_Country">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_Country1" Association="Self.FK_AddressBook_Country1">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_State" Association="Self.FK_AddressBook_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressBook_State1" Association="Self.FK_AddressBook_State1">
+      <End Role="State" EntitySet="States" />
+      <End Role="AddressBook" EntitySet="AddressBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AgentCall__UserI__5EAAD05B" Association="Self.FK__AgentCall__UserI__5EAAD05B">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AgentCallTimeStatus" EntitySet="AgentCallTimeStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AgentCall__UserI__61873D06" Association="Self.FK__AgentCall__UserI__61873D06">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AgentCallTimeStatusLog" EntitySet="AgentCallTimeStatusLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRole_Application" Association="Self.FK_SubRole_Application">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="SubRole" EntitySet="SubRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppRolePermissionMapper_Permission" Association="Self.FK_AppRolePermissionMapper_Permission">
+      <End Role="Permission" EntitySet="Permissions" />
+      <End Role="AppRolePermissionMapper" EntitySet="AppRolePermissionMappers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppRolePermissionMapper_User" Association="Self.FK_AppRolePermissionMapper_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AppRolePermissionMapper" EntitySet="AppRolePermissionMappers" />
+    </AssociationSet>
+    <AssociationSet Name="SubRoleId" Association="Self.SubRoleId">
+      <End Role="SubRole" EntitySet="SubRoles" />
+      <End Role="AppRolePermissionMapper" EntitySet="AppRolePermissionMappers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDetail_City" Association="Self.FK_BranchDetail_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="BranchDetail" EntitySet="BranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDetail_Country" Association="Self.FK_BranchDetail_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="BranchDetail" EntitySet="BranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDetail_State" Association="Self.FK_BranchDetail_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="BranchDetail" EntitySet="BranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBranchDetails_BranchDetail" Association="Self.FK_UserBranchDetails_BranchDetail">
+      <End Role="BranchDetail" EntitySet="BranchDetails" />
+      <End Role="UserBranchDetails" EntitySet="UserBranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchGateWayMapping_BranchMaster" Association="Self.FK_BranchGateWayMapping_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMasters" />
+      <End Role="BranchGatewayMapping" EntitySet="BranchGatewayMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExtensionMapping_BranchMaster" Association="Self.FK_ExtensionMapping_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMasters" />
+      <End Role="ExtensionMapping" EntitySet="ExtensionMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallDispositions_CallDispositions" Association="Self.FK_CallDispositions_CallDispositions">
+      <End Role="CallDispositions" EntitySet="CallDispositions" />
+      <End Role="CampaignDispositions" EntitySet="CampaignDispositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallSuccess_CallListAttempts" Association="Self.FK_CallSuccess_CallListAttempts">
+      <End Role="CallListAttempts" EntitySet="CallListAttempts" />
+      <End Role="CallSuccess" EntitySet="CallSuccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CallListD__CallL__15C52FC4" Association="Self.FK__CallListD__CallL__15C52FC4">
+      <End Role="CallListDetails" EntitySet="CallListDetails" />
+      <End Role="CallListDetailsAdditional" EntitySet="CallListDetailsAdditionals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CallListD__CallL__16B953FD" Association="Self.FK__CallListD__CallL__16B953FD">
+      <End Role="CallListDetails" EntitySet="CallListDetails" />
+      <End Role="CallListDetailsAdditional" EntitySet="CallListDetailsAdditionals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CallListD__CallL__6D980E30" Association="Self.FK__CallListD__CallL__6D980E30">
+      <End Role="CallListDetails" EntitySet="CallListDetails" />
+      <End Role="CallListDetailsAdditional" EntitySet="CallListDetailsAdditionals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallTransferSuccess_CallSuccess" Association="Self.FK_CallTransferSuccess_CallSuccess">
+      <End Role="CallSuccess" EntitySet="CallSuccesses" />
+      <End Role="CallTransferSuccess" EntitySet="CallTransferSuccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignChannels_Channels" Association="Self.FK_CampaignChannels_Channels">
+      <End Role="Channels" EntitySet="Channels" />
+      <End Role="CampaignChannels" EntitySet="CampaignChannels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignCustomFields_CustomFields" Association="Self.FK_CampaignCustomFields_CustomFields">
+      <End Role="CustomFields" EntitySet="CustomFields" />
+      <End Role="CampaignCustomFields" EntitySet="CampaignCustomFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignUserGroups_UserGroups" Association="Self.FK_CampaignUserGroups_UserGroups">
+      <End Role="UserGroups" EntitySet="UserGroups" />
+      <End Role="CampaignUserGroups" EntitySet="CampaignUserGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampaignVerifiers_Verifiers" Association="Self.FK_CampaignVerifiers_Verifiers">
+      <End Role="Verifiers" EntitySet="Verifiers" />
+      <End Role="CampaignVerifiers" EntitySet="CampaignVerifiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__Stateid__5F492382" Association="Self.FK__City__Stateid__5F492382">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__Stateid__6F8056A2" Association="Self.FK__City__Stateid__6F8056A2">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_City" Association="Self.FK_Customer_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_Emails_Communication_Email_SMTPServer" Association="Self.FK_Communication_Email_Emails_Communication_Email_SMTPServer">
+      <End Role="Communication_Email_SMTPServer" EntitySet="Communication_Email_SMTPServer" />
+      <End Role="Communication_Email_Emails" EntitySet="Communication_Email_Emails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_EmailsAttachments_Communication_Email_Em" Association="Self.FK_Communication_Email_EmailsAttachments_Communication_Email_Em">
+      <End Role="Communication_Email_Emails" EntitySet="Communication_Email_Emails" />
+      <End Role="Communication_Email_EmailsAttachments" EntitySet="Communication_Email_EmailsAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_EmailsAttempts_Communication_Email_Email" Association="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_Email">
+      <End Role="Communication_Email_Emails" EntitySet="Communication_Email_Emails" />
+      <End Role="Communication_Email_EmailsAttempts" EntitySet="Communication_Email_EmailsAttempts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS" Association="Self.FK_Communication_Email_EmailsAttempts_Communication_Email_SMTPS">
+      <End Role="Communication_Email_SMTPServer" EntitySet="Communication_Email_SMTPServer" />
+      <End Role="Communication_Email_EmailsAttempts" EntitySet="Communication_Email_EmailsAttempts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__Countryid__57A801BA" Association="Self.FK__State__Countryid__57A801BA">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__Countryid__71689F14" Association="Self.FK__State__Countryid__71689F14">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Country" Association="Self.FK_Customer_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_State" Association="Self.FK_Customer_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDataReceived_IncomingCalls" Association="Self.FK_IncomingDataReceived_IncomingCalls">
+      <End Role="IncomingCalls" EntitySet="IncomingCalls" />
+      <End Role="IncomingDataReceived" EntitySet="IncomingDataReceiveds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_Application" Association="Self.FK_Role_Application">
+      <End Role="Permission" EntitySet="Permissions" />
+      <End Role="Role" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRolePermissionMapper_Permission" Association="Self.FK_SubRolePermissionMapper_Permission">
+      <End Role="Permission" EntitySet="Permissions" />
+      <End Role="SubRolePermissionMapper" EntitySet="SubRolePermissionMappers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermission_Roles" Association="Self.FK_RolePermission_Roles">
+      <End Role="Roles" EntitySet="Roles1" />
+      <End Role="RolePermission" EntitySet="RolePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RuleAlert__RuleI__0D44F85C" Association="Self.FK__RuleAlert__RuleI__0D44F85C">
+      <End Role="Rule" EntitySet="Rules" />
+      <End Role="RuleAlert" EntitySet="RuleAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RuleAlert__RuleI__70747ADB" Association="Self.FK__RuleAlert__RuleI__70747ADB">
+      <End Role="Rule" EntitySet="Rules" />
+      <End Role="RuleAlert" EntitySet="RuleAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBranchDetails_State" Association="Self.FK_UserBranchDetails_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="UserBranchDetails" EntitySet="UserBranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubRolePermissionMapper_SubRole" Association="Self.FK_SubRolePermissionMapper_SubRole">
+      <End Role="SubRole" EntitySet="SubRoles" />
+      <End Role="SubRolePermissionMapper" EntitySet="SubRolePermissionMappers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBranchDetails_Zone" Association="Self.FK_UserBranchDetails_Zone">
+      <End Role="Zone" EntitySet="Zones" />
+      <End Role="UserBranchDetails" EntitySet="UserBranchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserBreaks_UserBreaks1" Association="Self.FK_UserBreaks_UserBreaks1">
+      <End Role="UserBreaks" EntitySet="UserBreaks" />
+      <End Role="UserBreaks1" EntitySet="UserBreaks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMappingwithUserDefinedRole_UserDefinedRole" Association="Self.FK_UserMappingwithUserDefinedRole_UserDefinedRole">
+      <End Role="UserDefinedRole" EntitySet="UserDefinedRoles" />
+      <End Role="UserMappingwithUserDefinedRole" EntitySet="UserMappingwithUserDefinedRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroupDetails_UserGroups" Association="Self.FK_UserGroupDetails_UserGroups">
+      <End Role="UserGroups" EntitySet="UserGroups" />
+      <End Role="UserGroupDetails" EntitySet="UserGroupDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

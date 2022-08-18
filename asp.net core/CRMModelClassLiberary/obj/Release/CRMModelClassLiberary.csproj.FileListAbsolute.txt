@@ -1,0 +1,12 @@
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\CRMModelClassLiberary.dll.config
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\CRMModelClassLiberary.dll
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\CRMModelClassLiberary.pdb
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\EntityFramework.dll
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\EntityFramework.SqlServer.dll
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\EntityFramework.xml
+D:\akash\study\asp.net core\CRMModelClassLiberary\bin\Release\EntityFramework.SqlServer.xml
+D:\akash\study\asp.net core\CRMModelClassLiberary\obj\Release\CRMModelClassLiberary.csproj.AssemblyReference.cache
+D:\akash\study\asp.net core\CRMModelClassLiberary\obj\Release\CRMModelClassLiberary.csproj.CoreCompileInputs.cache
+D:\akash\study\asp.net core\CRMModelClassLiberary\obj\Release\CRMModelClassLiberary.csproj.CopyComplete
+D:\akash\study\asp.net core\CRMModelClassLiberary\obj\Release\CRMModelClassLiberary.dll
+D:\akash\study\asp.net core\CRMModelClassLiberary\obj\Release\CRMModelClassLiberary.pdb

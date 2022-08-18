@@ -1,0 +1,80 @@
+﻿@model IEnumerable<crudusingEntity.Models.LeadManagement>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadSource)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedToUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadType)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeadId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeadSource)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedToUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenantId)
+        </td>
+        <td>
+        
+        <a href="@Url.Action("Edit","LeadTypes",new {id = item.LeadId })">
+            <img src="@Url.Content("~/Images/edit icon.png")" style="width:25px;height:25px;" />
+        </a>|
+        <a href="@Url.Action("Delete","LeadTypes",new {id = item.LeadId })">
+            <img src="@Url.Content("~/Images/delete.jpg")" style="width:25px;height:25px;" />
+        </a>
+        </td>
+    </tr>
+}
+
+</table>

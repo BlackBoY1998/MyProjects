@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\akash\\study\\asp.net core\\BlazorCrud\\Shared\\BlazorCrud.Shared.csproj": {}
+  },
+  "projects": {
+    "D:\\akash\\study\\asp.net core\\BlazorCrud\\Shared\\BlazorCrud.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\akash\\study\\asp.net core\\BlazorCrud\\Shared\\BlazorCrud.Shared.csproj",
+        "projectName": "BlazorCrud.Shared",
+        "projectPath": "D:\\akash\\study\\asp.net core\\BlazorCrud\\Shared\\BlazorCrud.Shared.csproj",
+        "packagesPath": "C:\\Users\\akash.gawde\\.nuget\\packages\\",
+        "outputPath": "D:\\akash\\study\\asp.net core\\BlazorCrud\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\akash.gawde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Trigrams": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+﻿@model EmailSender.Models.TemplateMaster
+
+@{
+    ViewBag.count = Session["data"];
+    ViewBag.Title = "Mail";
+}
+
+<h2>Mail</h2>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
+
+    
+    <title></title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        @*<div>
+            <a href="#" id="General">Genral Template</a>
+            <label>followup Mail</label>
+            <label> Sample Template</label>
+        </div>*@
+        <table border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>To:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="InputName" name="InputName" />
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>CC:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="Inputcc" name="Inputcc" />
+                        <h5 id="UserNamecheck" style="color:red;">**please add comma seperated Email Id for cc</h5>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+
+                <td>
+                    <div class="form-group">
+                        <label> subject </label>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="InputSubject" name="InputSubject" />
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Template &nbsp;&nbsp;&nbsp;</label>
+                       @*<label id="text">@ViewBag.count</label>*@
+                        <br/>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @*<textarea class="form-control" id="InputTemplate"  name="inputTemplate" rows="10"></textarea>*@
+                        @Html.TextAreaFor(x => x.Template, new { @id = "InputTemplate", @name = "InputTemplate", style = "height:300px", })
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div class="form-group">
+                        <label> Attachment&nbsp;&nbsp;&nbsp;</label>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <input type="file" id="inputFile" name="fileUploader" />
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="form-group">
+                        <input id="btnSave" class="btn btn-success" type="submit" value="Send" />
+                        <input id="btnTemplate" class="btn btn-warning" type="button" value="Template" onclick="pageRedirect()"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+    tinymce.init({
+        selector: '#InputTemplate',
+        width: 800,
+        Height:800,
+        forced_root_block: "",
+
+           @*tinymce.get("InputTemplate").setContent(@ViewBag.setData)*@
+    @*setup: function (editor) {
+                    editor.on('init', function (e) {
+                        editor.setContent('@ViewBag.count');
+                    });
+                }*@
+    });
+
+
+    if ('@ViewBag.Message' == 'Sent') {
+        alert('Mail has been sent successfully');
+    }
+             if ('@ViewBag.Error' == 'Error') {
+                alert('There is Problem in your Mail please check before sending');
+            }
+
+    function pageRedirect() {
+        window.location.href = "/Template/GetTemplate";
+    }
+
+
+
+
+
+
+        </script>
+    </form>
+</body>
+</html>

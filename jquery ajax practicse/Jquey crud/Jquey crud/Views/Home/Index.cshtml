@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head><title></title>
+    <script src="~/Scripts/jquery-3.6.0.min.js">
+    </script>
+    </head>
+<body>
+    <br/>
+    <br/>
+    <form>
+        <div class="form-group row">
+            <label for="inputemployeename" class="col-sm-2 col-form-label">Employee Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputname" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputemployeesalary" class="col-sm-2 col-form-label">Employee Salary</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputSalary" placeholder="Salary">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputemployeeDOJ" class="col-sm-2 col-form-label">Employee Date of Joining</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputJoining" placeholder="Joining">
+            </div>
+        </div>
+        <button type="button" id="BtnClick" class="btn btn-info">Submit</button>
+        &nbsp;
+        &nbsp;
+        <button type="button" id="addtext" class="btn btn-danger">show File Content</button>
+
+        <div id="div">
+
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('#addtext').click(function () {
+                $('#div').load('/textfile/Dateformar.txt')
+            });
+        });
+
+        $('#BtnClick').click(function () {
+            var value = {
+                Name: $('#inputname').val(),
+                Salary: $('#inputSalary').val(),
+                DOJ: $('#inputJoining').val()
+            };
+            $.ajax({
+                url: '/Home/Index',
+                data: JSON.stringify(value),
+                type: 'POST',
+                DataType: 'Json',
+                async: 'true',
+                contentType: 'application/json;charset=utf-8',
+                Success: function (result) {
+                    alert('data Added');
+                },
+                error:function(errormsg){
+                    alert(errormsg.responseText);
+                }
+
+            });
+        });
+    </script>
+
+</body>
+</html>

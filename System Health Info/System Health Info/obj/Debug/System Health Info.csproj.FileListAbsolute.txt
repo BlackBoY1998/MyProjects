@@ -1,0 +1,22 @@
+D:\akash\study\System Health Info\System Health Info\bin\System Health Info.dll.config
+D:\akash\study\System Health Info\System Health Info\bin\System Health Info.dll
+D:\akash\study\System Health Info\System Health Info\bin\System Health Info.pdb
+D:\akash\study\System Health Info\System Health Info\bin\EntityFramework.dll
+D:\akash\study\System Health Info\System Health Info\bin\EntityFramework.SqlServer.dll
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Helpers.dll
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Mvc.dll
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Razor.dll
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Webpages.Deployment.dll
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Webpages.dll
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Webpages.Razor.dll
+D:\akash\study\System Health Info\System Health Info\bin\EntityFramework.xml
+D:\akash\study\System Health Info\System Health Info\bin\EntityFramework.SqlServer.xml
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Razor.xml
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Webpages.xml
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Webpages.Deployment.xml
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Webpages.Razor.xml
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Helpers.xml
+D:\akash\study\System Health Info\System Health Info\bin\System.Web.Mvc.xml
+D:\akash\study\System Health Info\System Health Info\obj\Debug\System Health Info.csprojResolveAssemblyReference.cache
+D:\akash\study\System Health Info\System Health Info\obj\Debug\System Health Info.dll
+D:\akash\study\System Health Info\System Health Info\obj\Debug\System Health Info.pdb

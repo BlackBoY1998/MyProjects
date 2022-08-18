@@ -1,0 +1,6 @@
+D:\akash\study\TimesheetManagementModel\obj\Debug\TimesheetManagementModel.csproj.AssemblyReference.cache
+D:\akash\study\TimesheetManagementModel\obj\Debug\TimesheetManagementModel.csproj.CoreCompileInputs.cache
+D:\akash\study\TimesheetManagementModel\bin\Debug\TimesheetManagementModel.dll
+D:\akash\study\TimesheetManagementModel\bin\Debug\TimesheetManagementModel.pdb
+D:\akash\study\TimesheetManagementModel\obj\Debug\TimesheetManagementModel.dll
+D:\akash\study\TimesheetManagementModel\obj\Debug\TimesheetManagementModel.pdb

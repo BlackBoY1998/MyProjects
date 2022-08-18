@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RegModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LeadManagement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeadId" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+          <Property Name="LeadType" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="LeadSource" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="DOC" Type="datetime" />
+          <Property Name="DOM" Type="datetime" />
+          <Property Name="AssignedToUser" Type="varchar" MaxLength="50" />
+          <Property Name="Remarks" Type="varchar" MaxLength="50" />
+          <Property Name="TenantId" Type="int" />
+          <Property Name="TelphoneNo1" Type="varchar" MaxLength="50" />
+          <Property Name="TelePhoneNo2" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LeadType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="DOC" Type="datetime" />
+          <Property Name="DOM" Type="datetime" />
+          <Property Name="TenantId" Type="int" />
+          <Property Name="Description" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+          <Property Name="NewAccountDate" Type="datetime" />
+          <Property Name="Password2" Type="varchar" MaxLength="20" />
+          <Property Name="Password3" Type="varchar" MaxLength="20" />
+          <Property Name="IsActive" Type="int" />
+          <Property Name="IsLoggedin" Type="int" />
+        </EntityType>
+        <EntityType Name="Ptypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ptypes" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="rid" />
+          </Key>
+          <Property Name="rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" />
+          <Property Name="Dateofbirth" Type="nvarchar" MaxLength="20" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="Contact_no" Type="nvarchar" MaxLength="20" />
+          <Property Name="course" Type="varchar" MaxLength="20" />
+          <Property Name="OtherCourses" Type="varchar" MaxLength="30" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="varchar(max)" />
+          <Property Name="ZoneID" Type="int" />
+          <Property Name="TenantId" Type="int" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="zoneId" />
+          </Key>
+          <Property Name="zoneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="zoneName" Type="varchar(max)" />
+          <Property Name="Is_Deleted" Type="int" />
+          <Property Name="TenantId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="RegModelStoreContainer">
+          <EntitySet Name="LeadManagement" EntityType="Self.LeadManagement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeadType" EntityType="Self.LeadType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ptypes" EntityType="Self.Ptypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zone" EntityType="Self.Zone" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RegModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="rid" />
+          </Key>
+          <Property Name="rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Dateofbirth" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="course" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OtherCourses" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="RegEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Registrations" EntityType="Self.Registration" />
+          <EntitySet Name="LeadManagements" EntityType="RegModel.LeadManagement" />
+          <EntitySet Name="LeadTypes" EntityType="RegModel.LeadType" />
+          <EntitySet Name="States" EntityType="RegModel.State" />
+          <EntitySet Name="Zones" EntityType="RegModel.Zone" />
+          <EntitySet Name="Ptypes" EntityType="RegModel.Ptype" />
+          <EntitySet Name="LoginTables" EntityType="RegModel.LoginTable" />
+        </EntityContainer>
+        <EntityType Name="LeadManagement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeadId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LeadType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LeadSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOC" Type="DateTime" Precision="3" />
+          <Property Name="DOM" Type="DateTime" Precision="3" />
+          <Property Name="AssignedToUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenantId" Type="Int32" />
+          <Property Name="TelphoneNo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelePhoneNo2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LeadType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="DOC" Type="DateTime" Precision="3" />
+          <Property Name="DOM" Type="DateTime" Precision="3" />
+          <Property Name="TenantId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ZoneID" Type="Int32" />
+          <Property Name="TenantId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="zoneId" />
+          </Key>
+          <Property Name="zoneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zoneName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Is_Deleted" Type="Int32" />
+          <Property Name="TenantId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Ptype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ptypes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NewAccountDate" Type="DateTime" Precision="3" />
+          <Property Name="Password2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Int32" />
+          <Property Name="IsLoggedin" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RegModelStoreContainer" CdmEntityContainer="RegEntities">
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="RegModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="rid" ColumnName="rid" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Dateofbirth" ColumnName="Dateofbirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Contact_no" ColumnName="Contact_no" />
+                <ScalarProperty Name="course" ColumnName="course" />
+                <ScalarProperty Name="OtherCourses" ColumnName="OtherCourses" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeadManagements">
+            <EntityTypeMapping TypeName="RegModel.LeadManagement">
+              <MappingFragment StoreEntitySet="LeadManagement">
+                <ScalarProperty Name="TelePhoneNo2" ColumnName="TelePhoneNo2" />
+                <ScalarProperty Name="TelphoneNo1" ColumnName="TelphoneNo1" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="AssignedToUser" ColumnName="AssignedToUser" />
+                <ScalarProperty Name="DOM" ColumnName="DOM" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LeadSource" ColumnName="LeadSource" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LeadType" ColumnName="LeadType" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeadTypes">
+            <EntityTypeMapping TypeName="RegModel.LeadType">
+              <MappingFragment StoreEntitySet="LeadType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="DOM" ColumnName="DOM" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="RegModel.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="RegModel.Zone">
+              <MappingFragment StoreEntitySet="Zone">
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+                <ScalarProperty Name="zoneName" ColumnName="zoneName" />
+                <ScalarProperty Name="zoneId" ColumnName="zoneId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ptypes">
+            <EntityTypeMapping TypeName="RegModel.Ptype">
+              <MappingFragment StoreEntitySet="Ptypes">
+                <ScalarProperty Name="Ptypes" ColumnName="Ptypes" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginTables">
+            <EntityTypeMapping TypeName="RegModel.LoginTable">
+              <MappingFragment StoreEntitySet="LoginTable">
+                <ScalarProperty Name="IsLoggedin" ColumnName="IsLoggedin" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Password3" ColumnName="Password3" />
+                <ScalarProperty Name="Password2" ColumnName="Password2" />
+                <ScalarProperty Name="NewAccountDate" ColumnName="NewAccountDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

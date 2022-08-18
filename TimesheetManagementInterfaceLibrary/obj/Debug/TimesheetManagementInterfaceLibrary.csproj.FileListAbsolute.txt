@@ -1,0 +1,9 @@
+D:\akash\study\TimesheetManagementInterfaceLibrary\bin\Debug\TimesheetManagementInterfaceLibrary.dll
+D:\akash\study\TimesheetManagementInterfaceLibrary\bin\Debug\TimesheetManagementInterfaceLibrary.pdb
+D:\akash\study\TimesheetManagementInterfaceLibrary\bin\Debug\TimesheetManagementModel.dll
+D:\akash\study\TimesheetManagementInterfaceLibrary\bin\Debug\TimesheetManagementModel.pdb
+D:\akash\study\TimesheetManagementInterfaceLibrary\obj\Debug\TimesheetManagementInterfaceLibrary.csproj.AssemblyReference.cache
+D:\akash\study\TimesheetManagementInterfaceLibrary\obj\Debug\TimesheetManagementInterfaceLibrary.csproj.CoreCompileInputs.cache
+D:\akash\study\TimesheetManagementInterfaceLibrary\obj\Debug\TimesheetManagementInterfaceLibrary.csproj.CopyComplete
+D:\akash\study\TimesheetManagementInterfaceLibrary\obj\Debug\TimesheetManagementInterfaceLibrary.dll
+D:\akash\study\TimesheetManagementInterfaceLibrary\obj\Debug\TimesheetManagementInterfaceLibrary.pdb

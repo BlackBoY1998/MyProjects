@@ -1,0 +1,6 @@
+D:\akash\study\jquery ajax practicse\Test wcf\Test wcf\bin\Test wcf.dll.config
+D:\akash\study\jquery ajax practicse\Test wcf\Test wcf\bin\Test wcf.dll
+D:\akash\study\jquery ajax practicse\Test wcf\Test wcf\bin\Test wcf.pdb
+D:\akash\study\jquery ajax practicse\Test wcf\Test wcf\obj\Debug\Test wcf.csprojResolveAssemblyReference.cache
+D:\akash\study\jquery ajax practicse\Test wcf\Test wcf\obj\Debug\Test wcf.dll
+D:\akash\study\jquery ajax practicse\Test wcf\Test wcf\obj\Debug\Test wcf.pdb

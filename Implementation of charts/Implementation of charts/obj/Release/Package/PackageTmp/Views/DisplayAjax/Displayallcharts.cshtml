@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Displayallcharts";
+}
+
+<h2>Display all charts Using MDB charts</h2>
+
+<li><a href="/DisplayAjax/Bar" class="link-primary">Bar Chart</a></li>
+<li><a href="/DisplayAjax/Coloumn"link-primary">column Chart</a></li>
+<li><a href="/DisplayAjax/Index" class="link-primary">Line Chart</a></li>
+<li><a href="/DisplayAjax/Pie" class="link-primary">Pie Chart</a></li>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+
+
+
+@*<div style="width:700px; margin:0 auto;">
+    <canvas id="Chart"></canvas>
+</div>*@
+@*<figure class="highcharts-figure">
+   <canvas id="Chart"></canvas>
+</figure>
+
+
+<script>
+    function PieFunction() {
+        $.getJSON("/DisplayAjax/PieData", function (data) {
+
+            var ctxP = document.getElementById("Chart").getContext('2d');
+
+            var myPieChart = new Chart(ctxP, {
+                type: 'pie',
+                data: {
+                    labels: ["London", "Seattle", "Tacoma", "Kirkland", "Redmond"],
+                    datasets: [{
+                        data: [data.London, data.Seattle, data.Tacoma, data.Kirkland, data.Redmond],
+                        backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+                        hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        });
+    }
+    function LineFunction() {
+        $.getJSON("/DisplayAjax/Line", function (data) {
+            var Names = []
+            var Qts = []
+            for (var i = 0; i < data.length; i++) {
+                Names.push(data[i].Product);
+                Qts.push(data[i].Quantity);
+            }
+            var ctxL = document.getElementById("Chart").getContext('2d');
+            var myLineChart = new Chart(ctxL, {
+                type: 'line',
+                data: {
+                    labels: Names,
+                    datasets: [{
+                        label: "Stock Of Ordered Products",
+                        data: Qts,
+                        backgroundColor:'rgba(255, 99, 132, 0.2)',
+                      
+                        borderColor: 
+                        'rgba(255,99,132,1)'
+                        ,
+                        borderWidth: 2
+                    }
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+        });
+    }
+    
+    function ColoumnFunction() {
+        $.getJSON("/DisplayAjax/BarData", function (data) {
+            var Categorey = []
+            var ProductCount = []
+            for (var i = 0; i < data.length; i++) {
+                Categorey.push(data[i].CategoreyName);
+                ProductCount.push(data[i].ProductCount);
+            }
+            var ctxB = document.getElementById("Chart").getContext('2d');
+            var myBarChart = new Chart(ctxB, {
+                type: 'bar',
+                data: {
+                    labels: Categorey,
+                    datasets: [{
+                        label: 'Total Product Count',
+                        data: ProductCount,
+                        backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                         'rgba(0, 77, 255, 0.14)',
+                         'rgba(0, 214, 189, 0.14)'
+                        ],
+                        borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgb(106, 90, 205)',
+                        'rgb(150, 186, 151)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+       
+    }
+
+    function BarFunction() {
+        $.getJSON("/DisplayAjax/BarData", function (data) {
+            var Categorey = []
+            var ProductCount = []
+            for (var i = 0; i < data.length; i++) {
+                Categorey.push(data[i].CategoreyName);
+                ProductCount.push(data[i].ProductCount);
+            }
+            new Chart(document.getElementById("Chart"), {
+                "type": "horizontalBar",
+                "data": {
+                    "labels": Categorey,
+                    "datasets": [{
+                        "label": "Total Product Count",
+                        "data": ProductCount,
+                        "fill": false,
+                        "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+                        "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
+                        "rgba(153, 102, 255, 0.2)", "rgba(0, 77, 255, 0.14)", "rgba(0, 214, 189, 0.14)"
+                        ],
+                        "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+                        "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(106, 90, 205)", "rgb(150, 186, 151)"
+                        ],
+                        "borderWidth": 1
+                    }]
+                },
+                "options": {
+                    "scales": {
+                        "xAxes": [{
+                            "ticks": {
+                                "beginAtZero": true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    }
+
+
+    
+
+</script>*@

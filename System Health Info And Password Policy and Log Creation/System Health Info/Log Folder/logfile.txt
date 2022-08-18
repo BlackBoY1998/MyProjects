@@ -1,0 +1,45 @@
+2021-07-03 17:34:25,394 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Login Page Loaded Succesfully....
+2021-07-03 17:34:25,404 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Login Page Loaded Succesfully....
+2021-07-03 17:34:25,405 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Login Page Loaded Succesfully....
+2021-07-03 17:34:39,288 [10] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Checking Password Expiration
+2021-07-03 17:34:39,289 [10] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Checking Password Expiration
+2021-07-03 17:34:39,289 [10] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Checking Password Expiration
+2021-07-03 17:34:39,289 [10] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - User Logged in Succesfully Redirected to Info page
+2021-07-03 17:34:39,289 [10] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - User Logged in Succesfully Redirected to Info page
+2021-07-03 17:34:39,289 [10] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - User Logged in Succesfully Redirected to Info page
+2021-07-03 17:34:39,712 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Posting User Logged In Data in Database
+2021-07-03 17:34:39,712 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Posting User Logged In Data in Database
+2021-07-03 17:34:39,712 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Posting User Logged In Data in Database
+2021-07-03 17:34:39,765 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Users Server Info
+2021-07-03 17:34:39,765 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Users Server Info
+2021-07-03 17:34:39,765 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Users Server Info
+2021-07-03 17:34:39,766 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Name
+2021-07-03 17:34:39,767 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Name
+2021-07-03 17:34:39,767 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Name
+2021-07-03 17:34:39,827 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting LastLoginTime
+2021-07-03 17:34:39,827 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting LastLoginTime
+2021-07-03 17:34:39,827 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting LastLoginTime
+2021-07-03 17:34:39,882 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Last Ip Address
+2021-07-03 17:34:39,882 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Last Ip Address
+2021-07-03 17:34:39,882 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Last Ip Address
+2021-07-03 17:34:39,935 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Last User
+2021-07-03 17:34:39,935 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Last  User
+2021-07-03 17:34:39,935 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Last User
+2021-07-03 17:34:39,995 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Size in Data
+2021-07-03 17:34:39,995 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Size in Data
+2021-07-03 17:34:39,996 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Size in Data
+2021-07-03 17:34:40,054 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Size in Log
+2021-07-03 17:34:40,054 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Size in Log
+2021-07-03 17:34:40,054 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Getting Database Size in Log
+2021-07-03 17:34:40,054 [6] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Gathering Logged In User System Information
+2021-07-03 17:34:40,054 [6] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Gathering Logged In User System Information
+2021-07-03 17:34:40,055 [6] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Gathering Logged In User System Information
+2021-07-03 17:34:56,264 [10] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Posting User Logged Out Data in Database
+2021-07-03 17:34:56,264 [10] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Posting User Logged Out Data in Database
+2021-07-03 17:34:56,264 [10] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Posting User Logged Out Data in Database
+2021-07-03 17:34:56,264 [10] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - User Logged out Succesfully Redirected to Login page
+2021-07-03 17:34:56,265 [10] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - User Logged out Succesfully Redirected to Login page
+2021-07-03 17:34:56,265 [10] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - User Logged out Succesfully Redirected to Login page
+2021-07-03 17:34:56,299 [12] DEBUG System_Health_Info.Controllers.SystemInfoController [(null)] - Login Page Loaded Succesfully....
+2021-07-03 17:34:56,299 [12] INFO  System_Health_Info.Controllers.SystemInfoController [(null)] - Login Page Loaded Succesfully....
+2021-07-03 17:34:56,299 [12] WARN  System_Health_Info.Controllers.SystemInfoController [(null)] - Login Page Loaded Succesfully....

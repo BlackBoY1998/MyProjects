@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewBag.Title = "DisplayAllGraphs";
+}
+
+<h2>Display All Charts</h2>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<li><a href="#" class="link-primary" onclick="BarFunction();return false;">Bar Chart</a></li>
+<li><a href="#" class="link-primary" onclick="ColoumnFunction(); return false;">column Chart</a></li>
+<li><a href="#" class="link-primary" onclick="LineFunction(); return false;">Line Chart</a></li>
+<li><a href="#" class="link-primary" onclick="PieFunction(); return false;">Pie Chart</a></li>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+</figure>
+<script>
+    function BarFunction() {
+        $.getJSON("/Display/BarData", function (data) {
+            var Categorey = []
+            var ProductCount = []
+            for (var i = 0; i < data.length; i++) {
+                Categorey.push(data[i].CategoreyName);
+                ProductCount.push(data[i].ProductCount);
+            }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Categoreyewise Product Count '
+                },
+                subtitle: {
+                    text: 'Source: By Akash Gawde'
+                },
+                xAxis: {
+                    categories: Categorey,
+                    title: {
+                        text: null
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Product Count',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 200,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor:
+                        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    shadow: true
+                },
+                credits: {
+                    enabled: true
+                },
+                series: [{
+                    name: 'Total Product Count',
+                    data: ProductCount
+                }]
+            });
+        });
+    }
+
+
+    function ColoumnFunction() {
+
+        $.getJSON("/Display/BarData", function (data) {
+            var Categorey = []
+            var ProductCount = []
+            for (var i = 0; i < data.length; i++) {
+                Categorey.push(data[i].CategoreyName);
+                ProductCount.push(data[i].ProductCount);
+            }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Categoreywise Product Count'
+                },
+                subtitle: {
+                    text: 'Source: By Akash Gawde'
+                },
+                xAxis: {
+                    categories: Categorey,
+                    crosshair: false
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Product Count'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.f}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Total Product Count',
+                    //name: ViewBag.Product,
+                    data: ProductCount
+
+                }]
+            });
+        });
+    }
+
+    function LineFunction() {
+
+        $.getJSON("/Display/Line", function (data) {
+            var Names = []
+            var Qts = []
+            for (var i = 0; i < data.length; i++) {
+                Names.push(data[i].Product);
+                Qts.push(data[i].Quantity);
+            }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Stock Of Products'
+                },
+                subtitle: {
+                    text: 'Source: By Akash Gawde'
+                },
+                xAxis: {
+                    categories: Names
+                },
+                yAxis: {
+                    title: {
+                        text: 'Units'
+                    },
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: true
+                    }
+                },
+                series: [{
+                    name: 'Total Order Quantity',
+                    data: Qts
+                }]
+            });
+        });
+    }
+
+    function PieFunction() {
+        $.getJSON("/Display/PieData", function (data) {
+          
+
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Percentage of Employees By City'
+                },
+                subtitle: {
+                    text: 'Source: By Akash Gawde'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Citywise Employees',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'London',
+                        y:data.London
+                    },
+                    {
+                        name: 'Seattle',
+                        y: data.Seattle
+                    },
+                    {
+                        name: 'Tacoma',
+                        y: data.Tacoma
+                    },
+                    {
+                        name: 'Kirkland',
+                        y: data.Kirkland
+                    },
+                     {
+                         name: 'Redmond',
+                         y: data.Redmond
+                     }]
+                }]
+            });
+        });
+       
+    }
+</script>
+
+
+
+

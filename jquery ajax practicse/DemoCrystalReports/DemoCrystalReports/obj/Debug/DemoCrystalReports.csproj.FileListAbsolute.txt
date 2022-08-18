@@ -1,0 +1,9 @@
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\bin\Debug\DemoCrystalReports.exe.config
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\bin\Debug\DemoCrystalReports.exe
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\bin\Debug\DemoCrystalReports.pdb
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\obj\Debug\DemoCrystalReports.csprojResolveAssemblyReference.cache
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\obj\Debug\DemoCrystalReports.Form1.resources
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\obj\Debug\DemoCrystalReports.Properties.Resources.resources
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\obj\Debug\DemoCrystalReports.csproj.GenerateResource.Cache
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\obj\Debug\DemoCrystalReports.exe
+D:\akash\study\jquery ajax practicse\DemoCrystalReports\DemoCrystalReports\obj\Debug\DemoCrystalReports.pdb

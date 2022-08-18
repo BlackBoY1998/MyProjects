@@ -1,0 +1,118 @@
+﻿
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<h2> Add Customer </h2>
+<div class="form-group" style="display:none;">
+    <input id="txtCustomerId" class="form-control" name="CustomerID" />
+</div>
+<div class="form-group">
+    <label for="CustomerName">Customer Name:</label>
+    <input id="txtCustomerName" class="form-control" name="CustomerName" />
+</div>
+<div>
+    <label for="CustomerLocation">Customer Location:</label>
+    <input id="txtCustomerLocation" class="form-control" name="CustomerLocation" />
+</div>
+<br />
+
+<div class="text-center panel-body">
+    <button id="btnSave" class="btn btn-primary" style="width:100px">Save</button>
+</div>
+
+<h2> List Of Data</h2>
+<table id="tblCust" class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>CustomerName</th>
+            <th>CustomeLocation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getAllData();
+    });
+    $("#btnSave").click(function () {
+        debugger;
+        var CustomerID = $("#txtCustomerId").val();
+        if (CustomerID == 0) {
+            var data = {
+                customerID: $("#txtCustomerId").val(),
+                customerName: $("#txtCustomerName").val(),
+                customerLocation: $("#txtCustomerLocation").val(),
+
+            };
+            $.post("/CustomerUICs/AddUpdateCustomer", data).done(function (data) {
+                getAllData();
+            });
+        }
+        else {
+            UpdateCustomer(CustomerID)
+        }
+    });
+    function getAllData() {
+        $.getJSON("/CustomerUICs/GetAllCustomers", function (customers) {
+            $("#tblCust  tbody tr").remove();
+            $.map(customers, function (customer) {
+                $("#tblCust tbody").append("<tr>"
+                    + "<td>" + customer.customerName + "</td>"
+                    + "<td>" + customer.customerLocation + "</td>"
+                    + "<td>"
+                    + " <button  class='btn btn-primary' Onclick='EditCustomer(" + customer.customerID + ")' style='margin-right:5px;'>Edit</button>"
+                    + " <button  class='btn btn-danger' Onclick='DeleteCustomer(" + customer.customerID + ")'>Delete</button>"
+                    + "</td>"
+                    + "<tr>")
+            });
+        });
+    }
+
+
+    function EditCustomer(CustomerID) {
+
+        if (CustomerID > 0) {
+            debugger;
+            $.getJSON("/CustomerUICs/GetByCustomerId?CustomerID=" + CustomerID, function (customer) {
+                $("#txtCustomerId").val(customer.customerID);
+                $("#txtCustomerName").val(customer.customerName);
+                $("#txtCustomerLocation").val(customer.customerLocation);
+            });
+        }
+    }
+    function UpdateCustomer(customerID) {
+        debugger;
+        if (customerID > 0) {
+            $.ajax({
+                url: '/CustomerUICs/AddUpdateCustomer?CustomerID=' + customerID,
+                type: 'POST',
+                dataType: 'JSON',
+                success: function (data) {
+                    getAllData();
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+
+        }
+    }
+    function DeleteCustomer(CustomerID) {
+        if (CustomerID > 0) {
+            $.ajax({
+                url: '/CustomerUICs/DeleteCustomer?CustomerID=' + CustomerID,
+                type: 'DELETE',
+                dataType: 'JSON',
+                success: function (data) {
+                    getAllData
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+        }
+    }
+</script>

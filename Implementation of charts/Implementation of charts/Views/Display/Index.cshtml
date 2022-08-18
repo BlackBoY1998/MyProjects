@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container" style="min-width: 2000px; height: 500px; margin: 0 auto"></div>
+</figure>
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Display/Line", function (data) {
+            var Names = []
+            var Qts = []
+            for (var i = 0; i < data.length; i++) {
+                Names.push(data[i].Product);
+                Qts.push(data[i].Quantity);
+            }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Stock Of Products'
+                },
+                subtitle: {
+                    text: 'Source:By Akash Gawde'
+                },
+                xAxis: {
+                    categories:Names
+                },
+                yAxis: {
+                    title: {
+                        text: 'Units'
+                    },
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: true
+                    }
+                },
+                series: [{
+                    name: 'Units In Stock',
+                    data: Qts
+                }]
+            });
+        });
+    });
+</script>

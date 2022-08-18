@@ -1,0 +1,81 @@
+﻿@model IEnumerable<crudusingEntity.Models.Registration>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dateofbirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCourses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dateofbirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.course)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCourses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.rid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.rid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.rid })
+        </td>
+    </tr>
+}
+
+</table>

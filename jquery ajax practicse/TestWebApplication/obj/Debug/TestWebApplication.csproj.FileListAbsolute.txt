@@ -1,0 +1,2 @@
+D:\vs19 projects\TestWebApplication\obj\Debug\TestWebApplication.csproj.AssemblyReference.cache
+D:\vs19 projects\TestWebApplication\obj\Debug\TestWebApplication.csproj.CoreCompileInputs.cache

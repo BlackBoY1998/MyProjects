@@ -1,0 +1,51 @@
+﻿@model crudusingEntity.Models.StateAndZonecs
+
+@{
+    ViewBag.Title = "checkBox";
+}
+
+<h2>checkBox</h2>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<table>
+ 
+    <tr>
+        <td>
+            <label>Zones</label>
+        </td>
+        <td>
+           @Html.DropDownListFor(x => x.StateNames, Model.StateNames, "--Select--", new { @id = "ddlState" });  
+        </td>
+    </tr> 
+    <tr>
+        <td>
+            <label>States</label>
+        </td>
+        <td id="District">
+            @Html.DropDownListFor(x => x.ZoneName, new List<SelectListItem>(), "--Select--", new { @id = "ddlDistrict" });
+        </td>
+    </tr>   
+    
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#ddlState').change(function () {
+
+            $.ajax({
+                type: "post",
+                url: "/Reg/GetDistrict",
+                data: { ZoneId: $('#ddlState').val() },
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    var district = "<select id='ddlDistrict'>";
+                    district = district + '<option value="">--Select--</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                    }
+                    district = district + '</select>';
+                    $('#District').html(district);
+                }
+            });
+        });
+    });
+</script>

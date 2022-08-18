@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlpgsqlAPI", "PlpgsqlAPI.csproj", "{D581BBE3-4774-43EA-820C-9454322AC590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plpgsqlAPI-Client", "..\plpgsqlAPI-Client\plpgsqlAPI-Client.csproj", "{FE594330-F55D-4635-B04D-2FA82F71D969}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D581BBE3-4774-43EA-820C-9454322AC590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D581BBE3-4774-43EA-820C-9454322AC590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D581BBE3-4774-43EA-820C-9454322AC590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D581BBE3-4774-43EA-820C-9454322AC590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE594330-F55D-4635-B04D-2FA82F71D969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE594330-F55D-4635-B04D-2FA82F71D969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE594330-F55D-4635-B04D-2FA82F71D969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE594330-F55D-4635-B04D-2FA82F71D969}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2029862F-55B9-43F5-B0D6-BC503563554C}
+	EndGlobalSection
+EndGlobal

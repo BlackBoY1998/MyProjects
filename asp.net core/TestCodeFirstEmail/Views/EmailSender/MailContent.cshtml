@@ -1,0 +1,37 @@
+﻿@model EmailContent
+@{
+    ViewData["Title"] = "MailContent";
+}
+<form method="post">
+    <div class="border p-3 m-3">
+        <div class="row pb-2">
+            <h2 class="text-primary">Send Email</h2>
+            <hr />
+        </div>
+       
+
+
+        <div class="mb-2">
+            <label asp-for="To"></label>
+            <input asp-for="To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="CC"></label>
+            <input asp-for="CC" class="form-control" />
+            <span asp-validation-for="CC" class="text-danger"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="Subject"></label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="Content"></label>
+            <input asp-for="Content" class="form-control" style="Height:100px;width:960px" />
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+        <button type="submit" asp-controller="EmailSender" asp-action="MailContent" class="btn btn-primary" style="width:150px">Send Mail</button>
+    </div>
+</form>
+

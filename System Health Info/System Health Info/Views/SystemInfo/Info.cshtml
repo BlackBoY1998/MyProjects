@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Info";
+    //if (Session["Id"] == null)
+    //{
+    //    Response.Redirect("~/SystemInfo/Login");
+    //}
+}
+@using (Html.BeginForm("Logout", "SystemInfo", FormMethod.Post))
+{
+    <h3><a href="javascript:;" onclick="document.forms[0].submit();">Logout</a></h3>
+}
+<style >
+    #General {
+        height: 25px;
+        width: 30%;
+    }
+    progress{
+        height: 30px;
+        width: 100%;
+    }
+</style>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+@using System.Text.RegularExpressions;
+ @*<a href="@Url.Action("Logout","SystemInfo")">Logout</a>*@
+<h2><img src="~/Images/download.jpg" style="height:50px;width:50px" />&nbsp;&nbsp;System Information</h2>
+<hr/>
+
+<h4>IP Address:</h4>
+<h4><label>@ViewBag.Ip</label></h4>
+<hr />
+
+<h4>Windows Login Name:</h4>
+<h4><label>@ViewBag.WinLog</label></h4>
+<hr />
+
+<h4>Machine Name:</h4>
+<h4><label>@ViewBag.Machine</label></h4>
+<hr />
+
+<h4>Hard disk Usage:</h4>
+
+        @foreach (var item in ViewBag.Drive)
+        {
+
+            Regex reg1 = new Regex((@"^[0-9]+$"));
+            Regex reg = new Regex((@"^[A-Z\:\\]+$"));
+            if (reg.Match(@item).Success)
+            {
+                @item
+            }
+            else if (reg1.Match(@item).Success)
+            {
+                <div>@item %</div>
+
+                    <progress id="file" value="@item" max="100" style="width:250px;height:35px"></progress>
+            <br/>
+                 
+            }
+            else
+            {
+                <div>
+                    <label>&emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; @item</label>
+                </div>
+
+            }
+
+        }
+      <hr />
+@*<span>@item</span><br/>*@
+
+        <h4>Server Name:</h4>
+        <h4><label>@ViewBag.server</label></h4>
+
+<hr />
+        <h4>Database Name:</h4>
+        <h4><label>@TempData["DB"] </label></h4>
+<hr />
+        <h4>Last LoginTime:</h4>
+        <h4><label>@ViewBag.lastTime</label></h4>
+<hr />
+
+        <h4>Last Login IPAddress:</h4>
+        <h4><label>@ViewBag.LastIpAddress</label></h4>
+<hr />
+
+        <h4>Last Login By:</h4>
+        <h4><label>@ViewBag.LastUserName</label></h4>
+<hr />
+
+        <h4>Database Data Only size:</h4>
+        <h4><label>@ViewBag.DataSizes &nbsp; MB</label></h4>
+<hr />
+
+        <h4>Database Log  Only Size:</h4>
+        <h4><label>@ViewBag.LogSize &nbsp; MB</label></h4>
+
+<script type="text/javascript">
+    if ('@ViewBag.Error' == 'Error') {
+        alert('There is Problem....');
+    }
+    </script>
+
+

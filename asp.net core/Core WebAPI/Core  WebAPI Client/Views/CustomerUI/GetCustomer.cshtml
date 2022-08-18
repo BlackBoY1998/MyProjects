@@ -1,0 +1,37 @@
+﻿@model Core__WebAPI_Client.Models.Customer
+
+@{
+    ViewData["Title"] = "GetCustomer";
+}
+
+<h3>@ViewBag.StatusCode</h3>
+<form method="post">
+    <div class="form-group">
+        <label for="id">Customer Id:</label>
+        <input class="form-control" name="id" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Get Reservation</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Reservation</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Cutomer Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.CustomerID</td>
+                <td>@Model.CustomerName</td>
+                <td>@Model.CustomerLocation</td>
+            </tr>
+        </tbody>
+    </table>
+}

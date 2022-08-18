@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "BookAppointment";
+}
+
+<h2>BookAppointment</h2>
+<body>
+    <!-- Various <a> links that will increment your counter -->
+    <ul>
+        <li><a href='#' onclick='addToCount(1);'>Book Appointment</a></li>
+        <li><a href='#' onclick='addToCount(2);'>Book Appointment</a></li>
+        <li><a href='#' onclick='addToCount(3);'>Book Appointment</a></li>
+    </ul>
+    <hr />
+    <!-- Example Counter -->
+    Count : <span id='count'>10</span>
+    <!-- Hidden Counter (consider using a HiddenField for this) -->
+    <input id='counter' name='counter' type='hidden' value='10' />
+    <script type='text/javascript'>
+    function addToCount(valueToAdd){
+      // Grab the current count
+      var count = parseInt(document.getElementById('count').innerText);
+
+      // Add the specified amount to the count
+      var new_count = --count;
+      if (new_count < 0) {
+          alert("All Appointments are Booked");
+      }
+      else {
+          alert("Appointment Booked")
+          // Update your count (both the counter and hidden field)
+          document.getElementById('count').innerText = new_count;
+          document.getElementById('counter').value = new_count;
+      }
+    }
+    </script>
+</body>

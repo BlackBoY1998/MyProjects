@@ -1,0 +1,4 @@
+
+ ConvertJsonDateString(result.DOB)
+new Date(parseInt((result.DOB).substr(6)))
+new Date(parseInt((result.DOB).replace("/Date(", "").replace(")/")));

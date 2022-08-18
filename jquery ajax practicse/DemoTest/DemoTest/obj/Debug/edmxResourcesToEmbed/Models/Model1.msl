@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CallBalanceClopsModelStoreContainer" CdmEntityContainer="CallBalanceClopsEntities">
+    <EntitySetMapping Name="LocalIVRFlows">
+      <EntityTypeMapping TypeName="CallBalanceClopsModel.LocalIVRFlow">
+        <MappingFragment StoreEntitySet="LocalIVRFlow">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FlowName" ColumnName="FlowName" />
+          <ScalarProperty Name="FlowDisplayName" ColumnName="FlowDisplayName" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

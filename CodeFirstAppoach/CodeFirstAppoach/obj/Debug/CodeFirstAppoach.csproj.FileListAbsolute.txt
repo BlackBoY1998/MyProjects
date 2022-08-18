@@ -1,0 +1,10 @@
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\CodeFirstAppoach.dll.config
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\CodeFirstAppoach.dll
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\CodeFirstAppoach.pdb
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\EntityFramework.dll
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\EntityFramework.xml
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\obj\Debug\CodeFirstAppoach.dll
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\obj\Debug\CodeFirstAppoach.pdb
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\EntityFramework.SqlServer.dll
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\bin\EntityFramework.SqlServer.xml
+D:\akash\study\CodeFirstAppoach\CodeFirstAppoach\obj\Debug\CodeFirstAppoach.csprojResolveAssemblyReference.cache

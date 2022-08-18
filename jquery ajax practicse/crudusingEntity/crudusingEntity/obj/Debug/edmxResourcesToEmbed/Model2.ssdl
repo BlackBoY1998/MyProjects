@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallBalanceClopsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Campaign">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Description" Type="text" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Port" Type="int" Nullable="false" />
+    <Property Name="DOC" Type="datetime" />
+    <Property Name="DOM" Type="datetime" />
+    <Property Name="CallListType" Type="smallint" Nullable="false" />
+    <Property Name="MaxAttempts" Type="int" />
+    <Property Name="HoldPromptID" Type="int" />
+    <Property Name="DispositionAlgorithm" Type="int" Nullable="false" />
+    <Property Name="GreetingID" Type="int" />
+    <Property Name="CampaignMode" Type="int" />
+    <Property Name="CallFlow" Type="varchar" MaxLength="1024" />
+    <Property Name="BranchCode" Type="nchar" MaxLength="50" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="CampaignDID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CallBalanceClops.dbo.LocalIVRFlow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LocalIVRFlow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlowName" Type="varchar(max)" />
+    <Property Name="FlowDisplayName" Type="varchar(max)" />
+    <Property Name="CampaignID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CallBalanceClopsModelStoreContainer">
+    <EntitySet Name="Campaign" EntityType="Self.Campaign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocalIVRFlow" EntityType="Self.LocalIVRFlow" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LocalIVRFlow].[ID] AS [ID], 
+    [LocalIVRFlow].[FlowName] AS [FlowName], 
+    [LocalIVRFlow].[FlowDisplayName] AS [FlowDisplayName], 
+    [LocalIVRFlow].[CampaignID] AS [CampaignID]
+    FROM [dbo].[LocalIVRFlow] AS [LocalIVRFlow]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

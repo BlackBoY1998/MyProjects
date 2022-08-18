@@ -1,0 +1,45 @@
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Test token based authentication.dll.config
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Test token based authentication.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Test token based authentication.pdb
+D:\akash\study\Test token based authentication\Test token based authentication\bin\EntityFramework.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\EntityFramework.SqlServer.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Security.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Newtonsoft.Json.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Owin.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Net.Http.Formatting.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Helpers.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Http.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Http.WebHost.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Mvc.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Razor.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Webpages.Deployment.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Webpages.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Webpages.Razor.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\EntityFramework.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\EntityFramework.SqlServer.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Security.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Razor.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Webpages.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Webpages.Deployment.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Webpages.Razor.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Helpers.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Mvc.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Newtonsoft.Json.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Net.Http.Formatting.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Http.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Http.WebHost.xml
+D:\akash\study\Test token based authentication\Test token based authentication\obj\Debug\Test token based authentication.dll
+D:\akash\study\Test token based authentication\Test token based authentication\obj\Debug\Test token based authentication.pdb
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Security.OAuth.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Security.OAuth.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Cors.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\System.Web.Cors.dll
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Owin.Cors.xml
+D:\akash\study\Test token based authentication\Test token based authentication\bin\Microsoft.Web.Infrastructure.dll
+D:\akash\study\Test token based authentication\Test token based authentication\obj\Debug\Test token based authentication.csproj.AssemblyReference.cache
+D:\akash\study\Test token based authentication\Test token based authentication\obj\Debug\Test token based authentication.csproj.CoreCompileInputs.cache
+D:\akash\study\Test token based authentication\Test token based authentication\obj\Debug\Test token based authentication.csproj.CopyComplete

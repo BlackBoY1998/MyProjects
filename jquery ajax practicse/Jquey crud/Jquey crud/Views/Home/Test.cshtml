@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<style>
+    #para{
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+   p.over {
+    background: #ccc;
+  }
+  span {
+    color: red;
+  }
+  #die{
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+</style>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div id="rgt">
+    <p id="para">paragraph</p>
+</div>
+<p id="die"></p>
+<span></span>
+
+
+<button type="button" id="btnstyle" class="btn btn-success">animate</button><select name="Languages" multiple="multiple">
+    <option>Chocolate</option>
+    <option selected="selected">C#</option>
+    <option>c++</option>
+    <option selected="selected">Java</option>
+    <option>Python</option>
+    <option>PHP</option>
+</select>
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;"></div>
+    <script>
+        $('#btnstyle').click(function () {
+            $('div').animate({ left: '250px' })
+        })
+        $(document).ready(function () {
+            $('#div1').remove();
+        })
+        //var str = "";
+        //$('select').change(function () {
+        //    $("select option:selected").each(function () {
+        //        str += $(this).text() + " ";
+        //    });
+        //    $("div").text(str);
+
+        //}).change();
+
+        //var div = $("#rgt").first();
+        //div.contextmenu(function () {
+        //    div.toggleClass("contextmenu");
+        //});
+        $('#rgt').delegate("#para", "click", function () {
+            $(this).after('<p>another Paragraph</p>')
+        })
+        var fun = function () {
+            alert('Paragraph is clicked')
+        };
+
+        $('#die').die("click", fun);
+        $('#die').live("click", fun);//Remove event handlers previously attached using .live() from the elements.
+
+
+
+    </script>

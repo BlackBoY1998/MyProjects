@@ -1,0 +1,51 @@
+﻿<h3>DetailsPatient</h3>
+@page "/Detailspatients/{id}"
+@inject BlazorApplication.Data.IDataAccessProvider DataAccessProvider
+@inject NavigationManager navigation
+
+<EditForm Model="patient">
+    <div class="form-group">
+        <lable>Id:</lable>
+        <label for="id" class="font-weight-bold">@patient.id</label>
+    </div>
+    <div class="form-group">
+        <lable>Name:</lable>
+        <label for="name" class="font-weight-bold">@patient.name</label>
+    </div>
+    <div class="form-group">
+        <lable>Address:</lable>
+        <label for="Address" class="font-weight-bold">@patient.address</label>
+    </div>
+    <div class="form-group">
+        <lable>City:</lable>
+        <label for="City" class="font-weight-bold">@patient.city</label>
+    </div>
+    <div class="form-group">
+        <lable>Age:</lable>
+        <label for="Age" class="font-weight-bold">@patient.age</label>
+    </div>
+    <div class="form-group">
+        <lable>Gender:</lable>
+        <label for="Gender" class="font-weight-bold">@patient.gender</label>
+    </div>
+    <button type="button" class="btn btn-danger" @onclick="Close">Close</button>
+
+</EditForm>
+
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+
+    private BlazorApplication.Models.Patient patient { get; set; }
+
+    protected override void OnInitialized()
+    {
+        patient = DataAccessProvider.GetPatientSingleRecord(Convert.ToInt32(id));
+    }
+    public void Close()
+        {
+            navigation.NavigateTo("patients");
+        }
+
+}

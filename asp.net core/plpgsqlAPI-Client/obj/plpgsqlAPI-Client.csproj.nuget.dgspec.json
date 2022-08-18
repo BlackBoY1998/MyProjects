@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Akash\\akash\\study\\asp.net core\\plpgsqlAPI-Client\\plpgsqlAPI-Client.csproj": {}
+  },
+  "projects": {
+    "D:\\Akash\\akash\\study\\asp.net core\\plpgsqlAPI-Client\\plpgsqlAPI-Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Akash\\akash\\study\\asp.net core\\plpgsqlAPI-Client\\plpgsqlAPI-Client.csproj",
+        "projectName": "plpgsqlAPI-Client",
+        "projectPath": "D:\\Akash\\akash\\study\\asp.net core\\plpgsqlAPI-Client\\plpgsqlAPI-Client.csproj",
+        "packagesPath": "C:\\Users\\akash.gawde\\.nuget\\packages\\",
+        "outputPath": "D:\\Akash\\akash\\study\\asp.net core\\plpgsqlAPI-Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\akash.gawde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

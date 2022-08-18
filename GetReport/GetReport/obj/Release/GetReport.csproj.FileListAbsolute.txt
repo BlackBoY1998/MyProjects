@@ -1,0 +1,17 @@
+D:\akash\study\GetReport\GetReport\bin\GetReport.dll.config
+D:\akash\study\GetReport\GetReport\bin\GetReport.dll
+D:\akash\study\GetReport\GetReport\bin\GetReport.pdb
+D:\akash\study\GetReport\GetReport\bin\System.Web.Helpers.dll
+D:\akash\study\GetReport\GetReport\bin\System.Web.Mvc.dll
+D:\akash\study\GetReport\GetReport\bin\System.Web.Razor.dll
+D:\akash\study\GetReport\GetReport\bin\System.Web.Webpages.Deployment.dll
+D:\akash\study\GetReport\GetReport\bin\System.Web.Webpages.dll
+D:\akash\study\GetReport\GetReport\bin\System.Web.Webpages.Razor.dll
+D:\akash\study\GetReport\GetReport\bin\System.Web.Razor.xml
+D:\akash\study\GetReport\GetReport\bin\System.Web.Webpages.xml
+D:\akash\study\GetReport\GetReport\bin\System.Web.Webpages.Deployment.xml
+D:\akash\study\GetReport\GetReport\bin\System.Web.Webpages.Razor.xml
+D:\akash\study\GetReport\GetReport\bin\System.Web.Helpers.xml
+D:\akash\study\GetReport\GetReport\bin\System.Web.Mvc.xml
+D:\akash\study\GetReport\GetReport\obj\Release\GetReport.dll
+D:\akash\study\GetReport\GetReport\obj\Release\GetReport.pdb

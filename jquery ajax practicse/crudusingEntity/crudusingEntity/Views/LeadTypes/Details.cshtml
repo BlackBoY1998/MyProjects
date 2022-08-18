@@ -1,0 +1,74 @@
+﻿@model crudusingEntity.Models.LeadType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LeadType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadSource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadType1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadType1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LeadId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

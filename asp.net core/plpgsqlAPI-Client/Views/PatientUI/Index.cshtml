@@ -1,0 +1,144 @@
+﻿
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<h2> Add Customer </h2>
+<div class="form-group" style="display:none;">
+    <input id="txtid" class="form-control" name="pid" />
+</div>
+<div class="form-group">
+    <label for="PatientName"> Name:</label>
+    <input id="txtName" class="form-control" name="pname" />
+</div>
+<div>
+    <label for="patientaddress">address:</label>
+    <input id="txtaddress" class="form-control" name="paddress" />
+</div>
+<div>
+    <label for="patientCity">city:</label>
+    <input id="txtcity" class="form-control" name="pcity" />
+</div>
+<div>
+    <label for="patientAge">Age:</label>
+    <input id="txtage" class="form-control" name="page" />
+</div>
+<div>
+    <label for="patientGender">Gender:</label>
+    <input id="txtgender" class="form-control" name="pgender" />
+</div>
+<br />
+
+<div class="text-center panel-body">
+    <button id="btnSave" class="btn btn-primary" style="width:100px">Save</button>
+</div>
+
+<h2> List Of Data</h2>
+<table id="tblCust" class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>PatientName</th>
+            <th>Patientaddress</th>
+            <th>PatientCity</th>
+            <th>PatientAge</th>
+            <th>PatientGender</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getAllData();
+    });
+    $("#btnSave").click(function () {
+        debugger;
+        var PatientID = $("#txtid").val();
+        if (PatientID == 0) {
+            var data = {
+                pid: $("#txtid").val(),
+                pname: $("#txtName").val(),
+                paddress: $("#txtaddress").val(),
+                pcity: $("#txtcity").val(),
+                page: $("#txtage").val(),
+                pgender: $("#txtgender").val(),
+
+            };
+            $.post("/PatientUI/AddUpdatePatient", data).done(function (data) {
+                getAllData();
+            });
+        }
+        else {
+            UpdateCustomer(PatientID)
+        }
+    });
+    function getAllData() {
+        debugger;
+        $.getJSON("/PatientUI/GetAllPatients", function (patients) {
+            $("#tblCust  tbody tr").remove();
+            $.map(patients, function (patient) {
+                $("#tblCust tbody").append("<tr>"
+                    + "<td>" + patient.name + "</td>"
+                    + "<td>" + patient.address + "</td>"
+                    + "<td>" + patient.city + "</td>"
+                    + "<td>" + patient.age + "</td>"
+                    + "<td>" + patient.gender + "</td>"
+                    + "<td>"
+                    + " <button  class='btn btn-primary' Onclick='EditCustomer(" + patient.id + ")' style='margin-right:5px;'>Edit</button>"
+                    + " <button  class='btn btn-danger' Onclick='DeleteCustomer(" + patient.id + ")'>Delete</button>"
+                    + "</td>"
+                    + "<tr>")
+            });
+        });
+    }
+
+
+    function EditCustomer(PatientID) {
+
+        if (PatientID > 0) {
+            debugger;
+            $.getJSON("/PatientUI/GetPatientById?id=" + PatientID, function (patient) {
+
+                $("#txtid").val(patient.id);
+                $("#txtName").val(patient.name);
+                $("#txtaddress").val(patient.address);
+                $("#txtcity").val(patient.city);
+                $("#txtage").val(patient.age);
+                $("#txtgender").val(patient.gender);
+            });
+        }
+    }
+    function UpdateCustomer(patientID) {
+        debugger;
+        if (patientID > 0) {
+            $.ajax({
+                url: '/PatientUI/AddUpdatePatient?id=' + patientID,
+                type: 'POST',
+                dataType: 'JSON',
+                success: function (data) {
+                    getAllData();
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+
+        }
+    }
+    function DeleteCustomer(patientID) {
+        if (patientID > 0) {
+            $.ajax({
+                url: '/PatientUI/Deletepatient?id=' + patientID,
+                type: 'DELETE',
+                dataType: 'JSON',
+                success: function (data) {
+                    getAllData
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+        }
+    }
+</script>

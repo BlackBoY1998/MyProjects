@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Webapiusingsp.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br/>
+<br />
+@*<input type="radio" name="Type" value="PDF" />PDF
+    <input type="radio" name="Type" value="Excel" />Excel
+
+
+<input id="Submit1" type="submit" value="submit" />
+<br/>*@
+@using (Html.BeginForm("CheckRadio", "StudentUI", FormMethod.Post))
+{
+<div>
+    <h5>Select Type:</h5>
+    <div class="col-md-2">
+        @Html.RadioButton("Type","PDF") PDF
+        </div>
+    <div class="col-md-2">
+        @Html.RadioButton("Type","Excel") Excel
+        </div>
+
+
+    </div>
+<input type="submit" value="Export" class="btn btn-primary"/>
+}
+<br />
+<br/>
+
+@using (Html.BeginForm("Import", "StudentUI", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        <div class="form-group">
+
+            <div class="control-label col-md-2">Excel:</div>
+            <div class="col-md-10">
+                <input type="file" id="FileUpload" name="FileUpload" class="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10"><br/>
+                <input type="submit" value="Import" id="btnSubmit" class="btn btn-primary" />
+
+            </div>
+        </div>
+}
+<br/>
+<br/>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StdName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StdEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StdName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StdEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StdId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StdId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StdId })
+        </td>
+    </tr>
+}
+
+</table>

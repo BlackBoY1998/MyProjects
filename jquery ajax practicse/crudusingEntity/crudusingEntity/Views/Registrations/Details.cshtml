@@ -1,0 +1,90 @@
+﻿@model crudusingEntity.Models.Registration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Registration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dateofbirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dateofbirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherCourses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherCourses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.rid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

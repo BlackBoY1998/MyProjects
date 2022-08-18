@@ -1,0 +1,10 @@
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\SchemaFirstApproach.dll.config
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\SchemaFirstApproach.dll
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\SchemaFirstApproach.pdb
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\EntityFramework.dll
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\EntityFramework.SqlServer.dll
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\EntityFramework.xml
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\bin\EntityFramework.SqlServer.xml
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\obj\Debug\SchemaFirstApproach.csprojResolveAssemblyReference.cache
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\obj\Debug\SchemaFirstApproach.dll
+D:\akash\study\SchemaFirstApproach\SchemaFirstApproach\obj\Debug\SchemaFirstApproach.pdb

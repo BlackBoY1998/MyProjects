@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <style>
+#mySearch {
+  float: right;
+  width: 30%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: gold;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: gold;
+  color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="topnav" id="myTopnav">
+        
+        
+        <input type="text" id="mySearch"  placeholder="Search.." title="Type in a category">
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="#contact">Contact</a>
+        <a href="#news">News</a>
+        <a href="#home" class="active">Home</a>
+       
+
+    </div>
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Akash Gawde</p>
+        </footer>
+    </div>
+</body>
+</html>

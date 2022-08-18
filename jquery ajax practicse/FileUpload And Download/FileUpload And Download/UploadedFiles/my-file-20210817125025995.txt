@@ -1,0 +1,123 @@
+@using(Html.BeginForm("Add","Customer"))
+{
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            UCCNo
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            DOB
+        </th>
+        <th>
+            EmailID
+        </th>
+        <th>
+            Mobile
+        </th>
+        <th>
+            Landline
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            PinCode
+        </th>
+        <th>
+            DepositoryType
+        </th>
+        <th>
+            PanCardNo
+        </th>
+    </tr>
+    @{
+     if(Model)
+    }
+
+    }
+
+</table>
+
+
+
+
+
+  @{
+    if (Model.C != null)
+    {
+        int i = 0;
+        foreach (var item in Model.CustomerDetails.ToList())
+        {
+            <tr>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].Id, new { @Id="Id"+i})
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].UCCNo, new { @Id = "UccNo" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].Name, new { @Id = "Name" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].Gender, new { @Id = "Gender" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].DOB, new { @Id = "DOB" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].EmailId, new { @Id = "EmailID" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].MobileNo, new { @Id = "Mobile" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].LandLine, new { @Id = "Landline" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].Address, new { @Id = "Address" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].PinCode, new { @Id = "Pincode" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].DepositoryType, new { @Id = "DepoType" + i })
+                </td>
+                <td>
+                    @Html.LabelFor(x => x.CustomerDetails[i].PanCardNo, new { @Id = "Pancard" + i })
+                </td>
+            </tr>
+            i++;
+        }
+    }
+        }
+
+
+using Dapper;
+
+//DynamicParameters obj = new DynamicParameters();
+                //obj.Add("@Id", cust.Id);
+                //obj.Add("@UCCNo", cust.UCCNo);
+                //obj.Add("@Name", cust.Name);
+                //obj.Add("@Gender", cust.Gender);
+                //obj.Add("@DOB", cust.DOB);
+                //obj.Add("@EmailID", cust.EmailId);
+                //obj.Add("@Mobile", cust.Mobile);
+                //obj.Add("@Landline", cust.Landline);
+                //obj.Add("@Address", cust.Address);
+                //obj.Add("@PinCode", cust.PinCode);
+                //obj.Add("@DepositoryType", cust.DepositoryType);
+                //obj.Add("@PanCardNo", cust.PanCardNo);
+                //obj.Add("@Details", customerDetails.ToString());
+                //con = new SqlConnection(constr);
+                //con.Open();
+                //con.Execute("AddCustomer", obj, commandType: CommandType.StoredProcedure);
+                //con.Close();

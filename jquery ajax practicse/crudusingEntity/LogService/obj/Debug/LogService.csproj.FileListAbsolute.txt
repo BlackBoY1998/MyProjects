@@ -1,0 +1,8 @@
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\bin\Debug\LogService.exe.config
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\bin\Debug\LogService.exe
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\bin\Debug\LogService.pdb
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\obj\Debug\LogService.ProjectInstaller.resources
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\obj\Debug\LogService.csproj.GenerateResource.Cache
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\obj\Debug\LogService.exe
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\obj\Debug\LogService.pdb
+D:\akash\study\jquery ajax practicse\crudusingEntity\LogService\obj\Debug\LogService.csprojResolveAssemblyReference.cache

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Bar";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+
+<h2>Bar</h2>
+<canvas id="horizontalBar"></canvas>
+<script>
+    $(document).ready(function () {
+        $.getJSON("/DisplayAjax/BarData", function (data) {
+            var Categorey = []
+            var ProductCount = []
+            for (var i = 0; i < data.length; i++) {
+                Categorey.push(data[i].CategoreyName);
+                ProductCount.push(data[i].ProductCount);
+            }
+            new Chart(document.getElementById("horizontalBar"), {
+                "type": "horizontalBar",
+                "data": {
+                    "labels": Categorey,
+                    "datasets": [{
+                        "label": "Total Product Count",
+                        "data": ProductCount,
+                        "fill": false,
+                        "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+                        "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
+                        "rgba(153, 102, 255, 0.2)", "rgba(0, 77, 255, 0.14)", "rgba(0, 214, 189, 0.14)"
+                        ],
+                        "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+                        "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(106, 90, 205)", "rgb(150, 186, 151)"
+                        ],
+                        "borderWidth": 1
+                    }]
+                },
+                "options": {
+                    "scales": {
+                        "xAxes": [{
+                            "ticks": {
+                                "beginAtZero": true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    });
+</script>
+

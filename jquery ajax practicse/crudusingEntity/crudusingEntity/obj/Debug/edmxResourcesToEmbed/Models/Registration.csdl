@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RegModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="rid" />
+    </Key>
+    <Property Name="rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Dateofbirth" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="course" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OtherCourses" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="RegEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Registrations" EntityType="Self.Registration" />
+    <EntitySet Name="LeadManagements" EntityType="RegModel.LeadManagement" />
+    <EntitySet Name="LeadTypes" EntityType="RegModel.LeadType" />
+    <EntitySet Name="States" EntityType="RegModel.State" />
+    <EntitySet Name="Zones" EntityType="RegModel.Zone" />
+    <EntitySet Name="Ptypes" EntityType="RegModel.Ptype" />
+    <EntitySet Name="LoginTables" EntityType="RegModel.LoginTable" />
+  </EntityContainer>
+  <EntityType Name="LeadManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeadId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeadType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LeadSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="DOM" Type="DateTime" Precision="3" />
+    <Property Name="AssignedToUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="TelphoneNo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TelePhoneNo2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LeadType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="DOM" Type="DateTime" Precision="3" />
+    <Property Name="TenantId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ZoneID" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Zone">
+    <Key>
+      <PropertyRef Name="zoneId" />
+    </Key>
+    <Property Name="zoneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zoneName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Deleted" Type="Int32" />
+    <Property Name="TenantId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Ptype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ptypes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LoginTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NewAccountDate" Type="DateTime" Precision="3" />
+    <Property Name="Password2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
+    <Property Name="IsLoggedin" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "GetTemplate";
+}
+
+<h2>GetTemplate</h2>
+
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
+        <title></title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        @*<div>
+            <a href="#" id="General">Genral Template</a>
+            <label>followup Mail</label>
+            <label> Sample Template</label>
+        </div>*@
+        <table border="0" cellpadding="0" cellspacing="0" align="center">        
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Template &nbsp;&nbsp;&nbsp;</label>
+                        <br/>
+                        <div>
+                            <div id="General"></div>
+                            @*<a href="#" id="General"></a>*@
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <button type="button" class="btn btn-primary" value="new" id="NewTemplate" onclick="pageRedirect()">New</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <label>Preview</label>
+                    <div class="form-group">  
+                        <textarea class="form-control" id="inputTemplate" name="inputTemplate" rows="10"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="form-group">
+                        <input id="btnSelect" class="btn btn-success" type="submit" value="Select" />
+                        <input id="btnCancel" class="btn btn-warning" type="button" value="Cancel" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            tinymce.init({
+                selector: '#inputTemplate',
+                width: 800,
+                forced_root_block: ""
+            });
+
+            $(document).ready(function () {
+                loadData();
+               
+               
+            });
+            $('#NewTemplate').click(function () {
+                window.location.href = '/Template/Index'
+                window.open('/Template/Index');
+            })
+
+            function loadData() {
+                $.ajax({
+                    async: true,
+                    url: '/Template/show',
+                    type: 'Get',
+                    contentType: 'application/json;charset=utf-8',
+                    dataType: 'JSON',
+                    success: function (response) {
+                        $.each(response, function (key, value) {
+                           
+                            $('#General').append('<li><a href="#" onclick="return data(' + value.Id + ')">' + value.Name + ' &nbsp;&nbsp;&nbsp;</a></li>')
+                            //$('#General').append('<li><a href="#" id="return setdata(' + value.Id + ')">' + value.Name + '</a></li>')
+                        });
+                    },
+                    error: function () {
+                        alert('There is Problem is Template Table')
+                    }
+                });
+            }
+
+            function data(Id) {
+                
+                $.ajax({
+                    url: "/Template/Templatedetails/" + Id,
+                    type: "GET",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (result) {
+                        //var content = tinymce.get("inputTemplate").setContent(result.Template);
+                        //$('#inputTemplate').html(content)
+                        tinymce.get("inputTemplate").setContent(result.Template);
+                        
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+                return false;
+            }
+           
+            //function getdata() {
+            //    $('#btnSelect').click(function () {
+            //        var content = tinymce.get("InputTemplate").getContent();
+            //        $.ajax({
+            //            type: 'POST',
+            //            dataType: 'json',
+            //            contentType: 'application/json',
+            //            url: '/Template/checkSession',
+            //            data: { Template:content},
+            //            success: function (data) {
+            //                alert(data.sessionValue);
+            //                if (data.sessionValue == true) {
+            //                    location.href = "/Template/GetTemplate"
+            //                }
+            //                else {
+            //                    location.href = "/Template/Mail"
+            //                }
+            //            },
+            //            error: function (xhr) {
+            //                alert('error');
+            //            }
+            //        });
+            //    });
+            //}
+            $('#btnCancel').click(function () {
+                $('#InputName').val("");
+                tinyMCE.activeEditor.setContent('');
+            });
+            function pageRedirect() {
+                window.location.href = "/Template/Index";
+            }
+            //$(function () {
+            //    $("#btnSelect").click(function () {
+            //        $.ajax({
+            //            type: "POST",
+            //            url: "/Template/AjaxMethod",
+            //            data: '{name: "' + tinymce.get("inputTemplate").setContent()+ '" }',
+            //            contentType: "application/json; charset=utf-8",
+            //            dataType: "json",
+            //            success: function (response) {
+            //                alert("Hello: " + response.Name + " .\nCurrent Date and Time: " + response.DateTime);
+            //            },
+            //            failure: function (response) {
+            //                alert(response.responseText);
+            //            },
+            //            error: function (response) {
+            //                alert(response.responseText);
+            //            }
+            //        });
+            //    });
+            //});
+
+
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\ModelFirstApproach.dll.config
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\ModelFirstApproach.dll
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\ModelFirstApproach.pdb
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\EntityFramework.dll
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\EntityFramework.SqlServer.dll
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\EntityFramework.xml
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\bin\EntityFramework.SqlServer.xml
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.csprojResolveAssemblyReference.cache
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.dll
+D:\akash\study\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.pdb

@@ -1,0 +1,33 @@
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\FileUpload And Download.dll.config
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\FileUpload And Download.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\FileUpload And Download.pdb
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.Owin.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.Owin.Security.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Newtonsoft.Json.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Owin.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Helpers.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Mvc.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Razor.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Webpages.Deployment.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Webpages.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Webpages.Razor.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.Owin.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Microsoft.Owin.Security.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\Newtonsoft.Json.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Razor.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Webpages.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Webpages.Deployment.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Webpages.Razor.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Helpers.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\bin\System.Web.Mvc.xml
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\obj\Release\FileUpload And Download.csprojResolveAssemblyReference.cache
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\obj\Release\FileUpload And Download.dll
+D:\akash\study\jquery ajax practicse\FileUpload And Download\FileUpload And Download\obj\Release\FileUpload And Download.pdb

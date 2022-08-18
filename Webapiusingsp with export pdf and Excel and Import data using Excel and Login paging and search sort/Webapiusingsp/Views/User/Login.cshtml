@@ -1,0 +1,49 @@
+﻿@model Webapiusingsp.Models.Userclass
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 0px solid black;
+            padding: 5px;
+        }
+
+        table {
+            border-spacing: 15px;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <table border="0" align="center">
+                <tr>
+                    <td>@Html.LabelFor(m=>m.UserName)</td>
+                    <td>@Html.EditorFor(m=>m.UserName)</td>
+                    @*<td>@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })</td>*@
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m=>m.Password)</td>
+                    <td>@Html.EditorFor(m=>m.Password)</td>
+                    @*<td>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</td>*@
+                </tr>
+                <tr>
+                  <td>
+                      <input type="submit" value="Login" class="btn btn-primary" />
+                  </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

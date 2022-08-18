@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <title></title>
+    <link src="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        .display{
+            width: 400px;
+	        top:0;
+	        bottom: 0;
+	        left: 0;
+	        right: 0;	
+	        margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Index</h2>
+    <div class="form-group">
+        <lable>Timespan:</lable>
+        <select id="cbospan" class="form-control" name="cbospan">
+            <option id="H">Hourly</option>
+            <option id="W">weekly</option>
+            <option id="M">Monthly</option>
+            <option id="Y">Yearly</option>
+        </select>
+        <div class="form-group">
+            <br/>
+            <input id="btnSave" class="btn btn-success" onclick="GetData()"  type="button" value="Get Data" />
+        </div>
+        
+    </div>
+
+    <div id="RecordList" class="display">
+    </div>
+    <script type="text/javascript">
+    function GetData() {
+        var result = document.getElementById("cbospan").value;
+        if (result == 'Hourly') {
+            $("#RecordList").empty().append()
+            LoadHourly();
+
+        }
+        else if (result == 'weekly') {
+            $("#RecordList").empty().append()
+            LoadWeekly();
+        }
+        else if (result == 'Monthly') {
+            $("#RecordList").empty().append()
+            Loadmonthly();
+        }
+        else {
+            $("#RecordList").empty().append()
+            LoadYearly();
+        }
+    }
+
+    function LoadHourly() {
+        var Record = {};
+        Record.url = '@Url.Action("HourlyReport", "Report")';
+        Record.type = "POST";
+        Record.dataType = "json";
+        Record.ContentType = "application/json";
+        Record.success = function (RecordData) {
+            if (RecordData.length > 0) {
+                $('#RecordList').append('<tr><th>&emsp;Date&emsp;</th><th>&emsp;Hours&emsp;</th><th>&emsp;Order Count&emsp;</th></tr>')
+                $.each(RecordData, function (i, HourlyRecord) {
+                    var date = new Date(parseInt((HourlyRecord.Date).substr(6)));
+                    var month = date.getMonth() + 1;
+                    var fulldate = date.getDate() + "-" + month + "-" + date.getFullYear();
+
+                    $('#RecordList').append('<tr style="outline: thin solid"><td style="outline: thin solid">&emsp;' + fulldate + '&emsp;</td><td style="outline: thin solid">&emsp;' + HourlyRecord.Hours + '&emsp;</td><td style="outline: thin solid">&emsp;' + HourlyRecord.OrderCount + '&emsp;</td></tr>')
+                });
+            }
+        };
+        $.ajax(Record);
+    }
+
+    function LoadWeekly() {
+        var WeekRecord = {};
+        WeekRecord.url = '@Url.Action("WeeklyReport", "Report")';
+        WeekRecord.type = "POST";
+        WeekRecord.dataType = "json";
+        WeekRecord.ContentType = "application/json";
+        WeekRecord.success = function (RecordData) {
+            if (RecordData.length > 0) {
+                $('#RecordList').append('<tr><th>&emsp;Week&emsp;</th><th>&emsp;Order Count&emsp;</th></tr>')
+                $.each(RecordData, function (i, WeeklyData) {
+                    $('#RecordList').append('<tr style="outline: thin solid"><td style="outline: thin solid">&emsp;' + WeeklyData.Week + '&emsp;</td><td style="outline: thin solid">&emsp;' + WeeklyData.OrderCount + '&emsp;</td></tr>')
+                });
+            }
+        };
+        $.ajax(WeekRecord);
+    }
+    function Loadmonthly() {
+        var MonthlyRecord = {};
+        MonthlyRecord.url = '@Url.Action("MonthlyReport", "Report")';
+            MonthlyRecord.type = "POST";
+            MonthlyRecord.dataType = "json";
+            MonthlyRecord.ContentType = "application/json";
+            MonthlyRecord.success = function (MonthlyRecordData) {
+                if (MonthlyRecordData.length > 0) {
+                    $('#RecordList').append('<tr><th>&emsp;Year&emsp;</th><th>&emsp;Month&emsp;</th><th>&emsp;Month Name&emsp;</th><th>&emsp;Order Count&emsp;</th></tr>')
+                    $.each(MonthlyRecordData, function (i, MonthlyData) {
+                        $('#RecordList').append('<tr style="outline: thin solid"><td style="outline: thin solid">&emsp;' + MonthlyData.year + '&emsp;</td><td style="outline: thin solid">&emsp;' + MonthlyData.Month + '&emsp;</td><td style="outline: thin solid">&emsp;' + MonthlyData.MonthName + '&emsp;</td><td style="outline: thin solid">&emsp;' + MonthlyData.OrderCount + '&emsp;</td></tr>')
+                    });
+                }
+            };
+            $.ajax(MonthlyRecord);
+        }
+
+        function LoadYearly() {
+            var YearlyRecord = {};
+            YearlyRecord.url = '@Url.Action("YearlyReport", "Report")';
+            YearlyRecord.type = "POST";
+            YearlyRecord.dataType = "json";
+            YearlyRecord.ContentType = "application/json";
+            YearlyRecord.success = function (YearlyRecordData) {
+                if (YearlyRecordData.length > 0) {
+                    $('#RecordList').append('<tr><th>&emsp;Year&emsp;</th><th>&emsp;Order Count&emsp;</th></tr>')
+                    $.each(YearlyRecordData, function (i, YearlyData) {
+                        $('#RecordList').append('<tr style="outline: thin solid"><td style="outline: thin solid">&emsp;' + YearlyData.year + '&emsp;</td><td style="outline: thin solid">&emsp;' + YearlyData.OrderCount + '&emsp;</td></tr>')
+                    });
+                }
+            };
+            $.ajax(YearlyRecord);
+        }
+    </script>
+
+</body>
+</html>
